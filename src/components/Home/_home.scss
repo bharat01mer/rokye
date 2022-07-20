@@ -1,0 +1,64 @@
+.rokye__home{
+    margin-top: -5rem;
+    
+    &-intro{
+        background: #efefef;
+        // background-image: linear-gradient(to left bottom, #ffffff, #fcf2fb, #ffe3ec, #ffd5d1, #fdccb0);
+        // background-image: linear-gradient(to left bottom, #ffffff, #c6c9d1, #8998a3, #4c6b73, #114040);
+        
+        .outer{
+            @include center__elem;
+            justify-content: space-between;
+            padding: 9rem 0 0 3rem ;
+        }
+
+        .detail{
+            h1{
+                @include font2;
+                background-image: linear-gradient(to left bottom, #000000, #442829, #854f41, #c27f50, #f2ba5b);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 4rem;
+            }
+
+            p{
+                font-size: 1.2rem;
+                color: $color1;
+                margin: 3rem 0;
+            }
+            width: 100%;
+
+            &__btn{
+                // background: ;
+                padding: .5rem;
+                width: 10rem;
+                @include center__elem;
+                @include box-color;
+                // background: black;
+            }
+        }
+        .img{
+
+            width: 100%;
+        }
+
+        @media screen and (max-width:1000px) {
+            .outer{
+                flex-direction: column-reverse;
+                padding: 5rem 2rem 0;
+
+                .detail{
+                    margin-top: 2rem;
+
+                    h1{
+                        font-size: 3.5rem;
+                    }
+                    p{
+                        margin: 2rem 0;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}

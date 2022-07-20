@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Playfair+Display:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", serif;
+}
+body{
+  background-color: #F2F2F2;
+}
+$color1: #114040;
+$color2: #035941;
+$color3: #F2BA52;
+$color4: #F2F2F2;
+$color5: #F25C05;
+
+
+@mixin center__elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin font1 {
+}
+@mixin font2 {
+    font-family: "Playfair Display", serif;
+}
+
+@mixin box-color {
+  background: #F25C05;
+  color: white;
+  border: 1px solid #F25C05;
+  border-radius: 3px;
+
+  &:hover{
+    background: white;
+    color: #F25C05;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+  }
+}

@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Playfair+Display:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+.rokye__navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__navbar-logo h1 {
+  color: #F25C05;
+}
+.rokye__navbar-logo span {
+  color: black;
+}
+.rokye__navbar .outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__navbar-nav .item {
+  color: #035941;
+  margin-right: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__navbar-nav .item__indicator {
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #F25C05;
+}
+.rokye__navbar-nav .item.active {
+  color: #F25C05;
+}
+.rokye__navbar-mobnav {
+  padding: 1rem;
+  position: absolute;
+  text-align: end;
+  right: 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.77);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  top: 4rem;
+}
+.rokye__navbar-mobnav .item {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.rokye__navbar-mobnav .register {
+  border: 4px;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: #F25C05;
+  color: white;
+  border: 1px solid #F25C05;
+  border-radius: 3px;
+}
+.rokye__navbar-mobnav .register:hover {
+  background: white;
+  color: #F25C05;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.rokye__navbar-btn {
+  border: 4px;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: #F25C05;
+  color: white;
+  border: 1px solid #F25C05;
+  border-radius: 3px;
+}
+.rokye__navbar-btn:hover {
+  background: white;
+  color: #F25C05;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+@media screen and (max-width: 1000px) {
+  .rokye__navbar-nav {
+    display: none;
+  }
+}
+
+.rokye__home {
+  margin-top: -5rem;
+}
+.rokye__home-intro {
+  background: #efefef;
+}
+.rokye__home-intro .outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9rem 0 0 3rem;
+}
+.rokye__home-intro .detail {
+  width: 100%;
+}
+.rokye__home-intro .detail h1 {
+  font-family: "Playfair Display", serif;
+  background-image: linear-gradient(to left bottom, #000000, #442829, #854f41, #c27f50, #f2ba5b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+}
+.rokye__home-intro .detail p {
+  font-size: 1.2rem;
+  color: #114040;
+  margin: 3rem 0;
+}
+.rokye__home-intro .detail__btn {
+  padding: 0.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F25C05;
+  color: white;
+  border: 1px solid #F25C05;
+  border-radius: 3px;
+}
+.rokye__home-intro .detail__btn:hover {
+  background: white;
+  color: #F25C05;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.rokye__home-intro .img {
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .rokye__home-intro .outer {
+    flex-direction: column-reverse;
+    padding: 5rem 2rem 0;
+  }
+  .rokye__home-intro .outer .detail {
+    margin-top: 2rem;
+  }
+  .rokye__home-intro .outer .detail h1 {
+    font-size: 3.5rem;
+  }
+  .rokye__home-intro .outer .detail p {
+    margin: 2rem 0;
+    font-size: 1.1rem;
+  }
+}/*# sourceMappingURL=index.css.map */

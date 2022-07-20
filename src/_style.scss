@@ -1,0 +1,89 @@
+.rokye{
+    &__navbar{
+        padding: 1rem;
+        @include center__elem;
+        justify-content: space-between;
+
+        &-logo{
+            h1{
+                color: $color5;
+            }
+            span{
+                color: black
+            }
+        }
+
+        .outer{
+            @include center__elem;
+        }
+
+        &-nav{
+            
+            @include center__elem;
+            justify-content: space-between;
+            
+            .item{
+                color: #035941;
+                margin-right: 2rem;
+                cursor: pointer;
+                @include center__elem;
+                flex-direction: column;
+
+                &__indicator{
+                    border-radius: 50%;
+                    width: .5rem;
+                    height: .5rem;
+                    background: $color5;
+                }
+                &.active{
+                    color: $color5;
+                }
+            }
+        }
+
+        &-mobnav{
+            padding: 1rem;
+            position: absolute;
+            text-align: end;
+            right: 2rem;
+            /* From https://css.glass */
+background: rgba(255, 255, 255, 0.77);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.02);
+            
+            top: 4rem;
+            .item{
+                cursor: pointer;
+                margin-bottom: 1rem;
+            }
+
+            .register{
+                border: 4px;
+                // padding: .4rem 1rem;
+                width: 8rem;
+                @include center__elem;
+                padding: .5rem;
+                @include box-color;
+                
+            }
+        }
+
+        &-btn{
+            border: 4px;
+            // padding: .4rem 1rem;
+            width: 8rem;
+            @include center__elem;
+            padding: .5rem;
+            @include box-color;
+        }
+
+        @media screen and (max-width:1000px) {
+            &-nav{
+                display: none;
+            }
+        }
+    }
+}
