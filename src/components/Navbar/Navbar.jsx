@@ -4,18 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { setwinWidth } from '../../../redux/slices/util'
 
 const Navbar = () => {
   const router = useRouter()
-  
-  const {winWidth}=useSelector((state)=>state.util)
-  
+
+  const { winWidth } = useSelector((state) => state.util)
+
   const [showMobileNav, setShowMobileNav] = useState(false)
 
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
   const navLinks = [
+    winWidth < 650 && 
     {
       name: "Home",
       link: "",
@@ -44,7 +45,7 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(setwinWidth(window.innerWidth))
-  }, [showMobileNav,winWidth,dispatch])
+  }, [showMobileNav, winWidth, dispatch])
 
 
   return (
@@ -52,7 +53,7 @@ const Navbar = () => {
       <div className="rokye__navbar-logo">
         <h1>Rokye.<span>Realty</span></h1>
       </div>
-      <div className="rokye__navbar-nav">
+      {/* <div className="rokye__navbar-nav">
         {navLinks.map((item) => (
           <Link className='item' href={`/${item.link}`} key={item.link}>
             <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileHover={{ y: -5, color: "#F25C05" }}>
@@ -63,7 +64,7 @@ const Navbar = () => {
             </motion.div>
           </Link>
         ))}
-      </div>
+      </div> */}
       <AnimatePresence>
         {
           showMobileNav && (
@@ -82,16 +83,19 @@ const Navbar = () => {
           )
         }
       </AnimatePresence>
-      {
-        winWidth < 1000 ? showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} /> : (
-          <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} />
-        ) : (
-
-          <div className="rokye__navbar-btn">
-            <h3>Register</h3>
-          </div>
-        )
-      }
+      <div className='rokye__navbar-tab'>
+        <Link href={"/"} passHref >
+          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname==="/" ? "active" : "" }>Home</motion.h3>
+        </Link>
+        <Link href={"/properties/sell"} passHref>
+          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={isActivePage("properties/sell") ? "active" : ""}>Sell A Property</motion.h3>
+        </Link>
+        {
+          showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} /> : (
+            <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} />
+          )
+        }
+      </div>
 
     </div>
   )

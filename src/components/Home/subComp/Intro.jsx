@@ -1,31 +1,30 @@
 import React from 'react'
 import Image from 'next/image'
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
+import { VscHome } from "react-icons/vsc"
+import { MdOutlineAutoAwesome } from "react-icons/md"
 
-const Intro = ({winWidth}) => {
-
+const Intro = ({ winWidth }) => {
+    const url = "https://o.remove.bg/downloads/5489a143-a2ee-4dae-b5eb-8e9bae0f065e/photo-1479839672679-a46483c0e7c8-removebg-preview.png"
     return (
         <div className="rokye__home-intro">
-            <div className="outer">
-                <div className="detail">
-                    {winWidth < 1000 ? (
-                        <h1>Find Real Estate That Suits You.</h1>
-                        )
-                     : (
-                         <h1>Find Real Estate <br /> That Suits You.</h1>
-                     )
-                    }
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, molestias laboriosam delectus eaque error dolorem inventore! Accusamus in fuga corporis neque esse perspiciatis vel.</p>
-
-                    <div className="detail__btn">
-                        <h3>Get Started</h3>
-                    </div>
-                </div>
-                <div className="img">
-                    {/* <Image src={"/back1.png"} width={1000} height={700} objectFit="contain" /> */}
-                    <motion.img src="back1.png" alt="" width={"100%"}  />
-                </div>
+            <div className="text">
+                <h1>Find</h1>
+                <h1 className='mid'>Your <MdOutlineAutoAwesome size={50} color="#F2BA52" /> </h1>
+                <h1>
+                    <VscHome color='#F2BA52' size={100} /> Home
+                </h1>
             </div>
+            {
+                winWidth > 1000 && (
+                    <div className="img">
+                        <Image src="/blob.png" alt="" width={600} height={600} />
+                        <div className="img__inner">
+                            <img src={"/banner.png"} alt="" width={600} />
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }
