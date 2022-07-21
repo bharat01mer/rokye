@@ -1,6 +1,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
 
 * {
   margin: 0;
@@ -14,7 +15,8 @@
 
 }
 body{
-  background-color: #F2F2F2;
+  // background-color: #F2F2F2;
+  background: white;
 }
 $color1: #114040;
 $color2: #035941;
@@ -41,7 +43,8 @@ $color5: #F25C05;
 }
 
 @mixin heading_font {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'lora', sans-serif;
+  font-weight: bolder;
 }
 
 @mixin box-color {

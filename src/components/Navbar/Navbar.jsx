@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
+import {AiOutlinePlus} from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
 import { setwinWidth } from '../../../redux/slices/util'
 
 const Navbar = () => {
   const router = useRouter()
-
+  const headerRef=useRef()
   const { winWidth } = useSelector((state) => state.util)
 
   const [showMobileNav, setShowMobileNav] = useState(false)
 
   const dispatch = useDispatch()
   const navLinks = [
-    winWidth < 650 && 
+    winWidth < 650 &&
     {
       name: "Home",
       link: "",
+    },
+    {
+      name: "Our Plans",
+      link: "plans",
     },
     {
       name: "Properties",
@@ -34,9 +39,13 @@ const Navbar = () => {
       link: "contact",
     },
     {
-      name: "FAQ",
-      link: "faq",
+      name: "Reviews",
+      link: "reviews",
     },
+    // {
+    //   name: "FAQ",
+    //   link: "faq",
+    // },
   ]
 
   function isActivePage(item) {
@@ -45,26 +54,21 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(setwinWidth(window.innerWidth))
+    window.onscroll = (() => {
+      if (window.pageYOffset >= 66) {
+          headerRef.current.classList.add("sticky")
+      } else {
+          headerRef.current.classList.remove("sticky");
+      }
+  })
   }, [showMobileNav, winWidth, dispatch])
 
 
   return (
-    <div className="rokye__navbar">
+    <div className="rokye__navbar" ref={headerRef}>
       <div className="rokye__navbar-logo">
         <h1>Rokye.<span>Realty</span></h1>
       </div>
-      {/* <div className="rokye__navbar-nav">
-        {navLinks.map((item) => (
-          <Link className='item' href={`/${item.link}`} key={item.link}>
-            <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileHover={{ y: -5, color: "#F25C05" }}>
-              <h3>{item.name}</h3>
-              {isActivePage(item) && (
-                <motion.div className='item__indicator' initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ type: "spring", duration: 1 }}></motion.div>
-              )}
-            </motion.div>
-          </Link>
-        ))}
-      </div> */}
       <AnimatePresence>
         {
           showMobileNav && (
@@ -85,10 +89,13 @@ const Navbar = () => {
       </AnimatePresence>
       <div className='rokye__navbar-tab'>
         <Link href={"/"} passHref >
-          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname==="/" ? "active" : "" }>Home</motion.h3>
+          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""}>Home</motion.h3>
         </Link>
         <Link href={"/properties/sell"} passHref>
-          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={isActivePage("properties/sell") ? "active" : ""}>Sell A Property</motion.h3>
+          <motion.div className="sell"  whileTap={{scale:0.97}}>
+            <AiOutlinePlus size={25} color={"#fff "} />
+            <h3 >Add Property</h3>
+          </motion.div>
         </Link>
         {
           showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} /> : (

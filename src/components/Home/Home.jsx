@@ -5,6 +5,7 @@ import {Intro, SearchBar,Choose} from './subComp'
 
 const Home = () => {
   const state=useSelector((state)=>state)
+  
   return (
     <div className='rokye__home'>
       <Intro winWidth={state.util.winWidth} />

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +13,16 @@
 }
 
 body {
-  background-color: #F2F2F2;
+  background: white;
 }
 
 .rokye__navbar {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 23;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +111,24 @@ body {
   z-index: 2;
   color: #114040;
   cursor: pointer;
-  margin-right: 4rem;
+}
+.rokye__navbar-tab .sell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F25C05;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  margin: 0 3rem;
+}
+.rokye__navbar-tab .sell h3 {
+  margin-left: 0.4rem;
+  color: white;
+}
+@media screen and (max-width: 650px) {
+  .rokye__navbar-tab .sell {
+    margin-right: 1rem;
+  }
 }
 .rokye__navbar-tab .active {
   color: #F25C05 !important;
@@ -141,12 +162,19 @@ body {
     display: none;
   }
 }
+.rokye__navbar.sticky {
+  transition: all 0.5s ease-in-out;
+  padding: 0.8rem 1rem;
+  box-shadow: 0px 0px 7px black;
+  background: white;
+  z-index: 2;
+}
 
 .rokye__home {
   padding: 2rem;
 }
 .rokye__home-intro {
-  padding: 3rem;
+  padding: 4rem 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,11 +185,13 @@ body {
   color: #114040;
 }
 .rokye__home-intro .text h1 {
+  line-height: 6rem;
   font-size: 6rem;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: bold;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
 }
 .rokye__home-intro .text .mid {
+  line-height: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,6 +213,7 @@ body {
 }
 @media screen and (max-width: 1000px) {
   .rokye__home-intro {
+    margin-top: 3rem;
     flex-direction: column;
     padding: 0;
   }
@@ -232,7 +263,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 1.5rem 3rem;
   box-shadow: 0px 0px 10px black;
   background: white;
   border-radius: 16px;
@@ -243,11 +274,20 @@ body {
   align-items: center;
   align-items: flex-start;
 }
+.rokye__home-searchbar__tab .item .outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .rokye__home-searchbar__tab .item svg {
   margin-top: 0.6rem;
   color: #f2ba52;
+  color: #035941;
 }
 .rokye__home-searchbar__tab .item .title {
+  cursor: pointer;
   margin-left: 1rem;
   display: flex;
   justify-content: center;
@@ -258,6 +298,8 @@ body {
 }
 .rokye__home-searchbar__tab .item .title h1 {
   color: #114040;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
 }
 .rokye__home-searchbar__tab .item .title svg {
   margin-top: 0;
@@ -270,6 +312,53 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.rokye__home-searchbar__tab .item .menu {
+  width: 12rem;
+  height: 20rem;
+  background: white;
+  box-shadow: 0 0 5px black;
+  position: absolute;
+  overflow-y: scroll;
+  margin-top: 5rem;
+  border-radius: 0.5rem;
+  z-index: 999;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.rokye__home-searchbar__tab .item .menu__item {
+  cursor: pointer;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__home-searchbar__tab .item .menu__item:hover {
+  transition: 0.2s all ease-in-out;
+  background: rgba(0, 0, 0, 0.1);
+}
+.rokye__home-searchbar__tab .item .menu::-webkit-scrollbar {
+  width: 5px;
+}
+.rokye__home-searchbar__tab .item .menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.rokye__home-searchbar__tab .item .menu::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.rokye__home-searchbar__tab .item .menu::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.rokye__home-searchbar__tab .item .budget {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .rokye__home-searchbar__tab .divider {
   width: 3px;
@@ -286,6 +375,12 @@ body {
   align-items: center;
   color: #F2F2F2;
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__home-searchbar__tab .search h2 {
+  margin-left: 1rem;
 }
 @media screen and (max-width: 1350px) {
   .rokye__home-searchbar {
@@ -308,11 +403,41 @@ body {
     padding: 0;
   }
 }
+@media screen and (max-width: 840px) {
+  .rokye__home-searchbar .divider {
+    display: none;
+  }
+  .rokye__home-searchbar__tab {
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rokye__home-searchbar__tab .search {
+    width: 100%;
+  }
+  .rokye__home-searchbar__tab .item {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .rokye__home-searchbar__tab .item svg {
+    height: 2rem;
+    width: 2rem;
+  }
+  .rokye__home-searchbar__tab .item .title {
+    margin-left: 0;
+  }
+  .rokye__home-searchbar__tab .item .title svg {
+    height: 1rem;
+    width: 1rem;
+  }
+}
 .rokye__home-choose {
   overflow-x: hidden;
   overflow-y: hidden;
   margin-top: 2rem;
-  padding: 5rem 10rem;
+  padding: 5rem 2rem;
 }
 .rokye__home-choose__title {
   display: flex;
@@ -323,7 +448,8 @@ body {
 }
 .rokye__home-choose__title h1 {
   color: #035941;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
   font-weight: bolder;
 }
 .rokye__home-choose__title p {
@@ -338,9 +464,28 @@ body {
 .rokye__home-choose__detail .item {
   margin-right: 2rem;
   padding: 2rem;
+  height: 20rem;
+  width: 20rem;
   background: whitesmoke;
   box-shadow: 0 0 1rem #e7e7e7;
   border-radius: 5px;
+}
+.rokye__home-choose__detail .item .icon {
+  position: relative;
+}
+.rokye__home-choose__detail .item .icon__design {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2rem;
+  border-radius: 10px;
+  left: 0.7rem;
+  top: -0.5rem;
+  background: rgba(3, 89, 65, 0.3);
+}
+.rokye__home-choose__detail .item .icon svg {
+  position: relative;
+  z-index: 102 !important;
 }
 .rokye__home-choose__detail .detail {
   margin-top: 2rem;
@@ -349,7 +494,21 @@ body {
   color: #035941;
   margin-bottom: 0.4rem;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1500px) {
+  .rokye__home-choose__detail {
+    flex-wrap: wrap;
+  }
+  .rokye__home-choose__detail .item {
+    margin-bottom: 3rem;
+  }
+  .rokye__home-choose .outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 850px) {
   .rokye__home-choose {
     padding: 5rem 0;
   }
@@ -360,6 +519,8 @@ body {
     flex-direction: column;
   }
   .rokye__home-choose__detail .item {
+    width: 100%;
+    height: auto;
     margin-right: 0;
     margin-bottom: 1.5rem;
   }
