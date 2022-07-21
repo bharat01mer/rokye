@@ -411,9 +411,11 @@ body {
     padding: 1.5rem 2rem;
     flex-direction: column;
     align-items: flex-start;
+    border-radius: 5px;
   }
   .rokye__home-searchbar__tab .search {
     width: 100%;
+    border-radius: 5px;
   }
   .rokye__home-searchbar__tab .item {
     width: 100%;
@@ -485,7 +487,6 @@ body {
 }
 .rokye__home-choose__detail .item .icon svg {
   position: relative;
-  z-index: 102 !important;
 }
 .rokye__home-choose__detail .detail {
   margin-top: 2rem;

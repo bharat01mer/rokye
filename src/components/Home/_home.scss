@@ -203,6 +203,7 @@
         border-radius: 1rem;
         @include center__elem;
 
+
         h2{
           margin-left: 1rem;
         }
@@ -238,9 +239,11 @@
         padding: 1.5rem 2rem;
         flex-direction: column;
         align-items: flex-start;
-
+        border-radius: 5px;
+        
         .search{
           width: 100%;
+          border-radius: 5px;
         }
 
         .item{
@@ -315,22 +318,10 @@
             left: 0.7rem;
             top: -0.5rem;
             background: rgba($color: $color2, $alpha: 0.3);
-
-            // &::before{
-            //   position: absolute;
-            //   content: '';
-            //   height: 0;
-            //   width: 0;
-            //   border-bottom: 50px solid red;
-            //   border-left: 50px solid transparent;
-            //   border-right: 50px solid transparent;
-            //   bottom: 50px;
-            //   left: -25px;
-            // }
           }
           svg {
             position: relative;
-            z-index: 102 !important;
+            
           }
         }
       }
