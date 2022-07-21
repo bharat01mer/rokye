@@ -169,6 +169,111 @@ body {
   background: white;
   z-index: 2;
 }
+.rokye__card {
+  box-shadow: 0 0 3rem rgba(17, 64, 64, 0.2);
+  width: 20rem;
+  border-radius: 0.7rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rokye__card img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+.rokye__card-img {
+  padding: 1rem 1rem 0 1rem;
+}
+.rokye__card .favorite {
+  top: 0.5rem;
+  right: 0.5rem;
+  position: absolute;
+}
+.rokye__card .favorite svg {
+  color: #114040;
+}
+.rokye__card-detail {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.rokye__card-detail h2 {
+  color: #035941;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  margin-bottom: 0.7rem;
+}
+.rokye__card-detail .additional {
+  margin: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__card-detail .additional svg {
+  color: #114040;
+}
+.rokye__card-detail .additional p {
+  margin-left: 0.5rem;
+}
+.rokye__card-detail .additional__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__card-detail .additional__info .bed,
+.rokye__card-detail .additional__info .bath {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__card-detail .additional__info .bath {
+  margin-left: 0.4rem;
+}
+.rokye__card-detail .additional__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__card-detail .additional__price svg {
+  color: #F25C05;
+}
+.rokye__card-detail .additional__price p {
+  margin-left: 0.2rem;
+}
+.rokye__card-detail .additional__price p span {
+  color: #F25C05;
+}
+.rokye__card .info {
+  padding: 0 0 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.rokye__card .info__city {
+  color: gray;
+}
+.rokye__card .info__redirect {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(242, 92, 5, 0.3);
+  color: #F25C05;
+  border-bottom-right-radius: 0.7rem;
+  border-top-left-radius: 0.7rem;
+}
 
 .rokye__home {
   padding: 2rem;
@@ -243,7 +348,7 @@ body {
 }
 @media screen and (max-width: 1400px) and (max-width: 1250px) {
   .rokye__home-intro {
-    padding: 0;
+    padding: 2.5rem 0;
   }
 }
 @media screen and (max-width: 1400px) and (max-width: 1250px) and (min-width: 1000px) {
@@ -406,7 +511,7 @@ body {
 @media screen and (max-width: 840px) {
   .rokye__home-searchbar .divider {
     width: 100%;
-    height: 3px;
+    height: 2px;
     margin: 1rem 0;
   }
   .rokye__home-searchbar__tab {
@@ -527,4 +632,22 @@ body {
     margin-right: 0;
     margin-bottom: 1.5rem;
   }
+}
+.rokye__home-recent {
+  padding: 2rem;
+}
+.rokye__home-recent__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.rokye__home-recent__title h1 {
+  color: #035941;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+.rokye__home-recent__detail {
+  margin-top: 3rem;
 }/*# sourceMappingURL=index.css.map */

@@ -98,7 +98,7 @@
           color: white;
         }
 
-        @media screen and (max-width:650px) {
+        @media screen and (max-width: 650px) {
           margin-right: 1rem;
         }
       }
@@ -130,12 +130,112 @@
       }
     }
 
-    &.sticky{
+    &.sticky {
       transition: all 0.5s ease-in-out;
-      padding: .8rem 1rem ;
+      padding: 0.8rem 1rem;
       box-shadow: 0px 0px 7px black;
       background: white;
       z-index: 2;
+    }
+  }
+
+  &__card {
+    box-shadow: 0 0 3rem rgba($color: $color1, $alpha: 0.2) ;
+    width: 20rem;
+    border-radius: 0.7rem;
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 0.7rem;
+    }
+    @include center__elem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-img {
+      padding: 1rem 1rem 0 1rem;
+    }
+
+    .favorite{
+      top: .5rem;
+      right: .5rem;
+      position: absolute;
+
+      svg{
+        color: $color1;
+      }
+    }
+
+    &-detail {
+      width: 100%;
+      margin-top: 1rem;
+      @include center__elem;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+
+      h2 {
+        color: #035941;
+        font-family: "lora", sans-serif;
+        font-weight: bolder;
+        margin-bottom: .7rem;
+      }
+      .additional {
+        margin: 0.5rem 0;
+        width: 100%;
+        @include center__elem;
+        justify-content: space-between;
+
+        svg{
+          color:$color1;
+        }
+
+        p {
+          margin-left: 0.5rem;
+        }
+        &__info {
+          @include center__elem;
+          .bed,
+          .bath {
+            @include center__elem;
+            // align-items: flex-end;
+          }
+          .bath {
+            margin-left: 0.4rem;
+          }
+        }
+        &__price {
+          svg {
+            color: $color5;
+          }
+          p {
+            span{
+              color: $color5;
+            }
+            margin-left: 0.2rem;
+          }
+          @include center__elem;
+        }
+      }
+    }
+    .info {
+      padding: 0 0 0 1rem;
+      @include center__elem;
+      justify-content: space-between;
+      width: 100%;
+      &__city{
+        color: gray;
+      }
+
+      &__redirect {
+        width: 6rem;
+        @include center__elem;
+        background: rgba($color: $color5, $alpha: 0.3);
+        color: $color5;
+        border-bottom-right-radius: 0.7rem;
+        border-top-left-radius: 0.7rem;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {Intro, SearchBar,Choose} from './subComp'
+import {Intro, SearchBar,Choose,Recently} from './subComp'
 
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
       <Intro winWidth={state.util.winWidth} />
       <SearchBar winWidth={state.util.winWidth} />
       <Choose />
+      {/* <Recently /> */}
     </div>
   )
 }
