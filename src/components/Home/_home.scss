@@ -83,6 +83,10 @@
         }
       }
     }
+
+    @media screen and (max-width: 1000px) {
+      padding: 0;
+    }
   }
 
   // searchbar
@@ -391,6 +395,9 @@
         color: $color2;
         @include heading_font;
         font-weight: bolder;
+      }
+      p{
+        text-align:center;
       }
     }
     &__detail{

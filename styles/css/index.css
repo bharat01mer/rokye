@@ -318,6 +318,11 @@ body {
     font-size: 5rem;
   }
 }
+@media screen and (max-width: 1000px) {
+  .rokye__home-intro {
+    padding: 0;
+  }
+}
 .rokye__home-searchbar {
   position: relative;
   padding: 0 10rem;
@@ -606,6 +611,9 @@ body {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   font-weight: bolder;
+}
+.rokye__home-recent__title p {
+  text-align: center;
 }
 .rokye__home-recent__detail {
   margin-top: 3rem;
