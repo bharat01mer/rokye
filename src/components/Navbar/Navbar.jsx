@@ -31,21 +31,25 @@ const Navbar = () => {
       link: "properties",
     },
     {
-      name: "About Us",
-      link: "about",
-    },
-    {
       name: "Contact Us",
       link: "contact",
+    },
+    {
+      name: "Refer & Earn",
+      link: "refer",
+    },
+    {
+      name: "About Us",
+      link: "about",
     },
     {
       name: "Reviews",
       link: "reviews",
     },
-    // {
-    //   name: "FAQ",
-    //   link: "faq",
-    // },
+    {
+      name: "FAQ",
+      link: "faq",
+    },
   ]
 
   function isActivePage(item) {

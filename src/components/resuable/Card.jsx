@@ -5,13 +5,12 @@ import { MdBathtub } from "react-icons/md"
 import { HiCurrencyRupee } from "react-icons/hi"
 import { BsArrowRight,BsSuitHeartFill,BsSuitHeart } from "react-icons/bs"
 
-const Card = () => {
-  const [favorite, setfavorite] = useState(false)
+const Card = ({img,title,price,city,place}) => {
+  const [favorite, setfavorite] = useState(true)
   return (
     <div className="rokye__card">
       <div className="rokye__card-img">
-        <Image src={"/home.jpg"} width={300} height={250} objectFit="cover" />
-        
+        <Image src={img} width={300} height={250} objectFit="cover" />
       </div>
       <div className="favorite">
         {
@@ -20,7 +19,7 @@ const Card = () => {
         }
       </div>
       <div className="rokye__card-detail">
-        <h2>2 Bhk House 1400 sqft</h2>
+        <h2>{title}</h2>
         <div className="additional">
           <div className="additional__info">
             <div className="bed">
@@ -34,14 +33,14 @@ const Card = () => {
           </div>
           <div className="additional__price">
             <Image src={"/rupee.png"} width={20} height={20} />
-            <p> <span>700</span>/month </p>
+            <p> <span>{price}</span>/month </p>
           </div>
         </div>
 
       </div>
       <div className="info">
         <div className="info__city">
-          <p>Kandiwali in Mumbai</p>
+          <p>{place} in {city}</p>
         </div>
         <div className="info__redirect">
           <BsArrowRight size={40} />

@@ -92,3 +92,71 @@ export const budgetData = {
   ],
   
 };
+
+
+export const cardData=[
+  {
+    id:0,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"5k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408935/TriFlix/home_nen38g.jpg"
+  },
+  {
+    id:1,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"50k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408705/TriFlix/photo-1600573472550-8090b5e0745e_ztohsq.jpg"
+  },
+  {
+    id:2,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"1Lac",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408680/TriFlix/photo-1600585154340-be6161a56a0c_ohppfn.jpg"
+  },
+  {
+    id:3,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"80k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg"
+  },
+  {
+    id:4,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"5k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408935/TriFlix/home_nen38g.jpg"
+  },
+  {
+    id:5,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"50k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408705/TriFlix/photo-1600573472550-8090b5e0745e_ztohsq.jpg"
+  },
+  {
+    id:6,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"1Lac",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408680/TriFlix/photo-1600585154340-be6161a56a0c_ohppfn.jpg"
+  },
+  {
+    id:7,
+    city:"Mumbai",
+    place:"Boriwali",
+    price:"80k",
+    title:"2 BHK House 1400 sqft",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg"
+  },
+]

@@ -1,6 +1,8 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import { useSelector } from 'react-redux'
-import {Intro, SearchBar,Choose,Recently} from './subComp'
+import {Intro, SearchBar,Choose} from './subComp'
+const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
 
 
 const Home = () => {
@@ -11,7 +13,7 @@ const Home = () => {
       <Intro winWidth={state.util.winWidth} />
       <SearchBar winWidth={state.util.winWidth} />
       <Choose />
-      {/* <Recently /> */}
+      <Recently />
     </div>
   )
 }

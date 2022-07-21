@@ -39,31 +39,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-.rokye__navbar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-}
-.rokye__navbar-nav .item {
-  color: #035941;
-  margin-right: 2rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.rokye__navbar-nav .item__indicator {
-  border-radius: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  background: #F25C05;
-}
-.rokye__navbar-nav .item.active {
-  color: #F25C05;
-}
 .rokye__navbar-mobnav {
+  width: 12rem;
   z-index: 2;
   padding: 1rem;
   position: absolute;
@@ -86,7 +63,7 @@ body {
 }
 .rokye__navbar-mobnav .register {
   border: 4px;
-  width: 8rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,24 +116,6 @@ body {
     display: none;
   }
 }
-.rokye__navbar-btn {
-  border: 4px;
-  width: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  background: #F25C05;
-  color: white;
-  border: 1px solid #F25C05;
-  border-radius: 3px;
-}
-.rokye__navbar-btn:hover {
-  background: white;
-  color: #F25C05;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-}
 @media screen and (max-width: 1000px) {
   .rokye__navbar-nav {
     display: none;
@@ -206,7 +165,7 @@ body {
   padding: 1rem;
 }
 .rokye__card-detail h2 {
-  color: #035941;
+  color: #114040;
   font-family: "lora", sans-serif;
   font-weight: bolder;
   margin-bottom: 0.7rem;
@@ -575,7 +534,6 @@ body {
   padding: 2rem;
   height: 20rem;
   width: 20rem;
-  background: whitesmoke;
   box-shadow: 0 0 1rem #e7e7e7;
   border-radius: 5px;
 }
@@ -641,6 +599,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+  flex-direction: column;
 }
 .rokye__home-recent__title h1 {
   color: #035941;
@@ -650,4 +609,28 @@ body {
 }
 .rokye__home-recent__detail {
   margin-top: 3rem;
+}
+.rokye__home-recent .swiper {
+  padding: 1rem !important;
+}
+.rokye__home-recent__navigate {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__home-recent__navigate .prev__btn {
+  color: gray;
+}
+.rokye__home-recent__navigate .next__btn {
+  color: #035941;
+  margin-left: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .rokye__home-recent {
+    padding: 2rem 0;
+  }
+  .rokye__home-recent .swiper {
+    padding: 1rem 0;
+  }
 }/*# sourceMappingURL=index.css.map */

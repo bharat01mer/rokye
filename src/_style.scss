@@ -5,10 +5,10 @@
     position: fixed;
     width: 100%;
     z-index: 23;
-
+    
     @include center__elem;
     justify-content: space-between;
-
+    
     &-logo {
       h1 {
         color: $color5;
@@ -21,32 +21,9 @@
     .outer {
       @include center__elem;
     }
-
-    &-nav {
-      //exclude
-      @include center__elem;
-      justify-content: space-between;
-
-      .item {
-        color: #035941;
-        margin-right: 2rem;
-        cursor: pointer;
-        @include center__elem;
-        flex-direction: column;
-
-        &__indicator {
-          border-radius: 50%;
-          width: 0.5rem;
-          height: 0.5rem;
-          background: $color5;
-        }
-        &.active {
-          color: $color5;
-        }
-      }
-    }
-
+    
     &-mobnav {
+      width: 12rem;
       z-index: 2;
       padding: 1rem;
       position: absolute;
@@ -72,8 +49,8 @@
 
       .register {
         border: 4px;
-        // padding: .4rem 1rem;
-        width: 8rem;
+
+        width: 100%;
         @include center__elem;
         padding: 0.5rem;
         @include box-color;
@@ -112,16 +89,6 @@
           display: none;
         }
       }
-    }
-
-    &-btn {
-      //exlcude
-      border: 4px;
-      // padding: .4rem 1rem;
-      width: 8rem;
-      @include center__elem;
-      padding: 0.5rem;
-      @include box-color;
     }
 
     @media screen and (max-width: 1000px) {
@@ -176,7 +143,7 @@
       padding: 1rem;
 
       h2 {
-        color: #035941;
+        color: $color1;
         font-family: "lora", sans-serif;
         font-weight: bolder;
         margin-bottom: .7rem;

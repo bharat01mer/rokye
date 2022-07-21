@@ -84,10 +84,11 @@
       }
     }
   }
+
+  // searchbar
   &-searchbar {
     position: relative;
     padding: 0 10rem;
-    // z-index: 1000;
     &__tab {
       @include center__elem;
       justify-content: space-between;
@@ -309,7 +310,6 @@
         padding: 2rem;
         height: 20rem;
         width: 20rem;
-        background: whitesmoke;
 
         box-shadow: 0 0 1rem #e7e7e7;
 
@@ -385,6 +385,7 @@
     &__title{
       @include center__elem;
       font-size: 1.3rem;
+      flex-direction: column;
       
       h1 {
         color: $color2;
@@ -394,6 +395,32 @@
     }
     &__detail{
       margin-top: 3rem;
+    }
+
+    .swiper{
+      padding: 1rem !important;
+    }
+    &__navigate{
+      margin-top: 2rem;
+      @include center__elem;
+
+      .prev__btn{
+        color: gray;
+        
+      }
+      .next__btn{
+        color: $color2;
+
+        margin-left: 2rem;
+      }
+    }
+
+    @media screen and (max-width:500px) {
+      padding: 2rem 0;
+
+      .swiper{
+        padding: 1rem 0;
+      }
     }
   }
 }

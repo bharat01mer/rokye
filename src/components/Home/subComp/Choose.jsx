@@ -72,7 +72,7 @@ const Choose = () => {
             <motion.div className="rokye__home-choose__detail" variants={parentVariant} initial="intial" whileInView={"animate"} viewport={{ once: true }}>
                 {
                     items.map((data) => (
-                        <motion.div className="item" variants={childVariant} key={data.title}>
+                        <motion.div className="item" key={data.title}>
                             <div className="icon">
                                 <div className="icon__design" />
                                 {data.icon}
