@@ -15,7 +15,7 @@ const ReviewCard = ({ img, desc, name, position,className }) => {
                 </div>
             </div>
             <div className="review__card-detail">
-                <p>"{desc}"</p>
+                <p>&quot;{desc}&quot;</p>
 
                 <div className="person">
                     <h3>{name}</h3>
