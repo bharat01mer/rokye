@@ -1,5 +1,5 @@
 .rokye__home {
-  padding: 2rem;
+  padding: 2rem 2rem 0;
   &-intro {
     padding: 4rem 3rem;
     @include center__elem;
@@ -275,23 +275,23 @@
       }
     }
 
-    @media screen and (max-width:600px) {
-      .item{
-        .title{
-          h1{
+    @media screen and (max-width: 600px) {
+      .item {
+        .title {
+          h1 {
             font-size: 1.2rem;
           }
-          h3{
-            font-size: .9rem;
+          h3 {
+            font-size: 0.9rem;
           }
         }
-        svg{
+        svg {
           width: 1.5rem;
           height: 1.5rem;
         }
       }
-      .search{
-        font-size: .9rem;
+      .search {
+        font-size: 0.9rem;
       }
     }
   }
@@ -392,11 +392,11 @@
       }
     }
 
-    @media screen and (max-width:600px) {
-      &__title{
+    @media screen and (max-width: 600px) {
+      &__title {
         font-size: 1.1rem;
       }
-      .item{
+      .item {
         font-size: 0.9rem;
       }
     }
@@ -448,11 +448,11 @@
         padding: 1rem 0;
       }
     }
-    @media screen and (max-width:600px) {
-      &__title{
+    @media screen and (max-width: 600px) {
+      &__title {
         font-size: 1.1rem;
       }
-      .item{
+      .item {
         font-size: 0.9rem;
       }
     }
@@ -483,10 +483,9 @@
     .swiper {
       padding: 2rem 0;
     }
-    .active{
-      transition: all .5s ease-in-out;
+    .active {
+      transition: all 0.5s ease-in-out;
       box-shadow: 0 10px 2rem #d5d5d5;
-      
     }
     .review__card {
       padding: 1rem;
@@ -551,30 +550,112 @@
       }
     }
 
-    @media screen and (max-width:1000px) {
-      &__detail{
+    @media screen and (max-width: 1000px) {
+      &__detail {
         padding: 0;
       }
-
     }
-    @media screen and (min-width:1300px) and (max-width:1400px) {
-      &__detail{
+    @media screen and (min-width: 1300px) and (max-width: 1400px) {
+      &__detail {
         padding: 0 2rem;
       }
     }
-    @media screen and (max-width:850px) {
-      .review__card{
+    @media screen and (max-width: 850px) {
+      .review__card {
         width: 19rem;
       }
     }
-    @media screen and (max-width:600px) {
-      &__title{
+    @media screen and (max-width: 600px) {
+      &__title {
         font-size: 1.1rem;
       }
-      .item{
+      .item {
         font-size: 0.9rem;
       }
     }
   }
 
+  &-message {
+    @include center__elem;
+    margin: 0 5rem;
+    box-shadow: 0px 5px 10px #d5d5d5;
+    justify-content: space-between;
+    padding: 4rem;
+    border-radius: 1rem;
+    background: $color4;
+    background-color: white;
+    margin-bottom: -4rem;
+    position: relative;
+
+    .info {
+      @include heading_font;
+      color: $color1;
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: $color2;
+      }
+    }
+
+    .contact {
+      cursor: pointer;
+      background: $color5;
+      color: $color4;
+      border-radius: 5px;
+      padding: 1rem 4rem;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin: 0;
+    }
+    @media screen and (max-width: 980px) {
+      padding: 4rem 2rem;
+      .info {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    @media screen and (max-width:850px) {
+      .info{
+
+        h1{
+          font-size: 2rem;
+        }
+        p{
+          font-size: 1.1rem;
+        }
+      }
+    }
+    @media screen and (max-width:750px) {
+      flex-direction: column;
+      padding: 2rem;
+      margin-bottom: -5rem;
+
+      .info{
+        @include center__elem;
+        flex-direction: column;
+      }
+      .contact{
+        margin-top: 2rem;
+      }
+    }
+
+    @media screen and (max-width:500px) {
+      padding: 2rem 1rem;
+      .info{
+        h1{
+          font-size: 1.9rem;
+          text-align: center;
+        }
+        p{
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }

@@ -39,7 +39,7 @@ const Review = () => {
     return (
         <div className="rokye__home-review">
             <div className="rokye__home-review__title">
-                <h1>Review</h1>
+                <h1>Reviews</h1>
                 <p>Rokye Group is commited to helping its client to react their goals</p>
             </div>
             <div className="rokye__home-review__detail">

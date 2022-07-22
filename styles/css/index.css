@@ -164,7 +164,8 @@ body {
   align-items: flex-start;
   padding: 1rem;
 }
-.rokye__card-detail h2, .rokye__card-detail h3 {
+.rokye__card-detail h2,
+.rokye__card-detail h3 {
   color: #114040;
   font-family: "lora", sans-serif;
   font-weight: bolder;
@@ -233,9 +234,124 @@ body {
   border-bottom-right-radius: 0.7rem;
   border-top-left-radius: 0.7rem;
 }
+.rokye__footer {
+  background: #F2F2F2;
+  padding: 10rem 3rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__footer .outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.rokye__footer p {
+  cursor: pointer;
+  color: gray;
+  margin-top: 1rem;
+}
+.rokye__footer h1 {
+  color: #114040;
+}
+.rokye__footer-intro h1 {
+  color: #F25C05;
+}
+.rokye__footer-intro span {
+  color: #114040;
+}
+.rokye__footer-address .social {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__footer-address .social__item {
+  box-shadow: 1px 1px 5px #d5d5d5;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #F25C05;
+  padding: 1.1rem;
+}
+.rokye__footer-address .social__item svg {
+  font-size: 1.5rem;
+}
+.rokye__footer-address .social__item:hover {
+  transition: all 0.4s ease-in-out;
+  background: #F25C05;
+  color: white;
+}
+.rokye__footer-info {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__footer-info .dot {
+  width: 4px;
+  height: 4px;
+  background: gray;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+.rokye__footer-info p {
+  margin-top: 0;
+  text-align: center;
+  margin-right: 2rem;
+}
+.rokye__footer-info p:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 1250px) {
+  .rokye__footer {
+    padding: 10rem 1rem 3rem;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1150px) {
+  .rokye__footer {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .rokye__footer .outer {
+    flex-direction: column;
+  }
+  .rokye__footer h1 {
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 640px) {
+  .rokye__footer {
+    padding: 10rem 1rem 1rem;
+  }
+  .rokye__footer-address {
+    width: 100%;
+  }
+  .rokye__footer-address .social {
+    justify-content: space-around;
+  }
+  .rokye__footer-info {
+    flex-direction: column;
+  }
+  .rokye__footer-info .dot {
+    display: none;
+  }
+  .rokye__footer-info p {
+    margin-top: 1rem;
+    margin-right: 0;
+  }
+}
 
 .rokye__home {
-  padding: 2rem;
+  padding: 2rem 2rem 0;
 }
 .rokye__home-intro {
   padding: 4rem 3rem;
@@ -783,5 +899,87 @@ body {
   }
   .rokye__home-review .item {
     font-size: 0.9rem;
+  }
+}
+.rokye__home-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rem;
+  box-shadow: 0px 5px 10px #d5d5d5;
+  justify-content: space-between;
+  padding: 4rem;
+  border-radius: 1rem;
+  background: #F2F2F2;
+  background-color: white;
+  margin-bottom: -4rem;
+  position: relative;
+}
+.rokye__home-message .info {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__home-message .info h1 {
+  font-size: 3rem;
+}
+.rokye__home-message .info p {
+  font-size: 1.2rem;
+  color: #035941;
+}
+.rokye__home-message .contact {
+  cursor: pointer;
+  background: #F25C05;
+  color: #F2F2F2;
+  border-radius: 5px;
+  padding: 1rem 4rem;
+}
+@media screen and (max-width: 1200px) {
+  .rokye__home-message {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 980px) {
+  .rokye__home-message {
+    padding: 4rem 2rem;
+  }
+  .rokye__home-message .info h1 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .rokye__home-message .info h1 {
+    font-size: 2rem;
+  }
+  .rokye__home-message .info p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .rokye__home-message {
+    flex-direction: column;
+    padding: 2rem;
+    margin-bottom: -5rem;
+  }
+  .rokye__home-message .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .rokye__home-message .contact {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__home-message {
+    padding: 2rem 1rem;
+  }
+  .rokye__home-message .info h1 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+  .rokye__home-message .info p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=index.css.map */

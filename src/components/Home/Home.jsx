@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { useSelector } from 'react-redux'
-import {Intro, SearchBar,Choose} from './subComp'
+import {Intro, SearchBar,Choose,Message} from './subComp'
 import "swiper/css/navigation"
 
 const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
@@ -17,6 +17,7 @@ const Home = () => {
       <Choose />
       <Recently />
       <Review />
+      <Message />
     </div>
   )
 }
