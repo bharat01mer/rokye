@@ -1,8 +1,7 @@
 import Card from '../../resuable/Card'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"
-import "swiper/css/pagination";
-import "swiper/css/navigation"
+
 import { cardData } from '../../../../utils/data';
 
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"

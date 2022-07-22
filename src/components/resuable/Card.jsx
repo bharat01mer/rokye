@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 import { MdKingBed } from 'react-icons/md'
 import { MdBathtub } from "react-icons/md"
 import { HiCurrencyRupee } from "react-icons/hi"
-import { BsArrowRight,BsSuitHeartFill,BsSuitHeart } from "react-icons/bs"
+import { BsArrowRight, BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
+import { motion } from "framer-motion"
 
-const Card = ({img,title,price,city,place}) => {
+const Card = ({ img, title, price, city, place }) => {
   const [favorite, setfavorite] = useState(true)
   return (
     <div className="rokye__card">
@@ -14,9 +15,17 @@ const Card = ({img,title,price,city,place}) => {
       </div>
       <div className="favorite">
         {
-          !favorite ? 
-          <BsSuitHeart size={30} onClick={()=>setfavorite(true)} /> : <BsSuitHeartFill size={30} onClick={()=>setfavorite(false)} />
-        }
+          !favorite ? (
+            <motion.div whileTap={{scale:0.90}}>
+              <BsSuitHeart size={30} onClick={() => setfavorite(true)} />
+            </motion.div>
+          )
+            : (
+              <motion.div whileTap={{scale:0.90}}>
+                <BsSuitHeartFill size={30} onClick={() => setfavorite(false)} />
+              </motion.div>
+            )
+          }
       </div>
       <div className="rokye__card-detail">
         <h2>{title}</h2>

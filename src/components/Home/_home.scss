@@ -208,8 +208,7 @@
         border-radius: 1rem;
         @include center__elem;
 
-
-        h2{
+        h2 {
           margin-left: 1rem;
         }
       }
@@ -248,35 +247,31 @@
         flex-direction: column;
         align-items: flex-start;
         border-radius: 5px;
-        
-        .search{
+
+        .search {
           width: 100%;
           border-radius: 5px;
           margin-top: 1rem;
         }
 
-        .item{
+        .item {
           width: 100%;
           flex-direction: row-reverse;
           justify-content: space-between;
           // margin-bottom: 1rem;
-          
-          
 
-          svg{
+          svg {
             height: 2rem;
             width: 2rem;
           }
-          .title{
+          .title {
             margin-left: 0;
-            svg{
+            svg {
               height: 1rem;
               width: 1rem;
             }
           }
         }
-
-        
       }
     }
   }
@@ -333,7 +328,6 @@
           }
           svg {
             position: relative;
-            
           }
         }
       }
@@ -384,53 +378,161 @@
 
   // recently
 
-  &-recent{
+  &-recent {
     padding: 2rem;
-    &__title{
+    &__title {
       @include center__elem;
       font-size: 1.3rem;
       flex-direction: column;
-      
+
       h1 {
         color: $color2;
         @include heading_font;
         font-weight: bolder;
       }
-      p{
-        text-align:center;
+      p {
+        text-align: center;
       }
     }
-    &__detail{
+    &__detail {
       margin-top: 3rem;
     }
 
-    .swiper{
+    .swiper {
       padding: 1rem !important;
     }
-    &__navigate{
+    &__navigate {
       margin-top: 2rem;
       @include center__elem;
 
-      .prev__btn{
+      .prev__btn {
         color: gray;
-        
       }
-      .next__btn{
+      .next__btn {
         color: $color2;
 
         margin-left: 2rem;
       }
     }
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       padding: 2rem 0;
 
-      .swiper{
+      .swiper {
         padding: 1rem 0;
       }
     }
   }
+
+  // reviews
+  &-review {
+    padding: 5rem 2rem;
+    &__title {
+      @include center__elem;
+      font-size: 1.3rem;
+      flex-direction: column;
+
+      h1 {
+        color: $color2;
+        @include heading_font;
+        font-weight: bolder;
+      }
+      p {
+        text-align: center;
+      }
+    }
+
+    &__detail {
+      margin-top: 3rem;
+      padding: 0 5rem;
+    }
+    .swiper {
+      padding: 2rem 0;
+    }
+    .active{
+      transition: all .5s ease-in-out;
+      box-shadow: 0 10px 2rem #d5d5d5;
+      
+    }
+    .review__card {
+      padding: 1rem;
+      width: 23rem;
+      @include center__elem;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 1rem;
+      &-img {
+        position: relative;
+        img {
+          border-radius: 50% !important;
+        }
+        .comma {
+          position: absolute;
+          background: white;
+          box-shadow: 0 5px 5px #d5d5d5;
+          border-radius: 5px;
+          bottom: 0;
+          right: 0.6rem;
+          padding: 0.4rem;
+
+          @include center__elem;
+          span {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      &-detail {
+        p {
+          margin: 2rem 0;
+          color: gray;
+
+          font-size: 1.02rem;
+        }
+
+        .person {
+          font-size: 1.2rem;
+          h3 {
+            color: $color1;
+            @include heading_font;
+            margin-bottom: 0.3rem;
+          }
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+    &__navigate {
+      margin-top: 2rem;
+      @include center__elem;
+
+      .prev__btn-review {
+        color: gray;
+      }
+      .next__btn-review {
+        color: $color2;
+
+        margin-left: 2rem;
+      }
+    }
+
+    @media screen and (max-width:1000px) {
+      &__detail{
+        padding: 0;
+      }
+
+    }
+    @media screen and (min-width:1300px) and (max-width:1400px) {
+      &__detail{
+        padding: 0 2rem;
+      }
+    }
+    @media screen and (max-width:850px) {
+      .review__card{
+        width: 19rem;
+      }
+    }
+  }
+
 }
-
-
-

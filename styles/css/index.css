@@ -641,4 +641,110 @@ body {
   .rokye__home-recent .swiper {
     padding: 1rem 0;
   }
+}
+.rokye__home-review {
+  padding: 5rem 2rem;
+}
+.rokye__home-review__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  flex-direction: column;
+}
+.rokye__home-review__title h1 {
+  color: #035941;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+.rokye__home-review__title p {
+  text-align: center;
+}
+.rokye__home-review__detail {
+  margin-top: 3rem;
+  padding: 0 5rem;
+}
+.rokye__home-review .swiper {
+  padding: 2rem 0;
+}
+.rokye__home-review .active {
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 10px 2rem #d5d5d5;
+}
+.rokye__home-review .review__card {
+  padding: 1rem;
+  width: 23rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 1rem;
+}
+.rokye__home-review .review__card-img {
+  position: relative;
+}
+.rokye__home-review .review__card-img img {
+  border-radius: 50% !important;
+}
+.rokye__home-review .review__card-img .comma {
+  position: absolute;
+  background: white;
+  box-shadow: 0 5px 5px #d5d5d5;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0.6rem;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__home-review .review__card-img .comma span {
+  font-size: 2rem;
+}
+.rokye__home-review .review__card-detail p {
+  margin: 2rem 0;
+  color: gray;
+  font-size: 1.02rem;
+}
+.rokye__home-review .review__card-detail .person {
+  font-size: 1.2rem;
+}
+.rokye__home-review .review__card-detail .person h3 {
+  color: #114040;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  margin-bottom: 0.3rem;
+}
+.rokye__home-review .review__card-detail .person p {
+  margin: 0;
+}
+.rokye__home-review__navigate {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__home-review__navigate .prev__btn-review {
+  color: gray;
+}
+.rokye__home-review__navigate .next__btn-review {
+  color: #035941;
+  margin-left: 2rem;
+}
+@media screen and (max-width: 1000px) {
+  .rokye__home-review__detail {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .rokye__home-review__detail {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .rokye__home-review .review__card {
+    width: 19rem;
+  }
 }/*# sourceMappingURL=index.css.map */

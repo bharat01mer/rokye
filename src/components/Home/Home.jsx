@@ -2,8 +2,10 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import { useSelector } from 'react-redux'
 import {Intro, SearchBar,Choose} from './subComp'
-const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
+import "swiper/css/navigation"
 
+const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
+const Review=dynamic(()=>import("./subComp/Review"),{ssr:false})
 
 const Home = () => {
   const state=useSelector((state)=>state)
@@ -14,6 +16,7 @@ const Home = () => {
       <SearchBar winWidth={state.util.winWidth} />
       <Choose />
       <Recently />
+      <Review />
     </div>
   )
 }

@@ -160,3 +160,48 @@ export const cardData=[
     img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg"
   },
 ]
+
+export const reviewCard=[
+  {
+    id:0,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470807/TriFlix/photo-1500648767791-00dcc994a43e_iub67p_qyfpv4.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+  {
+    id:1,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470804/TriFlix/photo-1528892952291-009c663ce843_eyrzln_h9m7z9.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+  {
+    id:2,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470801/TriFlix/photo-1474176857210-7287d38d27c6_bpr7nd_dcou7b.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+  {
+    id:3,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470807/TriFlix/photo-1500648767791-00dcc994a43e_iub67p_qyfpv4.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+  {
+    id:4,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470804/TriFlix/photo-1528892952291-009c663ce843_eyrzln_h9m7z9.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+  {
+    id:5,
+    name:"Randy Elliot",
+    postion:"Marketing Officer, RTM",
+    img:"https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470801/TriFlix/photo-1474176857210-7287d38d27c6_bpr7nd_dcou7b.jpg",
+    desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident."
+  },
+]
