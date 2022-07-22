@@ -274,13 +274,30 @@
         }
       }
     }
+
+    @media screen and (max-width:600px) {
+      .item{
+        .title{
+          h1{
+            font-size: 1.2rem;
+          }
+          h3{
+            font-size: .9rem;
+          }
+        }
+        svg{
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+      .search{
+        font-size: .9rem;
+      }
+    }
   }
   // why choose us
 
   &-choose {
-    overflow-x: hidden;
-    overflow-y: hidden;
-
     margin-top: 2rem;
     padding: 5rem 2rem;
 
@@ -374,6 +391,15 @@
         }
       }
     }
+
+    @media screen and (max-width:600px) {
+      &__title{
+        font-size: 1.1rem;
+      }
+      .item{
+        font-size: 0.9rem;
+      }
+    }
   }
 
   // recently
@@ -420,6 +446,14 @@
 
       .swiper {
         padding: 1rem 0;
+      }
+    }
+    @media screen and (max-width:600px) {
+      &__title{
+        font-size: 1.1rem;
+      }
+      .item{
+        font-size: 0.9rem;
       }
     }
   }
@@ -531,6 +565,14 @@
     @media screen and (max-width:850px) {
       .review__card{
         width: 19rem;
+      }
+    }
+    @media screen and (max-width:600px) {
+      &__title{
+        font-size: 1.1rem;
+      }
+      .item{
+        font-size: 0.9rem;
       }
     }
   }

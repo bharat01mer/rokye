@@ -164,7 +164,7 @@ body {
   align-items: flex-start;
   padding: 1rem;
 }
-.rokye__card-detail h2 {
+.rokye__card-detail h2, .rokye__card-detail h3 {
   color: #114040;
   font-family: "lora", sans-serif;
   font-weight: bolder;
@@ -506,9 +506,22 @@ body {
     width: 1rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .rokye__home-searchbar .item .title h1 {
+    font-size: 1.2rem;
+  }
+  .rokye__home-searchbar .item .title h3 {
+    font-size: 0.9rem;
+  }
+  .rokye__home-searchbar .item svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .rokye__home-searchbar .search {
+    font-size: 0.9rem;
+  }
+}
 .rokye__home-choose {
-  overflow-x: hidden;
-  overflow-y: hidden;
   margin-top: 2rem;
   padding: 5rem 2rem;
 }
@@ -596,6 +609,14 @@ body {
     margin-bottom: 1.5rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .rokye__home-choose__title {
+    font-size: 1.1rem;
+  }
+  .rokye__home-choose .item {
+    font-size: 0.9rem;
+  }
+}
 .rokye__home-recent {
   padding: 2rem;
 }
@@ -640,6 +661,14 @@ body {
   }
   .rokye__home-recent .swiper {
     padding: 1rem 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rokye__home-recent__title {
+    font-size: 1.1rem;
+  }
+  .rokye__home-recent .item {
+    font-size: 0.9rem;
   }
 }
 .rokye__home-review {
@@ -746,5 +775,13 @@ body {
 @media screen and (max-width: 850px) {
   .rokye__home-review .review__card {
     width: 19rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rokye__home-review__title {
+    font-size: 1.1rem;
+  }
+  .rokye__home-review .item {
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=index.css.map */

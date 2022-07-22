@@ -28,15 +28,16 @@ const Card = ({ img, title, price, city, place }) => {
           }
       </div>
       <div className="rokye__card-detail">
-        <h2>{title}</h2>
+        {/* <h2>{title}</h2> */}
+        <h3>{title}</h3>
         <div className="additional">
           <div className="additional__info">
             <div className="bed">
-              <MdKingBed size={30} />
+              <MdKingBed size={25} />
               <p>2</p>
             </div>
             <div className="bath">
-              <MdBathtub size={25} />
+              <MdBathtub size={20} />
               <p>2</p>
             </div>
           </div>
