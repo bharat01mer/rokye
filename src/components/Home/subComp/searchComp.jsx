@@ -66,7 +66,7 @@ export default function Desktop(props) {
                         {
                             showMenu.id === 1 && showMenu.show && (
                                 <motion.div className="menu" variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
-                                    {optionData.map((item) => (
+                                    {optionData.city.map((item) => (
                                         <div className="menu__item" key={item.id} onClick={() => setShowMenu(false)}>
                                             <h3>{item.name}</h3>
                                         </div>
@@ -90,7 +90,7 @@ export default function Desktop(props) {
                         {
                             showMenu.id === 2 && showMenu.show && (
                                 <motion.div className="menu" variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
-                                    {optionData.map((item) => (
+                                    {optionData.condos.map((item) => (
                                         <div className="menu__item" key={item.id} onClick={() => setShowMenu(false)}>
                                             <h3>{item.name}</h3>
                                         </div>

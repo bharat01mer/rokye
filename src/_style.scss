@@ -1,7 +1,7 @@
 .rokye {
   &__navbar {
     @include font_light;
-    padding: 1rem;
+    padding: 1rem 5rem;
     position: fixed;
     width: 100%;
     z-index: 23;
@@ -55,6 +55,10 @@
         padding: 0.5rem;
         @include box-color;
       }
+
+      @media screen and (min-width:1250px) {
+        right: 5rem;
+      }
     }
 
     &-tab {
@@ -99,15 +103,23 @@
 
     &.sticky {
       transition: all 0.5s ease-in-out;
-      padding: 0.8rem 1rem;
+      padding: 0.8rem 4rem;
       box-shadow: 0px 0px 7px black;
       background: white;
       z-index: 2;
     }
+
+    @media screen and (max-width:1250px) {
+      padding: 1rem;
+
+      &.sticky{
+        padding: 0.8rem 1rem;
+      }
+    }
   }
 
   &__card {
-    box-shadow: 0 0 3rem rgba($color: $color1, $alpha: 0.2);
+    box-shadow: 0 0 1rem rgba($color: $color1, $alpha: 0.2);
     width: 20rem;
     border-radius: 0.7rem;
     position: relative;
@@ -211,7 +223,7 @@
     background: $color4;
     
 
-    padding: 10rem 3rem 3rem;
+    padding: 10rem 5rem 3rem;
     @include center__elem;
     flex-direction: column;
 
@@ -229,6 +241,7 @@
     }
 
     h1 {
+      @include heading_font;
       color: $color1;
     }
 
@@ -242,6 +255,7 @@
     }
 
     &-address {
+      width: 15rem;
       .social {
         margin-top: 2.5rem;
         @include center__elem;
@@ -255,7 +269,7 @@
           background: white;
           @include center__elem;
           border-radius: 50%;
-          color: $color5;
+          color: $color2;
           padding: 1.1rem;
 
           &:hover{

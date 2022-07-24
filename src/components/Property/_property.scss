@@ -1,0 +1,191 @@
+.rokye__property {
+  padding: 5rem 10rem;
+
+  @include center__elem;
+  justify-content: space-between;
+
+  &-filter {
+    box-shadow: 0 0.125rem 0.125rem -0.125rem rgb(31 27 45 / 8%),
+      0 0.25rem 0.75rem rgb(31 27 45 / 8%);
+    padding: 1rem;
+    width: 25rem;
+    .filter {
+      padding: 1rem;
+      @include center__elem;
+      justify-content: space-between;
+      border-radius: 5px;
+
+      &__item {
+        background: $color4;
+        box-shadow: 0 0.125rem 0.125rem -0.125rem rgb(31 27 45 / 8%),
+          0 0.25rem 0.75rem rgb(31 27 45 / 8%);
+        padding: 0.4rem 1rem;
+        border-radius: 1rem;
+        @include center__elem;
+        color: $color1;
+        cursor: pointer;
+
+        p {
+          margin-left: 0.5rem;
+        }
+        &:first-child {
+          margin-right: 1rem;
+        }
+
+        &.active {
+          transition: all 0.1s ease-in-out;
+          background: white;
+          color: $color5;
+        }
+      }
+    }
+
+    .lower {
+      transition: all 0.5s ease-in-out;
+      padding: 1rem;
+      .more {
+        @include center__elem;
+        color: $color5;
+        padding: 0 3rem;
+        cursor: pointer;
+        text-align: center;
+        align-items: center;
+
+        h3 {
+          padding: 0 0.5rem;
+        }
+      }
+
+      &__item {
+        cursor: pointer;
+        margin-bottom: 0.6rem;
+        position: relative;
+        .name {
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          padding: 1rem;
+          @include center__elem;
+          justify-content: space-between;
+
+          h4 {
+            color: $color1;
+          }
+          p {
+            color: gray;
+            @include center__elem;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            &.budget__p {
+              align-items: center;
+            }
+          }
+        }
+
+        .option {
+          position: absolute;
+          width: 100%;
+          background: white;
+          z-index: 2;
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          height: 10rem;
+          overflow-y: scroll;
+          &__item {
+            padding: 1rem;
+
+            &:hover {
+              transition: all 0.5s ease-in-out;
+              background: rgb(198, 198, 198);
+            }
+          }
+          @include custom__track;
+        }
+
+        .budget__option {
+          background: white;
+          @include center__elem;
+          width: 100%;
+          position: absolute;
+          z-index: 2;
+          justify-content: space-between;
+          flex-direction: column;
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+
+          &-container {
+            width: 100%;
+            height: 15rem;
+            overflow-y: scroll;
+            padding: 0 1rem;
+            @include center__elem;
+            justify-content: space-between;
+
+            .left,
+            .right {
+              width: 100%;
+              &__item {
+                padding: 1rem;
+                &:hover {
+                  transition: all 0.5s ease-in-out;
+                  background: rgb(198, 198, 198);
+                }
+              }
+            }
+            .right {
+              @include center__elem;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: flex-end;
+            }
+            @include custom__track;
+          }
+        }
+      }
+    }
+    .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+      color: $color5;
+    }
+    .Mui-focused {
+      color: $color5;
+    }
+    // .MuiOutlinedInput-notchedOutline{
+    //   border-color: $color5
+    // }
+    .preferred {
+      padding: 1rem;
+
+      &__amenities {
+        padding: 1rem 0;
+
+        .list {
+          margin-bottom: 1rem;
+        }
+        .list {
+          height: 14rem;
+          overflow-y: scroll;
+          @include center__elem;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1rem 0;
+
+          &__item {
+            @include center__elem;
+          }
+
+          @include custom__track;
+        }
+      }
+    }
+    .property__search {
+      .btn {
+        color: $color4;
+        padding: 0.6rem 1rem;
+        margin: 0 1rem;
+        border-radius: 5px;
+        @include center__elem;
+        background: $color5;
+        h3 {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}

@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className="rokye__footer-address">
           <h1>Address</h1>
-          <p>Consulate Of Japan Bunglow, M L Dahanukar <br /> Marg, Cumballa Hill</p>
+          <p>Email: - info@rokye.com</p>
 
           <div className="social">
             {

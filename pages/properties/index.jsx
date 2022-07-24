@@ -1,9 +1,11 @@
 import React from 'react'
-import {Layout} from "../../src/components"
+import {Layout, Property} from "../../src/components"
 
 const Index = () => {
   return (
-    <Layout >Index</Layout>
+    <Layout title={"Properties"}>
+      <Property />
+    </Layout>
   )
 }
 

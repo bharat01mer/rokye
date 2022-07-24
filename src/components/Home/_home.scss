@@ -1,7 +1,7 @@
 .rokye__home {
   padding: 2rem 2rem 0;
   &-intro {
-    padding: 4rem 3rem;
+    padding: 4rem 4rem;
     @include center__elem;
     justify-content: space-between;
     .text {
@@ -92,7 +92,7 @@
   // searchbar
   &-searchbar {
     position: relative;
-    padding: 0 10rem;
+    padding: 0 14rem 0 10rem;
     &__tab {
       @include center__elem;
       justify-content: space-between;
@@ -327,7 +327,7 @@
         height: 20rem;
         width: 20rem;
 
-        box-shadow: 0 0 1rem #e7e7e7;
+        // box-shadow: 0 0 1rem #e7e7e7;
 
         border-radius: 5px;
 
@@ -588,9 +588,9 @@
     position: relative;
 
     .info {
-      @include heading_font;
       color: $color1;
       h1 {
+        @include heading_font;
         font-size: 3rem;
       }
 
