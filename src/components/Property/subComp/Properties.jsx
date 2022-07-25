@@ -25,11 +25,16 @@ const Properties = ({ setShowMobFilter }) => {
             value: "high"
         },
     ]
+
+    const sortClickHandler=(data)=>{
+        console.log({data})
+        setShowSortOption(false)
+    }
     return (
         <div className='rokye__property-grid'>
             <div className="rokye__property-grid__title">
                 <div className="title">
-                    <h1>Property for rent</h1>
+                    <h1>Property for Rent</h1>
                     <motion.div className="mob__filter-btn" whileTap={{ scale: .97 }} onClick={() => setShowMobFilter(true)}>
                         <RiFilter3Line size={20} />
                         <p> Filter</p>
@@ -59,7 +64,7 @@ const Properties = ({ setShowMobFilter }) => {
                                     }}>
                                         {
                                             chooseItem.map((item) => (
-                                                <div className="option__item" key={item.value}>
+                                                <div className="option__item" key={item.value} onClick={sortClickHandler(item.value)}>
                                                     <p>{item.name}</p>
                                                 </div>
                                             ))
@@ -86,6 +91,8 @@ const Properties = ({ setShowMobFilter }) => {
                         ))
                     }
                 </div>
+                
+                {/* Implement Pagination after intergrating the api */}
                 {/* <div className="pagination">
                     <Pagination />
                 </div> */}

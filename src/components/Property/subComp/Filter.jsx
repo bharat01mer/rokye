@@ -139,8 +139,7 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
     const searchClickHandler = () => {
         console.log({ optionValue })
     }
-    const modifiedItemList=winWidth < 1100 ? itemList.splice(0,3) : itemList
-    // const modifiedPremiumList=winWidth < 1100 ? premiumItemList.splice(0,3) : itemList
+    const modifiedItemList=winWidth < 1100 ? itemList.splice(0,10) : itemList
 
     
     return (
@@ -162,6 +161,21 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
                 !showPremiumFilter ? (
 
                     <div className="lower" ref={ref}>
+                        <div className="lower__item" >
+                            {(showOption.id === 9 && showOption.show) && (
+                                <AnimatePresence>
+                                    <MinMaxFilter setModal={setShowOption} setValue={setValue} value={value} optionClickHandler={optionClickHandler} />
+                                </AnimatePresence>
+                            )}
+                            <div className="name" onClick={() => setShowOption({ id: 9, show: showOption.id === 9 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: 9, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
+                                <h4>Budget</h4>
+                                <p className='budget__p'> {value.min === 0 ? "Any Amount" : (
+                                    <>
+                                        <BiRupee />{millify(value.min)} - <BiRupee />{millify(value.max)}
+                                    </>
+                                )}  {(showArrow.show && showArrow.id === 9) ? <DownArrow size={20} /> : <BiMinus size={20} />}</p>
+                            </div>
+                        </div>
                         {
                             modifiedItemList.splice(0, 10).map((item, index) => (
                                 <div className="lower__item" key={item.name}>
@@ -192,21 +206,6 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
                                 </div>
                             ))
                         }
-                        <div className="lower__item" >
-                            {(showOption.id === 9 && showOption.show) && (
-                                <AnimatePresence>
-                                    <MinMaxFilter setModal={setShowOption} setValue={setValue} value={value} optionClickHandler={optionClickHandler} />
-                                </AnimatePresence>
-                            )}
-                            <div className="name" onClick={() => setShowOption({ id: 9, show: showOption.id === 9 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: 9, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
-                                <h4>Budget</h4>
-                                <p className='budget__p'> {value.min === 0 ? "Any Amount" : (
-                                    <>
-                                        <BiRupee />{millify(value.min)} - <BiRupee />{millify(value.max)}
-                                    </>
-                                )}  {(showArrow.show && showArrow.id === 9) ? <DownArrow size={20} /> : <BiMinus size={20} />}</p>
-                            </div>
-                        </div>
 
                     </div>
 
