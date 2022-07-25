@@ -1,12 +1,12 @@
 import { TbArrowsSort as SortIcon, TbVector, TbCircleCheck } from "react-icons/tb"
-import { RiArrowDropDownLine as DownArrow,RiFilter3Line } from "react-icons/ri"
+import { RiArrowDropDownLine as DownArrow, RiFilter3Line } from "react-icons/ri"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
 import { cardData } from "../../../../utils/data"
 import { Pagination } from "@mui/material"
 
-const Properties = ({setShowMobFilter}) => {
+const Properties = ({ setShowMobFilter }) => {
     const [showSortOption, setShowSortOption] = useState(false)
     const chooseItem = [
         {
@@ -30,7 +30,7 @@ const Properties = ({setShowMobFilter}) => {
             <div className="rokye__property-grid__title">
                 <div className="title">
                     <h1>Property for rent</h1>
-                    <motion.div className="mob__filter-btn" whileTap={{scale:.97}} onClick={()=>setShowMobFilter(true)}>
+                    <motion.div className="mob__filter-btn" whileTap={{ scale: .97 }} onClick={() => setShowMobFilter(true)}>
                         <RiFilter3Line size={20} />
                         <p> Filter</p>
                     </motion.div>
@@ -80,7 +80,9 @@ const Properties = ({setShowMobFilter}) => {
                 <div className="card">
                     {
                         cardData.map((item) => (
-                            <Card title={item.title} city={item.city} place={item.place} price={item.price} img={item.img} />
+                            <div key={item.id}>
+                                <Card title={item.title} city={item.city} place={item.place} price={item.price} img={item.img} />
+                            </div>
                         ))
                     }
                 </div>
