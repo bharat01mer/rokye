@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import { BiFilter, BiMinus, BiRupee } from "react-icons/bi"
 import { GoSettings } from "react-icons/go"
+import { FaRegTimesCircle } from "react-icons/fa"
 import { MdOutlineKeyboardArrowDown as DownArrow } from "react-icons/md"
 import { AiOutlineSearch } from "react-icons/ai"
 import millify from "millify";
@@ -10,7 +11,7 @@ import MinMaxFilter from '../../resuable/MinMaxFilter'
 import { premiumFilterdata, propertyData } from '../../../../utils/data'
 import Checkbox from '@mui/material/Checkbox'
 
-const Filter = ({ props }) => {
+const Filter = ({ winWidth,setShowMobFilter }) => {
     const [value, setValue] = useState({ min: 0, max: 0 })
     const [showOption, setShowOption] = useState({ id: null, show: false })
     const [showArrow, setShowArrow] = useState({ id: null, show: false })
@@ -138,9 +139,15 @@ const Filter = ({ props }) => {
     const searchClickHandler = () => {
         console.log({ optionValue })
     }
+    const modifiedItemList=winWidth < 1100 ? itemList.splice(0,3) : itemList
+    // const modifiedPremiumList=winWidth < 1100 ? premiumItemList.splice(0,3) : itemList
 
+    
     return (
         <div className="rokye__property-filter" >
+            <div className="modal__cancel" onClick={()=>setShowMobFilter(false)}>
+                <FaRegTimesCircle size={30} color={"#F25C05"} />
+            </div>
             <div className="filter">
                 <div className={`filter__item  ${showPremiumFilter ? "" : "active"}`} onClick={() => setShowPremiumFilter(false)}>
                     <BiFilter size={25} />
@@ -156,7 +163,7 @@ const Filter = ({ props }) => {
 
                     <div className="lower" ref={ref}>
                         {
-                            itemList.splice(0, 4).map((item, index) => (
+                            modifiedItemList.splice(0, 10).map((item, index) => (
                                 <div className="lower__item" key={item.name}>
                                     <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                         <h4>{item.name}:</h4>
@@ -236,6 +243,7 @@ const Filter = ({ props }) => {
                                 ))
                             }
                         </div>
+
                         <div className="preferred__amenities">
                             <div className="title">
                                 <h3>Amenities</h3>

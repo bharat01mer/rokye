@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { MdKingBed } from 'react-icons/md'
 import { MdBathtub } from "react-icons/md"
-import { HiCurrencyRupee } from "react-icons/hi"
 import { BsArrowRight, BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
 import { motion } from "framer-motion"
 
