@@ -9,32 +9,36 @@ const Property = () => {
     const [showMobFilter, setShowMobFilter] = useState(false)
 
     return (
-        <div className="rokye__property">
-            <AnimatePresence>
+        <>
+            <div className="rokye__property">
 
                 {
-                    winWidth > 1000 ? (
+                    winWidth > 1000 && (
                         <Filter winWidth={winWidth} />
-                    ) :
-                        showMobFilter &&
-                        (
-                            <motion.div className="filter__modal" initial={{
-                                scale: 0,
-                                opacity: 0
-                            }} exit={{
-                                scale: 0,
-                                opacity: 0
-                            }} animate={{
-                                scale: 1,
-                                opacity: 1
-                            }}>
-                                <Filter setShowMobFilter={setShowMobFilter} winWidth={winWidth} />
-                            </motion.div>
-                        )
+                    )
+                }
+                <Properties setShowMobFilter={setShowMobFilter} />
+            </div>
+            <AnimatePresence>
+                {
+                    showMobFilter &&
+                    (
+                        <motion.div className="filter__modal" initial={{
+                            scale: 0,
+                            opacity: 0
+                        }} exit={{
+                            scale: 0,
+                            opacity: 0
+                        }} animate={{
+                            scale: 1,
+                            opacity: 1
+                        }}>
+                            <Filter setShowMobFilter={setShowMobFilter} winWidth={winWidth} />
+                        </motion.div>
+                    )
                 }
             </AnimatePresence>
-            <Properties setShowMobFilter={setShowMobFilter} />
-        </div>
+        </>
     )
 }
 

@@ -335,31 +335,7 @@
     }
   }
   // mobile filter modal
-  .filter__modal{
-    position:fixed;
-    display: none;
-    width: 100%;
-    @include center__elem;
-    height: 100vh;
-    z-index: 34;
-    backdrop-filter: blur(3px);
-    
-    
-    .rokye__property-filter{
-      border-radius: 5px;
-      .modal__cancel{
-        @include center__elem;
-        justify-content: flex-end;
-        
-      }
-      
-      position: relative;
-      background-color: white;
-      box-shadow: 0 0 1rem black;
-      
-      z-index: 400;
-    }
-  }
+  
 
   @media screen and  (max-width:1275px)  {
     padding: 5rem 1rem;  
@@ -442,5 +418,35 @@
         }
       }
     }
+  }
+}
+
+
+.filter__modal{
+  position:fixed;
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)!important;
+
+  width: 100%;
+  @include center__elem;
+  height: 100vh;
+  z-index: 34;
+  backdrop-filter: blur(3px);
+  
+  
+  .rokye__property-filter{
+    border-radius: 5px;
+    .modal__cancel{
+      @include center__elem;
+      justify-content: flex-end;
+      
+    }
+    
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 1rem black;
+    
+    z-index: 400;
   }
 }
