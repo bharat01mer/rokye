@@ -1,12 +1,12 @@
 import React from 'react'
-import { Pagination } from '@mui/material'
+// import { Pagination } from '@mui/material'
 
-const Pagination = () => {
+const Paginate = () => {
     return (
         <>
-            
+               
         </>
     )
 }
 
-export default Pagination
+export default Paginate
