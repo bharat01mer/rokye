@@ -157,6 +157,14 @@ export const cardData = [
     title: "2 BHK House 1400 sqft",
     img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg",
   },
+  {
+    id: 8,
+    city: "Mumbai",
+    place: "Boriwali",
+    price: "80k",
+    title: "2 BHK House 1400 sqft",
+    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg",
+  },
 ];
 
 export const reviewCard = [
@@ -585,3 +593,128 @@ export const premiumFilterdata={
     },
   ]
 }
+
+export const propertyDetail={
+  left:[
+    {
+      id:0,
+      name:"Rent",
+      value:50000,
+      price:true
+    },
+    {
+      id:1,
+      name:"Deposit",
+      value:100000,
+      price:true
+    },
+    {
+      id:2,
+      name:"Maintenance",
+      value:"5000 Quaterly",
+    },
+    {
+      id:3,
+      name:"Property Type",
+      value:"3 BHK Apartment",
+    },
+    {
+      id:4,
+      name:"Bathrooms",
+      value:2,
+    },
+    {
+      id:5,
+      name:"Balconies",
+      value:4,
+    },
+    {
+      id:6,
+      name:"Furnished Status",
+      value:"Semi-furnished",
+    },
+    {
+      id:7,
+      name:"Parking Places",
+      value:3,
+    },
+    {
+      id:8,
+      name:"Availability",
+      value:"Immediately",
+    },
+  ],
+  right:[
+    {
+      id:0,
+      name:"Property Age",
+      value:"Less Than 5 yrs",
+    },
+    {
+      id:1,
+      name:"Carpet area",
+      value:"5565656 sq.ft",
+      numstring:true
+    },
+    {
+      id:2,
+      name:"Super area",
+      value:"5656 sq.ft",
+      numstring:true
+    },
+    {
+      id:3,
+      name:"Floor no",
+      value:15,
+    },
+    {
+      id:4,
+      name:"Total floors",
+      value:50,
+    },
+    {
+      id:5,
+      name:"Tenant preferred",
+      value:"Bachelors",
+    },
+    {
+      id:6,
+      name:"Facing",
+      value:"South",
+    },
+    {
+      id:7,
+      name:"Non-veg",
+      value:"Not allowed",
+    },
+    {
+      id:8,
+      name:"Pets",
+      value:"Not allowed",
+    },
+  ],
+}
+
+
+export const carouselData=[
+  {
+    id:0,
+    img:"https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    id:1,
+    img:"https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
+  },
+  {
+    id:2,
+    img:"https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    id:3,
+    img:"https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
+  },
+  {
+    id:4,
+    img:"https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+  },
+]

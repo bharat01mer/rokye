@@ -27,7 +27,7 @@ const Properties = ({ setShowMobFilter }) => {
     ]
 
     const sortClickHandler=(data)=>{
-        console.log({data})
+        
         setShowSortOption(false)
     }
     return (
@@ -64,7 +64,7 @@ const Properties = ({ setShowMobFilter }) => {
                                     }}>
                                         {
                                             chooseItem.map((item) => (
-                                                <div className="option__item" key={item.value} onClick={sortClickHandler(item.value)}>
+                                                <div className="option__item" key={item.value} onClick={()=>sortClickHandler(item.value)}>
                                                     <p>{item.name}</p>
                                                 </div>
                                             ))
@@ -86,7 +86,7 @@ const Properties = ({ setShowMobFilter }) => {
                     {
                         cardData.map((item) => (
                             <div key={item.id}>
-                                <Card title={item.title} city={item.city} place={item.place} price={item.price} img={item.img} />
+                                <Card title={item.title} city={item.city} place={item.place} price={item.price} img={item.img} id={item.id} />
                             </div>
                         ))
                     }

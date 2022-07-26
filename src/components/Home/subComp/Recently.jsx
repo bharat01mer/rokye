@@ -45,7 +45,7 @@ const Recently = () => {
                 >
                     {cardData.map((item) => (
                         <SwiperSlide key={item.id}>
-                            <Card city={item.city} place={item.place} title={item.title} img={item.img} price={item.price} />
+                            <Card city={item.city} place={item.place} title={item.title} img={item.img} price={item.price} id={item.id} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

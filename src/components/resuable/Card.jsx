@@ -4,27 +4,28 @@ import { MdKingBed } from 'react-icons/md'
 import { MdBathtub } from "react-icons/md"
 import { BsArrowRight, BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
-const Card = ({ img, title, price, city, place }) => {
+const Card = ({ img, title, price, city, place, id }) => {
   const [favorite, setfavorite] = useState(true)
   return (
     <div className="rokye__card">
       <div className="rokye__card-img">
-        <Image src={img} width={300} height={250} objectFit="cover" />
+        <Image src={img} width={300} height={250} objectFit="cover"  />
       </div>
       <div className="favorite">
         {
           !favorite ? (
-            <motion.div whileTap={{scale:0.90}}>
+            <motion.div whileTap={{ scale: 0.90 }}>
               <BsSuitHeart size={30} onClick={() => setfavorite(true)} />
             </motion.div>
           )
             : (
-              <motion.div whileTap={{scale:0.90}}>
+              <motion.div whileTap={{ scale: 0.90 }}>
                 <BsSuitHeartFill size={30} onClick={() => setfavorite(false)} />
               </motion.div>
             )
-          }
+        }
       </div>
       <div className="rokye__card-detail">
         {/* <h2>{title}</h2> */}
@@ -51,9 +52,13 @@ const Card = ({ img, title, price, city, place }) => {
         <div className="info__city">
           <p>{place} in {city}</p>
         </div>
-        <div className="info__redirect">
-          <BsArrowRight size={40} />
-        </div>
+        <Link passHref href={`/properties/${id}`}>
+          <div className="info__redirect">
+            <motion.div className="redirect" whileTap={{ x: 20 }}>
+              <BsArrowRight size={40} />
+            </motion.div>
+          </div>
+        </Link>
       </div>
     </div>
   )

@@ -575,9 +575,14 @@
     }
   }
 
+  .cover__message{
+    @include center__elem;
+    
+  }
   &-message {
     @include center__elem;
-    margin: 0 5rem;
+    width: 70rem;
+    // margin: 0 5rem;
     box-shadow: 0px 5px 10px #d5d5d5;
     justify-content: space-between;
     padding: 4rem;
@@ -658,4 +663,8 @@
       }
     }
   }
+}
+
+body{
+  user-select: none;
 }
