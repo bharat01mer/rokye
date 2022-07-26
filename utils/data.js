@@ -98,7 +98,7 @@ export const cardData = [
     city: "Mumbai",
     place: "Boriwali",
     price: "5k",
-    title: "2 BHK House 1400 sqft",
+    title: "2BHK House 1400 sqft",
     img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408935/TriFlix/home_nen38g.jpg",
   },
   {

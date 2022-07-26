@@ -4,6 +4,8 @@
     padding: 4rem 4rem;
     @include center__elem;
     justify-content: space-between;
+
+    
     .text {
       width: 100%;
       h1 {
@@ -20,6 +22,10 @@
         font-size: 8rem;
       }
       color: $color1;
+
+      @media screen and (min-width:1700px) {
+        margin-left: 5rem;
+      }
     }
     .img {
       @include center__elem;
@@ -31,6 +37,8 @@
         top: 4rem;
         right: 10rem;
       }
+
+      @m
     }
 
     @media screen and (max-width: 1000px) {

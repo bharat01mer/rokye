@@ -472,7 +472,7 @@
           color: $color1;
         }
         &__info {
-          margin-top: .5rem;
+          margin-top: 0.5rem;
           @include center__elem;
           justify-content: flex-start;
           .location,
@@ -486,7 +486,7 @@
             }
           }
 
-          .date{
+          .date {
             padding-left: 1rem;
           }
         }
@@ -558,12 +558,108 @@
           }
         }
       }
+
+    }
+    @media screen and (max-width: 1660px) {
+      padding: 7rem 5rem;
+    }
+    @media screen and(max-width: 1450px) {
+      .detail {
+        &__content {
+          width: 100% !important;
+        }
+      }
+      flex-direction: column;
+      align-items: center;
+      &__contact{
+        padding-left: 0 !important;
+        @include center__elem;
+
+        .contact__btn{
+          width: 20rem;
+          border-radius: 4px;
+          @include center__elem;
+          background: $color5;
+          color: $color4;
+          padding: .5rem 1rem;
+        }
+      }
+    }
+    @media screen and (max-width:850px) {
+      padding: 7rem 3rem;
+      .detail {
+        &__content {
+          flex-direction: column;
+          width: 100% !important;
+        }
+      }
+      .more{
+        margin-top: 1.5rem;
+        color: $color5;
+        .bar{
+          height: .08rem;
+          background: $color5;
+        }
+      }
+      
+    }
+
+    @media screen and (max-width:725px) {
+      .amenity{
+        &__content{
+          grid-template-columns: repeat(2,1fr);
+        }
+      }
+    }
+
+    @media screen and (max-width:650px) {
+      padding: 7rem 1rem 3rem;
+
+      .detail{
+        &__content{
+          padding: 2rem 1rem !important;
+        }
+      }
+      .amenity{
+        &__content{
+          padding: 2rem 1rem !important;
+        }
+      }
+
+      
+    }
+    @media screen and (max-width:500px) {
+      font-size: .9rem;
     }
     &__contact {
+      @media screen and (max-width: 850px) {  
+        flex-direction: column !important;
+        width: 100%;
+      }
       padding-left: 5rem;
       // width: 100%;
     }
   }
+}
+
+.contact__modal{
+  // position: relative;
+  @include center__elem;
+  
+  
+  &-item{
+    height: 100vh;
+    
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 230;
+    @include center__elem;
+    transform: translate(-50%, -50%) !important;
+  }
+
 }
 
 .filter__modal {

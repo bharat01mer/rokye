@@ -355,10 +355,20 @@
     width: 30rem;
     // color: $color1;
     @include center__elem;
+    background: white;
     flex-direction: column;
+    position: relative;
 
     &-header {
       width: 100%;
+
+      .cancel{
+        position: absolute;
+        top: -.5rem;
+        right: -.5rem;
+        @include center__elem;
+        justify-content: flex-end;
+      }
       .title {
         @include center__elem;
         justify-content: space-between;
@@ -380,9 +390,10 @@
             @include center__elem;
             border-radius: 50%;
             box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+            margin-left: .5rem;
 
             &:hover {
-              transition: all 0.9s ease-in-out;
+              transition: all 0.5s ease-in-out;
               background: $color5;
               color: $color4;
             }

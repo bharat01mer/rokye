@@ -1,17 +1,18 @@
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram, FiMail } from "react-icons/fi"
+import { FaRegTimesCircle } from "react-icons/fa"
 import { RiArrowDownSLine as DownArrow } from "react-icons/ri"
 import { motion, AnimatePresence } from "framer-motion"
 import { TextField, Checkbox } from "@mui/material"
 import Link from "next/link"
-import {useForm} from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { useEffect, useState } from "react"
 
 
-const ContactForm = () => {
+const ContactForm = ({ showCancel,setShowModal }) => {
     const [showOption, setShowOption] = useState(false)
-    const [optionValue, setOptionValue] = useState({id:null,name:""})
-    const {handleSubmit, formState,setValue,register}=useForm({mode:"onChange"})
+    const [optionValue, setOptionValue] = useState({ id: null, name: "" })
+    const { handleSubmit, formState, setValue, register } = useForm({ mode: "onChange" })
     const [checkBox, setCheckBox] = useState(false)
 
     const socialLinks = [
@@ -45,24 +46,32 @@ const ContactForm = () => {
         },
     ]
 
-    const optionClickHandler=(value)=>{
-        console.log({value})
-        setOptionValue({id:value.id,name:value.name})
-        setValue("type",value.value)
+    const optionClickHandler = (value) => {
+        console.log({ value })
+        setOptionValue({ id: value.id, name: value.name })
+        setValue("type", value.value)
         setShowOption(false)
     }
-    const onSubmithandler=(data)=>{
-        console.log({data})
+    const onSubmithandler = (data) => {
+        console.log({ data })
     }
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[optionValue])
-    
+    }, [optionValue])
 
-    const isValid=(formState.isValid && checkBox && optionValue.id!==null)  ? true :false
+
+    const isValid = (formState.isValid && checkBox && optionValue.id !== null) ? true : false
     return (
         <form className="rokye__form" onSubmit={handleSubmit(onSubmithandler)}>
+
             <div className="rokye__form-header">
+                {
+                    showCancel && (
+                        <div className="cancel" onClick={()=>setShowModal(false)}>
+                            <FaRegTimesCircle size={30} color={"#F25C05"}  />
+                        </div>
+                    )
+                }
                 <div className="title">
                     <h2>Rokye.<span>Realty</span></h2>
                     <div className="social">
@@ -85,9 +94,9 @@ const ContactForm = () => {
             <div className="divider" />
             <div className="rokye__form-content">
                 <div className="choose">
-                    <div className="choose__title" onClick={()=>setShowOption(!showOption)} >
+                    <div className="choose__title" onClick={() => setShowOption(!showOption)} >
                         <p>
-                            {optionValue.id===null ?  "Who are you ?" : optionValue.name}
+                            {optionValue.id === null ? "Who are you ?" : optionValue.name}
                         </p>
                         <DownArrow />
                     </div>
@@ -97,7 +106,7 @@ const ContactForm = () => {
                                 <motion.div className="choose__option" initial={{ scale: 0, opacity: 0 }} exit={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
                                     {
                                         optionItem.map((item) => (
-                                            <motion.div className="item" key={item.id} onClick={()=>optionClickHandler(item)} >
+                                            <motion.div className="item" key={item.id} onClick={() => optionClickHandler(item)} >
                                                 <p>{item.name}</p>
                                             </motion.div>
                                         ))
@@ -108,22 +117,22 @@ const ContactForm = () => {
                     </AnimatePresence>
                 </div>
                 <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{border:"none"}} {...register("name",{required:true})} />
+                    <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
                 </div>
                 <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone",{required:true,pattern:`^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$`})} />
+                    <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
                 </div>
                 <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email",{required:true})} />
+                    <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />
                 </div>
                 <div className="rokye__form-content__item">
                     <TextField id="outlined-basic" label="Mesage(optional)" variant="outlined" multiline rows={4} fullWidth {...register("message")} />
                 </div>
                 <div className="agree">
-                    <Checkbox color="primary" onChange={()=>setCheckBox(!checkBox)} />
+                    <Checkbox color="primary" onChange={() => setCheckBox(!checkBox)} />
                     <p>I agree to the <Link href={"/term"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
                 </div>
-                <motion.button className="submit" whileTap={{scale:0.97}} type="submit" style={{background:isValid ? "#F25C05" : "#ff9e65"}}>
+                <motion.button className="submit" whileTap={{ scale: 0.97 }} type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65" }}>
                     <h3>Send Request</h3>
                 </motion.button>
             </div>

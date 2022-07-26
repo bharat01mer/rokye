@@ -382,10 +382,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
   flex-direction: column;
+  position: relative;
 }
 .rokye__form-header {
   width: 100%;
+}
+.rokye__form-header .cancel {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
 }
 .rokye__form-header .title {
   display: flex;
@@ -414,9 +425,10 @@ body {
   align-items: center;
   border-radius: 50%;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  margin-left: 0.5rem;
 }
 .rokye__form-header .title .social__item:hover {
-  transition: all 0.9s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background: #F25C05;
   color: #F2F2F2;
 }
@@ -559,12 +571,18 @@ body {
   align-items: flex-start;
   font-size: 8rem;
 }
+@media screen and (min-width: 1700px) {
+  .rokye__home-intro .text {
+    margin-left: 5rem;
+  }
+}
 .rokye__home-intro .img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
+  @m;
 }
 .rokye__home-intro .img__inner {
   position: absolute;
@@ -1781,8 +1799,102 @@ body {
 .rokye__property-detail__prop .amenity__content .item p {
   margin-left: 0.5rem;
 }
+@media screen and (max-width: 1660px) {
+  .rokye__property-detail {
+    padding: 7rem 5rem;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .rokye__property-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rokye__property-detail .detail__content {
+    width: 100% !important;
+  }
+  .rokye__property-detail__contact {
+    padding-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rokye__property-detail__contact .contact__btn {
+    width: 20rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F25C05;
+    color: #F2F2F2;
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .rokye__property-detail {
+    padding: 7rem 3rem;
+  }
+  .rokye__property-detail .detail__content {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .rokye__property-detail .more {
+    margin-top: 1.5rem;
+    color: #F25C05;
+  }
+  .rokye__property-detail .more .bar {
+    height: 0.08rem;
+    background: #F25C05;
+  }
+}
+@media screen and (max-width: 725px) {
+  .rokye__property-detail .amenity__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 650px) {
+  .rokye__property-detail {
+    padding: 7rem 1rem 3rem;
+  }
+  .rokye__property-detail .detail__content {
+    padding: 2rem 1rem !important;
+  }
+  .rokye__property-detail .amenity__content {
+    padding: 2rem 1rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__property-detail {
+    font-size: 0.9rem;
+  }
+}
 .rokye__property-detail__contact {
   padding-left: 5rem;
+}
+@media screen and (max-width: 850px) {
+  .rokye__property-detail__contact {
+    flex-direction: column !important;
+    width: 100%;
+  }
+}
+
+.contact__modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__modal-item {
+  height: 100vh;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 230;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%) !important;
 }
 
 .filter__modal {

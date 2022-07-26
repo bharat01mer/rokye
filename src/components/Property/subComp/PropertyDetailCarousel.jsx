@@ -14,7 +14,7 @@ const PropertyDetailCarousel = () => {
         <div className="carousel__slider">
             <Swiper className="mySwiper" modules={[Navigation]} navigation={{prevEl:".navigation__prev",nextEl:".navigation__next",enabled:true}}  loop>
                 {carouselData.map((item) => (
-                    <SwiperSlide >
+                    <SwiperSlide key={item.id}>
                         <Image src={item.img} width={1400} height={740} alt={"img"} objectFit="cover" onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)} />
                     </SwiperSlide>
                 ))}
