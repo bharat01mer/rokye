@@ -487,6 +487,7 @@
         -webkit-appearance: none;
         margin: 0;
       }
+      
       textarea{
         color: $color1;
       }
@@ -502,6 +503,12 @@
         }
         .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
           padding: 0;
+        }
+        .css-zun73v.Mui-checked{
+          color: $color5 !important;
+        }
+        .css-zun73v{
+          padding: 0  !important;
         }
         p {
           margin-left: 0.5rem;

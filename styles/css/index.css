@@ -530,6 +530,12 @@ body {
 .rokye__form-content .agree .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   padding: 0;
 }
+.rokye__form-content .agree .css-zun73v.Mui-checked {
+  color: #F25C05 !important;
+}
+.rokye__form-content .agree .css-zun73v {
+  padding: 0 !important;
+}
 .rokye__form-content .agree p {
   margin-left: 0.5rem;
 }
