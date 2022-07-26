@@ -541,6 +541,11 @@ body {
   padding: 0.7rem 1rem;
   color: #F2F2F2;
 }
+@media screen and (max-width: 500px) {
+  .rokye__form {
+    width: 100%;
+  }
+}
 
 .rokye__home {
   padding: 2rem 2rem 0;
