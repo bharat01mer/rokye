@@ -466,8 +466,15 @@
           border: none;
           box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
         }
+        .css-igs3ac{
+          border: none !important;
+          outline: none !important;
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%) !important;
+
+          
+        }
         .Mui-focused {
-          color: $color5;
+          color: $color5 !important;
         }
         margin-top: 1.2rem;
 

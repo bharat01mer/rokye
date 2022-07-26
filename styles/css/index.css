@@ -498,8 +498,13 @@ body {
   border: none;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
 }
+.rokye__form-content__item .css-igs3ac {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1) !important;
+}
 .rokye__form-content__item .Mui-focused {
-  color: #F25C05;
+  color: #F25C05 !important;
 }
 .rokye__form-content__item input {
   color: #114040;
