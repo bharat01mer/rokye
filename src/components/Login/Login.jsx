@@ -109,7 +109,7 @@ const Login = ({isSignUp}) => {
                                     <div className="choose">
                                         <div className="choose__title" onClick={() => setShowOption(!showOption)} >
                                             <p {...register("type",{required:true})}>
-                                                {optionValue.id === null ? "Who are you ?" : optionValue.name}
+                                                {optionValue.id === null ? "I am " : optionValue.name}
                                             </p>
                                             <DownArrow />
                                         </div>
@@ -131,7 +131,7 @@ const Login = ({isSignUp}) => {
                                         </AnimatePresence>
                                     </div>
                                     <div className="name item">
-                                        <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
+                                        <TextField id="outlined-basic" label="Full Name*" variant="outlined"  fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
                                         {
                                             errors.name && (
                                                 <p> Name Required </p>

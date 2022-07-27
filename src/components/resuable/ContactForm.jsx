@@ -1,6 +1,6 @@
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram, FiMail } from "react-icons/fi"
-import { FaRegTimesCircle } from "react-icons/fa"
+import { FaTimesCircle } from "react-icons/fa"
 import { RiArrowDownSLine as DownArrow } from "react-icons/ri"
 import { motion, AnimatePresence } from "framer-motion"
 import { TextField, Checkbox } from "@mui/material"
@@ -70,7 +70,7 @@ const ContactForm = ({ showCancel,setShowModal }) => {
                 {
                     showCancel && (
                         <div className="cancel" onClick={()=>setShowModal(false)}>
-                            <FaRegTimesCircle size={30} color={"#F25C05"}  />
+                            <FaTimesCircle size={30} color={"#F25C05"}  />
                         </div>
                     )
                 }

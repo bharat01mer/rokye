@@ -229,13 +229,13 @@
 
   &__footer {
     background: $color4;
-    
+
     padding: 10rem 5rem 3rem;
     @include center__elem;
     flex-direction: column;
 
-    &.remove{
-      padding: 3rem 5rem
+    &.remove {
+      padding: 3rem 5rem;
     }
 
     .outer {
@@ -329,9 +329,8 @@
 
       @media screen and (max-width: 640px) {
         padding: 10rem 1rem 1rem;
-        &.remove{
+        &.remove {
           padding: 0rem 1rem 1rem;
-
         }
         &-address {
           width: 100%;
@@ -359,7 +358,8 @@
   &__form {
     padding: 2rem;
     border-radius: 5px;
-    box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+    border: 2px solid gray;
+    border-radius: 5px;
     width: 30rem;
     // color: $color1;
     @include center__elem;
@@ -370,10 +370,10 @@
     &-header {
       width: 100%;
 
-      .cancel{
+      .cancel {
         position: absolute;
-        top: -.5rem;
-        right: -.5rem;
+        top: -0.5rem;
+        right: -0.5rem;
         @include center__elem;
         justify-content: flex-end;
       }
@@ -384,10 +384,9 @@
           @include heading_font;
           color: $color5;
 
-          span{
+          span {
             color: $color1;
           }
-          
         }
 
         .social {
@@ -398,7 +397,7 @@
             @include center__elem;
             border-radius: 50%;
             box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
-            margin-left: .5rem;
+            margin-left: 0.5rem;
 
             &:hover {
               transition: all 0.5s ease-in-out;
@@ -443,10 +442,10 @@
           justify-content: space-between;
           padding: 1rem;
           width: 100%;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
-          // padding-left: ;
+          border-radius: 5px;
+          border: 1px solid gray;
         }
-
+        
         &__option {
           top: 3rem;
           background: white;
@@ -454,7 +453,9 @@
           @include center__elem;
           flex-direction: column;
           width: 100%;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          border: 1px solid gray;
+          border-radius: 5px;
+          // box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
           position: absolute;
 
           .item {
@@ -470,29 +471,21 @@
       }
 
       &__item {
-        .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-          border: none;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
-        }
-        .css-igs3ac{
-          border: none !important;
-          outline: none !important;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%) !important;
-
-          
+        .MuiOutlinedInput-notchedOutline {
+          border-color: gray !important;
+          box-shadow: none;
         }
         .Mui-focused {
           color: $color5 !important;
         }
         margin-top: 1.2rem;
 
-        input{
+        input {
           color: $color1;
         }
       }
-      
-      
-      textarea{
+
+      textarea {
         color: $color1;
       }
 
@@ -508,10 +501,10 @@
         .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
           padding: 0;
         }
-        .css-zun73v.Mui-checked{
+        .css-zun73v.Mui-checked {
           color: $color5 !important;
         }
-        .css-zun73v{
+        .css-zun73v {
           padding: 0 !important;
         }
         p {
@@ -534,7 +527,7 @@
       }
     }
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       width: 100%;
       padding: 2rem 1rem;
     }

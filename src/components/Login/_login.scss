@@ -38,11 +38,19 @@
     justify-content: flex-end;
 
     .form {
+      border: 2px solid black;
+      border-radius: 5px;
       @include box_shadow;
       padding: 2rem;
+      @include card_shadow;
       width: 34rem;
-      // @include center__elem;
-      // flex-direction: column;
+      
+      // changed focused mui textfield input style
+      .MuiOutlinedInput-notchedOutline{
+        border-color: gray !important; 
+        box-shadow: none
+      }
+
       &__title {
         @include center__elem;
         h1 {
@@ -65,7 +73,9 @@
           justify-content: space-between;
           padding: 1rem;
           width: 100%;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          // box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          border: 1px solid gray;
+          border-radius: 5px;
           // padding-left: ;
         }
         &__tag {
@@ -81,8 +91,8 @@
           @include center__elem;
           flex-direction: column;
           width: 100%;
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
           position: absolute;
+          border: 1px solid black;
 
           .item {
             width: 100%;

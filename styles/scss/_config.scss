@@ -79,12 +79,12 @@ $color5: #f25c05;
 }
 
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border: none;
+  // border: none;
   box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
 }
 .css-igs3ac {
-  border: none !important;
-  outline: none !important;
+  // border: none !important;
+  // outline: none !important;
   box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%) !important;
 }
 .Mui-focused {
@@ -99,6 +99,9 @@ $color5: #f25c05;
 }
 .css-zun73v.Mui-checked {
   color: $color5 !important;
+}
+.MuiOutlinedInput-notchedOutline{
+  border-color: $color5; 
 }
 .css-zun73v {
   padding: 0 !important;

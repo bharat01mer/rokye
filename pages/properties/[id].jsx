@@ -10,6 +10,7 @@ const PropertyDetail = () => {
     
     const cardDetail=cardData.find((item)=>item.id===parseInt(id))
     
+    
     return (
         <Layout title={cardDetail?.title}>
             <Detail cardDetail={cardDetail} />

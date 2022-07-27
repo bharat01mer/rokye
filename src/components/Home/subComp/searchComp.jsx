@@ -60,7 +60,7 @@ export default function Desktop(props) {
                 <div className="title" >
                     <div className="outer" onClick={() => setShowMenu({ id: 1, show: showMenu.id === 1 ? !showMenu.show : true })}>
                         <h1>Location</h1>
-                        <h3>Add Location <IoIosArrowDown size={props.iconSiz2} /> </h3>
+                        <h3>Select <IoIosArrowDown size={props.iconSiz2} /> </h3>
                     </div>
                     <AnimatePresence>
                         {
@@ -83,7 +83,7 @@ export default function Desktop(props) {
                 <div className="title">
                     <div className="outer" onClick={() => setShowMenu({ id: 2, show: showMenu.id === 2 ? !showMenu.show : true })}>
                         <h1>Property Type</h1>
-                        <h3>Condos <IoIosArrowDown size={props.iconSiz2} /> </h3>
+                        <h3>Select <IoIosArrowDown size={props.iconSiz2} /> </h3>
                     </div>
                     <AnimatePresence>
 
@@ -108,7 +108,7 @@ export default function Desktop(props) {
                 <div className="title" >
                     <div className="outer" onClick={() => setShowMenu({ id: 3, show: showMenu.id === 3 ? !showMenu.show : true })}>
                         <h1>Budget</h1>
-                        <h3>100000 <IoIosArrowDown size={props.iconSiz2} /> </h3>
+                        <h3>Select <IoIosArrowDown size={props.iconSiz2} /> </h3>
                     </div>
                     <AnimatePresence>
 

@@ -22,7 +22,7 @@ const PropertyDetail = ({ cardDetail }) => {
   const [favorite, setFavorite] = useState(false)
   const [showMore, setShowMore] = useState(false)
 
-
+  
 
   return (
     <>
@@ -53,13 +53,7 @@ const PropertyDetail = ({ cardDetail }) => {
             <Carousel />
           </div>
 
-          <div className="desc">
-            <div className="desc__title">
-              <h1>Description</h1>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi quod placeat explicabo sequi enim quaerat voluptatem maxime, quia ipsum impedit et, autem eveniet saepe ex unde mollitia culpa consectetur! </p>
-            <p>Ex mollitia, explicabo sed neque quidem voluptatum, corporis perspiciatis laboriosam eligendi harum odio rerum possimus obcaecati, quasi molestiae repellat excepturi delectus nulla velit dolor itaque enim ad alias fuga. Odit!</p>
-          </div>
+          
           <div className="detail">
             <div className="detail__title">
               <h1>Property Detail</h1>
@@ -90,7 +84,7 @@ const PropertyDetail = ({ cardDetail }) => {
                     {propertyDetail.right.map((item) => (
 
                       <div className="tag" key={item.id}>
-                        <p>{item.name}:</p>
+                        <p>{item.name}</p>
                         {
                           item?.numstring ? (
                             <>
@@ -143,7 +137,16 @@ const PropertyDetail = ({ cardDetail }) => {
               }
             </div>
           </div>
+
+          <div className="desc">
+            <div className="desc__title">
+              <h1>Description</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi quod placeat explicabo sequi enim quaerat voluptatem maxime, quia ipsum impedit et, autem eveniet saepe ex unde mollitia culpa consectetur! </p>
+            <p>Ex mollitia, explicabo sed neque quidem voluptatum, corporis perspiciatis laboriosam eligendi harum odio rerum possimus obcaecati, quasi molestiae repellat excepturi delectus nulla velit dolor itaque enim ad alias fuga. Odit!</p>
+          </div>
         </div>
+
         <div className="rokye__property-detail__contact">
           {
             winWidth > 1450 ? (

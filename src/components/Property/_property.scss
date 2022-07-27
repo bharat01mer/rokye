@@ -96,7 +96,7 @@
           height: 10rem;
           overflow-y: scroll;
           &__item {
-            padding: 1rem;
+            padding: .6rem 1rem;
 
             &:hover {
               transition: all 0.5s ease-in-out;
@@ -172,6 +172,7 @@
           &__item {
             @include center__elem;
             justify-content: flex-start;
+            margin: .6rem 0;
           }
 
           @include custom__track;
@@ -490,7 +491,7 @@
         }
       }
       .desc {
-        margin: 4rem 0;
+        
 
         h1 {
           @include heading_font;
@@ -503,6 +504,7 @@
         }
       }
       .detail {
+        margin: 4rem 0;
         h1 {
           @include heading_font;
           color: $color1;
@@ -515,7 +517,7 @@
           border-radius: 5px;
           padding: 2rem;
 
-          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          
 
           .item {
             width: 100%;
@@ -527,7 +529,7 @@
             p {
               width: 100%;
             }
-            p:last-child {
+            p:first-child {
               @include center__elem;
               justify-content: flex-start;
               margin-left: 0.5rem;
@@ -571,6 +573,7 @@
       align-items: center;
       &__contact{
         padding-left: 0 !important;
+        margin-top: 3rem;
         @include center__elem;
 
         .contact__btn{

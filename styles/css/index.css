@@ -17,13 +17,10 @@ body {
 }
 
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border: none;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
 }
 
 .css-igs3ac {
-  border: none !important;
-  outline: none !important;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1) !important;
 }
 
@@ -41,6 +38,10 @@ body {
 
 .css-zun73v.Mui-checked {
   color: #f25c05 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #f25c05;
 }
 
 .css-zun73v {
@@ -420,7 +421,8 @@ input::-webkit-inner-spin-button {
 .rokye__form {
   padding: 2rem;
   border-radius: 5px;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border: 2px solid gray;
+  border-radius: 5px;
   width: 30rem;
   display: flex;
   justify-content: center;
@@ -512,7 +514,8 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   padding: 1rem;
   width: 100%;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 .rokye__form-content .choose__option {
   top: 3rem;
@@ -523,7 +526,8 @@ input::-webkit-inner-spin-button {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border: 1px solid gray;
+  border-radius: 5px;
   position: absolute;
 }
 .rokye__form-content .choose__option .item {
@@ -537,14 +541,9 @@ input::-webkit-inner-spin-button {
 .rokye__form-content__item {
   margin-top: 1.2rem;
 }
-.rokye__form-content__item .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border: none;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
-}
-.rokye__form-content__item .css-igs3ac {
-  border: none !important;
-  outline: none !important;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1) !important;
+.rokye__form-content__item .MuiOutlinedInput-notchedOutline {
+  border-color: gray !important;
+  box-shadow: none;
 }
 .rokye__form-content__item .Mui-focused {
   color: #f25c05 !important;
@@ -1355,7 +1354,7 @@ body {
   /* Handle on hover */
 }
 .rokye__property-filter .lower__item .option__item {
-  padding: 1rem;
+  padding: 0.6rem 1rem;
 }
 .rokye__property-filter .lower__item .option__item:hover {
   transition: all 0.5s ease-in-out;
@@ -1463,6 +1462,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
+  margin: 0.6rem 0;
 }
 .rokye__property-filter .preferred__amenities .list::-webkit-scrollbar {
   width: 5px;
@@ -1786,9 +1786,6 @@ body {
 .rokye__property-detail__prop .title__info .date {
   padding-left: 1rem;
 }
-.rokye__property-detail__prop .desc {
-  margin: 4rem 0;
-}
 .rokye__property-detail__prop .desc h1 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
@@ -1797,6 +1794,9 @@ body {
 .rokye__property-detail__prop .desc p {
   color: gray;
   margin: 1rem 0;
+}
+.rokye__property-detail__prop .detail {
+  margin: 4rem 0;
 }
 .rokye__property-detail__prop .detail h1 {
   font-family: "lora", sans-serif;
@@ -1811,7 +1811,6 @@ body {
   width: 50rem;
   border-radius: 5px;
   padding: 2rem;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
 }
 .rokye__property-detail__prop .detail__content .item {
   width: 100%;
@@ -1826,7 +1825,7 @@ body {
 .rokye__property-detail__prop .detail__content .tag p {
   width: 100%;
 }
-.rokye__property-detail__prop .detail__content .tag p:last-child {
+.rokye__property-detail__prop .detail__content .tag p:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1869,6 +1868,7 @@ body {
   }
   .rokye__property-detail__contact {
     padding-left: 0 !important;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2023,9 +2023,16 @@ body {
   justify-content: flex-end;
 }
 .rokye__login-right .form {
+  border: 2px solid black;
+  border-radius: 5px;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   padding: 2rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
   width: 34rem;
+}
+.rokye__login-right .form .MuiOutlinedInput-notchedOutline {
+  border-color: gray !important;
+  box-shadow: none;
 }
 .rokye__login-right .form__title {
   display: flex;
@@ -2056,7 +2063,8 @@ body {
   justify-content: space-between;
   padding: 1rem;
   width: 100%;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 .rokye__login-right .form .choose__tag p {
   color: black !important;
@@ -2070,8 +2078,8 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   position: absolute;
+  border: 1px solid black;
 }
 .rokye__login-right .form .choose__option .item {
   width: 100%;

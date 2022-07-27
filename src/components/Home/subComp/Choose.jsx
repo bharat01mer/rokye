@@ -21,15 +21,15 @@ const Choose = () => {
         },
         {
             id: 2,
-            title: "Rental Agreement",
-            desc: 'We will assist you in creating rental agreement as well to make it hassle free and easy.',
-            icon: <CgFileDocument size={45} color={"#035941"} />
+            title: "Shortlist at home",
+            desc: 'Wishlist all the properties you like to see and visit once you are ready to make a decision.',
+            icon: <RiFileList2Fill size={45} color={"#035941"} />
         },
         {
             id: 3,
-            title: "Shortlist at home",
-            desc: 'Wishlist all the properties you like to see and visit once you are ready to make a decision, you will easily find the one you like to rent',
-            icon: <RiFileList2Fill size={45} color={"#035941"} />
+            title: "Rental Agreement",
+            desc: 'We will assist you in creating rental agreement as well to make it hassle free and easy.',
+            icon: <CgFileDocument size={45} color={"#035941"} />
         },
     ]
 
