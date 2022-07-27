@@ -188,7 +188,7 @@ const Login = ({isSignUp}) => {
                                 </p>
 
                             ) : (
-                                <p>Don't Have An Account?  <Link passHref href={`/signup`}>
+                                <p>Don&apos;t Have An Account?  <Link passHref href={`/signup`}>
                                     SignUp
                                 </Link>
                                 </p>
