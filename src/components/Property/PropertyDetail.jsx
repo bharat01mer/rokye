@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ContactForm } from '../resuable'
+import { ContactForm ,ContactModal} from '../resuable'
 import { ImLocation } from "react-icons/im"
 import millify from 'millify'
 import { propertyDetail } from '../../../utils/data'
@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { premiumFilterdata } from '../../../utils/data'
 import { useSelector } from 'react-redux'
 import dynamic from "next/dynamic"
+
 
 const Carousel = dynamic(() => import("./subComp/PropertyDetailCarousel"))
 
@@ -109,8 +110,8 @@ const PropertyDetail = ({ cardDetail }) => {
                 )
               }
               {
-                winWidth < 850  && (
-                  <motion.div className="more" onClick={()=>setShowMore(!showMore)}>
+                winWidth < 850 && (
+                  <motion.div className="more" onClick={() => setShowMore(!showMore)}>
                     {
                       showMore ? (
                         <p>Less</p>
@@ -160,11 +161,7 @@ const PropertyDetail = ({ cardDetail }) => {
 
         {
           showModal && (
-            <div className="contact__modal">
-              <motion.div className="contact__modal-item" initial={{ scale: 0, opacity: 0 }} exit={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-                <ContactForm showCancel={true} setShowModal={setShowModal} />
-              </motion.div>
-            </div>
+            <ContactModal setShowModal={setShowModal}></ContactModal>
           )
         }
       </AnimatePresence>

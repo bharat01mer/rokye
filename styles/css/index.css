@@ -2155,4 +2155,162 @@ body {
   .rokye__login {
     font-size: 0.9rem;
   }
+}
+
+.rokye__plan {
+  padding: 7rem;
+}
+.rokye__plan .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__plan-info {
+  width: 100%;
+}
+.rokye__plan-info .title h1 {
+  font-size: 2.4rem;
+  color: #114040;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+}
+.rokye__plan-info .content {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.rokye__plan-info .content__owner, .rokye__plan-info .content__tenant {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+}
+.rokye__plan-info .content__owner .detail, .rokye__plan-info .content__tenant .detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__plan-info .content__owner .detail__title, .rokye__plan-info .content__tenant .detail__title {
+  margin-top: 1rem;
+}
+.rokye__plan-info .content__owner .detail__title h1, .rokye__plan-info .content__tenant .detail__title h1 {
+  color: #f25c05;
+  font-weight: bold;
+}
+.rokye__plan-info .content__owner .detail__price, .rokye__plan-info .content__tenant .detail__price {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__plan-info .content__owner .detail__price h1, .rokye__plan-info .content__tenant .detail__price h1 {
+  color: #035941;
+  font-weight: bold;
+}
+.rokye__plan-info .content__owner .detail__point .item, .rokye__plan-info .content__tenant .detail__point .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+.rokye__plan-info .content__owner .detail__point .item svg, .rokye__plan-info .content__tenant .detail__point .item svg {
+  color: #035941;
+}
+.rokye__plan-info .content__owner .detail__point .item p, .rokye__plan-info .content__tenant .detail__point .item p {
+  color: gray;
+  margin-left: 1rem;
+}
+.rokye__plan-info .content__tenant {
+  margin-left: 2rem;
+}
+.rokye__plan .lower {
+  margin-top: 5rem;
+}
+.rokye__plan-work .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__plan-work .content {
+  margin-top: 2rem;
+}
+.rokye__plan-work .content__item {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+}
+.rokye__plan-work .content__item h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.rokye__plan-work .content__item p {
+  color: gray;
+}
+@media screen and (max-width: 1600px) {
+  .rokye__plan {
+    padding: 7rem 5rem;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .rokye__plan-info .content {
+    justify-content: space-between;
+  }
+  .rokye__plan-contact {
+    margin-top: 3rem;
+  }
+  .rokye__plan-contact .contact__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rokye__plan-contact .contact__btn .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: #f2f2f2;
+    padding: 0.5rem 1rem;
+    width: 20rem;
+    background: #f25c05;
+  }
+  .rokye__plan .upper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 980px) {
+  .rokye__plan {
+    padding: 7rem 1.5rem;
+  }
+  .rokye__plan-info .title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 750px) {
+  .rokye__plan-info .content {
+    flex-direction: column;
+  }
+  .rokye__plan-info .content__tenant {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__plan {
+    font-size: 0.9rem;
+  }
+  .rokye__plan-info .title h1 {
+    font-size: 2rem;
+  }
+  .rokye__plan-info .content__tenant, .rokye__plan-info .content__owner {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */

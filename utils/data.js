@@ -718,3 +718,82 @@ export const carouselData=[
     img:"https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
   },
 ]
+
+
+export const ownerPoints=[
+  {
+    id:0,
+    value:"No advance payment"
+  },
+  {
+    id:1,
+    value:"Photoshoot of your property"
+  },
+  {
+    id:2,
+    value:"Property promotion on site"
+  },
+  {
+    id:3,
+    value:"Privacy of your details"
+  },
+  {
+    id:4,
+    value:"Tenant verification"
+  },
+  {
+    id:5,
+    value:"Relationship manager"
+  },
+  {
+    id:6,
+    value:"Assistance by phone"
+  },
+  {
+    id:7,
+    value:"Showing house on your behalf"
+  },
+  {
+    id:8,
+    value:"Rental agreement"
+  },
+]
+
+export const tenantPoints=[
+  {
+    id:0,
+    value:"No advance payment"
+  },
+  {
+    id:1,
+    value:"All verified listings"
+  },
+  {
+    id:2,
+    value:"Soon available for rent"
+  },
+  {
+    id:3,
+    value:"Owner verification"
+  },
+  {
+    id:4,
+    value:"Rent Negotiation"
+  },
+  {
+    id:5,
+    value:"Relationship manager"
+  },
+  {
+    id:7,
+    value:"Personal field assistance"
+  },
+  {
+    id:8,
+    value:"Assistance by phone"
+  },
+  {
+    id:9,
+    value:"Rental agreement"
+  },
+]
