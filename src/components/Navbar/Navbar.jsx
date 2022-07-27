@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
-import {AiOutlinePlus} from "react-icons/ai"
+import { AiOutlinePlus } from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
 import { setwinWidth } from '../../../redux/slices/util'
 
 const Navbar = () => {
   const router = useRouter()
-  const headerRef=useRef()
+  const headerRef = useRef()
   const { winWidth } = useSelector((state) => state.util)
 
   const [showMobileNav, setShowMobileNav] = useState(false)
@@ -60,11 +60,11 @@ const Navbar = () => {
     dispatch(setwinWidth(window.innerWidth))
     window.onscroll = (() => {
       if (window.pageYOffset >= 66) {
-          headerRef.current.classList.add("sticky")
+        headerRef.current.classList.add("sticky")
       } else {
-          headerRef.current.classList.remove("sticky");
+        headerRef.current.classList.remove("sticky");
       }
-  })
+    })
   }, [showMobileNav, winWidth, dispatch])
 
 
@@ -84,9 +84,11 @@ const Navbar = () => {
                   </motion.div>
                 </Link>
               ))}
-              <div className="register">
-                <h3>Register</h3>
-              </div>
+              <Link passHref href={"/signup"}>
+                <div className="register">
+                  <h3>Register</h3>
+                </div>
+              </Link>
             </motion.div>
           )
         }
@@ -96,7 +98,7 @@ const Navbar = () => {
           <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""}>Home</motion.h3>
         </Link>
         <Link href={"/properties/sell"} passHref>
-          <motion.div className="sell"  whileTap={{scale:0.97}}>
+          <motion.div className="sell" whileTap={{ scale: 0.97 }}>
             <AiOutlinePlus size={25} color={"#fff "} />
             <h3 >Add Property</h3>
           </motion.div>
