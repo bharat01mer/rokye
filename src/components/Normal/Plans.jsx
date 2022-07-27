@@ -6,7 +6,7 @@ import { ownerPoints, tenantPoints } from "../../../utils/data"
 import ContactForm from "../resuable/ContactForm"
 import { useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import ContactModal from "../resuable/ContactModa"
+import {ContactModal} from "../resuable"
 
 
 const Plans = () => {
