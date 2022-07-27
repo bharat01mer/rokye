@@ -593,6 +593,7 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 500px) {
   .rokye__form {
     width: 100%;
+    padding: 2rem 1rem;
   }
 }
 
@@ -1938,6 +1939,7 @@ body {
 }
 .contact__modal-item {
   height: 100vh;
+  padding: 1rem;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   position: fixed;
