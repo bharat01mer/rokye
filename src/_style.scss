@@ -229,10 +229,14 @@
 
   &__footer {
     background: $color4;
-
+    
     padding: 10rem 5rem 3rem;
     @include center__elem;
     flex-direction: column;
+
+    &.remove{
+      padding: 3rem 5rem
+    }
 
     .outer {
       width: 100%;
@@ -325,6 +329,10 @@
 
       @media screen and (max-width: 640px) {
         padding: 10rem 1rem 1rem;
+        &.remove{
+          padding: 0rem 1rem 1rem;
+
+        }
         &-address {
           width: 100%;
 
@@ -482,11 +490,7 @@
           color: $color1;
         }
       }
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+      
       
       textarea{
         color: $color1;
@@ -508,7 +512,7 @@
           color: $color5 !important;
         }
         .css-zun73v{
-          padding: 0  !important;
+          padding: 0 !important;
         }
         p {
           margin-left: 0.5rem;

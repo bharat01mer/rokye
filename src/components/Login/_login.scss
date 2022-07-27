@@ -1,0 +1,171 @@
+.rokye__login {
+  padding: 7rem;
+  @include center__elem;
+  justify-content: space-between;
+
+  &-left {
+    width: 100%;
+
+    .points {
+      h1 {
+        @include heading-font;
+        color: $color1;
+        margin-bottom: 1rem;
+      }
+      &__item {
+        @include center__elem;
+        justify-content: flex-start;
+        margin-bottom: 0.4rem;
+
+        p {
+          margin-left: 0.4rem;
+        }
+      }
+    }
+
+    .animation {
+      width: 40rem;
+
+      @media screen and (max-width: 1380px) {
+        width: 100%;
+      }
+    }
+  }
+  &-right {
+    width: 100%;
+
+    @include center__elem;
+    justify-content: flex-end;
+
+    .form {
+      @include box_shadow;
+      padding: 2rem;
+      width: 34rem;
+      // @include center__elem;
+      // flex-direction: column;
+      &__title {
+        @include center__elem;
+        h1 {
+          @include heading-font;
+          color: $color1;
+        }
+      }
+      input {
+        color: $color1;
+      }
+      .choose {
+        position: relative;
+        @include center__elem;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1.5rem;
+
+        &__title {
+          @include center__elem;
+          justify-content: space-between;
+          padding: 1rem;
+          width: 100%;
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          // padding-left: ;
+        }
+        &__tag {
+          p {
+            color: black !important;
+          }
+        }
+
+        &__option {
+          top: 3rem;
+          background: white;
+          z-index: 23;
+          @include center__elem;
+          flex-direction: column;
+          width: 100%;
+          box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+          position: absolute;
+
+          .item {
+            width: 100%;
+            padding: 1rem;
+            margin: 0 !important;
+
+            &:hover {
+              transition: all 0.5s ease-in-out;
+              background: rgb(176, 176, 176);
+            }
+          }
+        }
+      }
+      .item {
+        margin: 2rem 0;
+        p {
+          color: red;
+          font-size: 0.8rem;
+        }
+      }
+
+      &__submit {
+        width: 100%;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        background: $color5;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+      &__switch {
+        @include center__elem;
+        justify-content: space-between;
+        margin-top: 1rem;
+        a {
+          color: $color5;
+        }
+        p:first-child {
+          color: $color1 !important;
+        }
+        p:last-child {
+          color: $color5;
+        }
+      }
+      @media screen and (max-width: 1180px) {
+        width: 100%;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    padding: 7rem 5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    padding: 5rem 2rem;
+    &.signup {
+      padding: 7rem 2rem;
+    }
+
+    &-right {
+      justify-content: center;
+      .form {
+        width: 34rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 5rem 1rem;
+    &.signup {
+      padding: 7rem 1rem;
+    }
+    &-right {
+      .form {
+        padding: 2rem 1rem;
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.9rem;
+  }
+}

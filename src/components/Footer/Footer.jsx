@@ -3,8 +3,10 @@ import Link from "next/link"
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 const Footer = () => {
+  const router=useRouter()
   const rentalLinks = [
     {
       id: 0,
@@ -58,8 +60,10 @@ const Footer = () => {
       icon: <FaTwitter />
     },
   ]
+
+  const isHomeRoute=router.pathname==="/" ? true : false
   return (
-    <footer className="rokye__footer">
+    <footer className={`rokye__footer ${isHomeRoute ? "" : "remove"}`} >
       <div className="outer">
         <div className="rokye__footer-intro">
           <h1>Rokye.<span>Realty</span></h1>

@@ -1,7 +1,6 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap");
 
 * {
   margin: 0;
@@ -10,58 +9,54 @@
   outline: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
-
 }
-body{
+body {
   // background-color: #F2F2F2;
   background: white;
 }
 $color1: #114040;
 $color2: #035941;
-$color3: #F2BA52;
-$color4: #F2F2F2;
-$color5: #F25C05;
-
+$color3: #f2ba52;
+$color4: #f2f2f2;
+$color5: #f25c05;
 
 @mixin center__elem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-@mixin font1 { 
-  font-family: 'Noto Sans', sans-serif;
+@mixin font1 {
+  font-family: "Noto Sans", sans-serif;
   font-weight: bold;
 }
 @mixin font_light {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
-
 }
 
 @mixin heading_font {
-  font-family: 'lora', sans-serif;
+  font-family: "lora", sans-serif;
   font-weight: bolder;
 }
 
 @mixin box-color {
-  background: #F25C05;
+  background: #f25c05;
   color: white;
-  border: 1px solid #F25C05;
+  border: 1px solid #f25c05;
   border-radius: 3px;
 
-  &:hover{
+  &:hover {
     background: white;
-    color: #F25C05;
+    color: #f25c05;
     cursor: pointer;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 }
 
-@mixin custom__track{
+@mixin custom__track {
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -81,4 +76,40 @@ $color5: #F25C05;
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none;
+  box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+}
+.css-igs3ac {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%) !important;
+}
+.Mui-focused {
+  color: $color5 !important;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: $color5;
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  padding: 0;
+}
+.css-zun73v.Mui-checked {
+  color: $color5 !important;
+}
+.css-zun73v {
+  padding: 0 !important;
+}
+
+@mixin box_shadow {
+  box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

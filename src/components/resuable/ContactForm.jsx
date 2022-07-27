@@ -61,6 +61,8 @@ const ContactForm = ({ showCancel,setShowModal }) => {
 
 
     const isValid = (formState.isValid && checkBox && optionValue.id !== null) ? true : false
+
+    
     return (
         <form className="rokye__form" onSubmit={handleSubmit(onSubmithandler)}>
 

@@ -16,6 +16,43 @@ body {
   background: white;
 }
 
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+}
+
+.css-igs3ac {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1) !important;
+}
+
+.Mui-focused {
+  color: #f25c05 !important;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: #f25c05;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  padding: 0;
+}
+
+.css-zun73v.Mui-checked {
+  color: #f25c05 !important;
+}
+
+.css-zun73v {
+  padding: 0 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .rokye__navbar {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
@@ -29,7 +66,7 @@ body {
   justify-content: space-between;
 }
 .rokye__navbar-logo h1 {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__navbar-logo span {
   color: #114040;
@@ -59,7 +96,7 @@ body {
   margin-bottom: 1rem;
 }
 .rokye__navbar-mobnav .item.active {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__navbar-mobnav .register {
   border: 4px;
@@ -68,14 +105,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  background: #F25C05;
+  background: #f25c05;
   color: white;
-  border: 1px solid #F25C05;
+  border: 1px solid #f25c05;
   border-radius: 3px;
 }
 .rokye__navbar-mobnav .register:hover {
   background: white;
-  color: #F25C05;
+  color: #f25c05;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
@@ -98,7 +135,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F25C05;
+  background: #f25c05;
   padding: 0.6rem 1rem;
   border-radius: 4px;
   margin: 0 3rem;
@@ -113,8 +150,8 @@ body {
   }
 }
 .rokye__navbar-tab .active {
-  color: #F25C05 !important;
-  border-bottom: 2px solid #F25C05;
+  color: #f25c05 !important;
+  border-bottom: 2px solid #f25c05;
 }
 @media screen and (max-width: 650px) {
   .rokye__navbar-tab h3 {
@@ -225,13 +262,13 @@ body {
   align-items: center;
 }
 .rokye__card-detail .additional__price svg {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__card-detail .additional__price p {
   margin-left: 0.2rem;
 }
 .rokye__card-detail .additional__price p span {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__card .info {
   padding: 0 0 0 1rem;
@@ -250,17 +287,20 @@ body {
   justify-content: center;
   align-items: center;
   background: rgba(242, 92, 5, 0.3);
-  color: #F25C05;
+  color: #f25c05;
   border-bottom-right-radius: 0.7rem;
   border-top-left-radius: 0.7rem;
 }
 .rokye__footer {
-  background: #F2F2F2;
+  background: #f2f2f2;
   padding: 10rem 5rem 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.rokye__footer.remove {
+  padding: 3rem 5rem;
 }
 .rokye__footer .outer {
   width: 100%;
@@ -281,7 +321,7 @@ body {
   color: #114040;
 }
 .rokye__footer-intro h1 {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__footer-intro span {
   color: #114040;
@@ -311,7 +351,7 @@ body {
 }
 .rokye__footer-address .social__item:hover {
   transition: all 0.4s ease-in-out;
-  background: #F25C05;
+  background: #f25c05;
   color: white;
 }
 .rokye__footer-info {
@@ -356,6 +396,9 @@ body {
 @media screen and (max-width: 1000px) and (max-width: 640px) {
   .rokye__footer {
     padding: 10rem 1rem 1rem;
+  }
+  .rokye__footer.remove {
+    padding: 0rem 1rem 1rem;
   }
   .rokye__footer-address {
     width: 100%;
@@ -407,7 +450,7 @@ body {
 .rokye__form-header .title h2 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__form-header .title h2 span {
   color: #114040;
@@ -429,8 +472,8 @@ body {
 }
 .rokye__form-header .title .social__item:hover {
   transition: all 0.5s ease-in-out;
-  background: #F25C05;
-  color: #F2F2F2;
+  background: #f25c05;
+  color: #f2f2f2;
 }
 .rokye__form-header .mail {
   margin-top: 1rem;
@@ -504,15 +547,10 @@ body {
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1) !important;
 }
 .rokye__form-content__item .Mui-focused {
-  color: #F25C05 !important;
+  color: #f25c05 !important;
 }
 .rokye__form-content__item input {
   color: #114040;
-}
-.rokye__form-content input::-webkit-outer-spin-button,
-.rokye__form-content input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 .rokye__form-content textarea {
   color: #114040;
@@ -525,13 +563,13 @@ body {
   margin: 1rem 0;
 }
 .rokye__form-content .agree .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__form-content .agree .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   padding: 0;
 }
 .rokye__form-content .agree .css-zun73v.Mui-checked {
-  color: #F25C05 !important;
+  color: #f25c05 !important;
 }
 .rokye__form-content .agree .css-zun73v {
   padding: 0 !important;
@@ -540,17 +578,17 @@ body {
   margin-left: 0.5rem;
 }
 .rokye__form-content .agree a {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__form-content .submit {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F25C05;
+  background: #f25c05;
   border-radius: 5px;
   padding: 0.7rem 1rem;
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 @media screen and (max-width: 500px) {
   .rokye__form {
@@ -768,11 +806,11 @@ body {
 .rokye__home-searchbar__tab .search {
   cursor: pointer;
   padding: 1rem;
-  background: #F25C05;
+  background: #f25c05;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #F2F2F2;
+  color: #f2f2f2;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
@@ -1128,7 +1166,7 @@ body {
   justify-content: space-between;
   padding: 4rem;
   border-radius: 1rem;
-  background: #F2F2F2;
+  background: #f2f2f2;
   background-color: white;
   margin-bottom: -4rem;
   position: relative;
@@ -1147,8 +1185,8 @@ body {
 }
 .rokye__home-message .contact {
   cursor: pointer;
-  background: #F25C05;
-  color: #F2F2F2;
+  background: #f25c05;
+  color: #f2f2f2;
   border-radius: 5px;
   padding: 1rem 4rem;
 }
@@ -1238,7 +1276,7 @@ body {
   border-radius: 5px;
 }
 .rokye__property-filter .filter__item {
-  background: #F2F2F2;
+  background: #f2f2f2;
   box-shadow: 0 0.125rem 0.125rem -0.125rem rgba(31, 27, 45, 0.08), 0 0.25rem 0.75rem rgba(31, 27, 45, 0.08);
   padding: 0.4rem 1rem;
   border-radius: 1rem;
@@ -1257,7 +1295,7 @@ body {
 .rokye__property-filter .filter__item.active {
   transition: all 0.1s ease-in-out;
   background: white;
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__property-filter .lower {
   transition: all 0.5s ease-in-out;
@@ -1267,7 +1305,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #F25C05;
+  color: #f25c05;
   padding: 0 3rem;
   cursor: pointer;
   text-align: center;
@@ -1395,10 +1433,10 @@ body {
   background: #555;
 }
 .rokye__property-filter .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__property-filter .Mui-focused {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__property-filter .preferred {
   padding: 1rem;
@@ -1439,14 +1477,14 @@ body {
   background: #555;
 }
 .rokye__property-filter .property__search .btn {
-  color: #F2F2F2;
+  color: #f2f2f2;
   padding: 0.6rem 1rem;
   margin: 0 1rem;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F25C05;
+  background: #f25c05;
 }
 .rokye__property-filter .property__search .btn h3 {
   margin-left: 0.5rem;
@@ -1476,7 +1514,7 @@ body {
   font-size: 2rem;
 }
 .rokye__property-grid__title .title .mob__filter-btn {
-  background: #F25C05;
+  background: #f25c05;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1700,7 +1738,7 @@ body {
   width: 100%;
 }
 .rokye__property-detail .carousel__slider .navigation svg {
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__property-detail__prop {
   width: 100%;
@@ -1737,7 +1775,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
-  color: #F25C05;
+  color: #f25c05;
 }
 .rokye__property-detail__prop .title__info .location p,
 .rokye__property-detail__prop .title__info .date p {
@@ -1840,8 +1878,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F25C05;
-    color: #F2F2F2;
+    background: #f25c05;
+    color: #f2f2f2;
     padding: 0.5rem 1rem;
   }
 }
@@ -1855,11 +1893,11 @@ body {
   }
   .rokye__property-detail .more {
     margin-top: 1.5rem;
-    color: #F25C05;
+    color: #f25c05;
   }
   .rokye__property-detail .more .bar {
     height: 0.08rem;
-    background: #F25C05;
+    background: #f25c05;
   }
 }
 @media screen and (max-width: 725px) {
@@ -1939,4 +1977,180 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
+}
+
+.rokye__login {
+  padding: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__login-left {
+  width: 100%;
+}
+.rokye__login-left .points h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  margin-bottom: 1rem;
+}
+.rokye__login-left .points__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.4rem;
+}
+.rokye__login-left .points__item p {
+  margin-left: 0.4rem;
+}
+.rokye__login-left .animation {
+  width: 40rem;
+}
+@media screen and (max-width: 1380px) {
+  .rokye__login-left .animation {
+    width: 100%;
+  }
+}
+.rokye__login-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+.rokye__login-right .form {
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 2rem;
+  width: 34rem;
+}
+.rokye__login-right .form__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__login-right .form__title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__login-right .form input {
+  color: #114040;
+}
+.rokye__login-right .form .choose {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+.rokye__login-right .form .choose__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+}
+.rokye__login-right .form .choose__tag p {
+  color: black !important;
+}
+.rokye__login-right .form .choose__option {
+  top: 3rem;
+  background: white;
+  z-index: 23;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  position: absolute;
+}
+.rokye__login-right .form .choose__option .item {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 !important;
+}
+.rokye__login-right .form .choose__option .item:hover {
+  transition: all 0.5s ease-in-out;
+  background: rgb(176, 176, 176);
+}
+.rokye__login-right .form .item {
+  margin: 2rem 0;
+}
+.rokye__login-right .form .item p {
+  color: red;
+  font-size: 0.8rem;
+}
+.rokye__login-right .form__submit {
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  background: #f25c05;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.rokye__login-right .form__switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.rokye__login-right .form__switch a {
+  color: #f25c05;
+}
+.rokye__login-right .form__switch p:first-child {
+  color: #114040 !important;
+}
+.rokye__login-right .form__switch p:last-child {
+  color: #f25c05;
+}
+@media screen and (max-width: 1180px) {
+  .rokye__login-right .form {
+    width: 100%;
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .rokye__login {
+    padding: 7rem 5rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .rokye__login {
+    flex-direction: column;
+    padding: 5rem 2rem;
+  }
+  .rokye__login.signup {
+    padding: 7rem 2rem;
+  }
+  .rokye__login-right {
+    justify-content: center;
+  }
+  .rokye__login-right .form {
+    width: 34rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .rokye__login {
+    padding: 5rem 1rem;
+  }
+  .rokye__login.signup {
+    padding: 7rem 1rem;
+  }
+  .rokye__login-right .form {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__login {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=index.css.map */
