@@ -109,7 +109,7 @@ const Plans = () => {
                         <div className="content">
                             {
                                 workItem.map((item) => (
-                                    <div className="content__item">
+                                    <div className="content__item" key={item.id}>
                                         <h3>{item.title}</h3>
                                         <p>{item.desc}</p>
                                     </div>
