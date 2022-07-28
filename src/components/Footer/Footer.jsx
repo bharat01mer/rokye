@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from "next/link"
+import Image from 'next/image'
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 
 const Footer = () => {
-  const router=useRouter()
+  const router = useRouter()
   const rentalLinks = [
     {
       id: 0,
@@ -61,12 +62,12 @@ const Footer = () => {
     },
   ]
 
-  const isHomeRoute=router.pathname==="/" ? true : false
+  const isHomeRoute = router.pathname === "/" ? true : false
   return (
     <footer className={`rokye__footer ${isHomeRoute ? "" : "remove"}`} >
       <div className="outer">
         <div className="rokye__footer-intro">
-          <h1>Rokye.<span>Realty</span></h1>
+          <Image src={"/logo.png"} width={150} height={80} objectFit="contain" />
           <p>Consulate Of Japan Bunglow, M L Dahanukar <br /> Marg, Cumballa Hill</p>
         </div>
         <div className="rokye__footer-links">
@@ -74,7 +75,7 @@ const Footer = () => {
           <div className="links">
             {rentalLinks.map((item) => (
               <Link key={item.name} href={`/${item.link}`}>
-                <motion.p whileTap={{x:10}}>{item.name}</motion.p>
+                <motion.p whileTap={{ x: 10 }}>{item.name}</motion.p>
               </Link>
             ))}
           </div>
@@ -84,7 +85,7 @@ const Footer = () => {
           <div className="links">
             {aboutLink.map((item) => (
               <Link key={item.name} href={`/${item.link}`} >
-                <motion.p whileTap={{x:10}}>{item.name}</motion.p>
+                <motion.p whileTap={{ x: 10 }}>{item.name}</motion.p>
               </Link>
             ))}
           </div>
@@ -96,7 +97,7 @@ const Footer = () => {
           <div className="social">
             {
               socialLinks.map((item) => (
-                <motion.a href={`https://${item.link}`} key={item.id} target="__blank" rel="noreferrer" whileTap={{scale:0.96}}>
+                <motion.a href={`https://${item.link}`} key={item.id} target="__blank" rel="noreferrer" whileTap={{ scale: 0.96 }}>
                   <motion.div className="social__item" >
                     {item.icon}
                   </motion.div>

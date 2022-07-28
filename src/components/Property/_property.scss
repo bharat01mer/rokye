@@ -96,7 +96,7 @@
           height: 10rem;
           overflow-y: scroll;
           &__item {
-            padding: .6rem 1rem;
+            padding: 0.6rem 1rem;
 
             &:hover {
               transition: all 0.5s ease-in-out;
@@ -152,7 +152,7 @@
     .Mui-focused {
       color: $color5;
     }
-    
+
     .preferred {
       padding: 1rem;
 
@@ -172,7 +172,7 @@
           &__item {
             @include center__elem;
             justify-content: flex-start;
-            margin: .6rem 0;
+            margin: 0.6rem 0;
           }
 
           @include custom__track;
@@ -491,8 +491,6 @@
         }
       }
       .desc {
-        
-
         h1 {
           @include heading_font;
           color: $color1;
@@ -516,8 +514,6 @@
           width: 50rem;
           border-radius: 5px;
           padding: 2rem;
-
-          
 
           .item {
             width: 100%;
@@ -558,7 +554,6 @@
           }
         }
       }
-
     }
     @media screen and (max-width: 1660px) {
       padding: 7rem 5rem;
@@ -571,22 +566,22 @@
       }
       flex-direction: column;
       align-items: center;
-      &__contact{
+      &__contact {
         padding-left: 0 !important;
         margin-top: 3rem;
         @include center__elem;
 
-        .contact__btn{
+        .contact__btn {
           width: 20rem;
           border-radius: 4px;
           @include center__elem;
           background: $color5;
           color: $color4;
-          padding: .5rem 1rem;
+          padding: 0.5rem 1rem;
         }
       }
     }
-    @media screen and (max-width:850px) {
+    @media screen and (max-width: 850px) {
       padding: 7rem 3rem;
       .detail {
         &__content {
@@ -594,61 +589,56 @@
           width: 100% !important;
         }
       }
-      .more{
+      .more {
         margin-top: 1.5rem;
         color: $color5;
-        .bar{
-          height: .08rem;
+        .bar {
+          height: 0.08rem;
           background: $color5;
         }
       }
-      
     }
 
-    @media screen and (max-width:725px) {
-      .amenity{
-        &__content{
-          grid-template-columns: repeat(2,1fr);
+    @media screen and (max-width: 725px) {
+      .amenity {
+        &__content {
+          grid-template-columns: repeat(2, 1fr);
         }
       }
     }
 
-    @media screen and (max-width:650px) {
+    @media screen and (max-width: 650px) {
       padding: 7rem 1rem 3rem;
 
-      .detail{
-        &__content{
+      .detail {
+        &__content {
           padding: 2rem 1rem !important;
         }
       }
-      .amenity{
-        &__content{
+      .amenity {
+        &__content {
           padding: 2rem 1rem !important;
         }
       }
-
-      
     }
-    @media screen and (max-width:500px) {
-      font-size: .9rem;
+    @media screen and (max-width: 500px) {
+      font-size: 0.9rem;
     }
     &__contact {
-      @media screen and (max-width: 850px) {  
+      @media screen and (max-width: 850px) {
         flex-direction: column !important;
         width: 100%;
       }
       padding-left: 5rem;
-      
     }
   }
 }
 
-.contact__modal{
+.contact__modal {
   // position: relative;
   @include center__elem;
-  
-  
-  &-item{
+
+  &-item {
     height: 100vh;
     padding: 1rem;
     backdrop-filter: blur(5px);
@@ -660,7 +650,6 @@
     @include center__elem;
     transform: translate(-50%, -50%) !important;
   }
-
 }
 
 .filter__modal {
@@ -687,5 +676,280 @@
     box-shadow: 0 0 1rem black;
 
     z-index: 400;
+  }
+}
+
+// add property
+
+.rokye__add-property {
+  padding: 7rem;
+
+  &__title {
+    h1 {
+      @include heading_font;
+      color: $color1;
+      font-size: 2.5rem;
+    }
+    @include center__elem;
+    flex-direction: column;
+    p {
+      margin-top: 0.5rem;
+      color: gray;
+    }
+  }
+  &__content {
+    margin-top: 3rem;
+
+    .stepper {
+      .Mui-completed {
+        color: $color5;
+      }
+      .Mui-active {
+        color: $color5;
+      }
+
+      &__btn {
+        @include center__elem;
+        justify-content: space-around;
+
+        &-next,
+        &-prev {
+          padding: 0.5rem 1rem;
+          width: 10rem;
+          @include center__elem;
+          color: $color4;
+          background: $color5;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .form {
+      svg {
+        color: $color5;
+      }
+      margin: 4rem 0;
+      &__basic {
+        @include center__elem;
+        flex-direction: column;
+
+        &-title {
+          @include center__elem;
+          margin-bottom: 2rem;
+
+          h1 {
+            margin-left: 1rem;
+            @include heading_font;
+            color: $color1;
+          }
+        }
+        .content {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+          align-content: center;
+          grid-gap: 2rem;
+        }
+      }
+
+      &__complex {
+        @include center__elem;
+        flex-direction: column;
+
+        &-title {
+          @include center__elem;
+          margin-bottom: 2rem;
+
+          h1 {
+            margin-left: 1rem;
+            @include heading_font;
+            color: $color1;
+          }
+        }
+        .content {
+          h1 {
+            @include heading_font;
+            color: $color1;
+          }
+          &__choose {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            align-content: center;
+            grid-gap: 2rem;
+          }
+          &__amenity {
+            margin-top: 3rem;
+            .amenity__title {
+              margin: 1rem 0;
+            }
+            .amenity__content {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              grid-gap: 1rem;
+
+              &-item {
+                @include center__elem;
+                justify-content: flex-start;
+
+                p {
+                  margin-left: 0.5rem;
+                  color: gray;
+                }
+              }
+
+              @media screen and (max-width:860px) {
+                grid-template-columns: repeat(2,1fr);
+              }
+            }
+          }
+          &__desc {
+            margin-top: 3rem;
+
+            &-title {
+              margin-bottom: 1rem;
+            }
+          }
+          &__rent {
+            margin-top: 2rem;
+            &-title {
+              margin-bottom: 1rem;
+            }
+            &-content {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-gap: 2rem;
+            }
+          }
+        }
+      }
+
+      &__upload {
+        @include center__elem;
+        flex-direction: column;
+        margin: 2rem 0;
+        padding: 3rem 10rem;
+        &-title {
+          width: 100%;
+          @include center__elem;
+          justify-content: flex-start;
+          h1 {
+            margin-left: 1rem;
+            @include heading_font;
+            color: $color1;
+          }
+        }
+        &-content {
+          margin-top: 2rem;
+          width: 100%;
+
+          input {
+            display: none;
+          }
+          .upload__btn {
+            margin-top: 3rem;
+            @include center__elem;
+            justify-content: flex-start;
+            label {
+
+              border-radius: 5px;
+              padding: 1rem;
+              background: $color5;
+              color: white;
+              svg{
+                color: white;
+              }
+              @include box_shadow;
+              @include center__elem;
+              p {
+                margin-left: .5rem;
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+        
+      }
+
+      .item {
+        width: 30rem;
+
+        input {
+          color: black;
+        }
+      }
+
+      .MuiOutlinedInput-notchedOutline {
+        border-color: rgb(173, 173, 173);
+      }
+      &__choose {
+        position: relative;
+        .title {
+          @include center__elem;
+          justify-content: space-between;
+          border: 1px solid rgb(173, 173, 173);
+          @include box_shadow;
+          padding: 0.9rem 1rem;
+          border-radius: 5px;
+        }
+
+        .option {
+          position: absolute;
+          width: 100%;
+          background: white;
+          z-index: 23;
+          @include box_shadow;
+          border-radius: 5px;
+          &__item {
+            padding: 0.8rem;
+            @include center__elem;
+            justify-content: flex-start;
+
+            &:hover {
+              transition: all 0.5s ease-in-out;
+              background: rgb(190, 190, 190);
+            }
+          }
+          &.overflow {
+            @include custom__track;
+            overflow-y: scroll;
+            height: 11rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        
+        .item {
+          width: 100%;
+        }
+
+        &__basic,&__complex{
+          .content{
+            width: 100%;
+          }
+        }
+        &__upload{
+          padding: 3rem 0;
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width:1200px) {
+    padding: 7rem 3rem;
+  }
+
+  @media screen and (max-width:600px) {
+    padding: 7rem 1rem;
+    font-size: .9rem;
+
+    .rokye__add-property__title{
+      text-align: center;
+      h1{
+        font-size: 1.9rem;
+      }
+    }
   }
 }

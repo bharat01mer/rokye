@@ -780,20 +780,21 @@ export const tenantPoints=[
     id:4,
     value:"Rent Negotiation"
   },
+
   {
     id:5,
     value:"Relationship manager"
   },
   {
-    id:7,
+    id:6,
     value:"Personal field assistance"
   },
   {
-    id:8,
-    value:"Assistance by phone"
+    id:7,
+    value:"Showing house on your behalf"
   },
   {
-    id:9,
+    id:8,
     value:"Rental agreement"
   },
 ]

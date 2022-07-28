@@ -1,0 +1,6 @@
+export {default as Basic} from "./Basic"
+export {default as Location} from "./Location"
+export {default as Stepper} from "./Stepper"
+export {default as Detail} from "./Detail"
+export {default as Upload} from "./Upload"
+export {default as Contact} from "./Contact"

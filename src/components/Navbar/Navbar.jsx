@@ -6,6 +6,7 @@ import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
+import Image from "next/image"
 import { setwinWidth } from '../../../redux/slices/util'
 
 const Navbar = () => {
@@ -71,7 +72,7 @@ const Navbar = () => {
   return (
     <div className="rokye__navbar" ref={headerRef}>
       <div className="rokye__navbar-logo">
-        <h1>Rokye.<span>Realty</span></h1>
+        <Image src={"/logo.png"} width={150} height={60} objectFit="contain" />
       </div>
       <AnimatePresence>
         {

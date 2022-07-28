@@ -252,7 +252,7 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
                                 {
                                     premiumFilterdata.amenities.map((item) => (
                                         <div className="list__item" key={item.id}>
-                                            {console.log(item.id)}
+                                            
                                             <Checkbox aria-label={item.name} defaultChecked={optionValue[item.value] ? true : false} value={item.value} onClick={(e) => amenitiesClickHandler(item.value)} />
                                             <p>{item.name}</p>
                                         </div>

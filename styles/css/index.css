@@ -1981,6 +1981,296 @@ body {
   justify-content: flex-end;
 }
 
+.rokye__add-property {
+  padding: 7rem;
+}
+.rokye__add-property__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__add-property__title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 2.5rem;
+}
+.rokye__add-property__title p {
+  margin-top: 0.5rem;
+  color: gray;
+}
+.rokye__add-property__content {
+  margin-top: 3rem;
+}
+.rokye__add-property__content .stepper .Mui-completed {
+  color: #f25c05;
+}
+.rokye__add-property__content .stepper .Mui-active {
+  color: #f25c05;
+}
+.rokye__add-property__content .stepper__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.rokye__add-property__content .stepper__btn-next, .rokye__add-property__content .stepper__btn-prev {
+  padding: 0.5rem 1rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f2f2f2;
+  background: #f25c05;
+  border-radius: 5px;
+}
+.rokye__add-property__content .form {
+  margin: 4rem 0;
+}
+.rokye__add-property__content .form svg {
+  color: #f25c05;
+}
+.rokye__add-property__content .form__basic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__add-property__content .form__basic-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.rokye__add-property__content .form__basic-title h1 {
+  margin-left: 1rem;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__add-property__content .form__basic .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+  grid-gap: 2rem;
+}
+.rokye__add-property__content .form__complex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__add-property__content .form__complex-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.rokye__add-property__content .form__complex-title h1 {
+  margin-left: 1rem;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__add-property__content .form__complex .content h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__add-property__content .form__complex .content__choose {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+  grid-gap: 2rem;
+}
+.rokye__add-property__content .form__complex .content__amenity {
+  margin-top: 3rem;
+}
+.rokye__add-property__content .form__complex .content__amenity .amenity__title {
+  margin: 1rem 0;
+}
+.rokye__add-property__content .form__complex .content__amenity .amenity__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+.rokye__add-property__content .form__complex .content__amenity .amenity__content-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__add-property__content .form__complex .content__amenity .amenity__content-item p {
+  margin-left: 0.5rem;
+  color: gray;
+}
+@media screen and (max-width: 860px) {
+  .rokye__add-property__content .form__complex .content__amenity .amenity__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.rokye__add-property__content .form__complex .content__desc {
+  margin-top: 3rem;
+}
+.rokye__add-property__content .form__complex .content__desc-title {
+  margin-bottom: 1rem;
+}
+.rokye__add-property__content .form__complex .content__rent {
+  margin-top: 2rem;
+}
+.rokye__add-property__content .form__complex .content__rent-title {
+  margin-bottom: 1rem;
+}
+.rokye__add-property__content .form__complex .content__rent-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+.rokye__add-property__content .form__upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
+  padding: 3rem 10rem;
+}
+.rokye__add-property__content .form__upload-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__add-property__content .form__upload-title h1 {
+  margin-left: 1rem;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__add-property__content .form__upload-content {
+  margin-top: 2rem;
+  width: 100%;
+}
+.rokye__add-property__content .form__upload-content input {
+  display: none;
+}
+.rokye__add-property__content .form__upload-content .upload__btn {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__add-property__content .form__upload-content .upload__btn label {
+  border-radius: 5px;
+  padding: 1rem;
+  background: #f25c05;
+  color: white;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__add-property__content .form__upload-content .upload__btn label svg {
+  color: white;
+}
+.rokye__add-property__content .form__upload-content .upload__btn label p {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+.rokye__add-property__content .form .item {
+  width: 30rem;
+}
+.rokye__add-property__content .form .item input {
+  color: black;
+}
+.rokye__add-property__content .form .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(173, 173, 173);
+}
+.rokye__add-property__content .form__choose {
+  position: relative;
+}
+.rokye__add-property__content .form__choose .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(173, 173, 173);
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 0.9rem 1rem;
+  border-radius: 5px;
+}
+.rokye__add-property__content .form__choose .option {
+  position: absolute;
+  width: 100%;
+  background: white;
+  z-index: 23;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border-radius: 5px;
+}
+.rokye__add-property__content .form__choose .option__item {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__add-property__content .form__choose .option__item:hover {
+  transition: all 0.5s ease-in-out;
+  background: rgb(190, 190, 190);
+}
+.rokye__add-property__content .form__choose .option.overflow {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  overflow-y: scroll;
+  height: 11rem;
+}
+.rokye__add-property__content .form__choose .option.overflow::-webkit-scrollbar {
+  width: 5px;
+}
+.rokye__add-property__content .form__choose .option.overflow::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.rokye__add-property__content .form__choose .option.overflow::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.rokye__add-property__content .form__choose .option.overflow::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@media screen and (max-width: 1200px) {
+  .rokye__add-property__content .form .item {
+    width: 100%;
+  }
+  .rokye__add-property__content .form__basic .content, .rokye__add-property__content .form__complex .content {
+    width: 100%;
+  }
+  .rokye__add-property__content .form__upload {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .rokye__add-property {
+    padding: 7rem 3rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rokye__add-property {
+    padding: 7rem 1rem;
+    font-size: 0.9rem;
+  }
+  .rokye__add-property .rokye__add-property__title {
+    text-align: center;
+  }
+  .rokye__add-property .rokye__add-property__title h1 {
+    font-size: 1.9rem;
+  }
+}
+
 .rokye__login {
   padding: 7rem;
   display: flex;
