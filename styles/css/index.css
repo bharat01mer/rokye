@@ -399,7 +399,7 @@ input::-webkit-inner-spin-button {
     padding: 10rem 1rem 1rem;
   }
   .rokye__footer.remove {
-    padding: 0rem 1rem 1rem;
+    padding: 2rem 1rem;
   }
   .rokye__footer-address {
     width: 100%;
@@ -2313,6 +2313,7 @@ body {
   font-weight: bolder;
   color: #114040;
   margin-bottom: 1rem;
+  font-size: 2.3rem;
 }
 .rokye__login-left .points__item {
   display: flex;
