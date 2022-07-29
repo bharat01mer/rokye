@@ -147,7 +147,7 @@ const Basic = () => {
             <div className="content">
                 {
                     contentItem.map((item) => (
-                        <div className="item" >
+                        <div className="item" key={item.name}>
                             <Choose title={item.title} optionItem={item.arr}  showOption={showOption} setShowOption={setShowOption} id={item.id} name={item.name}  />
                             {
                                 errors[item.name] && <p style={{color:"red"}}>Please fill the above field</p> 
