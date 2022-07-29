@@ -38,7 +38,7 @@ const initialState = {
 }
 
 const AddProperty = () => {
-    const [activeStep, setActiveStep] = useState(3)
+    const [activeStep, setActiveStep] = useState(0)
     const totalStep = 4
     const methods = useForm({
         defaultValues: initialState, mode: "all"
