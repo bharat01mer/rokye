@@ -2,13 +2,15 @@ import { useState } from "react"
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import { Checkbox, TextField } from "@mui/material"
 import Choose from "./Choose"
+import { useFormContext } from "react-hook-form"
+import { useEffect } from "react"
 
 
 const floorno = [
     {
         id: 0,
         title: "Basement",
-        value: "base"
+        value: "base",
     },
     {
         id: 1,
@@ -159,7 +161,7 @@ const balconies = [
 const furnishing = [
     {
         id: 0,
-        tilte: "Furnished",
+        title: "Furnished",
         value: "furnished"
     },
     {
@@ -169,7 +171,7 @@ const furnishing = [
     },
     {
 
-        id: 3,
+        id: 2,
         title: "Unfurnished",
         value: "unfurnished"
     },
@@ -226,11 +228,13 @@ const availability = [
 const family = [
     {
         id: 0,
-        title: "Bachelor"
+        title: "Bachelor",
+        value: "bachelor"
     },
     {
         id: 1,
-        title: "Family"
+        title: "Family",
+        value: "bachelor"
     },
 ]
 
@@ -367,85 +371,116 @@ const amenities = [
     },
 ]
 
-const perInfo=[
+const perInfo = [
     {
-        id:0,
-        title:"Monthly",
-        value:"month"
+        id: 0,
+        title: "Monthly",
+        value: "month"
     },
     {
-        id:1,
-        title:"Quaterly",
-        value:"quaterly"
+        id: 1,
+        title: "Quaterly",
+        value: "quaterly"
     },
     {
-        id:0,
-        title:"Yearly",
-        value:"year"
+        id: 0,
+        title: "Yearly",
+        value: "year"
     },
     {
-        id:0,
-        title:"One Time",
-        value:"once"
+        id: 0,
+        title: "One Time",
+        value: "once"
     },
 ]
 
 
 const Detail = () => {
+    const [amenitiesArray] = useState([])
     const chooseContent = [
         {
             id: 0,
             title: "Floor No",
-            arr: floorno
+            arr: floorno,
+            name: "floor"
         },
         {
             id: 1,
             title: "Total Floor",
-            arr: totalFloor
+            arr: totalFloor,
+            name: "totalfloor"
         },
         {
             id: 2,
             title: "Facing",
-            arr: facing
+            arr: facing,
+            name: "facing"
         },
         {
             id: 3,
             title: "Balconies",
-            arr: balconies
+            arr: balconies,
+            "name": "balconies"
         },
         {
             id: 4,
             title: "Furnished Status",
-            arr: furnishing
+            arr: furnishing,
+            name: "furnishing"
         },
         {
             id: 5,
             title: "Age of construction",
-            arr: age
+            arr: age,
+            name: "age"
         },
         {
             id: 6,
             title: "Availability",
-            arr: availability
+            arr: availability,
+            name: "availability",
         },
         {
             id: 7,
             title: "Tenants preferred",
-            arr: family
+            arr: family,
+            name: "tenant"
         },
         {
             id: 8,
             title: "Non-Veg",
-            arr: nonVeg
+            arr: nonVeg,
+            name: "nonVeg"
         },
         {
             id: 9,
             title: "Pets",
-            arr: pets
+            arr: pets,
+            name: "pet"
         },
     ]
 
     const [showOption, setShowOption] = useState({ id: null, show: false })
+    const { register, setValue, getValues, formState: { errors } } = useFormContext()
+
+
+    useEffect(() => {
+
+    }, [amenitiesArray, showOption])
+
+    const amenitiesHandler = (data) => {
+
+        if (amenitiesArray.includes(data)) {
+            const index = amenitiesArray.indexOf(data)
+            amenitiesArray.splice(index, 1)
+        } else {
+            amenitiesArray.push(data)
+        }
+        setValue("amenity", amenitiesArray)
+    }
+
+
+
     return (
         <div className="form__complex">
             <div className="form__complex-title">
@@ -456,8 +491,11 @@ const Detail = () => {
                 <div className="content__choose">
                     {
                         chooseContent.map((item) => (
-                            <div className="item" key={item.id} onClick={() => setShowOption({ id: item.id, show: item.id === showOption.id ? false : true })}>
-                                <Choose id={item.id} optionItem={item.arr} title={item.title} setShowOption={setShowOption} showOption={showOption} />
+                            <div className="item" key={item.id} onClick={() => setShowOption({ id: item.id === showOption.id ? null : item.id, show: item.id === showOption.id ? false : true })}>
+                                <Choose id={item.id} optionItem={item.arr} title={item.title} setShowOption={setShowOption} showOption={showOption} name={item.name} />
+                                {
+                                    errors[item.name] && <p style={{ color: "red" }}>Please fill the above field</p>
+                                }
                             </div>
                         ))
                     }
@@ -470,12 +508,16 @@ const Detail = () => {
                         {
                             amenities.map((item) => (
                                 <div className="amenity__content-item" key={item.id}>
-                                    <Checkbox aria-label={item.title} />
+                                    <Checkbox aria-label={item.title} defaultChecked={amenitiesArray[item.value] ? true : false} onChange={() => amenitiesHandler(item.value)} />
                                     <p>{item.title}</p>
                                 </div>
                             ))
                         }
+
                     </div>
+                    {
+                        amenitiesArray === [] && <p style={{ color: "red" }}>Please Select atleast one</p>
+                    }
                 </div>
 
                 <div className="content__desc">
@@ -484,11 +526,15 @@ const Detail = () => {
                     </div>
                     <TextField
                         fullWidth
+                        {...register("description", { required: true })}
                         id="outlined-multiline-static"
                         label="Description"
                         multiline
                         rows={5}
                     />
+                    {
+                        errors.description && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
+                    }
                 </div>
 
                 <div className="content__rent">
@@ -497,19 +543,34 @@ const Detail = () => {
                     </div>
                     <div className="content__rent-content">
                         <div className="item">
-                            <TextField variant="outlined" label="Monthly rent" fullWidth />
+                            <TextField variant="outlined" type={"number"} label="Monthly rent" fullWidth {...register("rentDetail.monthly", { required: true })} />
+                            {
+                                errors?.rentDetail?.monthly && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
+                            }
                         </div>
                         <div className="item">
-                            <TextField variant="outlined" label="Security amount" fullWidth />
+                            <TextField variant="outlined" type={"number"} label="Security amount" fullWidth {...register("rentDetail.securityAmount", { required: true })} />
+                            {
+                                errors?.rentDetail?.securityAmount && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
+                            }
+
                         </div>
                         <div className="item">
-                            <TextField variant="outlined" label="Maintenance charges" fullWidth />
+                            <TextField variant="outlined" type={"number"} label="Maintenance charges" fullWidth {...register("rentDetail.maintenance", { required: true })} />
+                            {
+                                errors.rentDetail?.maintenance && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
+                            }
                         </div>
                         <div className="item" onClick={() => setShowOption({ id: 10, show: showOption.show ? false : true })}>
-                            <Choose id={10} optionItem={perInfo} title={"Per"} setShowOption={setShowOption} showOption={showOption} />
+                            <Choose id={10} optionItem={perInfo} title={"Per"} setShowOption={setShowOption} showOption={showOption} name={"rentDetail.per"} />
+                            {
+                                errors.rentDetail?.per && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
+                            }
                         </div>
                     </div>
                 </div>
+
+                {/* <button onClick={onClickHandler}>Click Me</button> */}
             </div>
         </div>
     )

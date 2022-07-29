@@ -1,8 +1,9 @@
 import { TextField } from "@mui/material"
 import { useState } from "react"
+import { useFormContext } from "react-hook-form"
 import Choose from "./Choose"
 
-import {AiOutlineInfoCircle} from "react-icons/ai"
+import { AiOutlineInfoCircle } from "react-icons/ai"
 
 const category = [
     {
@@ -22,7 +23,7 @@ const propertyType = [
     {
         id: 1,
         title: "Appartment",
-        value: "Appartment"
+        value: "appartment"
     },
 ]
 
@@ -94,6 +95,49 @@ const car = [
 ]
 const Basic = () => {
     const [showOption, setShowOption] = useState({ id: null, show: false })
+    const { register,formState:{errors} } = useFormContext()
+
+
+    const contentItem = [
+        {
+            id: 0,
+            title: "Category",
+            arr: category,
+            name:"category"
+        },
+        {
+            id: 1,
+            title: "Property Type",
+            arr: propertyType,
+            name:"propType"
+        },
+        {
+            id: 2,
+            title: "Bedrooms",
+            arr: bedRoom,
+            name:"bedroom"
+        },
+        {
+            id: 3,
+            title: "Bathrooms",
+            arr: bike,
+            name:"bathroom"
+        },
+        {
+            id: 4,
+            title: "Bike Parking",
+            arr: bike,
+            name:"bikeParking"
+        },
+        {
+            id: 5,
+            title: "Car Parking",
+            arr: car,
+            name:"carParking"
+        },
+    ]
+
+    
     return (
         <div className="form__basic">
             <div className="form__basic-title">
@@ -101,30 +145,27 @@ const Basic = () => {
                 <h1>Basic Information</h1>
             </div>
             <div className="content">
-
-                <div className="item" onClick={() => setShowOption({ id: 1, show: showOption.show ? false : true })}>
-                    <Choose title={"Category"} optionItem={category} showOption={showOption} setShowOption={setShowOption} id={1} />
-                </div>
-                <div className="item" onClick={() => setShowOption({ id: 2, show: showOption.show ? false : true })}>
-                    <Choose title={"Property Type"} optionItem={propertyType} showOption={showOption} setShowOption={setShowOption} id={2} />
-                </div>
-                <div className="item" onClick={() => setShowOption({ id: 3, show: showOption.show ? false : true })}>
-                    <Choose title={"Bedrooms"} optionItem={bedRoom} showOption={showOption} setShowOption={setShowOption} id={3} />
-                </div>
-                <div className="item" onClick={() => setShowOption({ id: 4, show: showOption.show ? false : true })}>
-                    <Choose title={"Bedrooms"} optionItem={bike} showOption={showOption} setShowOption={setShowOption} id={4} />
-                </div>
-                <div className="item" onClick={() => setShowOption({ id: 5, show: showOption.show ? false : true })}>
-                    <Choose title={"Bike Parking"} optionItem={bike} showOption={showOption} setShowOption={setShowOption} id={5} />
-                </div>
-                <div className="item" onClick={() => setShowOption({ id: 6, show: showOption.show ? false : true })}>
-                    <Choose title={"Car Parking"} optionItem={car} showOption={showOption} setShowOption={setShowOption} id={6} />
+                {
+                    contentItem.map((item) => (
+                        <div className="item" >
+                            <Choose title={item.title} optionItem={item.arr}  showOption={showOption} setShowOption={setShowOption} id={item.id} name={item.name}  />
+                            {
+                                errors[item.name] && <p style={{color:"red"}}>Please fill the above field</p> 
+                            }
+                        </div>
+                    ))
+                }
+                <div className="item">
+                    <TextField variant="outlined" label="Carpet Area(sq-ft only)" type={"number"} fullWidth {...register("carpetArea", { required: true })} />
+                    {
+                        errors.carpetArea && <p style={{color:"red"}}>Please fill the above field</p> 
+                    }
                 </div>
                 <div className="item">
-                    <TextField variant="outlined" label="Carpet Area(sq-ft only)" fullWidth />
-                </div>
-                <div className="item">
-                    <TextField variant="outlined" label="Super Area(sq-ft only)" fullWidth />
+                    <TextField variant="outlined" label="Super Area(sq-ft only)" type={"number"} fullWidth {...register("superArea", { required: true })} />
+                    {
+                        errors.superArea && <p style={{color:"red"}}>Please fill the above field</p> 
+                    }
                 </div>
             </div>
         </div>

@@ -2016,7 +2016,7 @@ body {
   justify-content: space-around;
 }
 .rokye__add-property__content .stepper__btn-next, .rokye__add-property__content .stepper__btn-prev {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   width: 10rem;
   display: flex;
   justify-content: center;
@@ -2115,6 +2115,9 @@ body {
 .rokye__add-property__content .form__complex .content__desc {
   margin-top: 3rem;
 }
+.rokye__add-property__content .form__complex .content__desc .Mui-focused {
+  color: black !important;
+}
 .rokye__add-property__content .form__complex .content__desc-title {
   margin-bottom: 1rem;
 }
@@ -2181,6 +2184,20 @@ body {
   margin-left: 0.5rem;
   font-size: 1.2rem;
 }
+.rokye__add-property__content .form__upload-preview {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.rokye__add-property__content .form__upload-preview .item {
+  position: relative;
+  border: 2px solid black;
+}
+.rokye__add-property__content .form__upload-preview .item .remove {
+  z-index: 23;
+  position: absolute;
+}
 .rokye__add-property__content .form .item {
   width: 30rem;
 }
@@ -2203,7 +2220,17 @@ body {
   padding: 0.9rem 1rem;
   border-radius: 5px;
 }
+.rokye__add-property__content .form__choose .title__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__add-property__content .form__choose .title__item p {
+  margin-right: 0.5rem;
+  color: gray;
+}
 .rokye__add-property__content .form__choose .option {
+  border: 1px solid rgb(173, 173, 173);
   position: absolute;
   width: 100%;
   background: white;
@@ -2610,5 +2637,122 @@ body {
   }
   .rokye__plan-info .content__tenant, .rokye__plan-info .content__owner {
     width: 100%;
+  }
+}
+
+.rokye__contact {
+  padding: 7rem 10rem;
+}
+.rokye__contact .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__contact .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 3rem;
+}
+.rokye__contact .title h1 span {
+  color: #f25c05;
+}
+.rokye__contact-animate {
+  width: 100%;
+}
+.rokye__contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.rokye__contact .lower {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__contact .lower svg {
+  color: #f25c05;
+  font-size: 1.5rem;
+}
+.rokye__contact .lower a {
+  text-decoration: none;
+  color: inherit;
+}
+.rokye__contact .lower .item {
+  margin-top: 2rem;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 2rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__contact .lower .item__icon {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(242, 186, 82, 0.25);
+  border-radius: 50%;
+}
+.rokye__contact .lower .item p {
+  margin: 1rem 0 0.5rem;
+  color: gray;
+}
+.rokye__contact .lower .item:hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+}
+@media screen and (max-width: 1650px) {
+  .rokye__contact .lower {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    justify-items: center;
+    align-content: center;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .rokye__contact {
+    padding: 7rem 5rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .rokye__contact {
+    padding: 7rem 3rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .rokye__contact .upper {
+    flex-direction: column;
+  }
+  .rokye__contact-form {
+    justify-content: center;
+  }
+  .rokye__contact-form .rokye__form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .rokye__contact {
+    padding: 7rem 1rem;
+  }
+  .rokye__contact .rokye__form {
+    width: 100%;
+  }
+  .rokye__contact .title h1 {
+    font-size: 2.6rem;
+  }
+  .rokye__contact .upper, .rokye__contact .lower {
+    flex-direction: column;
+  }
+  .rokye__contact .lower {
+    grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=index.css.map */

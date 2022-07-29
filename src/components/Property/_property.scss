@@ -714,7 +714,7 @@
 
         &-next,
         &-prev {
-          padding: 0.5rem 1rem;
+          padding: 0.5rem;
           width: 10rem;
           @include center__elem;
           color: $color4;
@@ -805,7 +805,9 @@
           }
           &__desc {
             margin-top: 3rem;
-
+            .Mui-focused{
+              color: black !important;
+            }
             &-title {
               margin-bottom: 1rem;
             }
@@ -867,6 +869,24 @@
               }
             }
           }
+
+        }
+        &-preview{
+          margin-top: 2rem;
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          grid-gap: 2rem;
+
+
+          .item{
+            position: relative;
+            border: 2px solid black;
+
+            .remove{
+              z-index: 23;
+              position: absolute;
+            }
+          }
         }
         
       }
@@ -891,9 +911,18 @@
           @include box_shadow;
           padding: 0.9rem 1rem;
           border-radius: 5px;
+
+          &__item{
+            @include center__elem;
+            p{
+              margin-right: .5rem;
+              color: gray;
+            }
+          }
         }
 
         .option {
+          border: 1px solid rgb(173, 173, 173);
           position: absolute;
           width: 100%;
           background: white;

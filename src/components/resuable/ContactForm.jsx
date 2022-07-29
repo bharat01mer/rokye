@@ -18,17 +18,17 @@ const ContactForm = ({ showCancel,setShowModal }) => {
     const socialLinks = [
         {
             id: 0,
-            link: "facebook.com",
+            link: "facebook.com/rokyerealty",
             icon: <FaFacebookF size={20} />
         },
         {
             id: 1,
-            link: "instagram.com",
+            link: "instagram.com/rokyerealty",
             icon: <FiInstagram size={20} />
         },
         {
             id: 3,
-            link: "twitter.com",
+            link: "twitter.com/rokyerealty",
             icon: <FaTwitter size={20} />
         },
     ]

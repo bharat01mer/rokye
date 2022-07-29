@@ -47,17 +47,17 @@ const Footer = () => {
   const socialLinks = [
     {
       id: 0,
-      link: "facebook.com",
+      link: "facebook.com/rokyerealty",
       icon: <FaFacebookF />
     },
     {
       id: 1,
-      link: "instagram.com",
+      link: "instagram.com/rokyerealty",
       icon: <FiInstagram />
     },
     {
       id: 3,
-      link: "twitter.com",
+      link: "twitter.com/rokyerealty",
       icon: <FaTwitter />
     },
   ]

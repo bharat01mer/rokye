@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material"
 import { useState } from "react"
+import { useFormContext } from "react-hook-form"
 
 
 import { MdLocationPin } from "react-icons/md"
@@ -39,6 +40,7 @@ const Location = () => {
             name: "pincode"
         },
     ]
+    const { register,formState:{errors} } = useFormContext()
     return (
         <div className="form__basic">
             <div className="form__basic-title">
@@ -49,7 +51,10 @@ const Location = () => {
                 {
                     TextFieldItem.map((item) => (
                         <div className="item" key={item.id}>
-                            <TextField variant="outlined" label={item.label} fullWidth />
+                            <TextField variant="outlined" label={item.label} fullWidth {...register(item.name, { required: true })} />
+                            {
+                                errors[item.name] && <p style={{ color: "red" }}>Please fill the above field</p>
+                            }
                         </div>
                     ))
                 }

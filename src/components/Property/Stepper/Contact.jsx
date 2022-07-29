@@ -1,10 +1,10 @@
 
 import {TextField} from "@mui/material"
-import { useState } from "react"
+import { useFormContext } from "react-hook-form"
 import {AiOutlineContacts} from "react-icons/ai"
 
 const Contact = () => {
-    const [showOption, setShowOption] = useState({ id: null, show: false })
+    const {register}=useFormContext()
     return (
         <div className="form__basic">
             <div className="form__basic-title">
@@ -13,16 +13,16 @@ const Contact = () => {
             </div>
             <div className="content">
                 <div className="item">
-                    <TextField variant="outlined" label="First Name" fullWidth />
+                    <TextField variant="outlined" label="First Name"   fullWidth  {...register("firstName",{required:true})} />
                 </div>
                 <div className="item">
-                    <TextField variant="outlined" label="Last Name" fullWidth />
+                    <TextField variant="outlined" label="Last Name" fullWidth {...register("lastName",{required:true})} />
                 </div>
                 <div className="item">
-                    <TextField variant="outlined"  label="Phone Number" fullWidth type={"number"}  />
+                    <TextField variant="outlined"  label="Phone Number" fullWidth type={"number"} {...register("phone",{required:true})}   />
                 </div>
                 <div className="item">
-                    <TextField variant="outlined" label="Email" fullWidth type={"email"} />
+                    <TextField variant="outlined" label="Email" fullWidth type={"email"} {...register("email",{required:true})}  />
                 </div>
             </div>
         </div>
