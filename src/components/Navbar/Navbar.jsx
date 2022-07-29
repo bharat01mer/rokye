@@ -72,7 +72,7 @@ const Navbar = () => {
   return (
     <div className="rokye__navbar" ref={headerRef}>
       <div className="rokye__navbar-logo">
-        <Image src={"/logo.png"} width={150} height={60} objectFit="contain" />
+        <Image src={"/logo.png"} width={100} height={60} objectFit="contain" />
       </div>
       <AnimatePresence>
         {
@@ -98,7 +98,7 @@ const Navbar = () => {
         <Link href={"/"} passHref >
           <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""}>Home</motion.h3>
         </Link>
-        <Link href={"/properties/sell"} passHref>
+        <Link href={"/properties/create"} passHref>
           <motion.div className="sell" whileTap={{ scale: 0.97 }}>
             <AiOutlinePlus size={25} color={"#fff "} />
             <h3 >Add Property</h3>
