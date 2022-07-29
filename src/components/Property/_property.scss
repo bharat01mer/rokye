@@ -728,6 +728,16 @@
       svg {
         color: $color5;
       }
+      .item {
+        p{
+          font-size: .85rem;
+        }
+        width: 30rem;
+
+        input {
+          color: black;
+        }
+      }
       margin: 4rem 0;
       &__basic {
         @include center__elem;
@@ -881,6 +891,7 @@
           .item{
             position: relative;
             border: 2px solid black;
+            width: 100%;
 
             .remove{
               z-index: 23;
@@ -888,19 +899,13 @@
             }
           }
         }
-        
+       
       }
 
-      .item {
-        width: 30rem;
-
-        input {
-          color: black;
-        }
-      }
+      
 
       .MuiOutlinedInput-notchedOutline {
-        border-color: rgb(173, 173, 173);
+        border-color: rgb(173, 173, 173) !important;
       }
       &__choose {
         position: relative;

@@ -396,7 +396,8 @@ const perInfo = [
 
 
 const Detail = () => {
-    const [amenitiesArray] = useState([])
+    const { register, setValue, getValues, formState: { errors } } = useFormContext()
+    const [amenitiesArray] = useState( getValues("amenity") ? getValues("amenity") : [])
     const chooseContent = [
         {
             id: 0,
@@ -408,7 +409,7 @@ const Detail = () => {
             id: 1,
             title: "Total Floor",
             arr: totalFloor,
-            name: "totalfloor"
+            name: "totalFloor"
         },
         {
             id: 2,
@@ -461,12 +462,12 @@ const Detail = () => {
     ]
 
     const [showOption, setShowOption] = useState({ id: null, show: false })
-    const { register, setValue, getValues, formState: { errors } } = useFormContext()
 
 
     useEffect(() => {
 
     }, [amenitiesArray, showOption])
+    
 
     const amenitiesHandler = (data) => {
 
@@ -479,8 +480,13 @@ const Detail = () => {
         setValue("amenity", amenitiesArray)
     }
 
-
-
+    function checkAmenityElem(data){
+        if(amenitiesArray.includes(data)){
+            return true;
+        }else{
+            return false;
+        }
+    }
     return (
         <div className="form__complex">
             <div className="form__complex-title">
@@ -508,7 +514,7 @@ const Detail = () => {
                         {
                             amenities.map((item) => (
                                 <div className="amenity__content-item" key={item.id}>
-                                    <Checkbox aria-label={item.title} defaultChecked={amenitiesArray[item.value] ? true : false} onChange={() => amenitiesHandler(item.value)} />
+                                    <Checkbox aria-label={item.title} defaultChecked={checkAmenityElem(item.value)} onChange={() => amenitiesHandler(item.value)} />
                                     <p>{item.title}</p>
                                 </div>
                             ))

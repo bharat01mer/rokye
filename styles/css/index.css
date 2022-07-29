@@ -2031,6 +2031,15 @@ body {
 .rokye__add-property__content .form svg {
   color: #f25c05;
 }
+.rokye__add-property__content .form .item {
+  width: 30rem;
+}
+.rokye__add-property__content .form .item p {
+  font-size: 0.85rem;
+}
+.rokye__add-property__content .form .item input {
+  color: black;
+}
 .rokye__add-property__content .form__basic {
   display: flex;
   justify-content: center;
@@ -2193,19 +2202,14 @@ body {
 .rokye__add-property__content .form__upload-preview .item {
   position: relative;
   border: 2px solid black;
+  width: 100%;
 }
 .rokye__add-property__content .form__upload-preview .item .remove {
   z-index: 23;
   position: absolute;
 }
-.rokye__add-property__content .form .item {
-  width: 30rem;
-}
-.rokye__add-property__content .form .item input {
-  color: black;
-}
 .rokye__add-property__content .form .MuiOutlinedInput-notchedOutline {
-  border-color: rgb(173, 173, 173);
+  border-color: rgb(173, 173, 173) !important;
 }
 .rokye__add-property__content .form__choose {
   position: relative;

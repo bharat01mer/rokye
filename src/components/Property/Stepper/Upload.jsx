@@ -8,37 +8,30 @@ import axios from "axios"
 
 import Image from "next/image"
 
-const Upload = () => {
-    const [imageFile, setimageFile] = useState([])
+const Upload = ({ imageArray, setImageArray }) => {
     const [imagePreview, setimagePreview] = useState([])
-    const { register, getValues, resetField, setValue } = useFormContext()
+    const { register, getValues, resetField, setValue,formState:{errors} } = useFormContext()
 
 
     const onHandleChange = (e) => {
 
         if (e.target.files.length > 0 && e.target.files.length === 1) {
-
-            setimageFile([...e.target.files])
-            setimagePreview([...imagePreview, ...e.target.files])
+            setImageArray([...imageArray, ...e.target.files])
         } else {
 
-            setimageFile([...e.target.files])
-            setimagePreview([...imagePreview, ...e.target.files])
+            setImageArray([...imageArray, ...e.target.files])
         }
     }
 
     useEffect(() => {
 
-    }, [imageFile, imagePreview])
+    }, [imageArray, imagePreview])
     const removeImageFromArray = (id) => {
-
-        setimagePreview([...imagePreview.slice(0, id), ...imagePreview.slice(id + 1, imagePreview.length)])
+        setImageArray([...imageArray.slice(0, id), ...imageArray.slice(id + 1, imageArray.length)])
         resetField("file")
     }
 
-
-
-
+    
     return (
         <div className="form__upload">
             <div className="form__upload-title">
@@ -59,23 +52,25 @@ const Upload = () => {
                     </label>
                     <input type="file" name="image" id="image" {...register("images")} accept={"image/*"} onChange={(e) => onHandleChange(e)} multiple />
                 </div>
-
             </div>
-            {
-                imagePreview && imagePreview.map((item, i) => (
-                    <>
-                        <div className="form__upload-preview">
+
+            <div className="form__upload-preview">
+                {
+                    imageArray.length !== 0 && imageArray.map((item, i) => (
+                        <>
                             <div className="item" key={item.name}>
                                 <div className="remove" onClick={() => removeImageFromArray(i)} type="button"><MdCancel size={30} /></div>
-                                <Image src={URL.createObjectURL(item)} alt="" style={{ width: "100%" }} width={300} height={200} objectFit="cover" />
+                                <Image src={URL.createObjectURL(item)} alt="img" style={{ width: "100%" }} width={300} height={200} objectFit="contain" />
                             </div>
 
-                        </div>
-                        <div className="form__upload-submit">
-                            <p>Upload Image</p>
-                        </div>
-                    </>
-                ))
+                        </>
+                    ))
+                }
+            </div>
+            {
+                errors.images && (
+                    <p style={{textAlign:"start",color:"red",fontSize:".9rem",width:"100%"}}>Image is Required</p>
+                )
             }
         </div>
     )

@@ -7,12 +7,12 @@ import { MdLocationPin } from "react-icons/md"
 
 
 const Location = () => {
-    const [showOption, setShowOption] = useState({ id: null, show: false })
+    
     const TextFieldItem = [
         {
             id: 0,
             label: "House or Flat number",
-            name: "house"
+            name: "flatNo"
         },
         {
             id: 1,
@@ -37,7 +37,7 @@ const Location = () => {
         {
             id: 5,
             label: "PIN code",
-            name: "pincode"
+            name: "pinCode"
         },
     ]
     const { register,formState:{errors} } = useFormContext()

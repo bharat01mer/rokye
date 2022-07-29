@@ -17,7 +17,6 @@ const initialState = {
     city: "",
     state: "",
     pinCode: null,
-    floorNo: null,
     totalFloor: null,
     facing: "",
     balconies: null,
@@ -39,9 +38,10 @@ const initialState = {
 
 const AddProperty = () => {
     const [activeStep, setActiveStep] = useState(0)
+    const [imageArray, setImageArray] = useState([])
     const totalStep = 4
     const methods = useForm({
-        defaultValues: initialState, mode: "all"
+        defaultValues: initialState, mode: "onChange"
     })
 
     const showForm = (step) => {
@@ -53,7 +53,7 @@ const AddProperty = () => {
             case 2:
                 return <Detail />
             case 3:
-                return <Upload />
+                return <Upload imageArray={imageArray} setImageArray={setImageArray} />
             case 4:
                 return <Contact />
             default:
@@ -61,18 +61,19 @@ const AddProperty = () => {
         }
     }
 
-    const nextClickHandler = (data) => {
+    const nextClickHandler = (data) => {    
         
         if (activeStep === totalStep) {
-            console.log("Show Preview")
-        } else {
+            console.log(data)
+        }else if(activeStep===3 && imageArray.length===0){
+            methods.setError("images",{type:"required"})
+        }else {
             localStorage.setItem("propertyData",JSON.stringify(data))
             setActiveStep(item => item + 1)
         }
 
     }
-    const isValid=methods.formState.isValid
-    console.log(isValid)
+    
     
     
     return (
@@ -94,8 +95,8 @@ const AddProperty = () => {
                             <button className="stepper__btn-prev" type="button" style={{ visibility: activeStep === 0 ? "hidden" : "visible" }} onClick={() => setActiveStep(activeStep-1)}>
                                 <h2>Prev</h2>
                             </button>
-                            <button className="stepper__btn-next"  type="submit" style={{background: methods.formState.isValid ? "#f25c05" : "rgb(255, 158, 101)"}} >
-                                <h2>Next</h2>
+                            <button className="stepper__btn-next"  type="submit"  >
+                                <h2>{ activeStep===totalStep ? "Submit":"Next"}</h2>
                             </button>
                         </div>
                     </form>
