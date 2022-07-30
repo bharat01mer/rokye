@@ -61,6 +61,7 @@ input::-webkit-inner-spin-button {
   position: fixed;
   width: 100%;
   z-index: 23;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2772,10 +2773,113 @@ body {
   .rokye__contact .title h1 {
     font-size: 2.6rem;
   }
-  .rokye__contact .upper, .rokye__contact .lower {
+  .rokye__contact .upper,
+.rokye__contact .lower {
     flex-direction: column;
   }
   .rokye__contact .lower {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.rokye__faq {
+  background: #114040;
+  margin: 7rem 5rem;
+  padding: 3rem;
+  height: 100vh;
+}
+.rokye__faq-title {
+  text-align: center;
+  color: #f2f2f2;
+}
+.rokye__faq-title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: #f2f2f2;
+}
+.rokye__faq .divider {
+  height: 1px;
+  background: gray;
+  width: 100%;
+  margin: 1rem 0;
+}
+.rokye__faq-tab {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.rokye__faq-tab .item {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #f2ba52;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  border: 2px solid rgba(242, 242, 242, 0.3);
+}
+.rokye__faq-tab .item.active {
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  border: 2px solid #f2f2f2;
+}
+.rokye__faq-content {
+  margin-top: 2rem;
+  color: #f2f2f2;
+}
+.rokye__faq-content .item {
+  transition: all 0.5s ease-in-out;
+  margin: 1rem 0;
+}
+.rokye__faq-content .item__upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__faq-content .item__upper .quest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__faq-content .item__upper .quest .circle {
+  border-radius: 50%;
+  padding: 0.4rem;
+  background: #f2ba52;
+  margin-right: 1rem;
+}
+.rokye__faq-content .item__ans {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: hidden;
+  padding: 0 2rem;
+}
+.rokye__faq-content .item__ans.active {
+  padding: 1rem 2rem;
+  height: 8rem;
+}
+@media screen and (max-width: 1250px) {
+  .rokye__faq {
+    margin: 7rem 2rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .rokye__faq {
+    font-size: 0.9rem;
+    margin: 7rem 1rem;
+    padding: 2rem 1rem;
+  }
+  .rokye__faq h1 {
+    font-size: 2rem;
+  }
+  .rokye__faq .circle {
+    padding: 0.3rem !important;
+  }
+  .rokye__faq-faq .item {
+    padding: 0.5rem;
+  }
+  .rokye__faq p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=index.css.map */

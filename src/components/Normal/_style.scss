@@ -183,14 +183,13 @@
       @include heading-font;
       color: $color1;
       font-size: 3rem;
-      span{
+      span {
         color: $color5;
       }
     }
   }
   &-animate {
     width: 100%;
-
   }
 
   &-form {
@@ -199,9 +198,9 @@
     width: 100%;
   }
 
-  .lower{
+  .lower {
     margin-top: 2rem;
-    svg{
+    svg {
       color: $color5;
       font-size: 1.5rem;
     }
@@ -210,89 +209,197 @@
     // flex-wrap: wrap;
     justify-content: space-between;
 
-    a{
+    a {
       text-decoration: none;
       color: inherit;
-      
     }
-    .item{
+    .item {
       margin-top: 2rem;
       @include box_shadow;
-      
+
       padding: 2rem;
       width: 20rem;
       @include center__elem;
       flex-direction: column;
 
-      &__icon{
+      &__icon {
         padding: 1rem;
         @include center__elem;
-        background: rgba($color: $color3, $alpha: .25);
+        background: rgba($color: $color3, $alpha: 0.25);
         border-radius: 50%;
-        
-
       }
-      p{
-        margin: 1rem 0 .5rem;
+      p {
+        margin: 1rem 0 0.5rem;
         color: gray;
       }
 
-      &:hover{
-        transition: all .3s ease-in-out;
+      &:hover {
+        transition: all 0.3s ease-in-out;
         @include card_shadow;
       }
     }
   }
 
-  @media screen and (max-width:1650px) {
-
-    .lower{
+  @media screen and (max-width: 1650px) {
+    .lower {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-gap: 1rem;
       justify-items: center;
       align-content: center;
     }
   }
 
-  @media screen and (max-width:1500px) {
+  @media screen and (max-width: 1500px) {
     padding: 7rem 5rem;
   }
-  @media screen and (max-width:1250px) {
+  @media screen and (max-width: 1250px) {
     padding: 7rem 3rem;
   }
-  @media screen and (max-width:1000px) {
-    .upper{
+  @media screen and (max-width: 1000px) {
+    .upper {
       flex-direction: column;
-
     }
-    &-form{
+    &-form {
       justify-content: center;
 
-      .rokye__form{
+      .rokye__form {
         width: 100%;
       }
     }
   }
-  
-  @media screen and (max-width:750px) {
+
+  @media screen and (max-width: 750px) {
     // font-size: .9rem;
     padding: 7rem 1rem;
-    
-    .rokye__form{
+
+    .rokye__form {
       width: 100%;
     }
-    .title{
-      h1{
+    .title {
+      h1 {
         font-size: 2.6rem;
       }
     }
-    .upper,.lower{
+    .upper,
+    .lower {
       flex-direction: column;
     }
-    .lower{
-
-      grid-template-columns: repeat(1,1fr);
+    .lower {
+      grid-template-columns: repeat(1, 1fr);
     }
+  }
+}
+
+.rokye__faq {
+  background: $color1;
+  margin: 7rem 5rem;
+  padding: 3rem;
+  height: 100vh;
+  
+  
+  &-title {
+    text-align: center;
+    
+    color: $color4;
+    h1 {
+      @include heading-font;
+      font-size: 3rem;
+      color: $color4;
+    }
+  }
+  .divider{
+    height: 1px;
+    background: gray;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  &-tab{
+    margin: 2rem 0;
+    @include center__elem;
+    justify-content: space-around;
+
+    .item{
+      padding: .5rem 1rem;
+      // background: rgba($color: $color4, $alpha: 0.8);
+      
+      border-radius: 5px;
+      color: $color3;
+
+      
+      @include box_shadow;
+      border: 2px solid rgba($color: $color4, $alpha: 0.3);  
+      
+      &.active{
+        // background: $color4;
+        @include card_shadow;
+        border: 2px solid $color4;  
+      }
+    }
+  }
+  
+  &-content {
+    margin-top: 2rem;
+    color: $color4;
+    
+    .item {
+      transition: all .5s ease-in-out;
+      margin: 1rem 0;
+      &__upper {
+        @include center__elem;
+        justify-content: space-between;
+
+        .quest {
+          @include center__elem;
+
+          .circle {
+            border-radius: 50%;
+            padding: 0.4rem;
+            background: $color3;
+            margin-right: 1rem;
+          }
+        }
+      }
+      
+      &__ans{
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: .5s ;
+        overflow-y: hidden;
+        padding: 0 2rem;
+        &.active{
+          padding: 1rem 2rem;
+          height: 8rem;
+
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width:1250px) {
+    margin: 7rem 2rem;
+  }
+  @media screen and (max-width:650px) {
+    font-size: .9rem;
+    margin: 7rem 1rem;
+    padding: 2rem 1rem;
+
+    h1{
+      font-size: 2rem;
+    }
+    .circle{
+      padding: .3rem !important;
+    }
+    &-faq{
+      .item{
+        padding: .5rem;
+      }
+    }
+
+    p{
+      font-size: 1rem;
+    }
+    
   }
 }
