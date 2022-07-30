@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
-import { motion, AnimatePresence } from "framer-motion"
 
 import { questions } from '../../../utils/data'
 
@@ -45,14 +44,9 @@ const FAQComp = () => {
                                 </div>
                             </div>
                             <div className="divider" />
-                            <AnimatePresence>
-
-
                                 <div className={`item__ans ${showAns.id === item.id && showAns.show ? "active" : ""}`} >
                                     <p>{item.ans}</p>
                                 </div>
-
-                            </AnimatePresence>
                         </div>
                     ))
                 }

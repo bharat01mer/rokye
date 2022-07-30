@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form"
 import { useEffect, useState } from "react"
 
 
-const ContactForm = ({ showCancel,setShowModal }) => {
+const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
     const [showOption, setShowOption] = useState(false)
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
     const { handleSubmit, formState, setValue, register } = useForm({ mode: "onChange" })
@@ -62,15 +62,15 @@ const ContactForm = ({ showCancel,setShowModal }) => {
 
     const isValid = (formState.isValid && checkBox && optionValue.id !== null) ? true : false
 
-    
+
     return (
         <form className="rokye__form" onSubmit={handleSubmit(onSubmithandler)}>
 
             <div className="rokye__form-header">
                 {
                     showCancel && (
-                        <div className="cancel" onClick={()=>setShowModal(false)}>
-                            <FaTimesCircle size={30} color={"#F25C05"}  />
+                        <div className="cancel" onClick={() => setShowModal(false)}>
+                            <FaTimesCircle size={30} color={"#F25C05"} />
                         </div>
                     )
                 }
@@ -95,38 +95,64 @@ const ContactForm = ({ showCancel,setShowModal }) => {
             </div>
             <div className="divider" />
             <div className="rokye__form-content">
-                <div className="choose">
-                    <div className="choose__title" onClick={() => setShowOption(!showOption)} >
-                        <p>
-                            {optionValue.id === null ? "Who are you ?" : optionValue.name}
-                        </p>
-                        <DownArrow />
-                    </div>
-                    <AnimatePresence>
-                        {
-                            showOption && (
-                                <motion.div className="choose__option" initial={{ scale: 0, opacity: 0 }} exit={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-                                    {
-                                        optionItem.map((item) => (
-                                            <motion.div className="item" key={item.id} onClick={() => optionClickHandler(item)} >
-                                                <p>{item.name}</p>
-                                            </motion.div>
-                                        ))
-                                    }
-                                </motion.div>
-                            )
-                        }
-                    </AnimatePresence>
-                </div>
-                <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
-                </div>
-                <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
-                </div>
-                <div className="rokye__form-content__item">
-                    <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />
-                </div>
+                {
+                    !referral && (
+                        <div className="choose">
+                            <div className="choose__title" onClick={() => setShowOption(!showOption)} >
+                                <p>
+                                    {optionValue.id === null ? "Who are you ?" : optionValue.name}
+                                </p>
+                                <DownArrow />
+                            </div>
+                            <AnimatePresence>
+                                {
+                                    showOption && (
+                                        <motion.div className="choose__option" initial={{ scale: 0, opacity: 0 }} exit={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
+                                            {
+                                                optionItem.map((item) => (
+                                                    <motion.div className="item" key={item.id} onClick={() => optionClickHandler(item)} >
+                                                        <p>{item.name}</p>
+                                                    </motion.div>
+                                                ))
+                                            }
+                                        </motion.div>
+                                    )
+                                }
+                            </AnimatePresence>
+                        </div>
+                    )
+                }
+                {
+                    referral ? (
+                        <>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Your Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("referrarName", { required: true })} />
+                            </div>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Your Number*" type={"number"} variant="outlined" fullWidth {...register("referrarPhone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
+                            </div>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Referral Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("referralName", { required: true })} />
+                            </div>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Referral Number*" type={"number"} variant="outlined" fullWidth {...register("referralPhone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
+                            </div>
+                        </>
+
+                    ) : (
+                        <>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
+                            </div>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
+                            </div>
+                            <div className="rokye__form-content__item">
+                                <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />
+                            </div>
+                        </>
+                    )
+                }
                 <div className="rokye__form-content__item">
                     <TextField id="outlined-basic" label="Mesage(optional)" variant="outlined" multiline rows={4} fullWidth {...register("message")} />
                 </div>
