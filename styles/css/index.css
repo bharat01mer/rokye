@@ -2876,10 +2876,13 @@ body {
   .rokye__faq .circle {
     padding: 0.3rem !important;
   }
-  .rokye__faq-faq .item {
-    padding: 0.5rem;
+  .rokye__faq-tab .item {
+    padding: 0.5rem !important;
+  }
+  .rokye__faq-content h2 {
+    font-size: 1rem;
   }
   .rokye__faq p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=index.css.map */

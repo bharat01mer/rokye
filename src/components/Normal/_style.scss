@@ -391,14 +391,19 @@
     .circle{
       padding: .3rem !important;
     }
-    &-faq{
+    &-tab{
       .item{
-        padding: .5rem;
+        padding: .5rem !important;
+      }
+    }
+    &-content{
+      h2{
+        font-size: 1rem;
       }
     }
 
     p{
-      font-size: 1rem;
+      font-size: .8rem;
     }
     
   }
