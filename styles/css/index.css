@@ -2301,6 +2301,24 @@ body {
     font-size: 1.9rem;
   }
 }
+@media screen and (max-width: 1000px) {
+  .rokye__add-property .form__upload-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__add-property .form__basic .content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+  .rokye__add-property .form__complex .content__choose {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+  .rokye__add-property .form__upload-preview {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .rokye__login {
   padding: 7rem;

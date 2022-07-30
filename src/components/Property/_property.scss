@@ -729,8 +729,8 @@
         color: $color5;
       }
       .item {
-        p{
-          font-size: .85rem;
+        p {
+          font-size: 0.85rem;
         }
         width: 30rem;
 
@@ -808,14 +808,14 @@
                 }
               }
 
-              @media screen and (max-width:860px) {
-                grid-template-columns: repeat(2,1fr);
+              @media screen and (max-width: 860px) {
+                grid-template-columns: repeat(2, 1fr);
               }
             }
           }
           &__desc {
             margin-top: 3rem;
-            .Mui-focused{
+            .Mui-focused {
               color: black !important;
             }
             &-title {
@@ -863,46 +863,40 @@
             @include center__elem;
             justify-content: flex-start;
             label {
-
               border-radius: 5px;
               padding: 1rem;
               background: $color5;
               color: white;
-              svg{
+              svg {
                 color: white;
               }
               @include box_shadow;
               @include center__elem;
               p {
-                margin-left: .5rem;
+                margin-left: 0.5rem;
                 font-size: 1.2rem;
               }
             }
           }
-
         }
-        &-preview{
+        &-preview {
           margin-top: 2rem;
           display: grid;
-          grid-template-columns: repeat(3,1fr);
+          grid-template-columns: repeat(3, 1fr);
           grid-gap: 2rem;
 
-
-          .item{
+          .item {
             position: relative;
             border: 2px solid black;
             width: 100%;
 
-            .remove{
+            .remove {
               z-index: 23;
               position: absolute;
             }
           }
         }
-       
       }
-
-      
 
       .MuiOutlinedInput-notchedOutline {
         border-color: rgb(173, 173, 173) !important;
@@ -917,10 +911,10 @@
           padding: 0.9rem 1rem;
           border-radius: 5px;
 
-          &__item{
+          &__item {
             @include center__elem;
-            p{
-              margin-right: .5rem;
+            p {
+              margin-right: 0.5rem;
               color: gray;
             }
           }
@@ -953,36 +947,68 @@
       }
 
       @media screen and (max-width: 1200px) {
-        
         .item {
           width: 100%;
         }
 
-        &__basic,&__complex{
-          .content{
+        &__basic,
+        &__complex {
+          .content {
             width: 100%;
           }
         }
-        &__upload{
+        &__upload {
           padding: 3rem 0;
         }
       }
     }
-
   }
 
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width: 1200px) {
     padding: 7rem 3rem;
   }
 
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     padding: 7rem 1rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
 
-    .rokye__add-property__title{
+    .rokye__add-property__title {
       text-align: center;
-      h1{
+      h1 {
         font-size: 1.9rem;
+      }
+    }
+  }
+
+  @media screen and (max-width:1000px) {
+    .form__upload-preview{
+      grid-template-columns: repeat(2,1fr);
+
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .form {
+      &__basic {
+        .content {
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 1rem;
+        }
+      }
+
+      &__complex{
+        .content{
+          &__choose{
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1rem;
+          }
+        }
+      }
+
+      &__upload{
+        &-preview{
+          grid-template-columns: repeat(1,1fr);
+        }
       }
     }
   }
