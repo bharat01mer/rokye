@@ -37,7 +37,7 @@ const initialState = {
 }
 
 const AddProperty = () => {
-    const [activeStep, setActiveStep] = useState(3)
+    const [activeStep, setActiveStep] = useState(0)
     const [imageArray, setImageArray] = useState([])
     const totalStep = 4
     const methods = useForm({
