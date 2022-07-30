@@ -49,7 +49,7 @@ const FAQComp = () => {
 
 
                                 <div className={`item__ans ${showAns.id === item.id && showAns.show ? "active" : ""}`} >
-                                    <p>{item.ans} <br /> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ratione recusandae ipsa ex nemo optio ut accusamus? Nobis accusamus consequatur quia voluptate minus molestiae repudiandae, tempore nam culpa? Fuga, illo!</p>
+                                    <p>{item.ans}</p>
                                 </div>
 
                             </AnimatePresence>
