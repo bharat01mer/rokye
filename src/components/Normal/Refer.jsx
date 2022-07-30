@@ -57,7 +57,7 @@ const Refer = () => {
                     <div className="content">
                         {
                             workingItem.map((item) => (
-                                <div className="content__item">
+                                <div className="content__item" key={item.id}>
                                     <h2>{item.id + 1}</h2>
                                     <h3>{item.title}</h3>
                                     <p>{item.desc}</p>
