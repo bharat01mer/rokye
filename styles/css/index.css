@@ -3055,4 +3055,7 @@ body {
   .rokye__refer-faq .content h1 {
     font-size: 1.9rem;
   }
+  .rokye__refer-faq .content .item__ans.active {
+    height: 6rem;
+  }
 }/*# sourceMappingURL=index.css.map */

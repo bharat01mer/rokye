@@ -581,6 +581,12 @@
           font-size: 1.9rem;
         }
         font-size: .9rem;
+
+        .item__ans{
+          &.active{
+            height: 6rem;
+          }
+        } 
       }
     }
   }
