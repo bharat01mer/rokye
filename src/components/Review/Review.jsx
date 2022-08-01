@@ -136,7 +136,7 @@ const Review = () => {
             <div className="rokye__review">
                 <div className="rokye__review-profile">
                     <div className="intro">
-                        <Image src={"/logo.png"} width={150} height={75} objectFit={"contain"} />
+                        {/* <Image src={"/logo.png"} width={150} height={75} objectFit={"contain"} /> */}
                         <h1>Rokye Realty</h1>
                         <p>Online Property Listing Company</p>
                     </div>

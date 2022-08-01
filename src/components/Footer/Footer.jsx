@@ -68,7 +68,8 @@ const Footer = () => {
       <div className="outer">
         <div className="rokye__footer-intro">
           <Image src={"/logo.png"} width={150} height={80} objectFit="contain" />
-          <p>Consulate Of Japan Bunglow, M L Dahanukar <br /> Marg, Cumballa Hill</p>
+          <h3>New way of renting a home</h3>
+          <p>No brokerage, No advance payment and <br /> all the listings are physically verified.</p>
         </div>
         <div className="rokye__footer-links">
           <h1>Rental Options</h1>

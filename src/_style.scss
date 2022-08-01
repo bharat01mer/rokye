@@ -258,12 +258,11 @@
     }
 
     &-intro {
-      h1 {
-        color: $color5;
-      }
-      span {
+      h3 {
+        @include heading-font;
         color: $color1;
       }
+      
     }
 
     &-address {

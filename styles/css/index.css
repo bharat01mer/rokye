@@ -322,10 +322,9 @@ input::-webkit-inner-spin-button {
   font-weight: bolder;
   color: #114040;
 }
-.rokye__footer-intro h1 {
-  color: #f25c05;
-}
-.rokye__footer-intro span {
+.rokye__footer-intro h3 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
   color: #114040;
 }
 .rokye__footer-address {
@@ -2785,14 +2784,18 @@ body {
 .rokye__faq {
   background: #f2f2f2;
   border: 2px solid #114040;
-  margin: -4rem 5rem 5rem;
+  margin: -7rem 7rem 5rem;
   position: relative;
   border-radius: 1rem;
   padding: 3rem;
   height: auto;
 }
+.rokye__faq-img {
+  padding: 6rem 5rem 0;
+}
 .rokye__faq-img img {
   width: 100%;
+  border-radius: 1rem;
 }
 .rokye__faq-title {
   text-align: center;
@@ -2870,13 +2873,16 @@ body {
 }
 @media screen and (max-width: 1250px) {
   .rokye__faq {
-    margin: -4rem 2rem 5rem;
+    margin: -6rem 3rem 5rem;
+  }
+  .rokye__faq-img {
+    padding: 6rem 1rem 0;
   }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 830px) {
   .rokye__faq {
     font-size: 0.9rem;
-    margin: -4rem 1rem 5rem;
+    margin: 0rem 1rem 5rem;
     padding: 2rem 1rem;
   }
   .rokye__faq h1 {
@@ -3128,6 +3134,9 @@ body {
 .rokye__about .work .title h1 {
   font-size: 3rem;
 }
+.rokye__about .work .content__item {
+  box-shadow: none !important;
+}
 @media screen and (max-width: 1150px) {
   .rokye__about .work .content {
     grid-template-columns: repeat(2, 1fr);
@@ -3279,7 +3288,6 @@ body {
   }
   .rokye__about p {
     width: 100% !important;
-    text-align: center;
   }
 }
 
@@ -3469,6 +3477,16 @@ body {
 }
 .rokye__review-content .add__content p {
   margin-left: 1rem;
+}
+@media screen and (max-width: 400px) {
+  .rokye__review-content .add {
+    flex-direction: column;
+  }
+  .rokye__review-content .add__sort {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
 }
 .rokye__review-content .review {
   margin-top: 2rem;

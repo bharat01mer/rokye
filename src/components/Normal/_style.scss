@@ -294,15 +294,17 @@
 .rokye__faq {
   background: $color4;
   border: 2px solid $color1;
-  margin: -4rem 5rem 5rem;
+  margin: -7rem 7rem 5rem;
   position: relative;
   border-radius: 1rem;
   padding: 3rem;
   height: auto;
 
   &-img {
+    padding: 6rem 5rem 0;
     img {
       width: 100%;
+      border-radius: 1rem;
     }
   }
   &-title {
@@ -386,11 +388,14 @@
   }
 
   @media screen and (max-width: 1250px) {
-    margin: -4rem 2rem 5rem;
+    margin: -6rem 3rem 5rem;
+    &-img{
+      padding:  6rem 1rem 0;
+    }
   }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 830px) {
     font-size: 0.9rem;
-    margin: -4rem 1rem 5rem;
+    margin: 0rem 1rem 5rem;
     padding: 2rem 1rem;
 
     h1 {
@@ -579,6 +584,7 @@
       }
     }
     &-faq {
+      
       .content {
         margin-top: 0;
         padding: 2rem;
@@ -647,6 +653,9 @@
       h1{
         font-size: 3rem;
       }
+    }
+    .content__item{
+      box-shadow: none !important;
     }
     @media screen and (max-width:1150px) {
       .content{
@@ -790,7 +799,7 @@
 
     p{
       width: 100% !important;
-      text-align: center;
+      
     }
   }
 }

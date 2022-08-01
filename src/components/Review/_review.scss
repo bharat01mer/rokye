@@ -181,6 +181,14 @@
         border-radius: 4px;
         color: $color4;
       }
+      @media screen and (max-width:400px) {
+        flex-direction: column;
+        &__sort{
+          width: 100%;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+        }
+      }
     }
 
     .review {
