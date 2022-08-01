@@ -888,3 +888,42 @@ export const questions = {
       },
   ]
 }
+
+
+export const reviewData=[
+  {
+    id:0,
+    name:"Jahid Hasan",
+    rating:5,
+    date:"July 30, 2022",
+    review:"A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito"
+  },
+  {
+    id:1,
+    name:"Jahid Hasan",
+    rating:3,
+    date:"July 30, 2022",
+    review:"A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito"
+  },
+  {
+    id:2,
+    name:"Jahid Hasan",
+    rating:4,
+    date:"July 30, 2022",
+    review:"A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito"
+  },
+  {
+    id:3,
+    name:"Jahid Hasan",
+    rating:1,
+    date:"July 30, 2022",
+    review:"A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito"
+  },
+  {
+    id:4,
+    name:"Jahid Hasan",
+    rating:2,
+    date:"July 30, 2022",
+    review:"A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito"
+  },
+]

@@ -1,0 +1,329 @@
+.rokye__review {
+  @include center__elem;
+  justify-content: space-between;
+  padding: 7rem;
+  align-items: flex-start;
+
+  &-profile {
+    margin-right: 1rem;
+
+    .intro {
+      h1 {
+        color: $color1;
+        @include heading-font;
+        margin: 0.5rem 0;
+      }
+      p {
+        color: $color3;
+      }
+    }
+    .desc {
+      width: 23rem;
+      margin: 2rem 0;
+      color: gray;
+    }
+
+    .detail {
+      svg {
+        font-size: 1.3rem;
+        color: $color1;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      &__mail {
+        @include center__elem;
+        justify-content: flex-start;
+
+        a {
+          margin-left: 0.3rem;
+        }
+      }
+      &__social {
+        margin: 1.5rem 0;
+
+        svg {
+          font-size: 1.5rem;
+        }
+        @include center__elem;
+        justify-content: flex-start;
+
+        .item {
+          margin-right: 1rem;
+          border-radius: 50%;
+          padding: 0.5rem;
+          @include center__elem;
+          @include box_shadow;
+
+          &:hover {
+            transition: all 0.5s ease-in-out;
+            background: $color5;
+            svg {
+              color: $color4;
+            }
+          }
+        }
+      }
+
+      &__contact {
+        padding: 0.5rem 0;
+        border-radius: 3px;
+
+        color: $color4;
+        svg {
+          color: inherit;
+        }
+        background: $color5;
+        @include center__elem;
+        width: 15rem;
+
+        h3 {
+          margin-left: 0.4rem;
+        }
+      }
+    }
+  }
+  &-content {
+    margin-left: 4rem;
+    width: 100%;
+    .MuiLinearProgress-root {
+      background-color: rgba($color: $color5, $alpha: 0.4);
+    }
+    .MuiLinearProgress-bar {
+      background-color: $color5;
+    }
+    @include center__elem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .progress {
+      width: 100%;
+
+      h1 {
+        @include heading-font;
+        color: $color1;
+        margin-bottom: 1rem;
+      }
+      p {
+        @include center__elem;
+        justify-content: flex-start;
+        // margin: .1rem 0;
+        font-size: 1.2rem;
+      }
+      &__bar {
+        width: 100%;
+      }
+    }
+    .add {
+      width: 100%;
+      @include center__elem;
+      justify-content: space-between;
+
+      &__sort {
+        @include center__elem;
+
+        p {
+          svg {
+            margin-right: 0.3rem;
+          }
+          color: gray;
+          @include center__elem;
+          margin-right: 0.5rem;
+        }
+        .option {
+          position: relative;
+          // @include center__elem;
+
+          &__title {
+            @include center__elem;
+            justify-content: space-between;
+            width: 8rem;
+            padding: 0.5rem 1rem;
+            @include box_shadow;
+            border-radius: 5px;
+          }
+          &__content {
+            position: absolute;
+            top: 3rem;
+            border-radius: 5px;
+            @include card_shadow;
+
+            width: 8rem;
+
+            .item {
+              p {
+                justify-content: flex-start;
+              }
+              padding: 0.5rem;
+              width: 100%;
+
+              &:hover {
+                transition: all 0.5s ease-in-out;
+                background: rgb(191, 191, 191);
+              }
+            }
+          }
+        }
+      }
+
+      margin-top: 2rem;
+      &__content {
+        width: 10rem;
+        @include center__elem;
+        p {
+          margin-left: 1rem;
+        }
+        background: $color5;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        color: $color4;
+      }
+    }
+
+    .review {
+      margin-top: 2rem;
+
+      &__item {
+        margin-bottom: 3rem;
+        @include box_shadow;
+        padding: 1rem;
+        .upper {
+          @include center__elem;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+
+          &__info {
+            @include center__elem;
+            h2 {
+              @include heading-font;
+              color: $color1;
+            }
+            svg {
+              font-size: 1rem;
+              color: $color5;
+            }
+
+            .info {
+              margin-left: 0.4rem;
+            }
+          }
+          p {
+            color: gray;
+          }
+        }
+        .lower {
+          p {
+            color: gray;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    padding: 7rem 3rem;
+  }
+  @media screen and (max-width: 900px) {
+    padding: 7rem 1rem;
+  }
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+
+    &-profile {
+      .desc {
+        width: 100%;
+      }
+    }
+    &-content {
+      margin-top: 2rem;
+
+      .progress {
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.9rem;
+    .progress {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.rokye__reviewForm {
+  @include center__elem;
+  height: 100vh;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 230;
+  transform: translate(-50%, -50%) !important;
+
+  form {
+    padding: 2rem;
+    border-radius: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    flex-direction: column;
+    position: relative;
+
+    .cancel{
+        position: absolute;
+        top: -.5rem;
+        right: -.5rem;
+    }
+    h1 {
+      @include heading-font;
+      color: $color1;
+      margin-bottom: 2rem;
+    }
+    .item {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .rating {
+      &__title {
+        @include center__elem;
+        justify-content: space-between;
+        border: 2px solid gray;
+        padding: 0.8rem 1rem;
+        border-radius: 4px;
+      }
+    }
+    .Mui-focused {
+      border-color: gray !important;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: gray !important;
+      box-shadow: none;
+    }
+    .submit {
+      background: $color5;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      @include center__elem;
+      color: $color4;
+      margin-top: 1rem;
+      border-radius: 4px;
+    }
+  }
+}
