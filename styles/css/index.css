@@ -600,95 +600,80 @@ input::-webkit-inner-spin-button {
   padding: 2rem 2rem 0;
 }
 .rokye__home-intro {
+  margin-top: 2rem;
   padding: 4rem 4rem;
+  position: relative;
+  height: 60vh;
+}
+.rokye__home-intro .blob1,
+.rokye__home-intro .blob2 {
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  border-radius: 150px 150px 0 0;
+}
+.rokye__home-intro .blob1 {
+  top: 0;
+  right: 0;
+  transform: rotate(50deg);
+  background: #035941;
+}
+.rokye__home-intro .content {
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 }
-.rokye__home-intro .text {
-  width: 100%;
-  color: #114040;
-}
-.rokye__home-intro .text h1 {
-  line-height: 6rem;
-  font-size: 6rem;
+.rokye__home-intro .content h1 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
+  font-size: 4rem;
+  text-align: center;
+  color: #114040;
 }
-.rokye__home-intro .text .mid {
-  line-height: 7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 8rem;
+.rokye__home-intro .content h3 {
+  text-align: center;
+  font-size: 2rem;
 }
-@media screen and (min-width: 1700px) {
-  .rokye__home-intro .text {
-    margin-left: 5rem;
+.rokye__home-intro .blob2 {
+  bottom: 0;
+  left: 0;
+  transform: rotate(-130deg);
+  background: #f25c05;
+}
+@media screen and (max-width: 850px) {
+  .rokye__home-intro .content h1 {
+    font-size: 3rem;
+  }
+  .rokye__home-intro .content h3 {
+    font-size: 1.5rem;
   }
 }
-.rokye__home-intro .img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  @m;
-}
-.rokye__home-intro .img__inner {
-  position: absolute;
-  top: 4rem;
-  right: 10rem;
-}
-@media screen and (max-width: 1000px) {
-  .rokye__home-intro {
-    margin-top: 3rem;
-    flex-direction: column;
-    padding: 0;
+@media screen and (max-width: 750px) {
+  .rokye__home-intro .blob1,
+.rokye__home-intro .blob2 {
+    height: 5rem;
+    width: 11rem;
   }
-}
-@media screen and (max-width: 1000px) and (max-width: 600px) {
-  .rokye__home-intro .text h1 {
-    font-size: 4rem;
+  .rokye__home-intro .content h1 {
+    font-size: 2.5rem;
   }
-}
-@media screen and (max-width: 1000px) {
-  .rokye__home-intro .img {
-    margin-top: 3rem;
+  .rokye__home-intro .content h3 {
+    font-size: 1.3rem;
   }
-  .rokye__home-intro .img__inner {
-    top: 0;
-    right: 0;
+  .rokye__home-intro .blob1 {
+    right: -1rem;
+    transform: rotate(39deg);
   }
-  .rokye__home-intro .img__inner img {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .rokye__home-intro .img__inner {
-    top: 0;
-    right: 0;
-  }
-}
-@media screen and (max-width: 1400px) and (max-width: 1250px) {
-  .rokye__home-intro {
-    padding: 2.5rem 0;
-  }
-}
-@media screen and (max-width: 1400px) and (max-width: 1250px) and (min-width: 1000px) {
-  .rokye__home-intro .text h1 {
-    font-size: 4rem;
-  }
-  .rokye__home-intro .text .mid {
-    font-size: 5rem;
+  .rokye__home-intro .blob2 {
+    left: -1rem;
+    transform: rotate(-141deg);
   }
 }
 @media screen and (max-width: 1000px) {
   .rokye__home-intro {
-    padding: 0;
+    padding: 4rem 0;
   }
 }
 .rokye__home-searchbar {
