@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { ReferAnimation } from "../../../illustration"
 import { ContactForm } from "../resuable"
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
-import { questions } from '../../../utils/data'
 import { useSelector } from 'react-redux'
+import {BiRupee} from "react-icons/bi"
 
 const workingItem = [
     {
@@ -36,8 +35,7 @@ const Refer = () => {
             {
                 winWidth < 2000 && (
                     <div className="title">
-                        <h1>Refer &#38; Earn 250</h1>
-
+                        <h1>Refer &#38; Earn <BiRupee />250</h1>
                     </div>
                 )
             }
@@ -66,43 +64,7 @@ const Refer = () => {
                         }
                     </div>
                 </div>
-                <div className="rokye__refer-faq">
-                    <img src={"/refer.jpg"} objectFit="contain" />
-                    <div className="outer">
-                        <div className="content">
-                            <div className="content__title">
-                                <h1>Frequently asked questions</h1>
-                            </div>
-                            <div className="content__box">
-                                {
-                                    questions.referral.map((item) => (
-                                        <div className="item" key={item.id}>
-                                            <div className="item__upper" onClick={() => setShowAns({ id: showAns.id === item.id ? null : item.id, show: showAns.id === item.id ? false : true })}>
-                                                <div className="quest">
-                                                    <div className="circle" />
-                                                    <h3>{item.quest}</h3>
-                                                </div>
-                                                <div className="show">
-                                                    {
-                                                        (showAns.id === item.id && showAns.show) ? (
-                                                            <AiOutlineMinus size={25} />
-                                                        ) : (
-                                                            <AiOutlinePlus size={25} />
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                            <div className="divider" />
-                                            <div className={`item__ans ${showAns.id === item.id && showAns.show ? "active" : ""}`} >
-                                                <p>{item.ans}</p>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     )

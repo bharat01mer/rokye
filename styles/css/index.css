@@ -2783,20 +2783,25 @@ body {
 }
 
 .rokye__faq {
-  background: #114040;
-  margin: 7rem 5rem;
+  background: #f2f2f2;
+  border: 2px solid #114040;
+  margin: -4rem 5rem 5rem;
+  position: relative;
+  border-radius: 1rem;
   padding: 3rem;
-  height: 100vh;
+  height: auto;
+}
+.rokye__faq-img img {
+  width: 100%;
 }
 .rokye__faq-title {
   text-align: center;
-  color: #f2f2f2;
 }
 .rokye__faq-title h1 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
-  color: #f2f2f2;
+  color: #114040;
 }
 .rokye__faq .divider {
   height: 1px;
@@ -2814,17 +2819,21 @@ body {
 .rokye__faq-tab .item {
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  color: #f2ba52;
+  color: rgba(242, 92, 5, 0.75);
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   border: 2px solid rgba(242, 242, 242, 0.3);
 }
 .rokye__faq-tab .item.active {
+  color: #f25c05;
   box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
-  border: 2px solid #f2f2f2;
+  border: 2px solid #f25c05;
 }
 .rokye__faq-content {
   margin-top: 2rem;
-  color: #f2f2f2;
+  color: #114040;
+}
+.rokye__faq-content svg {
+  color: #f25c05 !important;
 }
 .rokye__faq-content .item {
   transition: all 0.5s ease-in-out;
@@ -2843,8 +2852,8 @@ body {
 }
 .rokye__faq-content .item__upper .quest .circle {
   border-radius: 50%;
-  padding: 0.4rem;
-  background: #f2ba52;
+  padding: 0.3rem;
+  background: #f25c05;
   margin-right: 1rem;
 }
 .rokye__faq-content .item__ans {
@@ -2856,18 +2865,18 @@ body {
   padding: 0 2rem;
 }
 .rokye__faq-content .item__ans.active {
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   height: 8rem;
 }
 @media screen and (max-width: 1250px) {
   .rokye__faq {
-    margin: 7rem 2rem;
+    margin: -4rem 2rem 5rem;
   }
 }
 @media screen and (max-width: 650px) {
   .rokye__faq {
     font-size: 0.9rem;
-    margin: 7rem 1rem;
+    margin: -4rem 1rem 5rem;
     padding: 2rem 1rem;
   }
   .rokye__faq h1 {
@@ -2906,6 +2915,9 @@ body {
   font-size: 1.2rem;
 }
 .rokye__refer .title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "lora", sans-serif;
   font-weight: bolder;
 }
