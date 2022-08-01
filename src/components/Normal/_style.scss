@@ -300,16 +300,14 @@
   padding: 3rem;
   height: auto;
 
-
-  &-img{
-    img{
+  &-img {
+    img {
       width: 100%;
     }
   }
   &-title {
     text-align: center;
 
-    
     h1 {
       @include heading-font;
       font-size: 3rem;
@@ -332,7 +330,7 @@
       // background: rgba($color: $color4, $alpha: 0.8);
 
       border-radius: 5px;
-      color: rgba($color: $color5, $alpha: .75);
+      color: rgba($color: $color5, $alpha: 0.75);
 
       @include box_shadow;
       border: 2px solid rgba($color: $color4, $alpha: 0.3);
@@ -349,7 +347,7 @@
   &-content {
     margin-top: 2rem;
     color: $color1;
-    svg{
+    svg {
       color: $color5 !important;
     }
 
@@ -427,21 +425,18 @@
   &-animation {
     width: 100%;
   }
-  .title{
-    h1{
+  .title {
+    h1 {
       @include center__elem;
       @include heading-font;
-
     }
     text-align: center;
     margin-bottom: 1rem;
     color: $color5;
 
-    font-size: 1.2rem
+    font-size: 1.2rem;
   }
   &-form {
-
-    
     @include center__elem;
     flex-direction: column;
     align-items: flex-end;
@@ -486,10 +481,9 @@
       width: 100%;
       border-radius: 1rem;
     }
-    
-    .outer{
+
+    .outer {
       @include center__elem;
-      
     }
     .content {
       border-radius: 1rem;
@@ -503,17 +497,17 @@
         height: 1px;
         background: gray;
         width: 100%;
-        margin: .5rem 0;
+        margin: 0.5rem 0;
       }
 
-      &__title{
+      &__title {
         text-align: center;
-        h1{
+        h1 {
           @include heading-font;
           font-size: 2.4rem;
         }
       }
-      &__box{
+      &__box {
         margin-top: 2rem;
       }
       .item {
@@ -550,58 +544,253 @@
       }
     }
   }
-  @media screen and (max-width:1550px) {
+  @media screen and (max-width: 1550px) {
     padding: 7rem 5rem;
   }
 
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width: 1200px) {
     padding: 7rem 2rem;
   }
 
-  @media screen and (max-width:1000px) {
-    .upper{
+  @media screen and (max-width: 1000px) {
+    .upper {
       flex-direction: column;
 
-      .rokye__form{
+      .rokye__form {
         width: 100%;
       }
     }
 
-    &-work{
+    &-work {
       margin: 4rem 0;
     }
-    &-work{
+    &-work {
+      .content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 7rem 1rem;
+    &-work {
+      .content {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    &-faq {
+      .content {
+        margin-top: 0;
+        padding: 2rem;
+
+        h1 {
+          font-size: 1.9rem;
+        }
+        font-size: 0.9rem;
+
+        .item__ans {
+          &.active {
+            height: 6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rokye__about {
+  padding:  7rem;
+
+  img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  .intro {
+    @include center__elem;
+    justify-content: space-between;
+    &__content{
+      width: 100%;
+      margin-left: 1rem;
+      h1{
+        color: $color1;
+        @include heading-font;
+        font-size: 3rem;
+      }
+      p{
+        margin: 2rem 0;
+        width: 30rem;
+      }
+      .btn{
+        background: $color5;
+        @include center__elem;
+        align-items: flex-end;
+        padding: .8rem;
+        border-radius: 5px;
+        width: 20rem;
+        color: white;
+        svg{
+          font-size: 1.5rem;
+          margin-right: .5rem;
+        }
+        p{
+          margin-left: .5rem;
+        }
+      }
+    }
+    
+  }
+
+  .work{
+    margin: 4rem 0;
+    .title{
+      @include center__elem;
+      h1{
+        font-size: 3rem;
+      }
+    }
+    @media screen and (max-width:1150px) {
       .content{
         grid-template-columns: repeat(2,1fr);
       }
     }
-    
-    
-  }
-  
-  @media screen and (max-width:650px) {
-    padding: 7rem 1rem;
-    &-work{
+    @media screen and (max-width:650px) {
       .content{
         grid-template-columns: repeat(1,1fr);
       }
     }
-    &-faq{
-      .content{
-        margin-top: 0;
-        padding: 2rem;
-
-        h1{
-          font-size: 1.9rem;
-        }
-        font-size: .9rem;
-
-        .item__ans{
-          &.active{
-            height: 6rem;
-          }
-        } 
+  }
+  .search{
+    margin: 5rem 0;
+    @include center__elem;
+    justify-content: space-around;
+    &__img{
+      width: 50rem;
+    }
+    
+    &__content{
+      margin-left: 1rem;
+      h1{
+        color: $color1;
+        @include heading-font;
+        font-size: 3rem;
       }
+      p{
+        margin: 2rem 0;
+        width: 30rem;
+      }
+      .btn{
+        background: $color5;
+        @include center__elem;
+        align-items: flex-end;
+        padding: .8rem;
+        border-radius: 5px;
+        width: 20rem;
+        color: white;
+        svg{
+          font-size: 1.5rem;
+          margin-right: .5rem;
+        }
+        p{
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+  .verification{
+    margin-top: 5rem;
+    @include center__elem;
+    justify-content: space-around;
+    &__img{
+      width: 50rem;
+    }
+    
+    &__content{
+      margin-right: 1rem;
+      
+      h1{
+        color: $color1;
+        @include heading-font;
+        font-size: 3rem;
+      }
+      p{
+        margin: 2rem 0;
+        width: 30rem;
+      }
+      .btn{
+        background: $color5;
+        @include center__elem;
+        align-items: flex-end;
+        padding: .8rem;
+        border-radius: 5px;
+        width: 20rem;
+        color: white;
+        svg{
+          font-size: 1.5rem;
+          margin-right: .5rem;
+        }
+        p{
+          margin-left: .5rem;
+        }
+      }
+    }
+    
+  }
+  @media screen and (max-width:1450px) {
+    padding: 7rem 5rem ;
+  }
+  @media screen and (max-width:1250px) {
+    padding: 7rem 2rem ;
+  }
+  @media screen and (max-width:1050px) {
+    .intro{
+      flex-direction: column;
+
+      &__content{
+        margin: 2rem;
+        @include center__elem;
+        flex-direction: column;
+      }
+    }
+    .search{
+      
+      flex-direction: column;
+      &__img{
+        width: 100%;
+      }
+  
+      &__content{
+        margin: 2rem;
+        @include center__elem;
+        flex-direction: column;
+      }
+    }
+    .verification{
+      flex-direction: column-reverse;
+      &__img{
+        width: 100%;
+      }
+  
+      &__content{
+        margin: 2rem;
+        @include center__elem;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media screen and (max-width:650px) {
+    // font-size: .9rem;
+
+    h1{
+      font-size: 2rem !important;
+    }
+  }
+  @media screen and (max-width:500px) {
+    padding: 7rem 1rem;
+
+    p{
+      width: 100% !important;
+      text-align: center;
     }
   }
 }
