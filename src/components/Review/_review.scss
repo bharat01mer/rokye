@@ -144,6 +144,8 @@
             border-radius: 5px;
           }
           &__content {
+            z-index: 2;
+            background-color: white;
             position: absolute;
             top: 3rem;
             border-radius: 5px;
@@ -233,8 +235,10 @@
   }
   @media screen and (max-width: 850px) {
     flex-direction: column;
+    
 
     &-profile {
+        margin-right: 0;
       .desc {
         width: 100%;
       }
@@ -250,6 +254,25 @@
     }
   }
   @media screen and (max-width: 500px) {
+    &-profile{
+        .intro{
+            @include center__elem;
+            flex-direction: column;
+        }
+        .detail{
+            @include center__elem;
+            flex-direction: column;
+
+            &__social{
+                width: 100%;
+                @include center__elem;
+                justify-content: space-around;
+            }
+            &__contact{
+                width: 100%;
+            }
+        }
+    }
     font-size: 0.9rem;
     .progress {
       p {

@@ -183,7 +183,7 @@ const Review = () => {
                                 Sort by:
                             </p>
                             <div className="option">
-                                <div className="option__title">
+                                <div className="option__title" onClick={()=>setShowSortingOption((item)=>!item)}>
                                     <p>Choose</p>
                                     <AiOutlineDown />
                                 </div>

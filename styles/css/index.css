@@ -3227,6 +3227,8 @@ body {
   border-radius: 5px;
 }
 .rokye__review-content .add__sort .option__content {
+  z-index: 2;
+  background-color: white;
   position: absolute;
   top: 3rem;
   border-radius: 5px;
@@ -3315,6 +3317,9 @@ body {
   .rokye__review {
     flex-direction: column;
   }
+  .rokye__review-profile {
+    margin-right: 0;
+  }
   .rokye__review-profile .desc {
     width: 100%;
   }
@@ -3328,6 +3333,28 @@ body {
 @media screen and (max-width: 500px) {
   .rokye__review {
     font-size: 0.9rem;
+  }
+  .rokye__review-profile .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .rokye__review-profile .detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .rokye__review-profile .detail__social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .rokye__review-profile .detail__contact {
+    width: 100%;
   }
   .rokye__review .progress p {
     font-size: 1rem;

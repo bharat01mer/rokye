@@ -81,7 +81,7 @@ const ReviewForm = ({setClose}) => {
                     <TextField variant='outlined' fullWidth label="Your Review" multiline rows={5} />
                 </div>
                 <div className="submit">
-                    <h2>Submit a review</h2>
+                    <h3>Submit a review</h3>
                 </div>
             </form>
         </div>
