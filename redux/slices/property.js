@@ -1,12 +1,11 @@
 import {createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const produrl="https://rokye.herokuapp.com/property" 
-const devUrl="http://localhost:4000/property"
+const url=process.env.NODE_ENV==="production" ?"https://rokye.herokuapp.com/property" :"http://localhost:4000/property"
 
 export const propertyApi=createApi({
     reducerPath:"property",
     baseQuery:fetchBaseQuery({
-        baseUrl:produrl,
+        baseUrl:url,
         prepareHeaders:(headers,{getState})=>{
             
             const token=getState().util.user.data.token
