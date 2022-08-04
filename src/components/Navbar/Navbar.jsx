@@ -128,7 +128,7 @@ const Navbar = () => {
           )
         }
         {
-          user && (
+          (user && winWidth<650)  && (
             <Link href={"/setting"} >
               <BiUserCircle size={40} color="#f25c05" />
             </Link>

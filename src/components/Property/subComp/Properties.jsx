@@ -3,13 +3,17 @@ import { RiArrowDropDownLine as DownArrow, RiFilter3Line } from "react-icons/ri"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
-import { cardData } from "../../../../utils/data"
-import { Pagination } from "@mui/material"
 import {useGetAllPropertyQuery} from "../../../../redux/slices/property"
+import Pagination from "./Pagination"
+import { useRouter } from "next/router"
+
 
 const Properties = ({ setShowMobFilter }) => {
     const [showSortOption, setShowSortOption] = useState(false)
     const {data,isFetching,error,isSuccess}=useGetAllPropertyQuery()
+    const router=useRouter()
+
+    const page=router.query?.page || 1
 
     const chooseItem = [
         {
@@ -37,8 +41,6 @@ const Properties = ({ setShowMobFilter }) => {
         return <h1>Waiting..</h1>
     }
 
-    console.log({error,data})
-    
     
     return (
         <div className='rokye__property-grid'>
@@ -96,7 +98,6 @@ const Properties = ({ setShowMobFilter }) => {
                     {
                         data.data.map((item) => (
                             <div key={item.id}>
-                                {console.log(item)}
                                 <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0].data} id={item._id} />
                             </div>
                         ))
@@ -105,7 +106,7 @@ const Properties = ({ setShowMobFilter }) => {
                 
                 {/* Implement Pagination after intergrating the api */}
                 {/* <div className="pagination">
-                    <Pagination />
+                    <Pagination page={page} propData={data}  />
                 </div> */}
             </div>
         </div>

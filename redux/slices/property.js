@@ -8,7 +8,7 @@ export const propertyApi=createApi({
         baseUrl:produrl,
         prepareHeaders:(headers,{getState})=>{
             
-            const token=getState().util.user.data.token
+            const token=getState().util?.user?.data?.token
 
             if(token){
                 headers.set('authorization',`Bearer ${token}`)
@@ -25,7 +25,7 @@ export const propertyApi=createApi({
             })
         }),
         getAllProperty:builder.query({
-            query:()=>"/"
+            query:(page)=>`/?page=${page}`
         }),
         getPropertyById: builder.query({
             query:(id)=>`/${id}`
