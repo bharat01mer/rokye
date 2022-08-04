@@ -10,7 +10,9 @@ const Listing = () => {
         <div className="content">
             {
                 cardData.slice(0,4).map((item)=>(
+                    <div key={item.id}>
                     <Card id={item.id} city={item.city} place={item.place} img={item.img} bath={2}  bed={2} price={12000} title={item.title} useFavorite={false} />
+                    </div>
                 ))
             }
         </div>

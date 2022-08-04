@@ -24,7 +24,9 @@ const WishList = ({list,id}) => {
             <div className="content">
                 {
                     data?.data?.data?.map((item) => (
+                        <div key={item._id}>
                         <Card id={item._id} city={item.city} place={item.society} img={item.images[0].data} bath={item.bathroom} bed={item.bathroom} price={item.rentDetail.monthly} title={`${item?.bedroom}BHK ${item?.propType} for rent`} />
+                        </div>
                     ))
                 }
             </div>
