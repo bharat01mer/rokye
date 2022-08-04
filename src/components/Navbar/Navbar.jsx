@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
+import {BiUserCircle} from "react-icons/bi"
 import { useSelector, useDispatch } from 'react-redux'
 import Image from "next/image"
 import { setwinWidth, logout } from '../../../redux/slices/util'
@@ -121,11 +122,19 @@ const Navbar = () => {
           user && (
 
             <Link href={"/setting"} passHref >
-              <motion.h3 style={{marginLeft:30}} whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/setting" ? "active" : ""}>Account</motion.h3>
+              <motion.h3 style={{ marginLeft: 30 }} whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/setting" ? "active" : ""}>Account</motion.h3>
             </Link>
 
           )
         }
+        {
+          user && (
+            <Link href={"/setting"} >
+              <BiUserCircle size={40} color="#f25c05" />
+            </Link>
+          )
+        }
+
         <Link href={"/properties/create"} passHref>
           <motion.div className="sell" whileTap={{ scale: 0.97 }}>
             <AiOutlinePlus size={25} color={"#fff "} />

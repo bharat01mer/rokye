@@ -149,6 +149,7 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 650px) {
   .rokye__navbar-tab .sell {
     margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
 .rokye__navbar-tab .active {
