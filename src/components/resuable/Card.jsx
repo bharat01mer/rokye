@@ -31,12 +31,15 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
   }
 
   useEffect(()=>{
-    const isFavorite=user.data.data.favoriteProp.find((item)=>item.id===id)
-  
-    if(isFavorite!==undefined || isFavorite){
-      setfavorite(true)
-    }else{
-      setfavorite(false)
+    if(user){
+
+      const isFavorite=user.data.data.favoriteProp.find((item)=>item.id===id)
+      
+      if(isFavorite!==undefined || isFavorite){
+        setfavorite(true)
+      }else{
+        setfavorite(false)
+      }
     }
     
   },[dispatch,user,favorite])
@@ -49,7 +52,7 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
         </div>
       </Link>
       {
-        useFavorite && (
+        useFavorite && user  && (
 
           <div className="favorite" onClick={addFavoritePropHandler}>
             {
