@@ -3,37 +3,88 @@ import { TextField, InputAdornment, IconButton } from "@mui/material"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import Link from "next/link"
 import { AiOutlineCheckCircle as CheckIcon } from "react-icons/ai"
-import { useRouter } from "next/router"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-
+import { useCreateUserMutation, useLoginUserMutation } from "../../../redux/slices/user"
 
 import { RiArrowDownSLine as DownArrow } from "react-icons/ri"
 import { motion, AnimatePresence } from "framer-motion"
+import { toast, ToastContainer } from "react-toast"
+import { useRouter } from "next/router"
+import { useDispatch } from "react-redux"
+import { userData } from "../../../redux/slices/util"
 
-const Login = ({isSignUp}) => {
-    
+
+const checkPoints = [
+    {
+        id: 0,
+        title: "No Brokerage"
+    },
+    {
+        id: 1,
+        title: "No Advance Payment"
+    },
+    {
+        id: 2,
+        title: "All listings physically verified"
+    },
+]
+const optionItem = [
+    {
+        id: 0,
+        name: "Owner",
+        value: "owner"
+    },
+    {
+        id: 1,
+        name: "Tenant",
+        value: "tenant"
+    },
+]
+const Login = ({ isSignUp }) => {
+    const dispatch = useDispatch()
     const [showOption, setShowOption] = useState(false)
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
     const { handleSubmit, formState: { errors, isValid }, setValue, register } = useForm({ mode: "onChange" })
     const [showPass, setShowPass] = useState(false)
+    const router = useRouter()
 
-    const optionItem = [
-        {
-            id: 0,
-            name: "Owner",
-            value: "owner"
-        },
-        {
-            id: 1,
-            name: "Tenant",
-            value: "tenant"
-        },
-    ]
+    const [createUser, responseInfo] = useCreateUserMutation()
+    const [loginUser, response] = useLoginUserMutation()
 
-    const onSubmitHandler = (data) => {
-        console.log({ data })
+
+
+    const onSubmitHandler = async (data) => {
+
+        if (isSignUp) {
+            try {
+                const userdata = await createUser(data)
+                localStorage.setItem("user", JSON.stringify(userdata))
+                toast.success("Signup Successfull")
+                dispatch(userData(userdata))
+                router.push("/")
+            } catch (error) {
+                toast.error("Signup Failed")
+            }
+        } else {
+            try {
+                await loginUser(data).then((res) => {
+                    localStorage.setItem("user", JSON.stringify(res))
+                    toast.success("Login Successfull")
+                    dispatch(userData(res))
+                    if (router.query?.redirect) {
+                        router.push(`/${router.query?.redirect}`)
+                    } else {
+                        router.push("/")
+                    }
+                })
+            } catch (error) {
+                console.log({error})
+                toast.error("Login Failed")
+            }
+        }
     }
+
 
     const optionClickHandler = (value) => {
 
@@ -42,26 +93,16 @@ const Login = ({isSignUp}) => {
         setShowOption(false)
     }
 
-    const checkPoints = [
-        {
-            id: 0,
-            title: "No Brokerage"
-        },
-        {
-            id: 1,
-            title: "No Advance Payment"
-        },
-        {
-            id: 2,
-            title: "All listings physically verified"
-        },
-    ]
 
-    console.log(errors)
+    useEffect(() => {
 
-    
+    }, [dispatch])
+
+
+
     return (
-        <div className={`rokye__login ${isSignUp ? "signup" :""}`} >
+        <div className={`rokye__login ${isSignUp ? "signup" : ""}`} >
+            <ToastContainer />
             <div className="rokye__login-left">
                 {
                     !isSignUp ? (
@@ -108,12 +149,12 @@ const Login = ({isSignUp}) => {
                                 <>
                                     <div className="choose">
                                         <div className="choose__title" onClick={() => setShowOption(!showOption)} >
-                                            <p {...register("type",{required:true})}>
+                                            <p {...register("type", { required: true })}>
                                                 {optionValue.id === null ? "I am " : optionValue.name}
                                             </p>
                                             <DownArrow />
                                         </div>
-                                        
+
                                         <AnimatePresence>
                                             {
                                                 showOption && (
@@ -121,7 +162,7 @@ const Login = ({isSignUp}) => {
                                                         {
                                                             optionItem.map((item) => (
                                                                 <motion.div className="item" key={item.id} onClick={() => optionClickHandler(item)} >
-                                                                    <p style={{color:"black",fontSize:"1rem"}} > {item.name}</p>
+                                                                    <p style={{ color: "black", fontSize: "1rem" }} > {item.name}</p>
                                                                 </motion.div>
                                                             ))
                                                         }
@@ -131,7 +172,7 @@ const Login = ({isSignUp}) => {
                                         </AnimatePresence>
                                     </div>
                                     <div className="name item">
-                                        <TextField id="outlined-basic" label="Full Name*" variant="outlined"  fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
+                                        <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
                                         {
                                             errors.name && (
                                                 <p> Name Required </p>
@@ -170,7 +211,7 @@ const Login = ({isSignUp}) => {
                             }} />
                             {
                                 errors.password && (
-                                    <p> {errors.password.type="minLength" ? "Password Length Should be greater than 8" : "Password Required"} </p>
+                                    <p> {errors.password.type = "minLength" ? "Password Length Should be greater than 8" : "Password Required"} </p>
                                 )
                             }
                         </div>

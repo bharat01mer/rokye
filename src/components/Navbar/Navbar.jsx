@@ -7,12 +7,13 @@ import { RiCloseLine } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
 import { useSelector, useDispatch } from 'react-redux'
 import Image from "next/image"
-import { setwinWidth } from '../../../redux/slices/util'
+import { setwinWidth, logout } from '../../../redux/slices/util'
 
 const Navbar = () => {
   const router = useRouter()
   const headerRef = useRef()
-  const { winWidth } = useSelector((state) => state.util)
+  const state = useSelector((state) => state.util)
+  const { winWidth, user } = state
 
   const [showMobileNav, setShowMobileNav] = useState(false)
 
@@ -57,6 +58,13 @@ const Navbar = () => {
     return router.pathname === `/${item.link}`
   }
 
+
+  console.log({ user })
+  const logoutHandler = () => {
+    dispatch(logout())
+    // router.push("/")
+  }
+
   useEffect(() => {
     dispatch(setwinWidth(window.innerWidth))
     window.onscroll = (() => {
@@ -66,7 +74,7 @@ const Navbar = () => {
         headerRef.current.classList.remove("sticky");
       }
     })
-  }, [showMobileNav, winWidth, dispatch])
+  }, [showMobileNav, state, dispatch])
 
 
   return (
@@ -85,11 +93,22 @@ const Navbar = () => {
                   </motion.div>
                 </Link>
               ))}
-              <Link passHref href={"/signup"}>
-                <div className="register">
-                  <h3>Register</h3>
-                </div>
-              </Link>
+
+              {
+                (!user || user === undefined) ? (
+                  <Link passHref href={"/signup"}>
+                    <motion.div className="register" whileTap={{ scale: .97 }}>
+                      <h3>Register</h3>
+                    </motion.div>
+                  </Link>
+
+                ) : (
+
+                  <motion.div className="register" onClick={logoutHandler} whileTap={{ scale: .97 }}>
+                    <h3>Logout</h3>
+                  </motion.div>
+                )
+              }
             </motion.div>
           )
         }
@@ -98,6 +117,15 @@ const Navbar = () => {
         <Link href={"/"} passHref >
           <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""}>Home</motion.h3>
         </Link>
+        {
+          user && (
+
+            <Link href={"/setting"} passHref >
+              <motion.h3 style={{marginLeft:30}} whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/setting" ? "active" : ""}>Account</motion.h3>
+            </Link>
+
+          )
+        }
         <Link href={"/properties/create"} passHref>
           <motion.div className="sell" whileTap={{ scale: 0.97 }}>
             <AiOutlinePlus size={25} color={"#fff "} />

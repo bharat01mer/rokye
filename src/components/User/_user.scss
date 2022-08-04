@@ -1,0 +1,192 @@
+.rokye__user {
+  padding: 7rem 5rem;
+
+  &-title {
+    @include center__elem;
+    justify-content: space-between;
+
+    .info {
+      @include center__elem;
+      // align-items: flex-start;
+      &__icon {
+        margin-right: 1rem;
+      }
+      h1 {
+        color: $color1;
+        @include heading-font;
+      }
+      p {
+        color: gray;
+      }
+    }
+    .logout {
+      @include center__elem;
+      h3 {
+        margin-left: 0.5rem;
+      }
+      background: $color5;
+      color: $color4;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+  }
+
+  &-dashboard {
+    @include box_shadow;
+    padding: 2rem;
+    margin-top: 2rem;
+
+    .tab {
+      @include center__elem;
+      justify-content: flex-start;
+
+      .item {
+        @include card_shadow;
+        padding: 0.4rem 1rem;
+        border-radius: 5px;
+        @include center__elem;
+        margin-right: 1rem;
+        cursor: pointer;
+
+        svg {
+          font-size: 1.3rem;
+          margin-right: 0.2rem;
+          color: $color5;
+        }
+
+        &.active {
+          border: 1.5px solid $color5;
+        }
+      }
+    }
+
+    .container {
+      margin-top: 2rem;
+
+      h1 {
+        @include heading-font;
+        color: $color1;
+      }
+    }
+    &__personal {
+      .content {
+        @include center__elem;
+        flex-direction: column;
+        margin-top: 2rem;
+        &__item {
+          width: 100%;
+          .upper {
+            @include center__elem;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            color: gray;
+          }
+          svg {
+            font-size: 1.3rem;
+          }
+          @include box_shadow;
+          padding: 1rem;
+          padding-bottom: 0;
+        }
+        &__input {
+          position: relative;
+          height: 0;
+          overflow: hidden;
+          transition: 0.5s;
+          overflow-y: hidden;
+          // // padding: 0 2rem;
+          // display: none;
+          
+          input {
+            width: 100%;
+            font-size: 1rem;
+            @include card_shadow;
+            padding: 1rem;
+            border-radius: 5px;
+          }
+          height: 5rem;
+          // &.active {
+          //   transition: 0.5s;
+          //   display: block;
+          //   // padding: 0 2rem;
+          // }
+        }
+        &__submit {
+          margin-top: 2rem;
+          @include center__elem;
+          padding: 0.5rem 1rem;
+          color: $color4;
+          border-radius: 5px;
+          width: 15rem;
+          background-color: $color5;
+        }
+      }
+    }
+    &__listing{
+        .content{
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 1rem;
+            justify-items: center;
+        }
+    }
+    &__wishlist{
+        
+        .content{
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 1rem;
+            justify-items: center;
+        }
+    }
+
+    @media screen and (max-width:1550px) {
+        &__listing,&__wishlist{
+            .content{
+
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+    @media screen and (max-width:1150px) {
+        &__listing,&__wishlist{
+            .content{
+
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+    @media screen and (max-width:800px) {
+        &__listing,&__wishlist{
+            .content{
+
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width:1250px) {
+    padding: 7rem 2rem;
+  }
+  @media screen and (max-width:800px) {
+    padding: 7rem 1rem;
+  }
+  @media screen and (max-width:500px) {
+    font-size: .9rem;
+
+    .tab{
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-gap: 1rem ;
+    }
+    &-dashboard{
+        padding: 2rem 0;
+    }
+  }
+}

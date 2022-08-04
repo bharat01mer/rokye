@@ -427,7 +427,7 @@ const Detail = () => {
             id: 4,
             title: "Furnished Status",
             arr: furnishing,
-            name: "furnishing"
+            name: "furnished"
         },
         {
             id: 5,

@@ -5,9 +5,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
 import { cardData } from "../../../../utils/data"
 import { Pagination } from "@mui/material"
+import {useGetAllPropertyQuery} from "../../../../redux/slices/property"
 
 const Properties = ({ setShowMobFilter }) => {
     const [showSortOption, setShowSortOption] = useState(false)
+    const {data,isFetching,error,isSuccess}=useGetAllPropertyQuery()
+
     const chooseItem = [
         {
             id: 0,
@@ -30,6 +33,13 @@ const Properties = ({ setShowMobFilter }) => {
         
         setShowSortOption(false)
     }
+    if(isFetching || !data){
+        return <h1>Waiting..</h1>
+    }
+
+    console.log({error,data})
+    
+    
     return (
         <div className='rokye__property-grid'>
             <div className="rokye__property-grid__title">
@@ -77,16 +87,17 @@ const Properties = ({ setShowMobFilter }) => {
                     <div className="line" />
                     <div className="result">
                         <TbCircleCheck />
-                        <p>8 results</p>
+                        <p>{data?.count} results</p>
                     </div>
                 </div>
             </div>
             <div className="rokye__property-grid__content">
                 <div className="card">
                     {
-                        cardData.map((item) => (
+                        data.data.map((item) => (
                             <div key={item.id}>
-                                <Card title={item.title} city={item.city} place={item.place} price={item.price} img={item.img} id={item.id} />
+                                {console.log(item)}
+                                <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0].data} id={item._id} />
                             </div>
                         ))
                     }

@@ -16,9 +16,6 @@ const Choose = ({ title, optionItem, showOption, setShowOption, id, name }) => {
         setShowOption({ id: null, show: false })
         setChoosedOption(title)
     }
-
-    
-
     
     return (
         <div className="form__choose" >

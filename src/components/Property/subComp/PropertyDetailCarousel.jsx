@@ -8,14 +8,14 @@ import "swiper/css/navigation"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
-const PropertyDetailCarousel = () => {
+const PropertyDetailCarousel = ({data}) => {
     const [showNav, setShowNav] = useState(false)
     return (
         <div className="carousel__slider">
             <Swiper className="mySwiper" modules={[Navigation]} navigation={{prevEl:".navigation__prev",nextEl:".navigation__next",enabled:true}}  loop>
-                {carouselData.map((item) => (
-                    <SwiperSlide key={item.id}>
-                        <Image src={item.img} width={1400} height={740} alt={"img"} objectFit="cover" onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)} />
+                {data.map((item) => (
+                    <SwiperSlide key={item._id}>
+                        <Image src={item.data} width={1400} height={740} alt={"img"} objectFit="cover" onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)} />
                     </SwiperSlide>
                 ))}
             </Swiper>

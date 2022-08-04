@@ -211,7 +211,7 @@ input::-webkit-inner-spin-button {
   position: absolute;
 }
 .rokye__card .favorite svg {
-  color: #114040;
+  color: #f25c05;
 }
 .rokye__card-detail {
   width: 100%;
@@ -594,6 +594,24 @@ input::-webkit-inner-spin-button {
     width: 100%;
     padding: 2rem 1rem;
   }
+}
+
+.rokye__loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 34;
+}
+.rokye__loader .item {
+  position: absolute;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  color: #000;
+  width: 28rem;
+  padding: 3rem;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
 }
 
 .rokye__home {
@@ -3644,4 +3662,183 @@ body {
   color: #f2f2f2;
   margin-top: 1rem;
   border-radius: 4px;
+}
+
+.rokye__user {
+  padding: 7rem 5rem;
+}
+.rokye__user-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__user-title .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__user-title .info__icon {
+  margin-right: 1rem;
+}
+.rokye__user-title .info h1 {
+  color: #114040;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+}
+.rokye__user-title .info p {
+  color: gray;
+}
+.rokye__user-title .logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f25c05;
+  color: #f2f2f2;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.rokye__user-title .logout h3 {
+  margin-left: 0.5rem;
+}
+.rokye__user-dashboard {
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.rokye__user-dashboard .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__user-dashboard .tab .item {
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.rokye__user-dashboard .tab .item svg {
+  font-size: 1.3rem;
+  margin-right: 0.2rem;
+  color: #f25c05;
+}
+.rokye__user-dashboard .tab .item.active {
+  border: 1.5px solid #f25c05;
+}
+.rokye__user-dashboard .container {
+  margin-top: 2rem;
+}
+.rokye__user-dashboard .container h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__user-dashboard__personal .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.rokye__user-dashboard__personal .content__item {
+  width: 100%;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.rokye__user-dashboard__personal .content__item .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.rokye__user-dashboard__personal .content__item p {
+  color: gray;
+}
+.rokye__user-dashboard__personal .content__item svg {
+  font-size: 1.3rem;
+}
+.rokye__user-dashboard__personal .content__input {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: hidden;
+  height: 5rem;
+}
+.rokye__user-dashboard__personal .content__input input {
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.rokye__user-dashboard__personal .content__submit {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #f2f2f2;
+  border-radius: 5px;
+  width: 15rem;
+  background-color: #f25c05;
+}
+.rokye__user-dashboard__listing .content {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+}
+.rokye__user-dashboard__wishlist .content {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+}
+@media screen and (max-width: 1550px) {
+  .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1150px) {
+  .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 1250px) {
+  .rokye__user {
+    padding: 7rem 2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .rokye__user {
+    padding: 7rem 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__user {
+    font-size: 0.9rem;
+  }
+  .rokye__user .tab {
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-gap: 1rem;
+  }
+  .rokye__user-dashboard {
+    padding: 2rem 0;
+  }
 }/*# sourceMappingURL=index.css.map */

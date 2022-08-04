@@ -1,56 +1,194 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { ContactForm ,ContactModal} from '../resuable'
 import { ImLocation } from "react-icons/im"
 import millify from 'millify'
-import { propertyDetail } from '../../../utils/data'
+
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { FcCalendar } from "react-icons/fc"
 import { BiRupee } from "react-icons/bi"
 import { TbCheckbox } from "react-icons/tb"
 import { motion, AnimatePresence } from 'framer-motion'
-import { premiumFilterdata } from '../../../utils/data'
 import { useSelector } from 'react-redux'
 import dynamic from "next/dynamic"
-
+import { useAddFavoriteMutation } from '../../../redux/slices/user'
+import {useDispatch} from "react-redux"
+import { updateUserData } from '../../../redux/slices/util'
 
 const Carousel = dynamic(() => import("./subComp/PropertyDetailCarousel"))
 
 
-const PropertyDetail = ({ cardDetail }) => {
-  const { winWidth } = useSelector((state) => state.util)
+const PropertyDetail = ({cardDetail}) => {
+  const { winWidth,user } = useSelector((state) => state.util)
   const [showModal, setShowModal] = useState(false)
-  const [favorite, setFavorite] = useState(false)
   const [showMore, setShowMore] = useState(false)
-
+  const dispatch=useDispatch()
+  const [addFavoriteProp]=useAddFavoriteMutation()
   
 
+  const [favorite, setFavorite] = useState(false)
+  useEffect(()=>{
+    const isFavorite=user.data.data.favoriteProp.find((item)=>item.id===cardDetail?._id)
+    
+    if(isFavorite!==undefined || isFavorite){
+      setFavorite(true)
+    }else{
+      setFavorite(false)
+    }
+    
+  },[dispatch,user,favorite,cardDetail])
+
+
+  if(!cardDetail){
+    return null
+  }
+
+  const propertyDetail={
+    left:[
+      {
+        id:0,
+        name:"Rent",
+        value:cardDetail.rentDetail.monthly,
+        price:true
+      },
+      {
+        id:1,
+        name:"Deposit",
+        value:cardDetail.rentDetail.securityAmount,
+        price:true
+      },
+      {
+        id:2,
+        name:"Maintenance",
+        value:cardDetail.rentDetail.maintenance,
+        price:true
+      },
+      {
+        id:3,
+        name:"Property Type",
+        value:cardDetail.propType
+      },
+      {
+        id:4,
+        name:"Bathrooms",
+        value:cardDetail.bathroom
+      },
+      {
+        id:5,
+        name:"Balconies",
+        value:cardDetail.bedroom
+      },
+      {
+        id:6,
+        name:"Furnished Status",
+        value:cardDetail.furnished
+      },
+      {
+        id:7,
+        name:"Parking Places",
+        value:cardDetail.carParking 
+      },
+      {
+        id:8,
+        name:"Availability",
+        value:cardDetail.availability
+      },
+    ],
+    right:[
+      {
+        id:0,
+        name:"Property Age",
+        value:cardDetail.age
+      },
+      {
+        id:1,
+        name:"Carpet area",
+        value:`${cardDetail.carpetArea} sq.ft`,
+        numstring:true
+      },
+      {
+        id:2,
+        name:"Super area",
+        value:`${cardDetail.superArea} sqft`,
+        numstring:true
+      },
+      {
+        id:3,
+        name:"Floor no",
+        value:cardDetail.flatNo 
+      },
+      {
+        id:4,
+        name:"Total floors",
+        value:cardDetail.totalFloor
+      },
+      {
+        id:5,
+        name:"Tenant preferred",
+        value:cardDetail.tenant
+      },
+      {
+        id:6,
+        name:"Facing",
+        value:"South",
+        value:cardDetail.facing
+      },
+      {
+        id:7,
+        name:"Non-veg",
+        value:"Not allowed",
+        value:cardDetail.nonVeg
+      },
+      {
+        id:8,
+        name:"Pets",
+        value:"Not allowed",
+        value:cardDetail.pet
+      },
+    ],
+  }
+
+  const addFavoritePropHandler=async()=>{
+    const id=user.data.data._id
+
+    try {
+      await addFavoriteProp({id,data:cardDetail._id}).then((res)=>{ 
+        dispatch(updateUserData(res.data.data))
+      })
+      
+    } catch (error) {
+      console.log({error})
+    }
+  }
+  
+  
+  
   return (
     <>
       <div className="rokye__property-detail">
         <div className="rokye__property-detail__prop">
           <div className="title">
             <div className="headline">
-              <h1>{cardDetail?.title}</h1>
+              <h1>{`${cardDetail?.bedroom}BHK ${cardDetail?.propType} for rent`}</h1>
 
-              <div className="like" onClick={() => setFavorite(!favorite)}>
+              <div className="like" onClick={addFavoritePropHandler}>
                 {
-                  favorite ? <AiFillHeart color='red' size={24} /> : <AiOutlineHeart size={24} />
+                  favorite ? <AiFillHeart color='red' size={24}  /> : <AiOutlineHeart size={24}  />
                 }
               </div>
             </div>
             <div className="title__info">
               <div className="location">
                 <ImLocation />
-                <p>{cardDetail?.place},{cardDetail?.city}</p>
+                <p>{cardDetail?.society},{cardDetail?.city}</p>
               </div>
               <div className="date">
                 <FcCalendar size={20} />
-                <p>29th May,2020</p>
+                <p>{cardDetail.date.slice(0,10)}</p>
               </div>
             </div>
           </div>
           <div className="carousel">
-            <Carousel />
+            <Carousel data={cardDetail.images} />
           </div>
 
           
@@ -87,13 +225,11 @@ const PropertyDetail = ({ cardDetail }) => {
                         <p>{item.name}</p>
                         {
                           item?.numstring ? (
-                            <>
-                              {console.log(item?.value?.split(" "))}
+                            <>                              
                               <p>{millify(parseInt(item?.value?.split(" ")[0]))} {item?.value?.split(" ")[1]} </p>
                             </>
 
                           ) : (
-
                             <p>{item.value}</p>
                           )
                         }
@@ -128,10 +264,10 @@ const PropertyDetail = ({ cardDetail }) => {
             </div>
             <div className="amenity__content">
               {
-                premiumFilterdata.amenities.slice(0, 9).map((item) => (
-                  <div className="item" key={item.id}>
+                cardDetail.amenity.map((item) => (
+                  <div className="item" key={item}>
                     <TbCheckbox size={20} color={"#035941"} />
-                    <p>{item.name}</p>
+                    <p style={{textTransform:"uppercase"}}>{item}</p>
                   </div>
                 ))
               }
@@ -142,8 +278,7 @@ const PropertyDetail = ({ cardDetail }) => {
             <div className="desc__title">
               <h1>Description</h1>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi quod placeat explicabo sequi enim quaerat voluptatem maxime, quia ipsum impedit et, autem eveniet saepe ex unde mollitia culpa consectetur! </p>
-            <p>Ex mollitia, explicabo sed neque quidem voluptatum, corporis perspiciatis laboriosam eligendi harum odio rerum possimus obcaecati, quasi molestiae repellat excepturi delectus nulla velit dolor itaque enim ad alias fuga. Odit!</p>
+            <p>{cardDetail.description}</p>
           </div>
         </div>
 
