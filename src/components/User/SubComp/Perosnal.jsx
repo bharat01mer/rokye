@@ -44,6 +44,7 @@ const Perosnal = ({ userData }) => {
 
     const onSubmitHandler = async(data) => {
         try {
+            
             await updateUser({id:userData._id,data}).then((res)=>{
                 dispatch(updateUserData(res.data.data))
             })
@@ -89,7 +90,7 @@ const Perosnal = ({ userData }) => {
                         </>
                     ))
                 }
-                <motion.button className="content__submit" type="submit" whileTap={{scale:.97}} disabled={isValid} >
+                <motion.button className="content__submit" type="submit" whileTap={{scale:.97}} >
                     <h2>Submit</h2>
                 </motion.button>
             </form>
