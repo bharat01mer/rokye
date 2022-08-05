@@ -1,20 +1,20 @@
 import { useGetFavListMutation } from "../../../../redux/slices/property"
 import { Card } from "../../resuable"
 import { useEffect } from "react"
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux"
 
-const WishList = ({list,id}) => {
-    const [run,data]=useGetFavListMutation()
-    const state=useSelector((state)=>state.util)
+const WishList = ({ list, id }) => {
+    const [run, data] = useGetFavListMutation()
+    const state = useSelector((state) => state.util)
 
-    useEffect(()=>{
+    useEffect(() => {
         run(id)
-    },[state])
-    if(!list || !data){
+    }, [state])
+    if (!list || !data) {
         return null
     }
-    console.log({data})
-    
+    console.log({ data })
+
     return (
         <div className="rokye__user-dashboard__wishlist">
             <div className="title">
@@ -25,7 +25,7 @@ const WishList = ({list,id}) => {
                 {
                     data?.data?.data?.map((item) => (
                         <div key={item._id}>
-                        <Card id={item._id} city={item.city} place={item.society} img={item.images[0].data} bath={item.bathroom} bed={item.bathroom} price={item.rentDetail.monthly} title={`${item?.bedroom}BHK ${item?.propType} for rent`} />
+                            <Card id={item._id} city={item.city} place={item.society} img={item.images[0].data} bath={item.bathroom} bed={item.bathroom} price={item.rentDetail.monthly} title={`${item?.bedroom}BHK ${item?.propType} for rent`} />
                         </div>
                     ))
                 }

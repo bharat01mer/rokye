@@ -25,7 +25,7 @@ export const propertyApi=createApi({
             })
         }),
         getAllProperty:builder.query({
-            query:(page)=>`/?page=${page}`
+            query:(page)=>`${produrl}?page=${page}`
         }),
         getPropertyById: builder.query({
             query:(id)=>`/${id}`
@@ -57,11 +57,17 @@ export const propertyApi=createApi({
                 method:"GET"
             })
         }),
+        getUserListing: builder.mutation({
+            query: (id)=>({
+                url:`/listing/${id}`,
+                method:"GET"
+            })
+        })
     })
 })
 
 
-export const {useCreatePropertyMutation,useAddImageInPropertyByIdMutation,useGetAllPropertyQuery,useGetPropertyByIdQuery,useGetFavListMutation}=propertyApi
+export const {useCreatePropertyMutation,useAddImageInPropertyByIdMutation,useGetAllPropertyQuery,useGetPropertyByIdQuery,useGetFavListMutation,useGetUserListingMutation}=propertyApi
 
 
 

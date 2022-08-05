@@ -3748,6 +3748,7 @@ body {
   margin-top: 2rem;
 }
 .rokye__user-dashboard__personal .content__item {
+  margin-bottom: 1rem;
   width: 100%;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   padding: 1rem;
@@ -3831,7 +3832,7 @@ body {
     padding: 7rem 1rem;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
   .rokye__user {
     font-size: 0.9rem;
   }
@@ -3841,6 +3842,6 @@ body {
     grid-gap: 1rem;
   }
   .rokye__user-dashboard {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
 }/*# sourceMappingURL=index.css.map */

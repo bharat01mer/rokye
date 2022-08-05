@@ -1,6 +1,6 @@
 import { TbArrowsSort as SortIcon, TbVector, TbCircleCheck } from "react-icons/tb"
 import { RiArrowDropDownLine as DownArrow, RiFilter3Line } from "react-icons/ri"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
 import {useGetAllPropertyQuery} from "../../../../redux/slices/property"
@@ -10,10 +10,15 @@ import { useRouter } from "next/router"
 
 const Properties = ({ setShowMobFilter }) => {
     const [showSortOption, setShowSortOption] = useState(false)
-    const {data,isFetching,error,isSuccess}=useGetAllPropertyQuery()
     const router=useRouter()
-
     const page=router.query?.page || 1
+    
+    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery(page)
+
+    useEffect(()=>{
+
+    },[data])
+
 
     const chooseItem = [
         {
@@ -40,8 +45,8 @@ const Properties = ({ setShowMobFilter }) => {
     if(isFetching || !data){
         return <h1>Waiting..</h1>
     }
-
     
+
     return (
         <div className='rokye__property-grid'>
             <div className="rokye__property-grid__title">
@@ -97,7 +102,7 @@ const Properties = ({ setShowMobFilter }) => {
                 <div className="card">
                     {
                         data.data.map((item) => (
-                            <div key={item.id}>
+                            <div key={item._id}>
                                 <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0].data} id={item._id} />
                             </div>
                         ))
@@ -105,9 +110,9 @@ const Properties = ({ setShowMobFilter }) => {
                 </div>
                 
                 {/* Implement Pagination after intergrating the api */}
-                {/* <div className="pagination">
-                    <Pagination page={page} propData={data}  />
-                </div> */}
+                <div className="pagination">
+                    <Pagination page={page} propData={data} refetch={refetch}  />
+                </div>
             </div>
         </div>
     )

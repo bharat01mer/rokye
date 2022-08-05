@@ -215,7 +215,7 @@ const Login = ({ isSignUp }) => {
                                 )
                             }
                         </div>
-                        <motion.button className="form__submit" type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65", borderColor: isValid ? "#F25C05" : "#ff9e65" }} whileTap={{ scale: isValid ? .95 : 1 }}>
+                        <motion.button className="form__submit" type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65", borderColor: isValid ? "#F25C05" : "#ff9e65" }} whileTap={{ scale:  .95 }}>
                             <h2>Submit</h2>
                         </motion.button>
                     </div>

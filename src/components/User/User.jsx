@@ -30,10 +30,10 @@ const tabItem = [
     },
 ]
 
-const User = () => {
+const User = ({user}) => {
     const [activetab, setActivetab] = useState(0)
     const dispatch=useDispatch()
-    const {user}=useSelector((state)=>state.util)
+    
     const router=useRouter()
 
     const userData=user ? user.data.data : []
@@ -43,7 +43,7 @@ const User = () => {
             case 0:
                 return <Perosnal userData={userData} />
             case 1:
-                return <Listing />
+                return <Listing id={userData._id}  />
             case 2:
                 return <WishList list={user?.data?.data?.favoriteProp} id={userData._id}  />
             default:

@@ -74,6 +74,7 @@
         flex-direction: column;
         margin-top: 2rem;
         &__item {
+          margin-bottom: 1rem;
           width: 100%;
           .upper {
             @include center__elem;
@@ -177,7 +178,7 @@
   @media screen and (max-width:800px) {
     padding: 7rem 1rem;
   }
-  @media screen and (max-width:500px) {
+  @media screen and (max-width:570px) {
     font-size: .9rem;
 
     .tab{
@@ -186,7 +187,7 @@
         grid-gap: 1rem ;
     }
     &-dashboard{
-        padding: 2rem 0;
+        padding: 2rem 1rem;
     }
   }
 }
