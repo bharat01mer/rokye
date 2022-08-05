@@ -103,7 +103,7 @@
       h1 {
         @include heading-font;
         color: $color1;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
       }
       p {
         @include center__elem;
@@ -113,6 +113,22 @@
       }
       &__bar {
         width: 100%;
+      }
+
+      .title{
+        margin-bottom: 1rem;
+        @include center__elem;
+        justify-content: flex-start;
+        // align-items: baseline;
+
+        .rating{
+          margin-left: 1rem;
+          @include center__elem;
+        }
+        svg{
+          font-size: 2rem;
+          color: $color2;
+        }
       }
     }
     .add {
@@ -193,8 +209,10 @@
 
     .review {
       margin-top: 2rem;
-
+      width: 100%;
+      
       &__item {
+        width: 100%;
         margin-bottom: 3rem;
         @include box_shadow;
         padding: 1rem;
@@ -203,7 +221,7 @@
           justify-content: space-between;
           align-items: flex-start;
           margin-bottom: 1rem;
-
+          
           &__info {
             @include center__elem;
             h2 {
@@ -212,7 +230,7 @@
             }
             svg {
               font-size: 1rem;
-              color: $color5;
+              color: $color2;
             }
 
             .info {
@@ -226,6 +244,10 @@
         .lower {
           p {
             color: gray;
+          }
+          .remove{
+            @include center__elem;
+            justify-content: flex-end;
           }
         }
       }
@@ -329,6 +351,10 @@
     .item {
       width: 100%;
       margin-bottom: 1rem;
+    }
+
+    .star{
+      @include center__elem;
     }
     .rating {
       &__title {

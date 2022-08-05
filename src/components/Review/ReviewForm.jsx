@@ -1,88 +1,73 @@
 import React, { useState } from 'react'
 import { TextField } from '@mui/material'
-import { AiOutlineDown, AiOutlineStar, AiFillStar } from "react-icons/ai"
 import { GiCancel } from "react-icons/gi"
+import { useForm } from "react-hook-form"
+import { motion } from "framer-motion"
+import ReactStars from "react-rating-stars-component";
+import { useCreateReviewMutation } from '../../../redux/slices/review'
+import { toast, ToastContainer } from 'react-toast'
 
-const ratingOption = [
-    {
-        id: 0,
-        value: 1,
-        marked:false
-    },
-    {
-        id: 1,
-        value: 2,
-        marked:false
-    },
-    {
-        id: 2,
-        value: 3,
-        marked:false
-    },
-    {
-        id: 3,
-        value: 4,
-        marked:false
-    },
-    {
-        id: 4,
-        value: 5,
-        marked:false
-    },
 
-]
-
-const ReviewForm = ({setClose}) => {
-    const [ratingOpt, setRatingOpt] = useState(ratingOption)
-
-    function starMark(value){
-        for(let i=0;i<value;i++){
-            if(i<5){
-                setRatingOpt((item)=>[...ratingOpt,ratingOpt[i].marked=true])
-            }
-            console.log(i)
-        }
-    }
-    function starUnMark(value){
-        
-    }
+const ReviewForm = ({ setClose, name, email, id, refetch }) => {
     
+    const { register, formState: { errors, isValid }, handleSubmit, setValue } = useForm({ mode: "onChange", defaultValues: { email, name } })
+    const [createReview, info] = useCreateReviewMutation()
+
+   const ratingHandler=(value)=>{
+    setValue("rating",value)
+   }
+
+    const onSubmitHandler = async (data) => {
+
+        await createReview({ ...data, createdBy: id }).then(() => {
+            refetch()
+            toast.success("Review Submitted")
+            setClose(false)
+        }).catch((err) => {
+            toast.error("Error Occured,try Again")
+
+        })
+
+    }
+
+
     return (
         <div className="rokye__reviewForm">
-            <form className='form'>
-                <div className="cancel" onClick={()=>setClose(false)}>
+            <ToastContainer delay={2000} />
+            <form className='form' onSubmit={handleSubmit(onSubmitHandler)}>
+                <div className="cancel" onClick={() => setClose(false)}>
                     <GiCancel size={35} color="#f25c05" />
                 </div>
                 <h1>Leave a Review</h1>
                 <div className="item name">
-                    <TextField variant='outlined' fullWidth label="Name" disabled value={"Jhon Doe"} />
+                    <TextField variant='outlined' fullWidth label="Name" disabled value={name} {...register("name")} />
                 </div>
                 <div className="item email">
-                    <TextField variant='outlined' fullWidth label="Email" disabled value={"jhondoe@gmail.com"} />
+                    <TextField variant='outlined' fullWidth label="Email" disabled value={email} {...register("email")} />
                 </div>
                 <div className="item rating">
                     <div className="rating__title">
-                        <p>Choose Rating:</p>
-                        
-                        <div className="star">
-                            {
-                                ratingOpt.map((item)=> item.marked  ? (
-                                    <AiFillStar size={20} color="#f25c05" onClick={()=>starUnMark(item.value)} />
+                        <p {...register("rating", { required: true })} >Choose Rating:</p>
 
-                                )  : (item.value<=5 && (
-                                    <AiOutlineStar size={20} onClick={()=>starMark(item.value)} color="#f25c05" />
-                                )))
-                            }
+                        <div className="star">
+                            <ReactStars
+                                count={5}
+                                onChange={ratingHandler}
+                                size={30}
+                                activeColor="#f25c05"
+                            />,
                         </div>
                     </div>
 
+
                 </div>
-                <div className="item review">
-                    <TextField variant='outlined' fullWidth label="Your Review" multiline rows={5} />
+                <div className="item review" >
+                    <TextField variant='outlined' fullWidth label="Your Review" multiline rows={5} {...register("comment", { required: true })} />
+
                 </div>
-                <div className="submit">
+                <motion.button className="submit" type="submit" whileTap={{ scale: .95 }}>
                     <h3>Submit a review</h3>
-                </div>
+                </motion.button>
             </form>
         </div>
     )

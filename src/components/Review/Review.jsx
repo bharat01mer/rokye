@@ -1,16 +1,20 @@
-import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
 import { AiOutlineStar, AiOutlineDown, AiFillStar } from "react-icons/ai"
 import { TbArrowsSort } from "react-icons/tb"
 import { FiInstagram, FiEdit, FiMail } from "react-icons/fi"
 import { FaFacebookF, FaTwitter, FaUserCircle } from "react-icons/fa"
 import { BiMessageDetail } from "react-icons/bi"
+import { MdDelete } from "react-icons/md"
 import ProgressBar from './ProgressBar'
-import { reviewData } from '../../../utils/data'
 import { ContactModal } from "../resuable"
+import { useGetAllReviewQuery } from '../../../redux/slices/review'
+import { useRouter } from 'next/router'
 import ReviewForm from './ReviewForm'
-
+import Paginate from './Pagination'
+import { useSelector } from 'react-redux'
+import { useDeleteReviewMutation } from '../../../redux/slices/review'
+import {ToastContainer,toast} from 'react-toast'
 
 const socialLinks = [
     {
@@ -29,32 +33,48 @@ const socialLinks = [
         icon: <FaTwitter />
     },
 ]
+
+
+
 const Review = () => {
-    const [reviewStar, setreviewStar] = useState({ one: 80, two: 90, three: 50, four: 30, five: 0 })
+    const [reviewStar, setReviewStar] = useState({ one: 80, two: 90, three: 50, four: 30, five: 20 })
     const [showSortingOption, setShowSortingOption] = useState(false)
     const [showContactForm, setShowContactForm] = useState(false)
     const [showReviewForm, setshowReviewForm] = useState(false)
+    const router = useRouter()
+    const page = router.query?.page || 1
+    const [filterVal, setFilterVal] = useState("new")
+
+    const { data, isFetching, error, refetch } = useGetAllReviewQuery({ id: page, filter: filterVal })
+    const { user } = useSelector(state => state.util)
+
+    const [deleteFunc,deleteInfo]=useDeleteReviewMutation()
+
+    useEffect(() => {
+
+    }, [page, data, filterVal, user])
 
     const starItem = [
         {
             id: 0,
-            value: reviewStar.one,
+            value: data?.percentages.one,
         },
         {
             id: 1,
-            value: reviewStar.two,
+            value: data?.percentages.two,
         },
         {
             id: 2,
-            value: reviewStar.three,
+            value: data?.percentages.three,
         },
         {
             id: 3,
             value: reviewStar.four,
+            value: data?.percentages.four,
         },
         {
-            id: 5,
-            value: reviewStar.five,
+            id: 4,
+            value: data?.percentages.five,
         },
     ]
 
@@ -131,9 +151,83 @@ const Review = () => {
                 <AiFillStar />
         }
     }
+    if (!data) {
+        return null
+    }
+
+
+
+    const sortClickHandler = (value) => {
+        setFilterVal(value)
+        setShowSortingOption(false)
+    }
+
+    function averageStar() {
+        const avg = Math.round(data.average)
+
+        switch (avg) {
+            case 1:
+                return (
+                    <AiFillStar />
+
+                )
+            case 2:
+                return (
+                    <>
+                        <AiFillStar />
+                        <AiFillStar />
+                    </>
+
+                )
+            case 3:
+                return (
+                    <>
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                    </>
+
+                )
+            case 4:
+                return (
+                    <>
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                    </>
+
+                )
+            case 5:
+                return (
+                    <>
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                        <AiFillStar />
+                    </>
+
+                )
+
+            default:
+                return <AiFillStar />
+        }
+    }
+
+    const deleteReviewHandler=async(id)=>{
+        await deleteFunc(id).then(()=>{
+            refetch()
+            toast.success("Post Deleted")
+        }).catch((err)=>{
+            console.log({err})
+            toast("Error Occured,Try Again")
+        })
+    }
     return (
         <>
             <div className="rokye__review">
+                <ToastContainer delay={2000} />
                 <div className="rokye__review-profile">
                     <div className="intro">
                         {/* <Image src={"/logo.png"} width={150} height={75} objectFit={"contain"} /> */}
@@ -164,10 +258,15 @@ const Review = () => {
                 </div>
                 <div className="rokye__review-content">
                     <div className="progress">
-                        <h1>Review(3)</h1>
+                        <div className="title">
+                            <h1>Review({data?.count})</h1>
+                            <div className="rating">
+                                {averageStar()}
+                            </div>
+                        </div>
                         {
                             starItem.map((item) => (
-                                <div className="progress__bar" key={item.value}>
+                                <div className="progress__bar" key={item.id}>
                                     <p>
                                         {item.id + 1} <AiOutlineStar />
                                     </p>
@@ -183,8 +282,8 @@ const Review = () => {
                                 Sort by:
                             </p>
                             <div className="option">
-                                <div className="option__title" onClick={()=>setShowSortingOption((item)=>!item)}>
-                                    <p>Choose</p>
+                                <div className="option__title" onClick={() => setShowSortingOption((item) => !item)}>
+                                    <p>{filterVal}</p>
                                     <AiOutlineDown />
                                 </div>
                                 {
@@ -193,7 +292,7 @@ const Review = () => {
 
                                             {
                                                 optionItem.map((item) => (
-                                                    <div className="item" key={item.id}>
+                                                    <div className="item" key={item.id} onClick={() => sortClickHandler(item.value)} >
                                                         <p>{item.name}</p>
                                                     </div>
                                                 ))
@@ -203,14 +302,18 @@ const Review = () => {
                                 }
                             </div>
                         </div>
-                        <motion.div className="add__content" whileTap={{ scale: .97 }} onClick={()=>setshowReviewForm(true)}>
-                            <FiEdit size={20} />
-                            <p>Add Review</p>
-                        </motion.div>
+                        {
+                            user && (
+                                <motion.div className="add__content" whileTap={{ scale: .97 }} onClick={() => setshowReviewForm(true)}>
+                                    <FiEdit size={20} />
+                                    <p>Add Review</p>
+                                </motion.div>
+                            )
+                        }
                     </div>
                     <div className="review">
                         {
-                            reviewData.map((item) => (
+                            data?.data?.map((item) => (
                                 <div className="review__item" key={item.id}>
                                     <div className="upper">
                                         <div className="upper__info">
@@ -224,18 +327,26 @@ const Review = () => {
                                             </div>
 
                                         </div>
-                                        <p>{item.date}</p>
+                                        <p>{item.date.slice(0, 10)}</p>
                                     </div>
                                     <div className="lower">
-                                        <p>{item.review}</p>
+                                        <p>{item.comment}</p>
+                                        {
+                                            (user && item?.createdBy?.toString()===user?.data?.data?._id?.toString())  && (
+                                                <motion.div className="remove" onClick={()=>deleteReviewHandler(item._id)} >
+                                                    <MdDelete size={30} color="red" />
+                                                </motion.div>
+                                            )
+                                        }
                                     </div>
+
                                 </div>
                             ))
                         }
                     </div>
-                    {/* <div className="pagination">
-
-                </div> */}
+                    <div className="pagination">
+                        <Paginate refetch={refetch} propData={data} page={page} />
+                    </div>
                 </div>
             </div>
             {
@@ -245,7 +356,7 @@ const Review = () => {
             }
             {
                 showReviewForm && (
-                    <ReviewForm setClose={setshowReviewForm} />
+                    <ReviewForm setClose={setshowReviewForm} name={user?.data?.data?.name} email={user?.data?.data?.email} refetch={refetch} id={user?.data?.data?._id} />
                 )
             }
         </>

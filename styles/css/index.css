@@ -3402,7 +3402,6 @@ body {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   color: #114040;
-  margin-bottom: 1rem;
 }
 .rokye__review-content .progress p {
   display: flex;
@@ -3413,6 +3412,23 @@ body {
 }
 .rokye__review-content .progress__bar {
   width: 100%;
+}
+.rokye__review-content .progress .title {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rokye__review-content .progress .title .rating {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__review-content .progress .title svg {
+  font-size: 2rem;
+  color: #035941;
 }
 .rokye__review-content .add {
   width: 100%;
@@ -3495,8 +3511,10 @@ body {
 }
 .rokye__review-content .review {
   margin-top: 2rem;
+  width: 100%;
 }
 .rokye__review-content .review__item {
+  width: 100%;
   margin-bottom: 3rem;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   padding: 1rem;
@@ -3521,7 +3539,7 @@ body {
 }
 .rokye__review-content .review__item .upper__info svg {
   font-size: 1rem;
-  color: #f25c05;
+  color: #035941;
 }
 .rokye__review-content .review__item .upper__info .info {
   margin-left: 0.4rem;
@@ -3531,6 +3549,12 @@ body {
 }
 .rokye__review-content .review__item .lower p {
   color: gray;
+}
+.rokye__review-content .review__item .lower .remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 960px) {
   .rokye__review-content {
@@ -3637,6 +3661,11 @@ body {
 .rokye__reviewForm form .item {
   width: 100%;
   margin-bottom: 1rem;
+}
+.rokye__reviewForm form .star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .rokye__reviewForm form .rating__title {
   display: flex;
