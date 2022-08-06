@@ -8,12 +8,16 @@ import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { useEffect, useState } from "react"
 
+import { useAddContactMutation } from "../../../redux/slices/contact"
+import { ToastContainer,toast } from "react-toast"
+
 
 const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
     const [showOption, setShowOption] = useState(false)
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
     const { handleSubmit, formState, setValue, register } = useForm({ mode: "onChange" })
     const [checkBox, setCheckBox] = useState(false)
+    const [addContact]=useAddContactMutation()
 
     const socialLinks = [
         {
@@ -51,8 +55,12 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
         setValue("type", value.value)
         setShowOption(false)
     }
-    const onSubmithandler = (data) => {
-        console.log({ data })
+    const onSubmithandler = async(data) => {
+        await addContact(data).then(()=>{
+            toast.success("Message Sent")
+        }).catch(()=>{
+            toast.error("Try Again")
+        })
     }
     useEffect(() => {
 
@@ -64,7 +72,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
 
     return (
         <form className="rokye__form" onSubmit={handleSubmit(onSubmithandler)}>
-
+            <ToastContainer delay={2000} />
             <div className="rokye__form-header">
                 {
                     showCancel && (

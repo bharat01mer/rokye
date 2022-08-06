@@ -14,7 +14,8 @@ export const rootReducer=combineReducers({
     util: utilSlice.reducer,
     [userApi.reducerPath]:userApi.reducer,
     [propertyApi.reducerPath]: propertyApi.reducer,
-    [reviewApi.reducerPath]: reviewApi.reducer
+    [reviewApi.reducerPath]: reviewApi.reducer,
+
 })
 const persistConfig={
     key:"root",

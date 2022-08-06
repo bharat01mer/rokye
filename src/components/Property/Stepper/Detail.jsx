@@ -236,6 +236,11 @@ const family = [
         title: "Family",
         value: "bachelor"
     },
+    {
+        id: 1,
+        title: "Bacholor/Family",
+        value: "bachelor/family"
+    },
 ]
 
 const nonVeg = [
