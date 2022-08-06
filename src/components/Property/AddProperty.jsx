@@ -42,7 +42,7 @@ const initialState = {
 }
 
 const AddProperty = () => {
-    const [activeStep, setActiveStep] = useState(4)
+    const [activeStep, setActiveStep] = useState(0)
     const [imageArray, setImageArray] = useState([])
 
     const [isImageUploading, setIsImageUploading] = useState(false)
@@ -141,13 +141,13 @@ const AddProperty = () => {
                         <div className="form" >
                             {showForm(activeStep)}
                         </div>
-                        {/* {
-                            isImageUploading && ( */}
+                        {
+                            isImageUploading && (
                                 <div className="status">
                                     <h3>Wait, While uploading Image,Once completed you will be automaitcally redirect to your property page</h3>
                                 </div>
-                            {/* )
-                        } */}
+                            )
+                        } 
                         <div className="stepper__btn">
                             <button className="stepper__btn-prev" type="button" style={{ visibility: activeStep === 0 ? "hidden" : "visible" }} onClick={() => setActiveStep(activeStep - 1)}>
                                 <h2>Prev</h2>
