@@ -14,7 +14,6 @@ const utilSlice=createSlice({
             state.user=action.payload
         },
         updateUserData:(state,action)=>{
-            console.log({action})
             state.user.data.data=action.payload
             
         },

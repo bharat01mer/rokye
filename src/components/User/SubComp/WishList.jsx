@@ -13,7 +13,6 @@ const WishList = ({ list, id }) => {
     if (!list || !data) {
         return null
     }
-    console.log({ data })
 
     return (
         <div className="rokye__user-dashboard__wishlist">

@@ -220,7 +220,6 @@ const Review = () => {
             refetch()
             toast.success("Post Deleted")
         }).catch((err)=>{
-            console.log({err})
             toast("Error Occured,Try Again")
         })
     }

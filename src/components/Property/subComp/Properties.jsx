@@ -45,8 +45,6 @@ const Properties = ({ setShowMobFilter }) => {
     if(isFetching || !data){
         return <h1>Waiting..</h1>
     }
-    
-    console.log({data})
 
     return (
         <div className='rokye__property-grid'>

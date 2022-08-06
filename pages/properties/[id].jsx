@@ -12,8 +12,6 @@ const PropertyDetail = () => {
     if (isFetching) {
         return <Loader />
     }
-
-    console.log(cardDetail)
     return (
         <Layout title={cardDetail ? `${cardDetail?.data?.bedroom}BHK ${cardDetail?.data?.propType} for rent` : "Error"} description={cardDetail && cardDetail.description}>
             {

@@ -59,8 +59,6 @@ const Navbar = () => {
     return router.pathname === `/${item.link}`
   }
 
-
-  console.log({ user })
   const logoutHandler = () => {
     dispatch(logout())
     // router.push("/")

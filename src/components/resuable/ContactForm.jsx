@@ -47,7 +47,6 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
     ]
 
     const optionClickHandler = (value) => {
-        console.log({ value })
         setOptionValue({ id: value.id, name: value.name })
         setValue("type", value.value)
         setShowOption(false)

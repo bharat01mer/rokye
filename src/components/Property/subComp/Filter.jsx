@@ -137,7 +137,7 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
         }
     }
     const searchClickHandler = () => {
-        console.log({ optionValue })
+
         setShowMobFilter(false)
     }
     const modifiedItemList=winWidth < 1100 ? itemList.splice(0,10) : itemList

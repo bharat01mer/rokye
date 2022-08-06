@@ -125,8 +125,6 @@ const AddProperty = () => {
         }
     }
 
-    console.log({isImageUploading})
-
     return (
         <div className="rokye__add-property">
             <ToastContainer delay={3000} />
