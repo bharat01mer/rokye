@@ -18,7 +18,6 @@ const Upload = ({ imageArray, setImageArray }) => {
         if (e.target.files.length > 0 && e.target.files.length === 1) {
             setImageArray([...imageArray, ...e.target.files])
         } else {
-
             setImageArray([...imageArray, ...e.target.files])
         }
     }

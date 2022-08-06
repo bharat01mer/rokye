@@ -46,6 +46,7 @@ const Properties = ({ setShowMobFilter }) => {
         return <h1>Waiting..</h1>
     }
     
+    console.log({data})
 
     return (
         <div className='rokye__property-grid'>
@@ -101,9 +102,9 @@ const Properties = ({ setShowMobFilter }) => {
             <div className="rokye__property-grid__content">
                 <div className="card">
                     {
-                        data.data.map((item) => (
+                        data?.data?.map((item) => (
                             <div key={item._id}>
-                                <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0].data} id={item._id} />
+                                <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"   } id={item._id} />
                             </div>
                         ))
                     }

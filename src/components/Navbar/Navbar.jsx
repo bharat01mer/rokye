@@ -37,10 +37,10 @@ const Navbar = () => {
       name: "Contact Us",
       link: "contact",
     },
-    {
-      name: "Refer & Earn",
-      link: "refer",
-    },
+    // {
+    //   name: "Refer & Earn",
+    //   link: "refer",
+    // },
     {
       name: "About Us",
       link: "about",
@@ -70,9 +70,9 @@ const Navbar = () => {
     dispatch(setwinWidth(window.innerWidth))
     window.onscroll = (() => {
       if (window.pageYOffset >= 66) {
-        headerRef.current.classList.add("sticky")
+        headerRef?.current?.classList?.add("sticky")
       } else {
-        headerRef.current.classList.remove("sticky");
+        headerRef?.current?.classList?.remove("sticky");
       }
     })
   }, [showMobileNav, state, dispatch])
