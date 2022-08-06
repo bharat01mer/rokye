@@ -756,7 +756,6 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-searchbar__tab .item .menu {
   width: 12rem;
-  height: 20rem;
   background: white;
   box-shadow: 0 0 5px black;
   position: absolute;
@@ -793,7 +792,11 @@ input::-webkit-inner-spin-button {
 .rokye__home-searchbar__tab .item .menu::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.rokye__home-searchbar__tab .item .menu.fixed {
+  height: 15rem;
+}
 .rokye__home-searchbar__tab .item .budget {
+  height: 20rem;
   padding: 1rem;
   display: flex;
   justify-content: center;

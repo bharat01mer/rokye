@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, {  useState } from 'react'
 import TextField from '@mui/material/TextField'
 import { budgetData } from '../../../utils/data'
 import { motion, AnimatePresence } from 'framer-motion'

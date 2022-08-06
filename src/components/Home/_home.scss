@@ -137,7 +137,6 @@
 
         .menu {
           width: 12rem;
-          height: 20rem;
           background: white;
           box-shadow: 0 0 5px black;
           position: absolute;
@@ -178,13 +177,20 @@
           &::-webkit-scrollbar-thumb:hover {
             background: #555;
           }
+          
+          &.fixed{
+            height: 15rem;
+            
+          }
         }
         .budget {
+          height: 20rem;
           padding: 1rem;
           @include center__elem;
           justify-content: space-between;
           align-items: flex-start;
         }
+        
       }
       .divider {
         width: 3px;

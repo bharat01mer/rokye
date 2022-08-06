@@ -7,8 +7,9 @@ export const reviewApi=createApi({
     baseQuery:fetchBaseQuery({
         baseUrl:produrl,
         prepareHeaders:(headers,{getState})=>{
-            const token=getState().util?.user?.data?.tokem
-
+            
+            const token=getState().util?.user?.data.token
+            console.log({token,data:getState().util.user.data.tokem})
             if(token){
                 headers.set("authorization",`Bearer ${token}`)
             }

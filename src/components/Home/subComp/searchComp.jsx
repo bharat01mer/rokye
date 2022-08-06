@@ -8,11 +8,14 @@ import { IoIosArrowDown } from "react-icons/io"
 
 import { budgetData, optionData } from '../../../../utils/data'
 import { useEffect, useState, useRef } from 'react'
+import {MinMaxFilter} from "../../resuable"
 
 export default function Desktop(props) {
     const [showMenu, setShowMenu] = useState({ id: null, show: false })
     const [budgetFilter, setBudgetFilter] = useState({ id: 1, show: true })
     const ref = useRef()
+
+    const [value, setValue] = useState({ min: 0, max: 0 })
 
     const menuVariant = {
         initial: {
@@ -53,6 +56,12 @@ export default function Desktop(props) {
         }
     }, [budgetFilter])
 
+
+    const optionClickHandler = (item, reset = true) => {
+
+        setOptionValue({ ...optionValue, [item.name]: item.value })
+        if (reset) setShowOption({ id: null, show: false })
+    }
     return (
         <div className="rokye__home-searchbar__tab" ref={ref}>
             <div className="location item">
@@ -65,7 +74,7 @@ export default function Desktop(props) {
                     <AnimatePresence>
                         {
                             showMenu.id === 1 && showMenu.show && (
-                                <motion.div className="menu" variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
+                                <motion.div className={`menu ${optionData.city.length>4 ? "fixed" : ""}`} variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
                                     {optionData.city.map((item) => (
                                         <div className="menu__item" key={item.id} onClick={() => setShowMenu(false)}>
                                             <h3>{item.name}</h3>
@@ -89,7 +98,7 @@ export default function Desktop(props) {
 
                         {
                             showMenu.id === 2 && showMenu.show && (
-                                <motion.div className="menu" variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
+                                <motion.div className={`menu ${optionData.condos.length>4 ? "fixed" : ""}`} variants={menuVariant} animate={"visible"} initial={"initial"} exit={"exit"}>
                                     {optionData.condos.map((item) => (
                                         <div className="menu__item" key={item.id} onClick={() => setShowMenu(false)}>
                                             <h3>{item.name}</h3>

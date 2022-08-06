@@ -4,6 +4,46 @@ export const optionData = {
       id: 0,
       name: "Ahmedabad",
     },
+    {
+      id: 1,
+      name: "Mumbai",
+    },
+    {
+      id: 2,
+      name: "Delhi",
+    },
+    {
+      id: 3,
+      name: "Noida",
+    },
+    {
+      id: 4,
+      name: "Bangalore",
+    },
+    {
+      id: 5,
+      name: "Kolkata",
+    },
+    {
+      id: 6,
+      name: "Chennai",
+    },
+    {
+      id: 7,
+      name: "Hyderabad",
+    },
+    {
+      id: 8,
+      name: "Pune",
+    },
+    {
+      id: 9,
+      name: "Gurgaon",
+    },
+    {
+      id: 10,
+      name: "Nagpur",
+    },
   ],
   condos: [
     {
