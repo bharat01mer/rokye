@@ -25,7 +25,7 @@ export const propertyApi=createApi({
             })
         }),
         getAllProperty:builder.query({
-            query:(page)=>`${produrl}?page=${page}`
+            query:({page,sort})=>`${produrl}?page=${page}&sort=${sort}`
         }),
         getPropertyById: builder.query({
             query:(id)=>`/${id}`

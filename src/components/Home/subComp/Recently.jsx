@@ -8,7 +8,7 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 
 import { Navigation } from "swiper"
 
-const Recently = () => {
+const Recently = ({data}) => {
     const breakpoints = {
         850: {
             slidesPerView: 2,
@@ -23,6 +23,7 @@ const Recently = () => {
             spaceBetween: 10,
         }
     }
+    console.log({data})
     return (
         <div className="rokye__home-recent">
             <div className="rokye__home-recent__title">
@@ -43,9 +44,9 @@ const Recently = () => {
                     // centeredSlides={true}
                     className="mySwiper"
                 >
-                    {cardData.map((item) => (
+                    {data?.data?.map((item) => (
                         <SwiperSlide key={item.id}>
-                            <Card city={item.city} place={item.place} title={item.title} img={item.img} price={item.price} id={item.id} />
+                            <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"   } id={item._id} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -264,10 +264,10 @@ const Review = () => {
                             </div>
                         </div>
                         {
-                            starItem.map((item) => (
+                            starItem.reverse().map((item) => (
                                 <div className="progress__bar" key={item.id}>
                                     <p>
-                                        {item.id + 1} <AiOutlineStar />
+                                        {item.id + 1}  <AiOutlineStar /> 
                                     </p>
                                     <ProgressBar value={item.value} />
                                 </div>

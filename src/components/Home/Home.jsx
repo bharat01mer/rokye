@@ -11,7 +11,7 @@ const Message=dynamic(()=>import("./subComp/Message"))
 const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
 const Review=dynamic(()=>import("./subComp/Review"),{ssr:false})
 
-const Home = () => {
+const Home = ({data}) => {
   const state=useSelector((state)=>state)
   
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <Intro winWidth={state.util.winWidth} />
       <SearchBar winWidth={state.util.winWidth} />
       <Choose />
-      <Recently />
+      <Recently data={data} />
       <Review />
       <Message />
     </div>

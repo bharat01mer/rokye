@@ -10,10 +10,11 @@ import { useRouter } from "next/router"
 
 const Properties = ({ setShowMobFilter }) => {
     const [showSortOption, setShowSortOption] = useState(false)
+    const [sortValue, setSortValue] = useState("new")
     const router=useRouter()
     const page=router.query?.page || 1
     
-    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery(page)
+    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery({page,sort:sortValue})
 
     useEffect(()=>{
 
@@ -40,11 +41,13 @@ const Properties = ({ setShowMobFilter }) => {
 
     const sortClickHandler=(data)=>{
         
+        setSortValue(data)
         setShowSortOption(false)
     }
     if(isFetching || !data){
         return <h1>Waiting..</h1>
     }
+
 
     return (
         <div className='rokye__property-grid'>
@@ -62,7 +65,7 @@ const Properties = ({ setShowMobFilter }) => {
                             <SortIcon />  <span>Sort by :</span>
                         </p>
                         <div className="title" onClick={() => setShowSortOption(!showSortOption)}>
-                            <p>Choose</p>
+                            <p>{`${sortValue[0].toUpperCase()}${sortValue.slice(1)}`}</p>
                             <DownArrow />
                         </div>
                         <AnimatePresence>
