@@ -1,14 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const produrl ="http://localhost:4000/user/";
+const produrl = "http://localhost:4000/user/";
 
 export const userApi = createApi({
   reducerPath: "user",
   baseQuery: fetchBaseQuery({
     baseUrl: produrl,
     prepareHeaders: (headers, { getState }) => {
-      const token = getState().util.user?.data?.token;
-      console.log({data: getState(),token})
+      const token = getState().util?.user?.data?.token;
+
       if (token) {
         headers.set("authorization", `Bearer ${token}`);
       }
@@ -50,11 +50,11 @@ export const userApi = createApi({
       }),
     }),
     deleteUser: builder.mutation({
-        query:(id)=>({
-            url:`/${id}`,
-            method:"DELETE"
-        })
-    })
+      query: (id) => ({
+        url: `/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
@@ -64,5 +64,5 @@ export const {
   useAddFavoriteMutation,
   useUpdateUserDataMutation,
   useGetAllUserQuery,
-  useDeleteUserMutation
+  useDeleteUserMutation,
 } = userApi;
