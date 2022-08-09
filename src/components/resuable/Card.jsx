@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { MdKingBed } from 'react-icons/md'
 import { MdBathtub } from "react-icons/md"
 import { BsArrowRight, BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
+import {  TiDelete} from 'react-icons/ti'
 import { motion } from "framer-motion"
 import Link from "next/link"
 import milify from "millify"
@@ -10,15 +11,18 @@ import {useSelector,useDispatch} from "react-redux"
 import { useEffect } from 'react'
 import { useAddFavoriteMutation } from '../../../redux/slices/user'
 import { updateUserData } from '../../../redux/slices/util'
+import { useDeletePropertyByIdMutation } from '../../../redux/slices/property'
+import {ToastContainer,toast} from 'react-toast'
 
-const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = true }) => {
+const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = true,useDelete=false,refetch }) => {
   const [favorite, setfavorite] = useState(true)
   const {user}=useSelector((state)=>state.util)
   const [addFavoriteProp]=useAddFavoriteMutation()
+  const [deletePropbyId]=useDeletePropertyByIdMutation()
   const dispatch=useDispatch()
 
   const addFavoritePropHandler=async()=>{
-    const userid=user.data.data._id
+    const userid=user.data._id
 
     try {
       await addFavoriteProp({id:userid,data:id}).then((res)=>{ 
@@ -29,11 +33,13 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
       console.log({error})
     }
   }
+  console.log({user})
 
   useEffect(()=>{
     if(user){
 
-      const isFavorite=user.data.data.favoriteProp.find((item)=>item.id===id)
+      const isFavorite=user.data?.data?.favoriteProp.find((item)=>item.id===id)
+      console.log({isFavorite})
       
       if(isFavorite!==undefined || isFavorite){
         setfavorite(true)
@@ -44,8 +50,18 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
     
   },[dispatch,user,favorite])
   
+  const deleteProp=async()=>{
+    await deletePropbyId(id).then(()=>{
+      toast.success("Property Deleted")
+      refetch()
+    }).catch((err)=>{
+      toast.error("Error Occured")
+    })
+  }
+
   return (
     <div className="rokye__card">
+      <ToastContainer delay={2000} />
       <Link passHref href={`/properties/${id}`} >
         <div className="rokye__card-img">
           <Image src={img} width={300} height={250} objectFit="cover" />
@@ -67,6 +83,13 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
                   </motion.div>
                 )
             }
+          </div>
+        )
+      }
+      {
+        useDelete && (
+          <div className="favorite" onClick={deleteProp}>
+            <TiDelete size={40} color="red" />
           </div>
         )
       }

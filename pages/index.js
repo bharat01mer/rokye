@@ -3,7 +3,7 @@ import { Home, Layout } from '../src/components'
 import { useGetAllPropertyQuery } from '../redux/slices/property'
 
 const Index = () => {
-  const {data,isFetching}=useGetAllPropertyQuery(1)
+  const {data,isFetching}=useGetAllPropertyQuery({page:1,sort:"new",limit:8})
 
   if(isFetching){
     return null

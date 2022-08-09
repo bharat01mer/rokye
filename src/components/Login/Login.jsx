@@ -57,18 +57,18 @@ const Login = ({ isSignUp }) => {
     const onSubmitHandler = async (data) => {
 
         if (isSignUp) {
-            try {
-                const userdata = await createUser(data)
-                localStorage.setItem("user", JSON.stringify(userdata))
+            createUser(data).unwrap().then((res)=>{
+                localStorage.setItem("user", JSON.stringify(res))
                 toast.success("Signup Successfull")
-                dispatch(userData(userdata))
+                dispatch(userData(res))
                 router.push("/")
-            } catch (error) {
-                toast.error("Signup Failed")
-            }
+            }).catch((err)=>{
+                console.log({err})
+                toast.error(err?.data ? err?.data?.message :"Error Occurred")
+            })
+            
         } else {
-            try {
-                await loginUser(data).then((res) => {
+            loginUser(data).unwrap().then((res) => {
                     localStorage.setItem("user", JSON.stringify(res))
                     toast.success("Login Successfull")
                     dispatch(userData(res))
@@ -77,11 +77,9 @@ const Login = ({ isSignUp }) => {
                     } else {
                         router.push("/")
                     }
+                }).catch (error=>{
+                    toast.error( err?.data ? err?.data?.message :"Error Occurred")
                 })
-            } catch (error) {
-                console.log({error})
-                toast.error("Login Failed")
-            }
         }
     }
 
@@ -102,7 +100,7 @@ const Login = ({ isSignUp }) => {
 
     return (
         <div className={`rokye__login ${isSignUp ? "signup" : ""}`} >
-            <ToastContainer />
+            <ToastContainer delay={2000} />
             <div className="rokye__login-left">
                 {
                     !isSignUp ? (

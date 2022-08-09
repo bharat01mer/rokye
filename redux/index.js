@@ -8,6 +8,7 @@ import { reviewApi } from "./slices/review";
 import storage from "redux-persist/lib/storage"
 import {persistReducer,persistStore} from "redux-persist";
 import thunk from "redux-thunk"
+import { contactApi } from "./slices/contact";
 
 
 export const rootReducer=combineReducers({
@@ -15,13 +16,15 @@ export const rootReducer=combineReducers({
     [userApi.reducerPath]:userApi.reducer,
     [propertyApi.reducerPath]: propertyApi.reducer,
     [reviewApi.reducerPath]: reviewApi.reducer,
+    [contactApi.reducerPath]: contactApi.reducer
 
 })
 const persistConfig={
     key:"root",
     blacklist:[
         "property",
-        "review"
+        "review",
+        "contact"
     ],
     storage
 }

@@ -1,6 +1,6 @@
 import {createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const produrl=process.env.NODE_ENV==="production" ?"https://rokye.herokuapp.com/property" :"http://localhost:4000/property"
+const produrl=process.env.NODE_ENV==="production" ? "https://rokye.herokuapp.com/property" :"http://localhost:4000/property"
 
 export const propertyApi=createApi({
     reducerPath:"property",
@@ -25,7 +25,7 @@ export const propertyApi=createApi({
             })
         }),
         getAllProperty:builder.query({
-            query:({page,sort})=>`${produrl}?page=${page}&sort=${sort}`
+            query:({page,sort,limit})=>`${produrl}?page=${page}&sort=${sort}&limit=${limit}`
         }),
         getPropertyById: builder.query({
             query:(id)=>`/${id}`
@@ -45,10 +45,9 @@ export const propertyApi=createApi({
             })
         }),
         deletePropertyById: builder.mutation({
-            query:({id,userId})=>({
+            query:(id)=>({
                 url:`/${id}`,
-                method:"DELETE",
-                body:userId
+                method:"DELETE"
             })
         }),
         getFavList: builder.mutation({
@@ -67,7 +66,7 @@ export const propertyApi=createApi({
 })
 
 
-export const {useCreatePropertyMutation,useAddImageInPropertyByIdMutation,useGetAllPropertyQuery,useGetPropertyByIdQuery,useGetFavListMutation,useGetUserListingMutation}=propertyApi
+export const {useCreatePropertyMutation,useAddImageInPropertyByIdMutation,useGetAllPropertyQuery,useGetPropertyByIdQuery,useGetFavListMutation,useGetUserListingMutation,useDeletePropertyByIdMutation}=propertyApi
 
 
 

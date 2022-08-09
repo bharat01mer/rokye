@@ -3876,4 +3876,283 @@ body {
   .rokye__user-dashboard {
     padding: 2rem 1rem;
   }
+}
+
+.outer__shell__login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.admin__sidebar {
+  width: 100%;
+  background: #114040;
+  color: #f2f2f2;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__sidebar .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin__sidebar .item {
+  padding: 1rem;
+}
+.admin__sidebar .item.active {
+  color: #f25c05;
+}
+.admin__sidebar .mobcontent {
+  padding-right: 1rem;
+  border-radius: 4px;
+  color: black;
+  z-index: 23;
+  position: absolute;
+  background: white;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  right: 3rem;
+  top: 3rem;
+}
+.admin__content {
+  width: 100%;
+  padding: 2rem;
+}
+.admin__content .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__content .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 2.5rem;
+}
+.admin__content .divider {
+  width: 100%;
+  height: 0.13rem;
+  background: black;
+  margin: 1rem 0 2rem;
+}
+.admin__content-user .content .item {
+  margin-bottom: 1rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.admin__content-user .content .item .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.admin__content-user .content .item .upper p {
+  margin-left: 1rem;
+  color: #f25c05;
+}
+.admin__content-user .content .item .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.admin__content-user .content .item__no h3 {
+  font-size: 1.5rem;
+}
+.admin__content-user .content .item__detail {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin__content-user .content .item__detail svg {
+  color: #f25c05;
+}
+.admin__content-user .content .item__detail .info {
+  margin-left: 1rem;
+}
+.admin__content .pagination {
+  margin-top: 2rem;
+}
+.admin__content-properties .content .card {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+@media screen and (max-width: 1700px) {
+  .admin__content-properties .content .card {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .admin__content-properties .content .card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .admin__content-properties .content .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 720px) {
+  .admin__content-properties .content .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.admin__content-contact .content {
+  padding: 1rem;
+}
+.admin__content-contact .content .item {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  padding: 2rem 1rem;
+  justify-content: space-between;
+}
+.admin__content-contact .content .item .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__content-contact .content .item .upper p {
+  color: gray;
+}
+.admin__content-contact .content .item .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+.admin__content-contact .content .item .left h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.admin__content-contact .content .item__icon {
+  color: #f25c05;
+  margin-right: 2rem;
+}
+.admin__content-contact .content .item__detail {
+  width: 50rem;
+}
+.admin__content-contact .content .item__info {
+  color: gray;
+  margin: 0.4rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+.admin__content-contact .content .item .read {
+  margin-left: 0.6rem;
+  color: #f25c05;
+}
+.admin__content-contact .content .item__delete {
+  padding: 0.5rem;
+  background: red;
+  color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1130px) {
+  .admin__content-contact .content .item__detail {
+    width: 100%;
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 730px) {
+  .admin__content-contact .content {
+    padding: 0;
+  }
+  .admin__content-contact .content .item__info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .admin__content-contact .content .item__info p {
+    margin-top: 1rem;
+  }
+}
+.admin__content-review .review {
+  margin-top: 2rem;
+  width: 100%;
+}
+.admin__content-review .review__item {
+  width: 100%;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+  padding: 1rem;
+}
+.admin__content-review .review__item .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.admin__content-review .review__item .upper__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin__content-review .review__item .upper__info h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.admin__content-review .review__item .upper__info svg {
+  font-size: 1rem;
+  color: #035941;
+}
+.admin__content-review .review__item .upper__info .info {
+  margin-left: 0.4rem;
+}
+.admin__content-review .review__item .upper p {
+  color: gray;
+}
+.admin__content-review .review__item .lower p {
+  color: gray;
+}
+.admin__content-review .review__item .lower .remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 600px) {
+  .admin {
+    font-size: 0.9rem;
+  }
+  .admin__content {
+    padding: 2rem 1rem;
+  }
+  .admin__content .title h1 {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=index.css.map */

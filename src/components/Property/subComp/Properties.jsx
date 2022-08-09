@@ -14,7 +14,7 @@ const Properties = ({ setShowMobFilter }) => {
     const router=useRouter()
     const page=router.query?.page || 1
     
-    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery({page,sort:sortValue})
+    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery({page,sort:sortValue,limit:8})
 
     useEffect(()=>{
 

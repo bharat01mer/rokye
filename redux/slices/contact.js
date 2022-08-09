@@ -14,9 +14,18 @@ export const contactApi=createApi({
                 method:"POST",
                 body:data
             })
-        })
+        }),
+        getAllContact: builder.query({
+            query: (page)=>`${produrl}?page=${page}`
+        }),
+        deleteContact: builder.mutation({
+            query: (id)=>({
+                url:`/${id}`,
+                method:"DELETE"
+            })
+        }),
     })
 })
 
 
-export const {useAddContactMutation}=contactApi
+export const {useAddContactMutation,useGetAllContactQuery,useDeleteContactMutation}=contactApi
