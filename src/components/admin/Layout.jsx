@@ -34,18 +34,18 @@ const Layout = ({ children }) => {
     const query = router.pathname.slice(7)
     const [winWidth, setWinWidth] = useState(0)
 
+    const { user } = useSelector(state => state.util)
+    
+    const isAdmin = user?.data?.data?.type === "admin";
+    
+    
     useEffect(() => {
         setWinWidth(window.innerWidth)
+        if (!isAdmin) {
+            router.push("/")
+            return <div className='outer__shell__login' > <h1>Access Denied</h1><p style={{ textAlign: "center" }}>Redirecting to Homepage</p> </div>
+        }
     }, [])
-    const { user } = useSelector(state => state.util)
-
-    const isAdmin = user?.data?.data?.type === "admin";
-
-    if (!isAdmin) {
-        // router.push("/")
-        return <div className='outer__shell__login' > <h1>Access Denied</h1><p style={{ textAlign: "center" }}>Redirecting to Homepage</p> </div>
-    }
-    console.log({isAdmin})
 
 
     return (
