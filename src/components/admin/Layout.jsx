@@ -38,15 +38,15 @@ const Layout = ({ children }) => {
 
     const isAdmin = user?.data?.data?.type === "admin"
 
-    if (!isAdmin) {
-        router.push("/")
-        return <div className='outer__shell__login' > <h1>Access Denied</h1><p style={{ textAlign: "center" }}>Redirecting to Homepage</p> </div>
-    }
     useEffect(() => {
         setWinWidth(window.innerWidth)
     }, [])
 
-
+    
+    if (!isAdmin) {
+        router.push("/")
+        return <div className='outer__shell__login' > <h1>Access Denied</h1><p style={{ textAlign: "center" }}>Redirecting to Homepage</p> </div>
+    }
 
 
     return (
