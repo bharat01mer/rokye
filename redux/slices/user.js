@@ -1,9 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const produrl =
-  process.env.NODE_ENV === "production"
-    ? "https://rokye.herokuapp.com/user/"
-    : "http://localhost:4000/user/";
+const produrl ="http://localhost:4000/user/";
 
 export const userApi = createApi({
   reducerPath: "user",
