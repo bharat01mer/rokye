@@ -8,7 +8,6 @@ import { IoIosArrowDown } from "react-icons/io"
 
 import { budgetData, optionData } from '../../../../utils/data'
 import { useEffect, useState, useRef } from 'react'
-import {MinMaxFilter} from "../../resuable"
 
 export default function Desktop(props) {
     const [showMenu, setShowMenu] = useState({ id: null, show: false })
@@ -41,8 +40,6 @@ export default function Desktop(props) {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            // If the menu is open and the clicked target is not within the menu,
-            // then close the menu
             if (budgetFilter.show && ref.current && !ref.current.contains(e.target)) {
                 setShowMenu({ show: false })
             }
@@ -51,17 +48,16 @@ export default function Desktop(props) {
         document.addEventListener("mousedown", checkIfClickedOutside)
 
         return () => {
-            // Cleanup the event listener
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [budgetFilter])
 
 
-    const optionClickHandler = (item, reset = true) => {
+    // const optionClickHandler = (item, reset = true) => {
 
-        setOptionValue({ ...optionValue, [item.name]: item.value })
-        if (reset) setShowOption({ id: null, show: false })
-    }
+    //     setOptionValue({ ...optionValue, [item.name]: item.value })
+    //     if (reset) setShowOption({ id: null, show: false })
+    // }
     return (
         <div className="rokye__home-searchbar__tab" ref={ref}>
             <div className="location item">

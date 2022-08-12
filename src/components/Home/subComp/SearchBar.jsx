@@ -1,7 +1,6 @@
 import Desktop from "./searchComp"
 
 const SearchBar = ({ winWidth }) => {
-  const option = ["Mumbai", "Pune", "India"]
 
   const iconSize = winWidth < 1000 ? 20 : 30
   const iconSiz2 = 20

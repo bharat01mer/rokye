@@ -22,7 +22,6 @@ const Recently = ({data}) => {
             spaceBetween: 10,
         }
     }
-    console.log({data})
     return (
         <div className="rokye__home-recent">
             <div className="rokye__home-recent__title">
