@@ -1,24 +1,25 @@
 import { TbArrowsSort as SortIcon, TbVector, TbCircleCheck } from "react-icons/tb"
 import { RiArrowDropDownLine as DownArrow, RiFilter3Line } from "react-icons/ri"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
-import {useGetAllPropertyQuery} from "../../../../redux/slices/property"
+
 import Pagination from "./Pagination"
-import { useRouter } from "next/router"
+import { NoData, Loader, ErrorAnimation } from "../../../../illustration"
 
 
-const Properties = ({ setShowMobFilter }) => {
+const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue,error,isLoading }) => {
     const [showSortOption, setShowSortOption] = useState(false)
-    const [sortValue, setSortValue] = useState("new")
-    const router=useRouter()
-    const page=router.query?.page || 1
-    
-    const {data,isFetching,error,isSuccess,refetch}=useGetAllPropertyQuery({page,sort:sortValue,limit:8})
 
-    useEffect(()=>{
 
-    },[data])
+
+    useEffect(() => {
+
+    }, [data])
+
+    // useEffect(()=>{
+
+    // },[optionValue])
 
 
     const chooseItem = [
@@ -39,16 +40,13 @@ const Properties = ({ setShowMobFilter }) => {
         },
     ]
 
-    const sortClickHandler=(data)=>{
-        
+    const sortClickHandler = (data) => {
+
         setSortValue(data)
         setShowSortOption(false)
     }
-    if(isFetching || !data){
-        return <h1>Waiting..</h1>
-    }
 
-
+    console.log({ data })
     return (
         <div className='rokye__property-grid'>
             <div className="rokye__property-grid__title">
@@ -83,7 +81,7 @@ const Properties = ({ setShowMobFilter }) => {
                                     }}>
                                         {
                                             chooseItem.map((item) => (
-                                                <div className="option__item" key={item.value} onClick={()=>sortClickHandler(item.value)}>
+                                                <div className="option__item" key={item.value} onClick={() => sortClickHandler(item.value)}>
                                                     <p>{item.name}</p>
                                                 </div>
                                             ))
@@ -100,22 +98,49 @@ const Properties = ({ setShowMobFilter }) => {
                     </div>
                 </div>
             </div>
-            <div className="rokye__property-grid__content">
-                <div className="card">
-                    {
-                        data?.data?.map((item) => (
-                            <div key={item._id}>
-                                <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"   } id={item._id} />
+
+            {
+                error && (
+                    <div className="error__prop">
+                        <ErrorAnimation />
+                        <h2>Some error occured, try again</h2>
+                    </div>
+                )
+            }
+            {
+                isLoading && !error ? (
+                    <div className="loading">
+                        <Loader />
+                        <h2>Wait, While Fetching Data</h2>
+                    </div>
+                ) : (
+
+                    data?.data.length !== 0 ? (
+
+                        <div className="rokye__property-grid__content">
+                            <div className="card">
+                                {
+                                    data?.data?.map((item) => (
+                                        <div key={item._id}>
+                                            <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"} id={item._id} />
+                                        </div>
+                                    ))
+                                }
                             </div>
-                        ))
-                    }
-                </div>
-                
-                {/* Implement Pagination after intergrating the api */}
-                <div className="pagination">
-                    <Pagination page={page} propData={data} refetch={refetch}  />
-                </div>
-            </div>
+
+                            {/* Implement Pagination after intergrating the api */}
+                            <div className="pagination">
+                                <Pagination page={page} propData={data} />
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="error">
+                            <NoData />
+                            <h2>Oops! No Data Found</h2>
+                        </div>
+                    )
+                )
+            }
         </div>
     )
 }

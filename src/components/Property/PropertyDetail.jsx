@@ -28,8 +28,9 @@ const PropertyDetail = ({ cardDetail }) => {
   const [favorite, setFavorite] = useState(false)
   useEffect(() => {
     if (user) {
-      const isFavorite = user.data.data.favoriteProp.find((item) => item.id === cardDetail?._id)
+      const isFavorite = user.data?.favoriteProp.find((item) => item.id === cardDetail?._id)
 
+      console.log({isFavorite})
       if (isFavorite !== undefined || isFavorite) {
         setFavorite(true)
       } else {
@@ -150,9 +151,10 @@ const PropertyDetail = ({ cardDetail }) => {
   }
 
   const addFavoritePropHandler = async () => {
-    const id = user.data.data._id
+    const id = user.data._id
 
     try {
+      console.log({ id, data: cardDetail._id})
       await addFavoriteProp({ id, data: cardDetail._id }).then((res) => {
         dispatch(updateUserData(res.data.data))
       })
@@ -161,8 +163,6 @@ const PropertyDetail = ({ cardDetail }) => {
       console.log({ error })
     }
   }
-
-
 
   return (
     <>

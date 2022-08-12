@@ -36,7 +36,7 @@ const User = ({user}) => {
     
     const router=useRouter()
 
-    const userData=user ? user.data.data : []
+    const userData=user ? user.data : []
 
     const returnTab=(tab)=>{
         switch (tab) {
@@ -45,12 +45,11 @@ const User = ({user}) => {
             case 1:
                 return <Listing id={userData._id}  />
             case 2:
-                return <WishList list={user?.data?.data?.favoriteProp} id={userData._id}  />
+                return <WishList list={user?.data?.favoriteProp} id={userData._id}  />
             default:
                 return <Perosnal />
         }
     }
-
 
     useEffect(()=>{
 

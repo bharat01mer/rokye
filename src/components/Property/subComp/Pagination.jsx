@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 
 
-const Paginate = ({ page, propData, refetch }) => {
+const Paginate = ({ page, propData }) => {
 
     const router = useRouter()
 
@@ -13,7 +13,6 @@ const Paginate = ({ page, propData, refetch }) => {
     }, [page, propData])
 
     const handlerOnChange = (e, value) => {
-        refetch()
         router.push(`/properties?page=${value}`, undefined, { shallow: true })
     }
     return (

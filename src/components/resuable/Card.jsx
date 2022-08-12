@@ -33,13 +33,12 @@ const Card = ({ img, title, price, city, place, id, bath, bed, useFavorite = tru
       console.log({error})
     }
   }
-  console.log({user})
 
   useEffect(()=>{
     if(user){
 
-      const isFavorite=user.data?.data?.favoriteProp.find((item)=>item.id===id)
-      console.log({isFavorite})
+      const isFavorite=user?.data?.favoriteProp.find((item)=>item.id===id)
+      
       
       if(isFavorite!==undefined || isFavorite){
         setfavorite(true)

@@ -1,11 +1,13 @@
 import { Stepper, Basic, Location, Detail, Upload, Contact } from "./Stepper"
-import {  useState } from "react"
+import { useState } from "react"
 import { useForm, FormProvider } from "react-hook-form"
 import { useSelector } from "react-redux"
 import { useCreatePropertyMutation, useAddImageInPropertyByIdMutation } from "../../../redux/slices/property"
 import { ToastContainer, toast } from "react-toast"
 import axios from "axios"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
+import useFormPersist from "react-hook-form-persist"
 
 const initialState = {
     category: "",
@@ -51,6 +53,7 @@ const AddProperty = () => {
     const methods = useForm({
         defaultValues: initialState, mode: "onChange"
     })
+    
     const router = useRouter()
 
     const { user } = useSelector((state) => state.util)
@@ -79,6 +82,7 @@ const AddProperty = () => {
     const imageUpload = (id) => {
         const file = new FormData()
 
+        console.log({ id })
         return new Promise((resolve, reject) => {
 
             for (let i = 0; i < imageArray.length; i++) {
@@ -86,7 +90,7 @@ const AddProperty = () => {
                 file.append('file', imageArray[i])
                 file.append("upload_preset", "trailer")
 
-                axios.post("https://api.cloudinary.com/v1_1/dykwfe4cr/image/upload", file).then((res) => {
+                axios.post("https://api.cloudinary.com/v1_1/dburijwvn/image/upload", file).then((res) => {
                     addImageInProp({ id: id, data: res.data.secure_url })
 
                     if (i === imageArray.length - 1) {
@@ -99,22 +103,26 @@ const AddProperty = () => {
         })
     }
 
+
     const nextClickHandler = async (data) => {
+
         if (activeStep === totalStep) {
             try {
-                await createProperty({ ...data, createdBy: user.data.data._id }).then(async (res) => {
+                createProperty({ ...data, createdBy: user.data._id }).unwrap().then(async (res) => {
                     setIsImageUploading(true)
-                    imageUpload(res.data.data._id).then(() => {
+                    imageUpload(res.data._id).then(() => {
                         toast.success("Completed")
                         setIsImageUploading(false)
-                        router.push(`/properties/${res.data.data._id}`)
+                        router.push(`/properties/${res.data._id}`)
                     }).catch((err) => {
+                        console.log({ err })
                         toast.error("Error")
                         setIsImageUploading(false)
                     })
                 })
 
             } catch (error) {
+                console.log({ error })
                 toast.error("Error Occured")
             }
         } else if (activeStep === 3 && imageArray.length === 0) {
@@ -147,12 +155,12 @@ const AddProperty = () => {
                                     <h3>Wait, While uploading Image,Once completed you will be automaitcally redirect to your property page</h3>
                                 </div>
                             )
-                        } 
+                        }
                         <div className="stepper__btn">
                             <button className="stepper__btn-prev" type="button" style={{ visibility: activeStep === 0 ? "hidden" : "visible" }} onClick={() => setActiveStep(activeStep - 1)}>
                                 <h2>Prev</h2>
                             </button>
-                            <button className="stepper__btn-next" type="submit" disabled={isImageUploading} style={{backgroundColor:isImageUploading && "gray"}}  >
+                            <button className="stepper__btn-next" type="submit" disabled={isImageUploading} style={{ backgroundColor: isImageUploading && "gray" }}  >
                                 <h2>{activeStep === totalStep ? "Submit" : "Next"}</h2>
                             </button>
                         </div>

@@ -11,18 +11,21 @@ import MinMaxFilter from '../../resuable/MinMaxFilter'
 import { premiumFilterdata, propertyData } from '../../../../utils/data'
 import Checkbox from '@mui/material/Checkbox'
 
-const Filter = ({ winWidth,setShowMobFilter }) => {
+const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) => {
     const [value, setValue] = useState({ min: 0, max: 0 })
     const [showOption, setShowOption] = useState({ id: null, show: false })
     const [showArrow, setShowArrow] = useState({ id: null, show: false })
-    const [optionValue, setOptionValue] = useState({ location: null, type: null, bed: null, bath: null, budget: null, furnishing: null, preferred: null, availablity: null, contructionAge: null, floor: null, facing: null, non_veg: null, pet: null })
+    
     const [showPremiumFilter, setShowPremiumFilter] = useState(false)
     const ref = useRef()
 
 
     const optionClickHandler = (item, reset = true) => {
-
-        setOptionValue({ ...optionValue, [item.name]: item.value })
+        if(item.value==="All"){
+            setOptionValue({ ...optionValue, [item.name]: null})
+        }else{
+            setOptionValue({ ...optionValue, [item.name]: item.value })
+        }
         if (reset) setShowOption({ id: null, show: false })
     }
 
@@ -30,44 +33,44 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
         {
             id: 1,
             name: "Location",
-            optionValue: optionValue.location,
+            optionValue: optionValue.city,
             data: propertyData.location,
-            nameForOptionHandler: "location"
+            nameForOptionHandler: "city"
         },
         {
             id: 2,
             name: "Type",
-            optionValue: optionValue.type,
+            optionValue: optionValue.propType,
             data: propertyData.type,
-            nameForOptionHandler: "type"
+            nameForOptionHandler: "propType"
         },
         {
             id: 3,
             name: "Beds",
-            optionValue: optionValue.bed,
+            optionValue: optionValue.bedroom,
             data: propertyData.beds,
-            nameForOptionHandler: "bed"
+            nameForOptionHandler: "bedroom"
         },
         {
             id: 4,
             name: "Bathroom",
-            optionValue: optionValue.bath,
+            optionValue: optionValue.bathroom,
             data: propertyData.bath,
-            nameForOptionHandler: "bath"
+            nameForOptionHandler: "bathroom"
         },
         {
             id: 5,
             name: "Furnishing",
-            optionValue: optionValue.furnishing,
+            optionValue: optionValue.furnished,
             data: propertyData.furnishing,
-            nameForOptionHandler: "furnishing"
+            nameForOptionHandler: "furnished"
         },
         {
             id: 6,
             name: "Tenant Preferred",
-            optionValue: optionValue.preferred,
+            optionValue: optionValue.tenant,
             data: propertyData.tenant,
-            nameForOptionHandler: "preferred"
+            nameForOptionHandler: "tenant"
         },
         {
             id: 7,
@@ -79,9 +82,9 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
         {
             id: 8,
             name: "Contruction Age",
-            optionValue: optionValue.contructionAge,
+            optionValue: optionValue.age,
             data: propertyData.age,
-            nameForOptionHandler: "contructionAge"
+            nameForOptionHandler: "age"
         },
     ]
 
@@ -104,8 +107,8 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
             id: 3,
             name: "Non-Veg",
             optionValue: optionValue.non_veg,
-            data: premiumFilterdata.non_veg,
-            nameForOptionHandler: "non_veg"
+            data: premiumFilterdata.nonVeg,
+            nameForOptionHandler: "nonVeg"
         },
         {
             id: 4,
@@ -115,6 +118,7 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
             nameForOptionHandler: "pet"
         },
     ]
+
     useEffect(() => {
         const checkIfClickedOutside = e => {
             if (showOption.show && ref.current && !ref.current.contains(e.target)) {
@@ -124,25 +128,35 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
         document.addEventListener("mousedown", checkIfClickedOutside)
 
         return () => {
-
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [showOption, optionValue])
 
     const amenitiesClickHandler = (data) => {
-        if (optionValue[data]) {
-            delete optionValue[data]
+        console.log(data)
+        const isExist=optionValue.amenity.includes(data)
+        if (isExist) {
+            let amenity=optionValue.amenity.filter(item=>item!==data)
+            setOptionValue({...optionValue,amenity})
         } else {
-            setOptionValue({ ...optionValue, [data]: data })
+            setOptionValue({ ...optionValue, amenity:[...optionValue.amenity,data] })
         }
     }
     const searchClickHandler = () => {
-
-        setShowMobFilter(false)
+        run(optionValue)
+        console.log({optionValue})
     }
     const modifiedItemList=winWidth < 1100 ? itemList.splice(0,10) : itemList
-
     
+    const isAmenityElemExist=(value)=>{
+        const isExist=optionValue.amenity.find((d)=>d===value)
+
+        if(isExist){
+            return true
+        }else{
+            return false
+        }
+    }
     return (
         <div className="rokye__property-filter" >
             <div className="modal__cancel" onClick={()=>setShowMobFilter(false)}>
@@ -160,7 +174,6 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
             </div>
             {
                 !showPremiumFilter ? (
-
                     <div className="lower" ref={ref}>
                         <div className="lower__item" >
                             {(showOption.id === 9 && showOption.show) && (
@@ -252,8 +265,7 @@ const Filter = ({ winWidth,setShowMobFilter }) => {
                                 {
                                     premiumFilterdata.amenities.map((item) => (
                                         <div className="list__item" key={item.id}>
-                                            
-                                            <Checkbox aria-label={item.name} defaultChecked={optionValue[item.value] ? true : false} value={item.value} onClick={(e) => amenitiesClickHandler(item.value)} />
+                                            <Checkbox aria-label={item.name} defaultChecked={isAmenityElemExist(item.value)} value={item.value} onClick={(e) => amenitiesClickHandler(item.value)} />
                                             <p>{item.name}</p>
                                         </div>
                                     ))

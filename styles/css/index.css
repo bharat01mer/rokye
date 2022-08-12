@@ -2327,6 +2327,39 @@ body {
   }
 }
 
+.error, .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  flex-direction: column;
+}
+.error svg, .loading svg {
+  width: 15rem;
+}
+.error h2, .loading h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.error__prop, .loading__prop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  flex-direction: column;
+}
+.error__prop h2, .loading__prop h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.error__prop svg, .loading__prop svg {
+  width: 15rem;
+}
+
 .rokye__login {
   padding: 7rem;
   display: flex;

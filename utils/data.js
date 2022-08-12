@@ -272,11 +272,35 @@ export const propertyData = {
     },
     {
       id: 4,
-      value: "Banglore",
+      value: "Noida",
     },
     {
       id: 5,
+      value: "Bangalore",
+    },
+    {
+      id: 6,
+      value: "Kolkata",
+    },
+    {
+      id: 7,
+      value: "Chennai",
+    },
+    {
+      id: 8,
       value: "Hyderabad",
+    },
+    {
+      id: 9,
+      value: "Pune",
+    },
+    {
+      id: 10,
+      value: "Gurgaon",
+    },
+    {
+      id: 11,
+      value: "Nagpur",
     },
   ],
   type: [
@@ -286,28 +310,12 @@ export const propertyData = {
     },
     {
       id: 1,
-      value: "House",
+      value: "house",
     },
     {
       id: 2,
-      value: "AppartMent",
-    },
-    {
-      id: 3,
-      value: "Condo",
-    },
-    {
-      id: 4,
-      value: "TownHouse",
-    },
-    {
-      id: 5,
-      value: "Villa",
-    },
-    {
-      id: 6,
-      value: "Duplex",
-    },
+      value: "appartment",
+    }
   ],
   beds: [
     {
@@ -316,19 +324,19 @@ export const propertyData = {
     },
     {
       id: 1,
-      value:"1 BHK",
+      value:"1",
     },
     {
       id: 1,
-      value:"2 BHK",
+      value:"2",
     },
     {
       id: 2,
-      value:"3 BHK",
+      value:"3",
     },
     {
       id: 3,
-      value:"3+ BHK",
+      value:"3+",
     },
   ],
   bath: [
@@ -338,19 +346,19 @@ export const propertyData = {
     },
     {
       id: 1,
-      value:"1 Bath",
+      value:"1",
     },
     {
       id: 2,
-      value:"2 Bath",
+      value:"2",
     },
     {
       id: 3,
-      value:"3 Bath",
+      value:"3",
     },
     {
       id: 4,
-      value:"3+ Bath",
+      value:"3+",
     },
   ],
   furnishing:[
@@ -383,6 +391,10 @@ export const propertyData = {
     {
       id:2,
       value:"Bachelors"
+    },
+    {
+      id:3,
+      value:"Family/Bachelors"
     },
   ],
   availability:[
