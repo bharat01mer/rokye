@@ -1,4 +1,4 @@
-import { Animation, LoginAnimation, SignUpAnimation } from "../../../illustration"
+import { LoginAnimation, SignUpAnimation } from "../../../illustration"
 import { TextField, InputAdornment, IconButton } from "@mui/material"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import Link from "next/link"
@@ -49,8 +49,8 @@ const Login = ({ isSignUp }) => {
     const [showPass, setShowPass] = useState(false)
     const router = useRouter()
 
-    const [createUser, responseInfo] = useCreateUserMutation()
-    const [loginUser, response] = useLoginUserMutation()
+    const [createUser] = useCreateUserMutation()
+    const [loginUser] = useLoginUserMutation()
 
 
 
