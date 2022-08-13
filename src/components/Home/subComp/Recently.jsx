@@ -1,13 +1,12 @@
 import Card from '../../resuable/Card'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"
-
+import Link from 'next/link';
 
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
-
 import { Navigation } from "swiper"
 
-const Recently = ({data}) => {
+const Recently = ({ data }) => {
     const breakpoints = {
         850: {
             slidesPerView: 2,
@@ -17,7 +16,7 @@ const Recently = ({data}) => {
             slidesPerView: 3,
             spaceBetween: 10,
         },
-        1550:{
+        1550: {
             slidesPerView: 4,
             spaceBetween: 10,
         }
@@ -26,7 +25,9 @@ const Recently = ({data}) => {
         <div className="rokye__home-recent">
             <div className="rokye__home-recent__title">
                 <h1>Recently Added</h1>
-                <p>Rokye Group is commited to helping its client to react their goals</p>
+                <Link passHref href="/properties">
+                <h3>Show More</h3>
+                </Link>
             </div>
             <div className="rokye__home-recent__detail">
                 <Swiper
@@ -44,7 +45,15 @@ const Recently = ({data}) => {
                 >
                     {data?.data?.map((item) => (
                         <SwiperSlide key={item.id}>
-                            <Card title={`${item.bedroom}BHK ${item.propType} for rent`} bath={item.bathroom} bed={item.bedroom} city={item.city} place={item.society} price={item.rentDetail.monthly} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"   } id={item._id} />
+                            <Card
+                                title={`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`}
+                                furnished={item.furnished}
+                                city={item.city}
+                                place={item.area}
+                                price={item.rentDetail.monthly}
+                                img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"}
+                                id={item._id}
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>

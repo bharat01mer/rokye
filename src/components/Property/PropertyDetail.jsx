@@ -6,6 +6,7 @@ import millify from 'millify'
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { FcCalendar } from "react-icons/fc"
 import { BiRupee } from "react-icons/bi"
+import { BsHash } from "react-icons/bs"
 import { TbCheckbox } from "react-icons/tb"
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
@@ -13,6 +14,7 @@ import dynamic from "next/dynamic"
 import { useAddFavoriteMutation } from '../../../redux/slices/user'
 import { useDispatch } from "react-redux"
 import { updateUserData } from '../../../redux/slices/util'
+import { propertyDataNew } from '../../../utils/data'
 
 const Carousel = dynamic(() => import("./subComp/PropertyDetailCarousel"))
 
@@ -68,7 +70,7 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 3,
         name: "Property Type",
-        value: cardDetail.propType
+        value: getTitle(cardDetail.propType,"propertyType")
       },
       {
         id: 4,
@@ -83,7 +85,7 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 6,
         name: "Furnished Status",
-        value: cardDetail.furnished
+        value: getTitle( cardDetail.furnished,"furnishing")
       },
       {
         id: 7,
@@ -93,30 +95,35 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 8,
         name: "Availability",
-        value: cardDetail.availability
+        value: getTitle( cardDetail.availability,"availability")
+      },
+      {
+        id: 9,
+        name: "Floor",
+        value: getTitle(cardDetail.floor,"floorno")
       },
     ],
     right: [
       {
         id: 0,
         name: "Property Age",
-        value: cardDetail.age
+        value: getTitle(cardDetail.age,"age")
       },
       {
         id: 1,
         name: "Carpet area",
         value: `${cardDetail.carpetArea} sq.ft`,
-        numstring: true
+        
       },
       {
         id: 2,
         name: "Super area",
         value: `${cardDetail.superArea} sqft`,
-        numstring: true
+        
       },
       {
         id: 3,
-        name: "Floor no",
+        name: "Flat no",
         value: cardDetail.flatNo
       },
       {
@@ -127,25 +134,25 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 5,
         name: "Tenant preferred",
-        value: cardDetail.tenant
+        value: getTitle(cardDetail.tenant,"family")
       },
       {
         id: 6,
         name: "Facing",
         value: "South",
-        value: cardDetail.facing
+        value: getTitle(cardDetail.facing,"facing")
       },
       {
         id: 7,
         name: "Non-veg",
         value: "Not allowed",
-        value: cardDetail.nonVeg
+        value: getTitle(cardDetail.nonVeg,"nonVeg")
       },
       {
         id: 8,
         name: "Pets",
         value: "Not allowed",
-        value: cardDetail.pet
+        value: getTitle(cardDetail.pet,"pets")
       },
     ],
   }
@@ -164,6 +171,10 @@ const PropertyDetail = ({ cardDetail }) => {
     }
   }
 
+  function getTitle(value,name){
+    const title=propertyDataNew[name].find((item)=>item.value===value)
+    return title?.title
+  }
   return (
     <>
       <div className="rokye__property-detail">
@@ -189,6 +200,10 @@ const PropertyDetail = ({ cardDetail }) => {
               <div className="date">
                 <FcCalendar size={20} />
                 <p>{cardDetail.date.slice(0, 10)}</p>
+              </div>
+              <div className="number">
+                <BsHash size={20} color={"#f25c05"} />
+                <p>{cardDetail._id?.match(/\d+/g)}</p>
               </div>
             </div>
           </div>
@@ -272,7 +287,7 @@ const PropertyDetail = ({ cardDetail }) => {
                 cardDetail.amenity.map((item) => (
                   <div className="item" key={item}>
                     <TbCheckbox size={20} color={"#035941"} />
-                    <p style={{ textTransform: "uppercase" }}>{item}</p>
+                    <p style={{ textTransform: "capitalize" }}>{item}</p>
                   </div>
                 ))
               }

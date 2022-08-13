@@ -82,7 +82,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                     )
                 }
                 <div className="title">
-                    <h2>Rokye.<span>Realty</span></h2>
+                    <h2>Rokye <span>Realty</span></h2>
                     <div className="social">
                         {
                             socialLinks.map((item) => (
@@ -107,7 +107,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                         <div className="choose">
                             <div className="choose__title" onClick={() => setShowOption(!showOption)} >
                                 <p>
-                                    {optionValue.id === null ? "Who are you ?" : optionValue.name}
+                                    {optionValue.id === null ? "I am" : optionValue.name}
                                 </p>
                                 <DownArrow />
                             </div>

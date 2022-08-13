@@ -36,8 +36,9 @@ const Layout = ({ children }) => {
 
     const { user } = useSelector(state => state.util)
     
-    const isAdmin = user?.data?.data?.type === "admin";
+    const isAdmin = user?.data?.type === "admin";
     
+    console.log({user})
     
     useEffect(() => {
         setWinWidth(window.innerWidth)
@@ -48,7 +49,7 @@ const Layout = ({ children }) => {
 
 
 
-    return (
+    return isAdmin && (
         <>
             <div className="admin__sidebar">
                 <div className="title">

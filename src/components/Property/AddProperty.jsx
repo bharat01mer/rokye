@@ -81,14 +81,12 @@ const AddProperty = () => {
 
     const imageUpload = (id) => {
         const file = new FormData()
-
-        console.log({ id })
         return new Promise((resolve, reject) => {
 
             for (let i = 0; i < imageArray.length; i++) {
 
                 file.append('file', imageArray[i])
-                file.append("upload_preset", "trailer")
+                file.append("upload_preset", "all_image")
 
                 axios.post("https://api.cloudinary.com/v1_1/dburijwvn/image/upload", file).then((res) => {
                     addImageInProp({ id: id, data: res.data.secure_url })
@@ -108,7 +106,7 @@ const AddProperty = () => {
 
         if (activeStep === totalStep) {
             try {
-                createProperty({ ...data, createdBy: user.data._id }).unwrap().then(async (res) => {
+                createProperty({ ...data, createdBy: user.data._id,city: data?.city.toLowerCase() }).unwrap().then(async (res) => {
                     setIsImageUploading(true)
                     imageUpload(res.data._id).then(() => {
                         toast.success("Completed")

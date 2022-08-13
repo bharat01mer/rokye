@@ -2,97 +2,10 @@ import { TextField } from "@mui/material"
 import { useState } from "react"
 import { useFormContext } from "react-hook-form"
 import Choose from "./Choose"
+import { propertyDataNew } from "../../../../utils/data"
 
 import { AiOutlineInfoCircle } from "react-icons/ai"
 
-const category = [
-    {
-        id: 0,
-        title: "For Rent",
-        value: "rent"
-    },
-
-]
-
-const propertyType = [
-    {
-        id: 0,
-        title: "House",
-        value: "house"
-    },
-    {
-        id: 1,
-        title: "Appartment",
-        value: "appartment"
-    },
-]
-
-const bedRoom = [
-    {
-        id: 0,
-        title: "1 Bhk",
-        value: '1'
-    },
-    {
-        id: 1,
-        title: "2 Bhk",
-        value: '2'
-    },
-    {
-        id: 2,
-        title: "3 Bhk",
-        value: '3'
-    },
-    {
-        id: 3,
-        title: "3+ Bhk",
-        value: "3+"
-    },
-]
-const bike = [
-    {
-        id: 0,
-        title: "1",
-        value: '1'
-    },
-    {
-        id: 1,
-        title: "2",
-        value: '2'
-    },
-    {
-        id: 2,
-        title: "3",
-        value: '3'
-    },
-    {
-        id: 3,
-        title: "3+",
-        value: "3+"
-    },
-]
-const car = [
-    {
-        id: 0,
-        title: "1",
-        value: '1'
-    },
-    {
-        id: 1,
-        title: "2",
-        value: '2'
-    },
-    {
-        id: 2,
-        title: "3",
-        value: '3'
-    },
-    {
-        id: 3,
-        title: "3+",
-        value: "3+"
-    },
-]
 const Basic = () => {
     const [showOption, setShowOption] = useState({ id: null, show: false })
     const { register,formState:{errors} } = useFormContext()
@@ -102,37 +15,37 @@ const Basic = () => {
         {
             id: 0,
             title: "Category",
-            arr: category,
+            arr: propertyDataNew.category,
             name:"category"
         },
         {
             id: 1,
             title: "Property Type",
-            arr: propertyType,
+            arr: propertyDataNew.propertyType,
             name:"propType"
         },
         {
             id: 2,
             title: "Bedrooms",
-            arr: bedRoom,
+            arr: propertyDataNew.bedRoom,
             name:"bedroom"
         },
         {
             id: 3,
             title: "Bathrooms",
-            arr: bike,
+            arr: propertyDataNew.bike,
             name:"bathroom"
         },
         {
             id: 4,
             title: "Bike Parking",
-            arr: bike,
+            arr: propertyDataNew.bike,
             name:"bikeParking"
         },
         {
             id: 5,
             title: "Car Parking",
-            arr: car,
+            arr: propertyDataNew.car,
             name:"carParking"
         },
     ]
@@ -162,7 +75,7 @@ const Basic = () => {
                     }
                 </div>
                 <div className="item">
-                    <TextField variant="outlined" label="Super Area(sq-ft only)" type={"number"} fullWidth {...register("superArea", { required: true })} />
+                    <TextField variant="outlined" label="Built-In Area(sq-ft only)" type={"number"} fullWidth {...register("superArea", { required: true })} />
                     {
                         errors.superArea && <p style={{color:"red"}}>Please fill the above field</p> 
                     }

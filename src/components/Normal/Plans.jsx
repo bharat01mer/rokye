@@ -47,8 +47,8 @@ const Plans = () => {
                                         <h1>Owner Plans</h1>
                                     </div>
                                     <div className="detail__price">
-                                        <BiRupee size={40} />
-                                        <h1>8999 <span>Inc. Gst</span> </h1>
+                                        <BiRupee size={35} />
+                                        <h1>9999 <span>Inc. Gst</span> </h1>
                                     </div>
                                     <div className="detail__point">
                                         {
@@ -69,8 +69,8 @@ const Plans = () => {
                                         <h1>Tenant Plans</h1>
                                     </div>
                                     <div className="detail__price">
-                                        <BiRupee />
-                                        <h1>7999 <span>Inc. Gst</span> </h1>
+                                        <BiRupee size={35} />
+                                        <h1>6999 <span>Inc. Gst</span> </h1>
                                     </div>
                                     <div className="detail__point">
                                         {

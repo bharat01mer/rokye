@@ -7,7 +7,7 @@ const Properties = () => {
     const router = useRouter()
     const page = router.query?.page || 1
 
-    const { data, isFetching, error, isSuccess, refetch } = useGetAllPropertyQuery({ page, sort: "new",limit:10 })
+    const { data, isFetching, error, isSuccess, refetch } = useGetAllPropertyQuery({ page, sort: "new", limit: 10 })
 
     if (!data) {
         return null
@@ -26,17 +26,13 @@ const Properties = () => {
                         data?.data?.map((item) => (
                             <div key={item._id}>
                                 <Card
-                                    useDelete={true}
-                                    title={`${item.bedroom}BHK ${item.propType} for rent`}
-                                    bath={item.bathroom}
-                                    bed={item.bedroom}
+                                    title={`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`}
+                                    furnished={item.furnished}
                                     city={item.city}
-                                    place={item.society}
+                                    place={item.area}
                                     price={item.rentDetail.monthly}
                                     img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"}
                                     id={item._id}
-                                    useFavorite={false}
-                                    refetch={refetch}
                                 />
                             </div>
                         ))

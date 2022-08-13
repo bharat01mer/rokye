@@ -182,6 +182,7 @@ input::-webkit-inner-spin-button {
   }
 }
 .rokye__card {
+  cursor: pointer;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   width: 20rem;
   border-radius: 0.7rem;
@@ -322,6 +323,12 @@ input::-webkit-inner-spin-button {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   color: #114040;
+}
+.rokye__footer-intro span {
+  color: #f25c05;
+}
+.rokye__footer-intro h1 {
+  margin-bottom: 1rem;
 }
 .rokye__footer-intro h3 {
   font-family: "lora", sans-serif;
@@ -632,8 +639,8 @@ input::-webkit-inner-spin-button {
   border-radius: 150px 150px 0 0;
 }
 .rokye__home-intro .blob1 {
-  top: 0;
-  right: 0;
+  top: 1.5rem;
+  right: -1rem;
   transform: rotate(50deg);
   background: #035941;
 }
@@ -897,7 +904,6 @@ input::-webkit-inner-spin-button {
   }
 }
 .rokye__home-choose {
-  margin-top: 2rem;
   padding: 5rem 2rem;
 }
 .rokye__home-choose__title {
@@ -992,14 +998,16 @@ input::-webkit-inner-spin-button {
   }
 }
 .rokye__home-recent {
+  margin-top: 3rem;
   padding: 2rem;
 }
 .rokye__home-recent__title {
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
-  flex-direction: column;
+  justify-content: space-between;
 }
 .rokye__home-recent__title h1 {
   color: #035941;
@@ -1007,11 +1015,13 @@ input::-webkit-inner-spin-button {
   font-weight: bolder;
   font-weight: bolder;
 }
-.rokye__home-recent__title p {
-  text-align: center;
+.rokye__home-recent__title h3 {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #f25c05;
 }
 .rokye__home-recent__detail {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .rokye__home-recent .swiper {
   padding: 1rem !important;
@@ -1506,6 +1516,38 @@ body {
   justify-content: flex-start;
   width: 57vw;
 }
+.rokye__property-grid .error, .rokye__property-grid .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  flex-direction: column;
+}
+.rokye__property-grid .error svg, .rokye__property-grid .loading svg {
+  width: 15rem;
+}
+.rokye__property-grid .error h2, .rokye__property-grid .loading h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__property-grid .error__prop, .rokye__property-grid .loading__prop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  flex-direction: column;
+}
+.rokye__property-grid .error__prop h2, .rokye__property-grid .loading__prop h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__property-grid .error__prop svg, .rokye__property-grid .loading__prop svg {
+  width: 15rem;
+}
 .rokye__property-grid__title {
   width: 100%;
 }
@@ -1793,6 +1835,12 @@ body {
 .rokye__property-detail__prop .title__info .date {
   padding-left: 1rem;
 }
+.rokye__property-detail__prop .title__info .number {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .rokye__property-detail__prop .desc h1 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
@@ -1815,6 +1863,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-around;
+  align-items: baseline;
   width: 50rem;
   border-radius: 5px;
   padding: 2rem;
@@ -2327,39 +2376,6 @@ body {
   }
 }
 
-.error, .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 45vh;
-  flex-direction: column;
-}
-.error svg, .loading svg {
-  width: 15rem;
-}
-.error h2, .loading h2 {
-  font-family: "lora", sans-serif;
-  font-weight: bolder;
-  color: #114040;
-}
-.error__prop, .loading__prop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 45vh;
-  flex-direction: column;
-}
-.error__prop h2, .loading__prop h2 {
-  font-family: "lora", sans-serif;
-  font-weight: bolder;
-  color: #114040;
-}
-.error__prop svg, .loading__prop svg {
-  width: 15rem;
-}
-
 .rokye__login {
   padding: 7rem;
   display: flex;
@@ -2824,12 +2840,12 @@ body {
 
 .rokye__faq {
   background: #f2f2f2;
-  border: 2px solid #114040;
   margin: -7rem 7rem 5rem;
   position: relative;
   border-radius: 1rem;
   padding: 3rem;
   height: auto;
+  background: #114040;
 }
 .rokye__faq-img {
   padding: 6rem 5rem 0;
@@ -2845,7 +2861,7 @@ body {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
-  color: #114040;
+  color: #f2f2f2;
 }
 .rokye__faq .divider {
   height: 1px;
@@ -2863,14 +2879,14 @@ body {
 .rokye__faq-tab .item {
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  color: rgba(242, 92, 5, 0.75);
+  color: rgba(242, 242, 242, 0.75);
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   border: 2px solid rgba(242, 242, 242, 0.3);
 }
 .rokye__faq-tab .item.active {
-  color: #f25c05;
+  color: #f2f2f2;
   box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
-  border: 2px solid #f25c05;
+  border: 2px solid #f2f2f2;
 }
 .rokye__faq-content {
   margin-top: 2rem;
@@ -2882,6 +2898,7 @@ body {
 .rokye__faq-content .item {
   transition: all 0.5s ease-in-out;
   margin: 1rem 0;
+  color: #f2f2f2;
 }
 .rokye__faq-content .item__upper {
   display: flex;

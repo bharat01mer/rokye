@@ -15,8 +15,8 @@
       // background-color: green;
     }
     .blob1 {
-      top: 0;
-      right: 0;
+      top: 1.5rem;
+      right: -1rem;
       transform: rotate(50deg);
       background: $color2;
     }
@@ -298,7 +298,7 @@
   // why choose us
 
   &-choose {
-    margin-top: 2rem;
+    
     padding: 5rem 2rem;
 
     &__title {
@@ -405,23 +405,27 @@
   // recently
 
   &-recent {
+    margin-top: 3rem;
     padding: 2rem;
     &__title {
+      padding: 1rem 2rem ;
       @include center__elem;
       font-size: 1.3rem;
-      flex-direction: column;
+      justify-content: space-between;
 
       h1 {
         color: $color2;
         @include heading_font;
         font-weight: bolder;
       }
-      p {
-        text-align: center;
+      h3 {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $color5;
       }
     }
     &__detail {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .swiper {

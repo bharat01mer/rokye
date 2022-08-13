@@ -12,17 +12,31 @@ const MinMaxFilter = ({ setModal, value, setValue,optionClickHandler }) => {
 
     const itemValueHandler = (num,name) => {
         if (showMenu.id === 1) {
-            setValue({ ...value, min: num })
+            setValue({ ...value, min: parseInt(num) })
             setShowMenu({ id: 2, show: true })
             optionClickHandler({name:name,value:num},false)
         }
         else if (showMenu.id === 2) {
-            setValue({ ...value, max: (num < value.min || num===value.min ) ? value.min + addAmountInMaxIfLessThanMin : num })
+            setValue({ ...value, max: parseInt((num < value.min || num===value.min ) ? value.min + addAmountInMaxIfLessThanMin : num )})
             setShowMenu({ id: null, show: false })
             setModal({ show: false })
             optionClickHandler({name:name,value: num < value.min ? value.min + addAmountInMaxIfLessThanMin : num},false)
         }
     }
+    
+    const onChangeHandler=(num,name)=>{
+        
+        if(name==="max"){
+            
+            setValue({ ...value, max: parseInt((num < value.min || num===value.min ) ? value.min + addAmountInMaxIfLessThanMin : num )})
+            optionClickHandler({name:name,value: num < value.min ? value.min + addAmountInMaxIfLessThanMin : num},false)
+        }else if(name==="min"){
+            setValue({ ...value, min: parseInt(num) })
+            optionClickHandler({name:name,value:num},false)
+        }
+    }
+
+    console.log({showMenu})
 
 
 
@@ -42,8 +56,8 @@ const MinMaxFilter = ({ setModal, value, setValue,optionClickHandler }) => {
                     opacity: 1
                 }}>
                 <div className="filter">
-                    <TextField id="outlined-basic" label="Min" value={value.min} variant="outlined" style={{ marginBottom: 10 }} onFocus={() => setShowMenu({ id: 1, show: true })} onChange={(e) => setValue({ ...value, min: e.target.value })} />
-                    <TextField id="outlined-basic" label="Max" value={value.max} variant="outlined" style={{ marginBottom: 10, marginLeft: 20 }} onFocus={() => setShowMenu({ id: 2, show: true })} onChange={(e) => setValue({ ...value, max: e.target.value })} />
+                    <TextField id="outlined-basic" label="Min" type={"number"} defaultValue={value.min} variant="outlined" style={{ marginBottom: 10 }} onFocus={() => setShowMenu({ id: 1, show: true })} onChange={(e) => onChangeHandler(e.target.value,"min")} />
+                    <TextField id="outlined-basic" label="Max" type={"number"} defaultValue={value.max} variant="outlined" style={{ marginBottom: 10, marginLeft: 20 }} onFocus={() => setShowMenu({ id: 2, show: true })} onChange={(e) => onChangeHandler(e.target.value,"max")} />
                 </div>
                 <div className="budget__option-container">
                     {

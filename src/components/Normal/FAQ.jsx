@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
+import Image from 'next/image'
 
 import { questions } from '../../../utils/data'
 
@@ -9,7 +10,7 @@ const FAQComp = () => {
     return (
         <>
             <div className="rokye__faq-img">
-                <img src={"/refer.jpg"} objectFit="contain" />
+                <Image src={"https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1596&q=80"} objectFit="cover" width={2000} height={1000} />
             </div>
             <div className="rokye__faq">
                 <div className="rokye__faq-title">

@@ -4,401 +4,7 @@ import { Checkbox, TextField } from "@mui/material"
 import Choose from "./Choose"
 import { useFormContext } from "react-hook-form"
 import { useEffect } from "react"
-
-
-const floorno = [
-    {
-        id: 0,
-        title: "Basement",
-        value: "base",
-    },
-    {
-        id: 1,
-        title: "Ground",
-        value: "ground"
-    },
-    {
-        id: 2,
-        title: "1",
-        value: "1"
-    },
-    {
-        id: 3,
-        title: "2",
-        value: "2"
-    },
-    {
-        id: 4,
-        title: "3",
-        value: "3"
-    },
-    {
-        id: 1,
-        title: "3+",
-        value: "3+"
-    },
-]
-
-const totalFloor = [
-    {
-        id: 0,
-        title: "1",
-        value: "1",
-    },
-    {
-        id: 1,
-        title: "2",
-        value: "2",
-    },
-    {
-        id: 2,
-        title: "3",
-        value: "3",
-    },
-    {
-        id: 3,
-        title: "4",
-        value: "4",
-    },
-    {
-        id: 4,
-        title: "5",
-        value: "5",
-    },
-    {
-        id: 5,
-        title: "6",
-        value: "6",
-    },
-    {
-        id: 6,
-        title: "6",
-        value: "6",
-    },
-    {
-        id: 7,
-        title: "7",
-        value: "7",
-    },
-    {
-        id: 8,
-        title: "8",
-        value: "8",
-    },
-    {
-        id: 9,
-        title: "9",
-        value: "9",
-    },
-]
-
-const facing = [
-    {
-        id: 0,
-        title: "East",
-        value: "east"
-    },
-    {
-        id: 1,
-        title: "West",
-        value: "west"
-    },
-    {
-        id: 2,
-        title: "North",
-        value: "north"
-    },
-    {
-        id: 3,
-        title: "South",
-        value: "south"
-    },
-    {
-        id: 4,
-        title: "North-East",
-        value: "North-East",
-    },
-    {
-        id: 5,
-        title: "North-West",
-        value: "north-west"
-    },
-    {
-        id: 6,
-        title: "South-East",
-        value: "south-east"
-    },
-    {
-        id: 7,
-        title: "South-West",
-        value: "south-west"
-    },
-]
-
-const balconies = [
-    {
-        id: 0,
-        title: "1",
-        value: '1'
-    },
-    {
-        id: 1,
-        title: "2",
-        value: '2'
-    },
-    {
-        id: 2,
-        title: "3",
-        value: '3'
-    },
-    {
-        id: 3,
-        title: "3+",
-        value: '3+'
-    },
-]
-
-const furnishing = [
-    {
-        id: 0,
-        title: "Furnished",
-        value: "furnished"
-    },
-    {
-        id: 1,
-        title: "Semi-Furnished",
-        value: "semifurnished"
-    },
-    {
-
-        id: 2,
-        title: "Unfurnished",
-        value: "unfurnished"
-    },
-]
-
-const age = [
-    {
-        id: 0,
-        title: "Newly",
-        value: "new"
-    },
-    {
-        id: 1,
-        title: "<5 years old",
-        value: "-5"
-    },
-    {
-        id: 2,
-        title: "5+ years old",
-        value: "5+"
-    },
-    {
-        id: 3,
-        title: "5-10 years old",
-        value: "10"
-    },
-    {
-        id: 4,
-        title: "10+ years old",
-        value: "10+"
-    },
-]
-
-const availability = [
-    {
-        id: 0,
-        title: "Immediately",
-        value: "0",
-
-    },
-    {
-        id: 1,
-        title: "Within 15 days",
-        value: "15"
-    },
-    {
-        id: 2,
-        title: "Within 30 days",
-        value: "30"
-    },
-]
-
-
-const family = [
-    {
-        id: 0,
-        title: "Bachelor",
-        value: "bachelor"
-    },
-    {
-        id: 1,
-        title: "Family",
-        value: "bachelor"
-    },
-    {
-        id: 1,
-        title: "Bacholor/Family",
-        value: "bachelor/family"
-    },
-]
-
-const nonVeg = [
-    {
-        id: 0,
-        title: "Allowed",
-        value: "allowed"
-    },
-    {
-        id: 1,
-        title: "Not Allowed",
-        value: "notallowed"
-    },
-]
-const pets = [
-    {
-        id: 0,
-        title: "Allowed",
-        value: "allowed"
-    },
-    {
-        id: 1,
-        title: "Not Allowed",
-        value: "notallowed"
-    },
-]
-
-const amenities = [
-    {
-        id: 0,
-        title: "Lift",
-        value: "lift"
-    },
-    {
-        id: 1,
-        title: "Gas Pipeline",
-        value: "gas"
-    },
-    {
-        id: 2,
-        title: "24x7 Water supply",
-        value: "water"
-    },
-    {
-        id: 3,
-        title: "24x7 Security",
-        value: "security"
-    },
-    {
-        id: 4,
-        title: "Car Parking",
-        value: "parking"
-    },
-    {
-        id: 5,
-        title: "Visitort Parking",
-        value: "visitor"
-    },
-    {
-        id: 6,
-        title: "Children's play area",
-        value: "playarea"
-    },
-    {
-        id: 7,
-        title: "Landscape garden",
-        value: "garden"
-    },
-    {
-        id: 8,
-        title: "Air conditioning",
-        value: "ac"
-    },
-    {
-        id: 9,
-        title: "CCTV",
-        value: "cctv"
-    },
-    {
-        id: 10,
-        title: "Fire safety",
-        value: "firesafety"
-    },
-    {
-        id: 11,
-        title: "Internet services",
-        value: "internet"
-    },
-    {
-        id: 12,
-        title: "Gym",
-        value: "gym"
-    },
-    {
-        id: 13,
-        title: "Club House",
-        value: "clubhouse"
-    },
-    {
-        id: 14,
-        title: "Swimming pool",
-        value: "pool"
-    },
-    {
-        id: 15,
-        title: "House keeping",
-        value: "housekeeping"
-    },
-    {
-        id: 16,
-        title: "Power backup",
-        value: "powerbackup"
-    },
-    {
-        id: 17,
-        title: "Sewage treatment plant",
-        value: "sewage"
-    },
-    {
-        id: 18,
-        title: "Rain water harvesting",
-        value: "rainharvesting"
-    },
-    {
-        id: 19,
-        title: "Shopping center",
-        value: "shopingcenter"
-    },
-    {
-        id: 20,
-        title: "Park",
-        value: "park"
-    },
-]
-
-const perInfo = [
-    {
-        id: 0,
-        title: "Monthly",
-        value: "month"
-    },
-    {
-        id: 1,
-        title: "Quaterly",
-        value: "quaterly"
-    },
-    {
-        id: 0,
-        title: "Yearly",
-        value: "year"
-    },
-    {
-        id: 0,
-        title: "One Time",
-        value: "once"
-    },
-]
-
+import { propertyDataNew } from "../../../../utils/data"
 
 const Detail = () => {
     const { register, setValue, getValues, formState: { errors } } = useFormContext()
@@ -407,61 +13,61 @@ const Detail = () => {
         {
             id: 0,
             title: "Floor No",
-            arr: floorno,
+            arr:propertyDataNew.floorno,
             name: "floor"
         },
         {
             id: 1,
             title: "Total Floor",
-            arr: totalFloor,
+            arr:propertyDataNew.totalFloor,
             name: "totalFloor"
         },
         {
             id: 2,
             title: "Facing",
-            arr: facing,
+            arr:propertyDataNew.facing,
             name: "facing"
         },
         {
             id: 3,
             title: "Balconies",
-            arr: balconies,
+            arr:propertyDataNew.balconies,
             "name": "balconies"
         },
         {
             id: 4,
             title: "Furnished Status",
-            arr: furnishing,
+            arr:propertyDataNew.furnishing,
             name: "furnished"
         },
         {
             id: 5,
             title: "Age of construction",
-            arr: age,
+            arr:propertyDataNew.age,
             name: "age"
         },
         {
             id: 6,
             title: "Availability",
-            arr: availability,
+            arr:propertyDataNew.availability,
             name: "availability",
         },
         {
             id: 7,
             title: "Tenants preferred",
-            arr: family,
+            arr:propertyDataNew.family,
             name: "tenant"
         },
         {
             id: 8,
             title: "Non-Veg",
-            arr: nonVeg,
+            arr:propertyDataNew.nonVeg,
             name: "nonVeg"
         },
         {
             id: 9,
             title: "Pets",
-            arr: pets,
+            arr:propertyDataNew.pets,
             name: "pet"
         },
     ]
@@ -517,7 +123,7 @@ const Detail = () => {
                     </div>
                     <div className="amenity__content">
                         {
-                            amenities.map((item) => (
+                            propertyDataNew.amenities.map((item) => (
                                 <div className="amenity__content-item" key={item.id}>
                                     <Checkbox aria-label={item.title} defaultChecked={checkAmenityElem(item.value)} onChange={() => amenitiesHandler(item.value)} />
                                     <p>{item.title}</p>
@@ -573,7 +179,7 @@ const Detail = () => {
                             }
                         </div>
                         <div className="item" onClick={() => setShowOption({ id: 10, show: showOption.show ? false : true })}>
-                            <Choose id={10} optionItem={perInfo} title={"Per"} setShowOption={setShowOption} showOption={showOption} name={"rentDetail.per"} />
+                            <Choose id={10} optionItem={propertyDataNew.perInfo} title={"Per"} setShowOption={setShowOption} showOption={showOption} name={"rentDetail.per"} />
                             {
                                 errors.rentDetail?.per && <p className="error" style={{ color: "red" }}>Please fill the above field</p>
                             }

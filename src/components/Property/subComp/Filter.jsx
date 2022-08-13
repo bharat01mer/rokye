@@ -8,25 +8,27 @@ import { AiOutlineSearch } from "react-icons/ai"
 import millify from "millify";
 import MinMaxFilter from '../../resuable/MinMaxFilter'
 
-import { premiumFilterdata, propertyData } from '../../../../utils/data'
+import { premiumFilterdata, propertyDataNew } from '../../../../utils/data'
 import Checkbox from '@mui/material/Checkbox'
 
-const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) => {
+const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }) => {
     const [value, setValue] = useState({ min: 0, max: 0 })
     const [showOption, setShowOption] = useState({ id: null, show: false })
     const [showArrow, setShowArrow] = useState({ id: null, show: false })
-    
+
     const [showPremiumFilter, setShowPremiumFilter] = useState(false)
     const ref = useRef()
 
 
     const optionClickHandler = (item, reset = true) => {
-        if(item.value==="All"){
-            setOptionValue({ ...optionValue, [item.name]: null})
-        }else{
+        if (item.value === "all") {
+            setOptionValue({ ...optionValue, [item.name]: null })
+        } else {
             setOptionValue({ ...optionValue, [item.name]: item.value })
         }
+
         if (reset) setShowOption({ id: null, show: false })
+
     }
 
     const itemList = [
@@ -34,56 +36,56 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
             id: 1,
             name: "Location",
             optionValue: optionValue.city,
-            data: propertyData.location,
+            data: propertyDataNew.location,
             nameForOptionHandler: "city"
         },
         {
             id: 2,
             name: "Type",
             optionValue: optionValue.propType,
-            data: propertyData.type,
+            data: propertyDataNew.propertyType,
             nameForOptionHandler: "propType"
         },
         {
             id: 3,
             name: "Beds",
             optionValue: optionValue.bedroom,
-            data: propertyData.beds,
+            data: propertyDataNew.bedRoom,
             nameForOptionHandler: "bedroom"
         },
         {
             id: 4,
             name: "Bathroom",
             optionValue: optionValue.bathroom,
-            data: propertyData.bath,
+            data: propertyDataNew.bedRoom,
             nameForOptionHandler: "bathroom"
         },
         {
             id: 5,
             name: "Furnishing",
             optionValue: optionValue.furnished,
-            data: propertyData.furnishing,
+            data: propertyDataNew.furnishing,
             nameForOptionHandler: "furnished"
         },
         {
             id: 6,
             name: "Tenant Preferred",
             optionValue: optionValue.tenant,
-            data: propertyData.tenant,
+            data: propertyDataNew.family,
             nameForOptionHandler: "tenant"
         },
         {
             id: 7,
             name: "Availability",
             optionValue: optionValue.availablity,
-            data: propertyData.availability,
+            data: propertyDataNew.availability,
             nameForOptionHandler: "availablity"
         },
         {
             id: 8,
             name: "Contruction Age",
             optionValue: optionValue.age,
-            data: propertyData.age,
+            data: propertyDataNew.age,
             nameForOptionHandler: "age"
         },
     ]
@@ -93,28 +95,28 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
             id: 1,
             name: "Floor No",
             optionValue: optionValue.floor,
-            data: premiumFilterdata.floor,
+            data: propertyDataNew.floorno,
             nameForOptionHandler: "floor"
         },
         {
             id: 2,
             name: "Facing",
             optionValue: optionValue.facing,
-            data: premiumFilterdata.facing,
+            data: propertyDataNew.facing,
             nameForOptionHandler: "facing"
         },
         {
             id: 3,
             name: "Non-Veg",
             optionValue: optionValue.non_veg,
-            data: premiumFilterdata.nonVeg,
+            data: propertyDataNew.nonVeg,
             nameForOptionHandler: "nonVeg"
         },
         {
             id: 4,
             name: "Pets",
             optionValue: optionValue.pet,
-            data: premiumFilterdata.pet,
+            data: propertyDataNew.pets,
             nameForOptionHandler: "pet"
         },
     ]
@@ -134,32 +136,41 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
 
     const amenitiesClickHandler = (data) => {
         console.log(data)
-        const isExist=optionValue.amenity.includes(data)
+        const isExist = optionValue.amenity.includes(data)
         if (isExist) {
-            let amenity=optionValue.amenity.filter(item=>item!==data)
-            setOptionValue({...optionValue,amenity})
+            let amenity = optionValue.amenity.filter(item => item !== data)
+            setOptionValue({ ...optionValue, amenity })
         } else {
-            setOptionValue({ ...optionValue, amenity:[...optionValue.amenity,data] })
+            setOptionValue({ ...optionValue, amenity: [...optionValue.amenity, data] })
         }
     }
     const searchClickHandler = () => {
         run(optionValue)
-        console.log({optionValue})
+        console.log({ optionValue })
     }
-    const modifiedItemList=winWidth < 1100 ? itemList.splice(0,10) : itemList
-    
-    const isAmenityElemExist=(value)=>{
-        const isExist=optionValue.amenity.find((d)=>d===value)
+    const modifiedItemList = winWidth < 1100 ? itemList.splice(0, 10) : itemList
 
-        if(isExist){
+    const isAmenityElemExist = (value) => {
+        const isExist = optionValue.amenity.find((d) => d === value)
+
+        if (isExist) {
             return true
-        }else{
+        } else {
             return false
         }
     }
+
+    function getTitle(arr, value) {
+        const title = arr.find((item) => item.value === value)        
+        return title?.title
+    }
+
+    console.log({value,min: optionValue?.min,max:optionValue?.max})
+
+
     return (
         <div className="rokye__property-filter" >
-            <div className="modal__cancel" onClick={()=>setShowMobFilter(false)}>
+            <div className="modal__cancel" onClick={() => setShowMobFilter(false)}>
                 <FaRegTimesCircle size={30} color={"#F25C05"} />
             </div>
             <div className="filter">
@@ -195,7 +206,7 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
                                 <div className="lower__item" key={item.name}>
                                     <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                         <h4>{item.name}:</h4>
-                                        <p>{item.optionValue ? item.optionValue : "All"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />}
+                                        <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "All"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />}
                                         </p>
                                     </div>
                                     <AnimatePresence>
@@ -211,8 +222,8 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
                                             opacity: 1
                                         }}>
                                             {item.data.map(data =>
-                                                <div className="option__item" key={data.value} onClick={() => optionClickHandler({ name: item.nameForOptionHandler, value: data.value })} >
-                                                    <p>{data.value}</p>
+                                                <div className="option__item" key={data.value} onClick={() => optionClickHandler({ name: item.nameForOptionHandler, value: data.value }, data.title)} >
+                                                    <p>{data.title}</p>
                                                     <div className="divider" />
                                                 </div>)}
                                         </motion.div>}
@@ -231,7 +242,7 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
                                     <div className='lower__item' key={item.name}>
                                         <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                             <h4>{item.name}</h4>
-                                            <p>{item.optionValue ? item.optionValue : "Any"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />} </p>
+                                            <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "Any"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />} </p>
                                         </div>
 
                                         <AnimatePresence>
@@ -247,7 +258,7 @@ const Filter = ({ winWidth,setShowMobFilter,setOptionValue,optionValue,run }) =>
                                             }}>
                                                 {item.data.map(data =>
                                                     <div className="option__item" key={data.value} onClick={() => optionClickHandler({ name: item.nameForOptionHandler, value: data.value })} >
-                                                        <p>{data.value}</p>
+                                                        <p>{data.title}</p>
                                                         <div className="divider" />
                                                     </div>)}
                                             </motion.div>}

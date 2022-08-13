@@ -18,8 +18,8 @@ const Home = ({data}) => {
     <div className='rokye__home'>
       <Intro winWidth={state.util.winWidth} />
       <SearchBar winWidth={state.util.winWidth} />
-      <Choose />
       <Recently data={data} />
+      <Choose />
       <Review />
       <Message />
     </div>

@@ -16,8 +16,8 @@ const Footer = () => {
     },
     {
       id: 1,
-      name: "Refer & Earn",
-      link: "refer",
+      name: "Properties",
+      link: "properties",
     },
     {
       id: 2,
@@ -67,7 +67,8 @@ const Footer = () => {
     <footer className={`rokye__footer ${isHomeRoute ? "" : "remove"}`} >
       <div className="outer">
         <div className="rokye__footer-intro">
-          <Image src={"/logo.png"} width={150} height={80} objectFit="contain" />
+          {/* <Image src={"/logo.png"} width={150} height={80} objectFit="contain" /> */}
+          <h1>Rokye <span>Realty</span></h1>
           <h3>New way of renting a home</h3>
           <p>No brokerage, No advance payment and <br /> all the listings are physically verified.</p>
         </div>

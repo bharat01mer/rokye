@@ -13,7 +13,7 @@ const WishList = ({ list, id }) => {
     if (!list || !data) {
         return null
     }
-    
+
 
     return (
         <div className="rokye__user-dashboard__wishlist">
@@ -25,7 +25,15 @@ const WishList = ({ list, id }) => {
                 {
                     data?.data?.data?.map((item) => (
                         <div key={item._id}>
-                            <Card id={item._id} city={item.city} place={item.society} img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"  } bath={item.bathroom} bed={item.bathroom} price={item.rentDetail.monthly} title={`${item?.bedroom}BHK ${item?.propType} for rent`} />
+                            <Card
+                                title={`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`}
+                                furnished={item.furnished}
+                                city={item.city}
+                                place={item.area}
+                                price={item.rentDetail.monthly}
+                                img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"}
+                                id={item._id}
+                            />
                         </div>
                     ))
                 }
