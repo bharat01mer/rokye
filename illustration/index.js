@@ -1,7 +1,0 @@
-export {default as LoginAnimation} from "./LoginAnimation"
-export {default as SignUpAnimation} from "./SignUpAnimation"
-export {default as ReferAnimation} from "./ReferAnimation"
-export {default as ContactAnimation} from "./Contact"
-export {default as Loader} from "./Loader"
-export {default as NoData} from "./NoData"
-export {default as ErrorAnimation} from "./Error"

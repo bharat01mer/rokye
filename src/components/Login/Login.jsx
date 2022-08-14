@@ -1,7 +1,8 @@
-import { LoginAnimation, SignUpAnimation } from "../../../illustration"
+
 import { TextField, InputAdornment, IconButton } from "@mui/material"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import Link from "next/link"
+import Image from "next/image"
 import { AiOutlineCheckCircle as CheckIcon } from "react-icons/ai"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -13,6 +14,7 @@ import { toast, ToastContainer } from "react-toast"
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
 import { userData } from "../../../redux/slices/util"
+
 
 
 const checkPoints = [
@@ -104,7 +106,7 @@ const Login = ({ isSignUp }) => {
             <div className="rokye__login-left">
                 {
                     !isSignUp ? (
-                        <LoginAnimation />
+                                <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Login-pana_prjzhm.png"}  />
                     ) : (
 
                         <>
@@ -123,7 +125,7 @@ const Login = ({ isSignUp }) => {
                                 }
                             </div>
                             <div className="animation">
-                                <SignUpAnimation />
+                                <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Sign_up-cuate_tyrhp1.png"}  />
                             </div>
                         </>
                     )

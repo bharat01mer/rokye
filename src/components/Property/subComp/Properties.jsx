@@ -1,11 +1,12 @@
-import { TbArrowsSort as SortIcon, TbVector, TbCircleCheck } from "react-icons/tb"
+import { TbArrowsSort as SortIcon, TbCircleCheck } from "react-icons/tb"
 import { RiArrowDropDownLine as DownArrow, RiFilter3Line } from "react-icons/ri"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "../../resuable"
 
 import Pagination from "./Pagination"
-import { NoData, Loader, ErrorAnimation } from "../../../../illustration"
+
+import Image from "next/image"
 
 
 const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, error, isLoading }) => {
@@ -101,7 +102,7 @@ const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, err
             {
                 error && (
                     <div className="error__prop">
-                        <ErrorAnimation />
+                        <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/500_Internal_Server_Error-amico_eaxuem.png"} width={300} height={300} objectFit={"contain"} />
                         <h2>Some error occured, try again</h2>
                     </div>
                 )
@@ -109,7 +110,7 @@ const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, err
             {
                 isLoading && !error ? (
                     <div className="loading">
-                        <Loader />
+                        <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Meditation-bro_k9gdcc.png"} width={300} height={300} objectFit={"contain"} />
                         <h2>Wait, While Fetching Data</h2>
                     </div>
                 ) : (
@@ -134,7 +135,6 @@ const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, err
                                     ))
                                 }
                             </div>
-
                             {/* Implement Pagination after intergrating the api */}
                             <div className="pagination">
                                 <Pagination page={page} propData={data} />
@@ -142,7 +142,8 @@ const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, err
                         </div>
                     ) : (
                         <div className="error">
-                            <NoData />
+                            
+                            <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/500_Internal_Server_Error-amico_eaxuem.png "} width={300} height={300} objectFit={"contain"} />
                             <h2>Oops! No Data Found</h2>
                         </div>
                     )

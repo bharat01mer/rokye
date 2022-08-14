@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react'
-import { Home, Layout } from '../src/components'
-import { useGetAllPropertyQuery } from '../redux/slices/property'
+import React from 'react'
+import Layout from '../src/components/layout'
+
+import dynamic from 'next/dynamic'
+
+const Home= dynamic(()=> import("../src/components/Home/Home"))
 
 const Index = () => {
-  const {data,isFetching}=useGetAllPropertyQuery({page:1,sort:"new",limit:8})
-
-  if(isFetching){
-    return null
-  }
   return (
     <Layout title={"Home"} description={"Homepage of Royke Realty"}>
-      <Home data={data} />
+      <Home  />
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 
-import { ContactAnimation } from '../../../illustration'
+import Image from 'next/image'
 import { ContactForm } from '../resuable'
 import { GoMail } from "react-icons/go"
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
@@ -43,7 +43,7 @@ const Contact = () => {
             </div>
             <div className="upper">
                 <div className="rokye__contact-animate">
-                    <ContactAnimation />
+                    <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486047/Contact_us-pana_zipvkl.png"} width={2500} height={2500} objectFit="contain" />
                 </div>
                 <div className="rokye__contact-form">
                     <ContactForm />

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "find:unused": "next-unused"
+    "find:unused": "next-unused",
+    "analyze":"cross-env ANALYZE=true next build"
   },
   "next-unused": {
     "alias": {},
@@ -25,10 +26,12 @@
     "@mui/lab": "^5.0.0-alpha.91",
     "@mui/material": "^5.9.1",
     "@mui/styles": "^5.9.1",
+    "@next/bundle-analyzer": "^12.2.5",
     "@reduxjs/toolkit": "^1.8.3",
     "@types/material-ui": "^0.21.12",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3",
     "framer-motion": "^6.5.1",
     "millify": "^5.0.0",
     "next": "12.2.2",

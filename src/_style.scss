@@ -558,6 +558,8 @@
     width: 28rem;
     padding: 3rem;
     border-radius: 5px;
+    @include center__elem;
+    flex-direction: column;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%)!important;

@@ -1,7 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { useSelector } from 'react-redux'
-// import { SearchBar,Choose,Message} from './subComp'
 import "swiper/css/navigation"
 
 const Intro=dynamic(()=>import("./subComp/Intro"))
@@ -18,7 +17,7 @@ const Home = ({data}) => {
     <div className='rokye__home'>
       <Intro winWidth={state.util.winWidth} />
       <SearchBar winWidth={state.util.winWidth} />
-      <Recently data={data} />
+      <Recently  />
       <Choose />
       <Review />
       <Message />
