@@ -9,7 +9,6 @@ export const reviewApi=createApi({
         prepareHeaders:(headers,{getState})=>{
             
             const token=getState().util?.user?.data.token
-            console.log({token,data:getState().util.user.data.tokem})
             if(token){
                 headers.set("authorization",`Bearer ${token}`)
             }

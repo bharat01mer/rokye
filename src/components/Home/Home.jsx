@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux'
 import "swiper/css/navigation"
 
 const Intro=dynamic(()=>import("./subComp/Intro"))
-const SearchBar=dynamic(()=>import("./subComp/SearchBar"))
 const Choose=dynamic(()=>import("./subComp/Choose"))
 const Message=dynamic(()=>import("./subComp/Message"))
 const Recently=dynamic(()=>import("./subComp/Recently"),{ssr:false})
 const Review=dynamic(()=>import("./subComp/Review"),{ssr:false})
+import SearchBar from './subComp/SearchBar'
 
 const Home = ({data}) => {
   const state=useSelector((state)=>state)
