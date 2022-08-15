@@ -1,16 +1,13 @@
 import { BsImages } from "react-icons/bs"
 import { Alert, AlertTitle } from "@mui/material"
 import { useFormContext } from "react-hook-form"
-import { useState } from "react"
 import { useEffect } from "react"
 import { MdCancel } from "react-icons/md"
-import axios from "axios"
 
 import Image from "next/image"
 
 const Upload = ({ imageArray, setImageArray }) => {
-    const [imagePreview, setimagePreview] = useState([])
-    const { register, getValues, resetField, setValue,formState:{errors} } = useFormContext()
+    const { register, resetField,formState:{errors} } = useFormContext()
 
 
     const onHandleChange = (e) => {
@@ -24,7 +21,7 @@ const Upload = ({ imageArray, setImageArray }) => {
 
     useEffect(() => {
 
-    }, [imageArray, imagePreview])
+    }, [imageArray])
     const removeImageFromArray = (id) => {
         setImageArray([...imageArray.slice(0, id), ...imageArray.slice(id + 1, imageArray.length)])
         resetField("file")

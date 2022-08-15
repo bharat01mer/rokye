@@ -6,8 +6,6 @@ import { useCreatePropertyMutation, useAddImageInPropertyByIdMutation } from "..
 import { ToastContainer, toast } from "react-toast"
 import axios from "axios"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
-import useFormPersist from "react-hook-form-persist"
 
 const initialState = {
     category: "",
@@ -58,7 +56,7 @@ const AddProperty = () => {
 
     const { user } = useSelector((state) => state.util)
 
-    const [createProperty, propData] = useCreatePropertyMutation()
+    const [createProperty] = useCreatePropertyMutation()
     const [addImageInProp] = useAddImageInPropertyByIdMutation()
 
     const showForm = (step) => {

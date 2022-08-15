@@ -57,8 +57,6 @@ const Perosnal = ({ userData }) => {
     useEffect(()=>{
 
     },[userData,dispatch,state])
-
-
     
     return (
         <div className="rokye__user-dashboard__personal">

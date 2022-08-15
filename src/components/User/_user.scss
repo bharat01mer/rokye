@@ -1,6 +1,54 @@
 .rokye__user {
   padding: 7rem 5rem;
 
+  &-edit {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    z-index: 34;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+
+    .inner {
+      position: absolute;
+      background: white;
+      @include card_shadow;
+      top: 50%;
+      width: 25rem;
+      padding: 3rem 1rem;
+      border-radius: 5px;
+      transform: translate(-50%, -50%) !important;
+      left: 50%;
+      @include center__elem;
+      flex-direction: column;
+    }
+
+    .close {
+      top: 1rem;
+      right: 1rem;
+      color: $color5;
+      position: absolute;
+    }
+
+    &__preview {
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+    &__submit {
+      margin-top: 1rem;
+      color: #fff;
+      background: $color5;
+      border: 4px;
+
+      padding: 0.5rem 2rem;
+    }
+  }
+
   &-title {
     @include center__elem;
     justify-content: space-between;
@@ -11,6 +59,45 @@
       &__icon {
         margin-right: 1rem;
       }
+
+      .img{
+        position: relative;
+        img{
+          width: 100%;
+          width: 5rem;
+          border-radius: 50%;
+          
+        }
+        cursor: pointer;
+  
+        input {
+          display: none;
+        }
+        .edit {
+          position: absolute;
+          bottom: 0.5rem;
+          color: $color5;
+          right: 0.5rem;
+        }
+      }
+      .no__img {
+        cursor: pointer;
+
+        input {
+          display: none;
+        }
+        position: relative;
+
+        border-radius: 50%;
+
+        .edit {
+          position: absolute;
+          bottom: 0.2rem;
+          color: black;
+          right: 0.3rem;
+        }
+      }
+
       h1 {
         color: $color1;
         @include heading-font;
@@ -100,7 +187,7 @@
           overflow-y: hidden;
           // // padding: 0 2rem;
           // display: none;
-          
+
           input {
             width: 100%;
             font-size: 1rem;
@@ -126,68 +213,67 @@
         }
       }
     }
-    &__listing{
-        .content{
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            grid-gap: 1rem;
-            justify-items: center;
-        }
+    &__listing {
+      .content {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        justify-items: center;
+      }
     }
-    &__wishlist{
-        
-        .content{
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            grid-gap: 1rem;
-            justify-items: center;
-        }
+    &__wishlist {
+      .content {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        justify-items: center;
+      }
     }
 
-    @media screen and (max-width:1550px) {
-        &__listing,&__wishlist{
-            .content{
-
-                grid-template-columns: repeat(3,1fr);
-            }
+    @media screen and (max-width: 1550px) {
+      &__listing,
+      &__wishlist {
+        .content {
+          grid-template-columns: repeat(3, 1fr);
         }
+      }
     }
-    @media screen and (max-width:1150px) {
-        &__listing,&__wishlist{
-            .content{
-
-                grid-template-columns: repeat(2,1fr);
-            }
+    @media screen and (max-width: 1150px) {
+      &__listing,
+      &__wishlist {
+        .content {
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
     }
-    @media screen and (max-width:800px) {
-        &__listing,&__wishlist{
-            .content{
-
-                grid-template-columns: repeat(1,1fr);
-            }
+    @media screen and (max-width: 800px) {
+      &__listing,
+      &__wishlist {
+        .content {
+          grid-template-columns: repeat(1, 1fr);
         }
+      }
     }
   }
 
-  @media screen and (max-width:1250px) {
+  @media screen and (max-width: 1250px) {
     padding: 7rem 2rem;
   }
-  @media screen and (max-width:800px) {
+  @media screen and (max-width: 800px) {
     padding: 7rem 1rem;
   }
-  @media screen and (max-width:570px) {
-    font-size: .9rem;
+  @media screen and (max-width: 570px) {
+    font-size: 0.9rem;
 
-    .tab{
-        justify-content: center;
-        flex-wrap: wrap;
-        grid-gap: 1rem ;
+    .tab {
+      justify-content: center;
+      flex-wrap: wrap;
+      grid-gap: 1rem;
     }
-    &-dashboard{
-        padding: 2rem 1rem;
+    &-dashboard {
+      padding: 2rem 1rem;
     }
   }
 }
