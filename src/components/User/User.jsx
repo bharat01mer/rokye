@@ -37,7 +37,7 @@ const tabItem = [
 ]
 
 const User = ({ user }) => {
-    const [profileImg, setProfileImg] = useState()
+    const [profileImg, setProfileImg] = useState(null)
     const [showPreview, setShowPreview] = useState(false)
     const [activetab, setActivetab] = useState(0)
     const dispatch = useDispatch()
@@ -96,11 +96,9 @@ const User = ({ user }) => {
                 setShowPreview(false)
             }).catch((err)=>{
                 toast.error("Error Occured,Try Again")
-                console.log({err})
             })
             
         }).catch((err) => {
-            console.log({err})
             toast.error("Error Occured,Try Again")
         })
     }
@@ -162,7 +160,7 @@ const User = ({ user }) => {
                 </div>
             </div>
             {
-                showPreview && (
+                (showPreview && profileImg) && (
                     <Edit img={URL.createObjectURL(profileImg)} setModal={setShowPreview} handler={imageUploadHandler} />
                 )
             }
