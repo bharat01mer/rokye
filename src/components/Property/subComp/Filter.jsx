@@ -11,7 +11,7 @@ import MinMaxFilter from '../../resuable/MinMaxFilter'
 import { premiumFilterdata, propertyDataNew } from '../../../../utils/data'
 import Checkbox from '@mui/material/Checkbox'
 
-const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }) => {
+const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,isModal=false }) => {
     const [value, setValue] = useState({ min: 0, max: 0 })
     const [showOption, setShowOption] = useState({ id: null, show: false })
     const [showArrow, setShowArrow] = useState({ id: null, show: false })
@@ -28,6 +28,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }
         }
 
         if (reset) setShowOption({ id: null, show: false })
+        
 
     }
 
@@ -135,7 +136,6 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }
     }, [showOption, optionValue])
 
     const amenitiesClickHandler = (data) => {
-        console.log(data)
         const isExist = optionValue.amenity.includes(data)
         if (isExist) {
             let amenity = optionValue.amenity.filter(item => item !== data)
@@ -146,7 +146,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }
     }
     const searchClickHandler = () => {
         run(optionValue)
-        console.log({ optionValue })
+        if(isModal) setShowMobFilter(false)
     }
     const modifiedItemList = winWidth < 1100 ? itemList.splice(0, 10) : itemList
 
@@ -163,9 +163,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run }
     function getTitle(arr, value) {
         const title = arr.find((item) => item.value === value)        
         return title?.title
-    }
-
-    console.log({value,min: optionValue?.min,max:optionValue?.max})
+    }    
 
 
     return (

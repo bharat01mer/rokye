@@ -52,7 +52,7 @@ const Property = () => {
                             scale: 1,
                             opacity: 1
                         }}>
-                            <Filter setShowMobFilter={setShowMobFilter} winWidth={winWidth} optionValue={optionValue} setOptionValue={setOptionValue} run={filterClickHanlder} />
+                            <Filter setShowMobFilter={setShowMobFilter} winWidth={winWidth} optionValue={optionValue} setOptionValue={setOptionValue} run={filterClickHanlder} isModal={true} />
                         </motion.div>
                     )
                 }

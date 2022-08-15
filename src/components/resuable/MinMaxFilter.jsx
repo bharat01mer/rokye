@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField'
 import { budgetData } from '../../../utils/data'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -27,7 +27,6 @@ const MinMaxFilter = ({ setModal, value, setValue,optionClickHandler }) => {
     const onChangeHandler=(num,name)=>{
         
         if(name==="max"){
-            
             setValue({ ...value, max: parseInt((num < value.min || num===value.min ) ? value.min + addAmountInMaxIfLessThanMin : num )})
             optionClickHandler({name:name,value: num < value.min ? value.min + addAmountInMaxIfLessThanMin : num},false)
         }else if(name==="min"){
@@ -35,8 +34,7 @@ const MinMaxFilter = ({ setModal, value, setValue,optionClickHandler }) => {
             optionClickHandler({name:name,value:num},false)
         }
     }
-
-    console.log({showMenu})
+    
 
 
 

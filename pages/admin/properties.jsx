@@ -6,7 +6,7 @@ import React from 'react'
 const properties = () => {
   return (
     <Layout>
-    <Properties />
+      <Properties />
     </Layout>
   )
 }

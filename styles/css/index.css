@@ -4119,31 +4119,62 @@ body {
 .admin__content .pagination {
   margin-top: 2rem;
 }
-.admin__content-properties .content .card {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
+.admin__content-properties .content .card__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  margin-bottom: 1rem;
 }
-@media screen and (max-width: 1700px) {
-  .admin__content-properties .content .card {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.admin__content-properties .content .card__list .img {
+  margin-right: 1rem;
 }
-@media screen and (max-width: 1400px) {
-  .admin__content-properties .content .card {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.admin__content-properties .content .card__list .detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 1050px) {
-  .admin__content-properties .content .card {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.admin__content-properties .content .card__list .detail__no {
+  margin-right: 1rem;
 }
-@media screen and (max-width: 720px) {
-  .admin__content-properties .content .card {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.admin__content-properties .content .card__list .detail__info .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__content-properties .content .card__list .detail__info .upper h3 {
+  margin-right: 1rem;
+}
+.admin__content-properties .content .card__list .detail__info .upper p {
+  color: gray;
+}
+.admin__content-properties .content .card__list .detail__info .lower {
+  color: gray;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.admin__content-properties .content .card__list .detail__info .lower p {
+  margin-right: 1.5rem;
+  text-align: center;
+}
+.admin__content-properties .content .card__list .detail__info .lower p.lower__id {
+  color: blue;
+  cursor: pointer;
+}
+.admin__content-properties .content .card__list .delete {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  border-radius: 50%;
 }
 .admin__content-contact .content {
   padding: 1rem;
