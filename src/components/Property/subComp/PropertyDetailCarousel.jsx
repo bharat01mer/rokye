@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Image from 'next/image';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 import "swiper/css/navigation"
@@ -7,7 +6,6 @@ import { Navigation } from 'swiper';
 
 
 const PropertyDetailCarousel = ({ data }) => {
-    const [showNav, setShowNav] = useState(false)
     return (
         <div className="carousel__slider">
             <Swiper className="mySwiper" slidesPerView={1}

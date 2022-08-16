@@ -909,7 +909,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-choose {
   padding: 7rem 4rem;
-  background: #f2ba52;
+  background: rgba(242, 92, 5, 0.9);
 }
 .rokye__home-choose__title {
   display: flex;
@@ -917,7 +917,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   flex-direction: column;
   font-size: 1.3rem;
-  color: #114040;
+  color: #f2f2f2;
 }
 .rokye__home-choose__title h1 {
   font-family: "lora", sans-serif;
@@ -981,7 +981,7 @@ input::-webkit-inner-spin-button {
   font-size: 1.7rem;
   font-family: "lora", sans-serif;
   font-weight: bolder;
-  color: #035941;
+  color: #f2f2f2;
   margin-bottom: 0.4rem;
 }
 @media screen and (max-width: 1400px) {
@@ -1159,6 +1159,7 @@ input::-webkit-inner-spin-button {
 .rokye__home-review .review__card {
   padding: 1rem;
   width: 23rem;
+  height: 29rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1191,6 +1192,9 @@ input::-webkit-inner-spin-button {
   margin: 2rem 0;
   color: gray;
   font-size: 1.02rem;
+}
+.rokye__home-review .review__card-detail .rating {
+  color: #f25c05;
 }
 .rokye__home-review .review__card-detail .person {
   font-size: 1.2rem;
@@ -3795,6 +3799,14 @@ body {
 .rokye__reviewForm form .item {
   width: 100%;
   margin-bottom: 1rem;
+}
+.rokye__reviewForm form .review p {
+  color: gray;
+  text-align: end;
+  font-size: 0.9rem;
+}
+.rokye__reviewForm form .review p.error {
+  color: red;
 }
 .rokye__reviewForm form .star {
   display: flex;

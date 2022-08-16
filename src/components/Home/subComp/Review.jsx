@@ -1,11 +1,63 @@
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
+import { AiFillStar } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Navigation } from "swiper"
 import { useGetAllReviewQuery } from "../../../../redux/slices/review";
 
-const ReviewCard = ({ img, desc, name, position,className }) => {
+const userRatingStar = (value) => {
+    switch (value) {
+        case 1:
+            return (
+                <>
+                    <AiFillStar />
+                </>
+            )
+
+        case 2:
+            return (
+                <>
+                    <AiFillStar />
+                    <AiFillStar />
+                </>
+            )
+
+        case 3:
+            return (
+                <>
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                </>
+            )
+        case 4:
+            return (
+                <>
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                </>
+            )
+        case 5:
+            return (
+                <>
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                </>
+            )
+
+        default:
+            <AiFillStar />
+    }
+}
+
+
+const ReviewCard = ({ img, desc, name, className,rating }) => {
     return (
         <div className={`review__card ${className}`}>
             <div className="review__card-img">
@@ -19,26 +71,27 @@ const ReviewCard = ({ img, desc, name, position,className }) => {
 
                 <div className="person">
                     <h3>{name}</h3>
-                    {/* <p>{position}</p> */}
+                    <p className="rating">{userRatingStar(rating)}</p>
                 </div>
             </div>
         </div>
     )
 }
 
+
 const Review = () => {
-    const {data}=useGetAllReviewQuery({id:1,filter:"new"})
-    const breakpoints={
-        700:{
-            slidesPerView:2,
-            spaceBetween:100
+    const { data } = useGetAllReviewQuery({ id: 1, filter: "new" })
+    const breakpoints = {
+        700: {
+            slidesPerView: 2,
+            spaceBetween: 100
         },
-        1300:{
-            slidesPerView:3
+        1300: {
+            slidesPerView: 3
         }
     }
 
-    if(!data){
+    if (!data) {
         return null
     }
     return (
@@ -65,7 +118,7 @@ const Review = () => {
                         data?.data?.map((item) => (
                             <SwiperSlide key={item._id}>
                                 {({ isActive }) => (
-                                    <ReviewCard  img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.comment}  />
+                                    <ReviewCard img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.comment} rating={item.rating} />
                                 )}
                             </SwiperSlide>
                         ))

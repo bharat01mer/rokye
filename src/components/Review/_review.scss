@@ -361,6 +361,17 @@
       margin-bottom: 1rem;
     }
 
+    .review{
+      p{
+        color: gray;
+        text-align: end;
+        font-size: .9rem;
+
+        &.error{
+          color: red;
+        }
+      }
+    }
     .star{
       @include center__elem;
     }

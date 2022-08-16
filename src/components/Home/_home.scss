@@ -297,16 +297,15 @@
 
   &-choose {
     padding: 7rem 4rem;
-    background: $color3;
+    background: rgba($color: $color5, $alpha: 0.9);
     &__title {
       @include center__elem;
       flex-direction: column;
 
       font-size: 1.3rem;
-      color: $color1;
+      color: $color4;
 
       h1 {
-        // color: $color4;
         @include heading_font;
         font-weight: bolder;
       }
@@ -370,7 +369,7 @@
         h2 {
           font-size: 1.7rem;
           @include heading_font;
-          color: $color2;
+          color: $color4;
           margin-bottom: 0.4rem;
         }
       }
@@ -563,6 +562,7 @@
     .review__card {
       padding: 1rem;
       width: 23rem;
+      height: 29rem;
       @include center__elem;
       flex-direction: column;
       align-items: flex-start;
@@ -594,6 +594,9 @@
           color: gray;
 
           font-size: 1.02rem;
+        }
+        .rating{
+          color: $color5;
         }
 
         .person {
