@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import { motion } from "framer-motion";
 import { Navigation } from "swiper"
-import { reviewCard } from "../../../../utils/data";
+import { useGetAllReviewQuery } from "../../../../redux/slices/review";
 
 const ReviewCard = ({ img, desc, name, position,className }) => {
     return (
@@ -19,7 +19,7 @@ const ReviewCard = ({ img, desc, name, position,className }) => {
 
                 <div className="person">
                     <h3>{name}</h3>
-                    <p>{position}</p>
+                    {/* <p>{position}</p> */}
                 </div>
             </div>
         </div>
@@ -27,6 +27,7 @@ const ReviewCard = ({ img, desc, name, position,className }) => {
 }
 
 const Review = () => {
+    const {data}=useGetAllReviewQuery({id:1,filter:"new"})
     const breakpoints={
         700:{
             slidesPerView:2,
@@ -57,10 +58,10 @@ const Review = () => {
                     className="mySwiper"
                 >
                     {
-                        reviewCard.map((item) => (
+                        data.data.map((item) => (
                             <SwiperSlide key={item.id}>
                                 {({ isActive }) => (
-                                    <ReviewCard  img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.desc} position={item.postion} />
+                                    <ReviewCard  img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.comment}  />
                                 )}
                             </SwiperSlide>
                         ))

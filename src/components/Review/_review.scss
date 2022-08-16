@@ -216,6 +216,14 @@
         margin-bottom: 3rem;
         @include box_shadow;
         padding: 1rem;
+        .img{
+          img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+          }
+
+        }
         .upper {
           @include center__elem;
           justify-content: space-between;

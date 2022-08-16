@@ -70,14 +70,15 @@ const Review = () => {
     return null
   }
 
-  const deleteReviewHandler = async (id) => {
-    await deleteFunc(id).then(() => {
+  const deleteReviewHandler = (id) => {
+    deleteFunc(id).unwrap().then(() => {
       refetch()
       toast.success("Post Deleted")
     }).catch((err) => {
-      toast("Error Occured,Try Again")
+      toast.error("Error Occured,Try Again")
     })
   }
+
   return (
     <div className="admin__content-review">
       <ToastContainer delay={2000} />
@@ -93,6 +94,9 @@ const Review = () => {
               <div className="review__item" key={item.id}>
                 <div className="upper">
                   <div className="upper__info">
+                    {
+                      
+                    }
                     <FaUserCircle size={40} />
 
                     <div className="info">

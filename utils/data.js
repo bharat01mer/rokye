@@ -1,66 +1,86 @@
 export const optionData = {
-  city: [
+  location: [
     {
       id: 0,
-      name: "Ahmedabad",
+      title: "All",
+      value: "all",
     },
     {
       id: 1,
-      name: "Mumbai",
+      title: "Ahmedabad",
+      value: "ahmedabad",
     },
     {
       id: 2,
-      name: "Delhi",
+      title: "Mumbai",
+      value: "mumbai",
     },
     {
       id: 3,
-      name: "Noida",
+      title: "Delhi",
+      value: "delhi",
     },
     {
       id: 4,
-      name: "Bangalore",
+      title: "Noida",
+      value: "noida",
     },
     {
       id: 5,
-      name: "Kolkata",
+      title: "Bangalore",
+      value: "bangalore",
     },
     {
       id: 6,
-      name: "Chennai",
+      title: "Kolkata",
+      value: "kolkata",
     },
     {
       id: 7,
-      name: "Hyderabad",
+      title: "Chennai",
+      value: "chennai",
     },
     {
       id: 8,
-      name: "Pune",
+      title: "Hyderabad",
+      value: "hyderabad",
     },
     {
       id: 9,
-      name: "Gurgaon",
+      title: "Pune",
+      value: "pune",
     },
     {
       id: 10,
-      name: "Nagpur",
+      title: "Gurgaon",
+      value: "gurgaon",
+    },
+    {
+      id: 11,
+      title: "Nagpur",
+      value: "nagpur",
     },
   ],
-  condos: [
+  propertyType: [
     {
       id: 0,
-      name: "1 BHK",
+      title: "House",
+      value: "house",
     },
     {
-      id: 0,
-      name: "2 BHK",
+      id: 1,
+      title: "Apartment",
+      value: "apartment",
     },
     {
-      id: 0,
-      name: "3 BHK",
+      id: 2,
+      title: "Villa",
+      value: "villa",
     },
     {
-      id: 0,
-      name: "3+ BHK",
+      id: 3,
+      title: "Duplex",
+      value: "duplex",
     },
   ],
 };
@@ -172,223 +192,8 @@ export const budgetData = {
   ],
 };
 
-export const cardData = [
-  {
-    id: 0,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "5k",
-    title: "2BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408935/TriFlix/home_nen38g.jpg",
-  },
-  {
-    id: 1,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "50k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408705/TriFlix/photo-1600573472550-8090b5e0745e_ztohsq.jpg",
-  },
-  {
-    id: 2,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "1Lac",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408680/TriFlix/photo-1600585154340-be6161a56a0c_ohppfn.jpg",
-  },
-  {
-    id: 3,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "80k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg",
-  },
-  {
-    id: 4,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "5k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408935/TriFlix/home_nen38g.jpg",
-  },
-  {
-    id: 5,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "50k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408705/TriFlix/photo-1600573472550-8090b5e0745e_ztohsq.jpg",
-  },
-  {
-    id: 6,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "1Lac",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408680/TriFlix/photo-1600585154340-be6161a56a0c_ohppfn.jpg",
-  },
-  {
-    id: 7,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "80k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg",
-  },
-  {
-    id: 8,
-    city: "Mumbai",
-    place: "Boriwali",
-    price: "80k",
-    title: "2 BHK House 1400 sqft",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658408656/TriFlix/photo-1600596542815-ffad4c1539a9_yyygym.jpg",
-  },
-];
-
-export const reviewCard = [
-  {
-    id: 0,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470807/TriFlix/photo-1500648767791-00dcc994a43e_iub67p_qyfpv4.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-  {
-    id: 1,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470804/TriFlix/photo-1528892952291-009c663ce843_eyrzln_h9m7z9.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-  {
-    id: 2,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470801/TriFlix/photo-1474176857210-7287d38d27c6_bpr7nd_dcou7b.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-  {
-    id: 3,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470807/TriFlix/photo-1500648767791-00dcc994a43e_iub67p_qyfpv4.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-  {
-    id: 4,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470804/TriFlix/photo-1528892952291-009c663ce843_eyrzln_h9m7z9.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-  {
-    id: 5,
-    name: "Randy Elliot",
-    postion: "Marketing Officer, RTM",
-    img: "https://res.cloudinary.com/dykwfe4cr/image/upload/v1658470801/TriFlix/photo-1474176857210-7287d38d27c6_bpr7nd_dcou7b.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam, nisi doloribus ratione unde nam distinctio blanditiis dicta quos a beatae? Vero nisi voluptate quibusdam quaerat repudiandae velit a provident.",
-  },
-];
 
 export const premiumFilterdata = {
-  floor: [
-    {
-      id: 0,
-      value: "Basement",
-    },
-    {
-      id: 1,
-      value: "Ground",
-    },
-    {
-      id: 2,
-      value: "1",
-    },
-    {
-      id: 3,
-      value: "2",
-    },
-    {
-      id: 4,
-      value: "3",
-    },
-    {
-      id: 5,
-      value: "4",
-    },
-    {
-      id: 6,
-      value: "4+",
-    },
-  ],
-  facing: [
-    {
-      id: 0,
-      value: "All",
-    },
-    {
-      id: 1,
-      value: "East",
-    },
-    {
-      id: 2,
-      value: "West",
-    },
-    {
-      id: 3,
-      value: "North",
-    },
-    {
-      id: 5,
-      value: "South",
-    },
-    {
-      id: 6,
-      value: "North-East",
-    },
-    {
-      id: 7,
-      value: "North-West",
-    },
-    {
-      id: 8,
-      value: "South-East",
-    },
-    {
-      id: 9,
-      value: "South-West",
-    },
-  ],
-  non_veg: [
-    {
-      id: 0,
-      value: "All",
-    },
-    {
-      id: 0,
-      value: "Allowed",
-    },
-    {
-      id: 0,
-      value: "Not allowed",
-    },
-  ],
-  pet: [
-    {
-      id: 0,
-      value: "All",
-    },
-    {
-      id: 0,
-      value: "Allowed",
-    },
-    {
-      id: 0,
-      value: "Not allowed",
-    },
-  ],
   amenities: [
     {
       id: 0,
@@ -498,28 +303,6 @@ export const premiumFilterdata = {
   ],
 };
 
-export const carouselData = [
-  {
-    id: 0,
-    img: "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    id: 1,
-    img: "https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80",
-  },
-  {
-    id: 2,
-    img: "https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    id: 3,
-    img: "https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80",
-  },
-  {
-    id: 4,
-    img: "https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  },
-];
 
 export const ownerPoints = [
   {
@@ -689,49 +472,6 @@ export const questions = {
     },
   ],
 };
-
-export const reviewData = [
-  {
-    id: 0,
-    name: "Jahid Hasan",
-    rating: 5,
-    date: "July 30, 2022",
-    review:
-      "A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito",
-  },
-  {
-    id: 1,
-    name: "Jahid Hasan",
-    rating: 3,
-    date: "July 30, 2022",
-    review:
-      "A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito",
-  },
-  {
-    id: 2,
-    name: "Jahid Hasan",
-    rating: 4,
-    date: "July 30, 2022",
-    review:
-      "A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito",
-  },
-  {
-    id: 3,
-    name: "Jahid Hasan",
-    rating: 1,
-    date: "July 30, 2022",
-    review:
-      "A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito",
-  },
-  {
-    id: 4,
-    name: "Jahid Hasan",
-    rating: 2,
-    date: "July 30, 2022",
-    review:
-      "A long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page edito",
-  },
-];
 
 export const propertyDataNew = {
   location: [

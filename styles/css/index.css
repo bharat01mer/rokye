@@ -3648,6 +3648,11 @@ body {
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   padding: 1rem;
 }
+.rokye__review-content .review__item .img img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
 .rokye__review-content .review__item .upper {
   display: flex;
   justify-content: center;
@@ -3891,6 +3896,7 @@ body {
 .rokye__user-title .info .img img {
   width: 100%;
   width: 5rem;
+  height: 5rem;
   border-radius: 50%;
 }
 .rokye__user-title .info .img input {

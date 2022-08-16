@@ -7,18 +7,32 @@ import {  useGetAllPropertyWithFilterMutation } from "../../../redux/slices/prop
 import { useRouter } from "next/router"
 
 const Property = () => {
-    const { winWidth } = useSelector((state => state.util))
+    const { winWidth,search } = useSelector((state => state.util))
     const [showMobFilter, setShowMobFilter] = useState(false)
     const [sortValue, setSortValue] = useState("new")
     const router = useRouter()
     const page = router.query?.page || 1
     const [optionValue, setOptionValue] = useState({ city: null, propType: null, bedroom: null, bathroom: null, min: null, max: null, furnished: null, availablity: null, age: null, flatNo: null, facing: null, nonVeg: null, pet: null, amenity: [] })
+    
+    
+    const isRedirected=router.query.redirect==="true" ? true : false
 
     const [run, info] = useGetAllPropertyWithFilterMutation()
 
+    console.log({router})
     useEffect(() => {
-        run({ page, sort: sortValue, limit: 8, data: optionValue })
+        if(!isRedirected){
+            run({ page, sort: sortValue, limit: 8, data: optionValue })
+        }
     }, [page, sortValue])
+    
+    useEffect(()=>{
+        if(isRedirected){
+            run({ page, sort: sortValue, limit: 8, data: search })  
+        }
+    },[])
+
+    console.log({optionValue})
 
     const filterClickHanlder = (data) => {
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Navigation } from 'swiper'; 
-import { carouselData } from '../../../../utils/data';
 import Image from 'next/image';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 import { motion, AnimatePresence } from 'framer-motion';

@@ -8,18 +8,18 @@ import { useCreateReviewMutation } from '../../../redux/slices/review'
 import { toast, ToastContainer } from 'react-toast'
 
 
-const ReviewForm = ({ setClose, name, email, id, refetch }) => {
+const ReviewForm = ({ setClose, name, email, id, refetch,img }) => {
     
-    const { register, formState: { errors, isValid }, handleSubmit, setValue } = useForm({ mode: "onChange", defaultValues: { email, name } })
-    const [createReview, info] = useCreateReviewMutation()
+    const { register, handleSubmit, setValue } = useForm({ mode: "onChange", defaultValues: { email, name } })
+    const [createReview] = useCreateReviewMutation()
 
    const ratingHandler=(value)=>{
     setValue("rating",value)
    }
 
-    const onSubmitHandler = async (data) => {
+    const onSubmitHandler = (data) => {
 
-        await createReview({ ...data, createdBy: id }).then(() => {
+        createReview({ ...data, createdBy: id,img }).unwrap().then(() => {
             refetch()
             toast.success("Review Submitted")
             setClose(false)
@@ -29,6 +29,8 @@ const ReviewForm = ({ setClose, name, email, id, refetch }) => {
         })
 
     }
+
+    
 
 
     return (

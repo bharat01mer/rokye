@@ -8,7 +8,7 @@ export const reviewApi=createApi({
         baseUrl:produrl,
         prepareHeaders:(headers,{getState})=>{
             
-            const token=getState().util?.user?.data.token
+            const token=getState().util?.user?.token
             if(token){
                 headers.set("authorization",`Bearer ${token}`)
             }

@@ -20,10 +20,13 @@ const utilSlice=createSlice({
         logout:(state,action)=>{
             state.user=null
             localStorage.clear("user")
+        },
+        searchQuery:(state,action)=>{
+            state.search=action.payload
         }
     }
 })
 
-export const {setwinWidth,userData,logout,updateUserData}=utilSlice.actions
+export const {setwinWidth,userData,logout,updateUserData,searchQuery}=utilSlice.actions
 
 export default utilSlice

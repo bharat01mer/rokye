@@ -37,7 +37,6 @@ const socialLinks = [
 
 
 const Review = () => {
-    const [reviewStar, setReviewStar] = useState({ one: 80, two: 90, three: 50, four: 30, five: 20 })
     const [showSortingOption, setShowSortingOption] = useState(false)
     const [showContactForm, setShowContactForm] = useState(false)
     const [showReviewForm, setshowReviewForm] = useState(false)
@@ -45,10 +44,10 @@ const Review = () => {
     const page = router.query?.page || 1
     const [filterVal, setFilterVal] = useState("new")
 
-    const { data, isFetching, error, refetch } = useGetAllReviewQuery({ id: page, filter: filterVal })
+    const { data, refetch } = useGetAllReviewQuery({ id: page, filter: filterVal })
     const { user } = useSelector(state => state.util)
 
-    const [deleteFunc,deleteInfo]=useDeleteReviewMutation()
+    const [deleteFunc]=useDeleteReviewMutation()
 
     useEffect(() => {
 
@@ -69,7 +68,6 @@ const Review = () => {
         },
         {
             id: 3,
-            value: reviewStar.four,
             value: data?.percentages.four,
         },
         {
@@ -223,6 +221,8 @@ const Review = () => {
             toast("Error Occured,Try Again")
         })
     }
+
+    console.log({data})
     return (
         <>
             <div className="rokye__review">
@@ -316,7 +316,15 @@ const Review = () => {
                                 <div className="review__item" key={item.id}>
                                     <div className="upper">
                                         <div className="upper__info">
-                                            <FaUserCircle size={40} />
+                                            {
+                                                item.img ? (
+                                                    <div className="img">
+                                                        <img src={item.img} alt="img" />
+                                                    </div>
+                                                ) : (   
+                                                    <FaUserCircle size={40} />
+                                                )
+                                            }
 
                                             <div className="info">
                                                 <h2>{item.name}</h2>
@@ -355,7 +363,7 @@ const Review = () => {
             }
             {
                 showReviewForm && (
-                    <ReviewForm setClose={setshowReviewForm} name={user?.data?.data?.name} email={user?.data?.data?.email} refetch={refetch} id={user?.data?.data?._id} />
+                    <ReviewForm setClose={setshowReviewForm} name={user?.data?.name} email={user?.data?.email} refetch={refetch} id={user?.data?._id} img={user?.data?.img} />
                 )
             }
         </>

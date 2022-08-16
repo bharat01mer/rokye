@@ -11,16 +11,9 @@ import Image from "next/image"
 
 const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, error, isLoading }) => {
     const [showSortOption, setShowSortOption] = useState(false)
-
-
-
     useEffect(() => {
 
     }, [data])
-
-    // useEffect(()=>{
-
-    // },[optionValue])
 
 
     const chooseItem = [
