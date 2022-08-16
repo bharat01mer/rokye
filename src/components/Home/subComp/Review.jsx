@@ -58,7 +58,7 @@ const Review = () => {
                     className="mySwiper"
                 >
                     {
-                        data.data.map((item) => (
+                        data?.data?.map((item) => (
                             <SwiperSlide key={item.id}>
                                 {({ isActive }) => (
                                     <ReviewCard  img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.comment}  />

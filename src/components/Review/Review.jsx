@@ -222,7 +222,7 @@ const Review = () => {
         })
     }
 
-    console.log({data})
+    
     return (
         <>
             <div className="rokye__review">
