@@ -37,6 +37,10 @@ const Review = () => {
             slidesPerView:3
         }
     }
+
+    if(!data){
+        return null
+    }
     return (
         <div className="rokye__home-review">
             <div className="rokye__home-review__title">
@@ -59,7 +63,7 @@ const Review = () => {
                 >
                     {
                         data?.data?.map((item) => (
-                            <SwiperSlide key={item.id}>
+                            <SwiperSlide key={item._id}>
                                 {({ isActive }) => (
                                     <ReviewCard  img={item.img} name={item.name} className={isActive ? "active" : ""} desc={item.comment}  />
                                 )}

@@ -1,38 +1,38 @@
 import React, { useState } from 'react'
-import { Navigation } from 'swiper'; 
 import Image from 'next/image';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
-import { motion, AnimatePresence } from 'framer-motion';
 import "swiper/css/navigation"
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from 'swiper';
 
 
-const PropertyDetailCarousel = ({data}) => {
+const PropertyDetailCarousel = ({ data }) => {
     const [showNav, setShowNav] = useState(false)
     return (
         <div className="carousel__slider">
-            <Swiper className="mySwiper" modules={[Navigation]} navigation={{prevEl:".navigation__prev",nextEl:".navigation__next",enabled:true}}  loop>
+            <Swiper className="mySwiper" slidesPerView={1}
+                spaceBetween={40}
+                centeredSlides
+                loop
+                modules={[Navigation]}
+                navigation={{ nextEl: ".navigation__next", prevEl: ".navigation__prev" }}
+                pagination={{
+                    clickable: true,
+                }}>
                 {data.map((item) => (
                     <SwiperSlide key={item._id}>
-                        <Image src={item.data} width={1400} height={740} alt={"img"} objectFit="cover" onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)} />
+                        <Image src={item.data} width={1400} height={740} alt={"img"} objectFit="cover" />
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <AnimatePresence>
-
-                {
-                    showNav && (
-                        <div className="navigation" onMouseOver={() => setShowNav(true)}>
-                            <motion.div className="navigation__prev" initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -20, opacity: 0 }} transition={{ duration: .7 }} whileTap={{scale:1.2}}>
-                                <AiOutlineArrowLeft size={50} />
-                            </motion.div>
-                            <motion.div className="navigation__next" initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: 20, opacity: 0 }} transition={{ duration: .7 }} whileTap={{scale:1.2}}>
-                                <AiOutlineArrowRight size={50} />
-                            </motion.div>
-                        </div>
-                    )
-                }
-            </AnimatePresence>
+            <div className="navigation" >
+                <div className="navigation__prev" >
+                    <AiOutlineArrowLeft size={50} />
+                </div>
+                <div className="navigation__next" >
+                    <AiOutlineArrowRight size={50} />
+                </div>
+            </div>
         </div>
     )
 }

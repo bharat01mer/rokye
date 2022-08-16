@@ -31,8 +31,6 @@ const PropertyDetail = ({ cardDetail }) => {
   useEffect(() => {
     if (user) {
       const isFavorite = user.data?.favoriteProp.find((item) => item.id === cardDetail?._id)
-
-      console.log({isFavorite})
       if (isFavorite !== undefined || isFavorite) {
         setFavorite(true)
       } else {
