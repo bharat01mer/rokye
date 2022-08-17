@@ -626,6 +626,13 @@ input::-webkit-inner-spin-button {
   transform: translate(-50%, -50%) !important;
 }
 
+.rokye__preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .rokye__home {
   padding: 2rem 0 0;
 }

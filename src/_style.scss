@@ -565,3 +565,9 @@
     transform: translate(-50%,-50%)!important;
   }
 }
+
+
+.rokye__preloader{
+  @include center__elem;
+  height: 100vh;
+}

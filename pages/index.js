@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import Layout from "../src/components/layout";
-import {Loader} from "../src/components/resuable"
+import { Preloader} from "../src/components/resuable"
 
 import dynamic from "next/dynamic";
 
@@ -10,7 +10,7 @@ const Home = dynamic(() => import("../src/components/Home/Home"), {
 
 const Index = () => {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<Preloader />}>
       <Layout title={"Home"} description={"Homepage of Royke Realty"}>
         <Home />
       </Layout>
