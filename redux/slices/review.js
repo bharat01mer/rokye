@@ -1,6 +1,6 @@
 import {createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const produrl=process.env.NODE_ENV==="production" ?"https://rokye.herokuapp.com/review" :"http://localhost:4000/review"
+const produrl=process.env.NODE_ENV==="production" ?"https://api.rokye.com/review" :"http://localhost:4000/review"
 
 export const reviewApi=createApi({
     reducerPath:"review",

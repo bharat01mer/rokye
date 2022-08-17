@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const produrl =
   process.env.NODE_ENV === "production"
-    ? "https://rokye.herokuapp.com/property"
+    ? "https://api.rokye.com/property"
     : "http://localhost:4000/property";
 
 export const propertyApi = createApi({
