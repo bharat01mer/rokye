@@ -251,6 +251,7 @@
         }
         .lower {
           p {
+            word-break: break-word;
             color: gray;
           }
           .remove{

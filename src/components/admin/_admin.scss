@@ -153,6 +153,7 @@
                       p{
                         margin-right: 1.5rem;
                         text-align: center;
+                        
 
                         &.lower__id{
                           color: blue;
@@ -290,6 +291,7 @@
           }
           .lower {
             p {
+              word-break: break-word;
               color: gray;
             }
             .remove{

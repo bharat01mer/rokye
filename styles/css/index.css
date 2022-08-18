@@ -1196,6 +1196,7 @@ input::-webkit-inner-spin-button {
   font-size: 2rem;
 }
 .rokye__home-review .review__card-detail p {
+  word-break: break-word;
   margin: 2rem 0;
   color: gray;
   font-size: 1.02rem;
@@ -3693,6 +3694,7 @@ body {
   color: gray;
 }
 .rokye__review-content .review__item .lower p {
+  word-break: break-word;
   color: gray;
 }
 .rokye__review-content .review__item .lower .remove {
@@ -4394,6 +4396,7 @@ body {
   color: gray;
 }
 .admin__content-review .review__item .lower p {
+  word-break: break-word;
   color: gray;
 }
 .admin__content-review .review__item .lower .remove {
