@@ -22,7 +22,7 @@ const Footer = () => {
     {
       id: 2,
       name: "Reviews",
-      link: "review",
+      link: "reviews",
     },
   ]
 
@@ -110,7 +110,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="rokye__footer-info">
-        <p>&#169;Rokye Realty. All rights reserved</p>
+        <p>  All rights reserved &#169; 2022 Rokye Realty LLP</p>
         <div className="dot" />
         <p>Terms & Conditions</p>
         <div className="dot" />

@@ -67,6 +67,9 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: space-between;
 }
+.rokye__navbar-logo {
+  cursor: pointer;
+}
 .rokye__navbar-logo h1 {
   color: #f25c05;
 }
@@ -540,7 +543,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__form-content .choose__option .item {
   width: 100%;
-  padding: 1rem;
+  padding: 0.6rem 1rem;
 }
 .rokye__form-content .choose__option .item:hover {
   transition: all 0.5s ease-in-out;
@@ -592,6 +595,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   background: #f25c05;
   border-radius: 5px;
   padding: 0.7rem 1rem;
@@ -650,9 +654,9 @@ input::-webkit-inner-spin-button {
   border-radius: 150px 150px 0 0;
 }
 .rokye__home-intro .blob1 {
-  top: 1rem;
+  top: 2rem;
   right: 1rem;
-  transform: rotate(50deg);
+  transform: rotate(64deg);
   background: #035941;
 }
 .rokye__home-intro .content {
@@ -674,9 +678,9 @@ input::-webkit-inner-spin-button {
   font-size: 2rem;
 }
 .rokye__home-intro .blob2 {
-  bottom: 0;
+  bottom: 6rem;
   left: 0;
-  transform: rotate(-130deg);
+  transform: rotate(-126deg);
   background: #f25c05;
 }
 @media screen and (max-width: 850px) {
@@ -715,7 +719,8 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-searchbar {
   position: relative;
-  padding: 0 14rem 0 10rem;
+  padding: 0 16rem 0 11rem;
+  margin-top: -7rem;
 }
 .rokye__home-searchbar__tab {
   display: flex;
@@ -787,11 +792,12 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-searchbar__tab .item .menu__item {
   cursor: pointer;
-  padding-bottom: 1rem;
+  padding: 0.6rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  align-items: flex-start;
 }
 .rokye__home-searchbar__tab .item .menu__item:hover {
   transition: 0.2s all ease-in-out;
@@ -916,7 +922,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-choose {
   padding: 7rem 4rem;
-  background: rgba(242, 92, 5, 0.9);
+  background: rgba(242, 186, 82, 0.9);
 }
 .rokye__home-choose__title {
   display: flex;
@@ -924,7 +930,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   flex-direction: column;
   font-size: 1.3rem;
-  color: #f2f2f2;
+  color: #035941;
 }
 .rokye__home-choose__title h1 {
   font-family: "lora", sans-serif;
@@ -988,7 +994,7 @@ input::-webkit-inner-spin-button {
   font-size: 1.7rem;
   font-family: "lora", sans-serif;
   font-weight: bolder;
-  color: #f2f2f2;
+  color: #035941;
   margin-bottom: 0.4rem;
 }
 @media screen and (max-width: 1400px) {
@@ -1092,9 +1098,11 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .rokye__home-recent__navigate .prev__btn {
+  cursor: pointer;
   color: gray;
 }
 .rokye__home-recent__navigate .next__btn {
+  cursor: pointer;
   color: #035941;
   margin-left: 2rem;
 }
@@ -1172,6 +1180,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   border-radius: 1rem;
 }
 .rokye__home-review .review__card-img {
@@ -1194,6 +1203,13 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-review .review__card-img .comma span {
   font-size: 2rem;
+}
+.rokye__home-review .review__card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
 }
 .rokye__home-review .review__card-detail p {
   word-break: break-word;
@@ -1223,9 +1239,11 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .rokye__home-review__navigate .prev__btn-review {
+  cursor: pointer;
   color: gray;
 }
 .rokye__home-review__navigate .next__btn-review {
+  cursor: pointer;
   color: #035941;
   margin-left: 2rem;
 }
@@ -1353,7 +1371,7 @@ body {
 }
 
 .rokye__property {
-  padding: 5rem 10rem;
+  padding: 9rem 10rem 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1499,6 +1517,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  align-items: baseline;
   /* Track */
   /* Handle */
   /* Handle on hover */
@@ -1509,7 +1528,7 @@ body {
 }
 .rokye__property-filter .lower__item .budget__option-container .left__item,
 .rokye__property-filter .lower__item .budget__option-container .right__item {
-  padding: 1rem;
+  padding: 0.6rem 1rem;
 }
 .rokye__property-filter .lower__item .budget__option-container .left__item:hover,
 .rokye__property-filter .lower__item .budget__option-container .right__item:hover {
@@ -1583,6 +1602,7 @@ body {
   background: #555;
 }
 .rokye__property-filter .property__search .btn {
+  cursor: pointer;
   color: #f2f2f2;
   padding: 0.6rem 1rem;
   margin: 0 1rem;
@@ -1723,7 +1743,7 @@ body {
   text-align: start;
   cursor: pointer;
   width: 100%;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
 }
 .rokye__property-grid__title .sort__option .option__item p {
   display: block;
@@ -2160,6 +2180,7 @@ body {
   justify-content: space-around;
 }
 .rokye__add-property__content .stepper__btn-next, .rokye__add-property__content .stepper__btn-prev {
+  cursor: pointer;
   padding: 0.5rem;
   width: 10rem;
   display: flex;
@@ -2359,6 +2380,7 @@ body {
   position: relative;
 }
 .rokye__add-property__content .form__choose .title {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2387,7 +2409,8 @@ body {
   border-radius: 5px;
 }
 .rokye__add-property__content .form__choose .option__item {
-  padding: 0.8rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2766,6 +2789,7 @@ body {
     align-items: center;
   }
   .rokye__plan-contact .contact__btn .btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2965,6 +2989,7 @@ body {
   justify-content: space-around;
 }
 .rokye__faq-tab .item {
+  cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   color: rgba(242, 242, 242, 0.75);
@@ -3252,6 +3277,7 @@ body {
   width: 30rem;
 }
 .rokye__about .intro__content .btn {
+  cursor: pointer;
   background: #f25c05;
   display: flex;
   justify-content: center;
@@ -3317,6 +3343,7 @@ body {
   width: 30rem;
 }
 .rokye__about .search__content .btn {
+  cursor: pointer;
   background: #f25c05;
   display: flex;
   justify-content: center;
@@ -3358,6 +3385,7 @@ body {
   width: 30rem;
 }
 .rokye__about .verification__content .btn {
+  cursor: pointer;
   background: #f25c05;
   display: flex;
   justify-content: center;
@@ -3508,6 +3536,7 @@ body {
 .rokye__review-profile .detail__contact {
   padding: 0.5rem 0;
   border-radius: 3px;
+  cursor: pointer;
   color: #f2f2f2;
   background: #f25c05;
   display: flex;
@@ -3598,6 +3627,7 @@ body {
   position: relative;
 }
 .rokye__review-content .add__sort .option__title {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3606,6 +3636,9 @@ body {
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
   border-radius: 5px;
+}
+.rokye__review-content .add__sort .option__title p {
+  text-transform: capitalize;
 }
 .rokye__review-content .add__sort .option__content {
   z-index: 2;
@@ -3617,6 +3650,7 @@ body {
   width: 8rem;
 }
 .rokye__review-content .add__sort .option__content .item {
+  cursor: pointer;
   padding: 0.5rem;
   width: 100%;
 }
@@ -3628,6 +3662,7 @@ body {
   background: rgb(191, 191, 191);
 }
 .rokye__review-content .add__content {
+  cursor: pointer;
   width: 10rem;
   display: flex;
   justify-content: center;
@@ -3952,6 +3987,7 @@ body {
   color: gray;
 }
 .rokye__user-title .logout {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4043,6 +4079,7 @@ body {
   border-radius: 5px;
 }
 .rokye__user-dashboard__personal .content__submit {
+  cursor: pointer;
   margin-top: 2rem;
   display: flex;
   justify-content: center;

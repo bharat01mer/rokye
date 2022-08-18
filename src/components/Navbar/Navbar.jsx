@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { CgMenuRight } from "react-icons/cg"
 import { RiCloseLine } from "react-icons/ri"
 import { AiOutlinePlus } from "react-icons/ai"
-import {BiUserCircle} from "react-icons/bi"
+import { BiUserCircle } from "react-icons/bi"
 import { useSelector, useDispatch } from 'react-redux'
 import Image from "next/image"
 import { setwinWidth, logout } from '../../../redux/slices/util'
@@ -78,9 +78,11 @@ const Navbar = () => {
 
   return (
     <div className="rokye__navbar" ref={headerRef}>
+      <Link passHref href={"/"}>
       <div className="rokye__navbar-logo">
-        <Image src={"/logo.png"} width={100} height={60} objectFit="contain" />
+        <Image src={"/logo1.png"} width={180} height={80} objectFit="contain" />
       </div>
+      </Link>
       <AnimatePresence>
         {
           showMobileNav && (
@@ -97,7 +99,7 @@ const Navbar = () => {
                 (!user || user === undefined) ? (
                   <Link passHref href={"/signup"}>
                     <motion.div className="register" whileTap={{ scale: .97 }}>
-                      <h3>Register</h3>
+                      <h3>Login</h3>
                     </motion.div>
                   </Link>
 
@@ -114,24 +116,16 @@ const Navbar = () => {
       </AnimatePresence>
       <div className='rokye__navbar-tab'>
         <Link href={"/"} passHref >
-          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""}>Home</motion.h3>
+          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""} style={{marginRight:"2rem"}}>Home</motion.h3>
         </Link>
         {
           user && (
-
-            <Link href={"/setting"} passHref >
-              <motion.h3 style={{ marginLeft: 30 }} whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/setting" ? "active" : ""}>Account</motion.h3>
-            </Link>
-
-          )
-        }
-        {
-          (user && winWidth<650)  && (
             <Link href={"/setting"} >
-              <BiUserCircle size={40} color="#f25c05" />
+              <BiUserCircle size={40} color="#f25c05" cursor={"pointer"} />
             </Link>
           )
         }
+
 
         <Link href={"/properties/create"} passHref>
           <motion.div className="sell" whileTap={{ scale: 0.97 }}>
@@ -140,8 +134,8 @@ const Navbar = () => {
           </motion.div>
         </Link>
         {
-          showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} /> : (
-            <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} />
+          showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
+            <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
           )
         }
       </div>

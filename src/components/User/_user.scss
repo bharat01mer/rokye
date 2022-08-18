@@ -108,6 +108,7 @@
       }
     }
     .logout {
+      cursor: pointer;
       @include center__elem;
       h3 {
         margin-left: 0.5rem;
@@ -197,13 +198,10 @@
             border-radius: 5px;
           }
           height: 5rem;
-          // &.active {
-          //   transition: 0.5s;
-          //   display: block;
-          //   // padding: 0 2rem;
-          // }
+          
         }
         &__submit {
+          cursor: pointer;
           margin-top: 2rem;
           @include center__elem;
           padding: 0.5rem 1rem;

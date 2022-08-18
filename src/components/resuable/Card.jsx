@@ -100,20 +100,23 @@ const Card = ({ img, title, price, city, place, id, furnished, useFavorite = tru
         )
       }
 
-      <div className="rokye__card-detail">
-        {/* <h2>{title}</h2> */}
-        <h3>{title}</h3>
-        <div className="additional">
-          <div className="additional__price">
-            <Image src={"/rupee.png"} width={20} height={20} />
-            <p> <span>{milify(price)}</span>/month </p>
-          </div>
-          <div className="additional__info">
-            <p style={{ textTransform: "capitalize" }}>{furnished}</p>
-          </div>
-        </div>
+      <Link passHref href={`/properties/${id}`} >
 
-      </div>
+        <div className="rokye__card-detail">
+          {/* <h2>{title}</h2> */}
+          <h3>{title}</h3>
+          <div className="additional">
+            <div className="additional__price">
+              <Image src={"/rupee.png"} width={20} height={20} />
+              <p> <span>{milify(price)}</span>/month </p>
+            </div>
+            <div className="additional__info">
+              <p style={{ textTransform: "capitalize" }}>{furnished}</p>
+            </div>
+          </div>
+
+        </div>
+      </Link>
       <div className="info">
         <div className="info__city">
           <p style={{ textTransform: "capitalize" }}>{place}, {city}</p>

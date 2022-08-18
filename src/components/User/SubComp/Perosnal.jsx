@@ -74,7 +74,7 @@ const Perosnal = ({ userData }) => {
                                         <p>{item.value}</p>
                                     </div>
                                     <div className="edit" onClick={() => setOpenEdit({ id:item.id===openEdit.id ? null : item.id })}>
-                                        <FiEdit />
+                                        <FiEdit cursor={"pointer"} />
                                     </div>
                                 </div>
                                 {

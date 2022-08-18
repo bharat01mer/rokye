@@ -117,7 +117,7 @@ const User = ({ user }) => {
                                         <input type="file" id="profimg" accept="image/*" onChange={(e) => onChangeImageHandler(e)} />
                                         <img src={userData.img} alt="" />
                                         <div className="edit">
-                                            <FaEdit size={20} />
+                                            <FaEdit size={20} cursor="pointer" />
                                         </div>
                                     </label>
                                 ) : (
@@ -126,7 +126,7 @@ const User = ({ user }) => {
 
                                         <FaUserCircle size={55} color="gray" />
                                         <div className="edit">
-                                            <FaEdit size={20} />
+                                            <FaEdit size={20}  cursor="pointer" />
                                         </div>
                                     </label>
                                 )

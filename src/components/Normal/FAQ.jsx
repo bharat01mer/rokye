@@ -10,9 +10,10 @@ const FAQComp = () => {
     return (
         <>
             <div className="rokye__faq-img">
-                <Image src={"https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1596&q=80"} objectFit="cover" width={2000} height={1000} />
+                {/* <Image src={"https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1596&q=80"} objectFit="cover" width={2000} height={1000} /> */}
+                {/* <img src="https://www.superoffice.com/globalassets/blog/2016/10/how-to-build-faq-section.jpg" alt="" style={{width:"100%"}} /> */}
             </div>
-            <div className="rokye__faq">
+            <div className="rokye__faq" style={{marginTop:"3rem"}}>
                 <div className="rokye__faq-title">
                     <h1>Frequently Asked Questions</h1>
                 </div>
@@ -41,9 +42,9 @@ const FAQComp = () => {
                                     <div className="show">
                                         {
                                             (showAns.id === item.id && showAns.show) ? (
-                                                <AiOutlineMinus size={25} />
+                                                <AiOutlineMinus size={25} cursor="pointer" />
                                             ) : (
-                                                <AiOutlinePlus size={25} />
+                                                <AiOutlinePlus size={25} cursor="pointer" />
                                             )
                                         }
                                     </div>

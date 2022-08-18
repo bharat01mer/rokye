@@ -139,56 +139,102 @@ export const budgetData = {
     },
     {
       id: 10,
-      price: "75k",
-      data: 75000,
+      price: "60k",
+      data: 60000,
     },
     {
-      id:11,
-      price: "1lac",
-      data:10000,
+      id: 11,
+      price: "70k",
+      data: 70000,
     },
+    {
+      id:12,
+      price: "80k",
+      data:80000,
+    },
+    {
+      id:13,
+      price: "90k",
+      data:90000,
+    },
+    {
+      id:14,
+      price: "1Lac",
+      data:100000,
+    } 
   ],
   max: [
     {
       id: 0,
-      price: "10K",
-      data: 50000,
+      price: "10k",
+      data: 10000,
     },
     {
       id: 1,
+      price: "15k",
+      data: 15000,
+    },
+    {
+      id: 2,
       price: "20k",
       data: 20000,
     },
     {
-      id: 2,
+      id: 3,
+      price: "25k",
+      data: 25000,
+    },
+    {
+      id: 4,
       price: "30k",
       data: 30000,
     },
     {
-      id: 3,
+      id: 5,
+      price: "35k",
+      data: 35000,
+    },
+    {
+      id: 6,
+      price: "40k",
+      data: 40000,
+    },
+    {
+      id: 7,
+      price: "45k",
+      data: 45000,
+    },
+    {
+      id: 8,
       price: "50k",
       data: 50000,
     },
     {
-      id: 4,
-      price: "75k",
-      data: 75000,
+      id: 9,
+      price: "60k",
+      data: 60000,
     },
     {
-      id: 5,
-      price: "1lac",
-      data: 100000,
+      id:11,
+      price: "70k",
+      data:70000,
     },
     {
-      id: 6,
-      price: "1.5lac",
-      data: 150000,
+      id:12,
+      price: "80k",
+      data:80000,
     },
     {
-      id: 7,
-      price: "2lac",
-      data: 200000,
+      id:13,
+      price: "90k",
+      data:90000,
     },
+    {
+      id:14,
+      price: "1lac+",
+      data:200000,
+    },
+
   ],
 };
 
@@ -659,9 +705,19 @@ export const propertyDataNew = {
       value: "3",
     },
     {
-      id: 1,
-      title: "3+",
-      value: "3+",
+      id: 5,
+      title: "4",
+      value: "4",
+    },
+    {
+      id: 6,
+      title: "5",
+      value: "5",
+    },
+    {
+      id: 7,
+      title: "5+",
+      value: "5+",
     },
   ],
 

@@ -69,6 +69,7 @@
       &__contact {
         padding: 0.5rem 0;
         border-radius: 3px;
+        cursor: pointer;
 
         color: $color4;
         svg {
@@ -152,14 +153,20 @@
           // @include center__elem;
 
           &__title {
+            cursor: pointer;
             @include center__elem;
             justify-content: space-between;
             width: 8rem;
             padding: 0.5rem 1rem;
             @include box_shadow;
             border-radius: 5px;
+
+            p{
+              text-transform: capitalize;
+            }
           }
           &__content {
+            
             z-index: 2;
             background-color: white;
             position: absolute;
@@ -170,8 +177,10 @@
             width: 8rem;
 
             .item {
+              cursor: pointer;
               p {
                 justify-content: flex-start;
+
               }
               padding: 0.5rem;
               width: 100%;
@@ -187,6 +196,7 @@
 
       margin-top: 2rem;
       &__content {
+        cursor: pointer;
         width: 10rem;
         @include center__elem;
         p {
@@ -308,6 +318,7 @@
                 justify-content: space-around;
             }
             &__contact{
+              
                 width: 100%;
             }
         }

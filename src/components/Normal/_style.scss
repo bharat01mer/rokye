@@ -115,6 +115,7 @@
       .contact__btn {
         @include center__elem;
         .btn {
+          cursor: pointer;
           @include center__elem;
           border-radius: 4px;
           color: $color4;
@@ -330,6 +331,7 @@
     justify-content: space-around;
 
     .item {
+      cursor: pointer;
       padding: 0.5rem 1rem;
       // background: rgba($color: $color4, $alpha: 0.8);
 
@@ -631,6 +633,7 @@
         width: 30rem;
       }
       .btn{
+        cursor: pointer;
         background: $color5;
         @include center__elem;
         align-items: flex-end;
@@ -692,6 +695,7 @@
         width: 30rem;
       }
       .btn{
+        cursor: pointer;
         background: $color5;
         @include center__elem;
         align-items: flex-end;
@@ -730,6 +734,7 @@
         width: 30rem;
       }
       .btn{
+        cursor: pointer;
         background: $color5;
         @include center__elem;
         align-items: flex-end;

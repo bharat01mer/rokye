@@ -55,7 +55,7 @@ const Choose = () => {
         <div className="rokye__home-choose">
             <div className="rokye__home-choose__title">
                 <h1>Why Choose us</h1>
-                <p>Rokye Group is commited to helping its client to react their goals</p>
+                <p>Rokye Group is commited to help our clients</p>
             </div>
             <div className="outer">
 

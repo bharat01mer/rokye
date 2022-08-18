@@ -44,7 +44,7 @@ const Properties = ({ setShowMobFilter, data, page, sortValue, setSortValue, err
         <div className='rokye__property-grid'>
             <div className="rokye__property-grid__title">
                 <div className="title">
-                    <h1>Property for Rent</h1>
+                    <h1>Properties for Rent</h1>
                     <motion.div className="mob__filter-btn" whileTap={{ scale: .97 }} onClick={() => setShowMobFilter(true)}>
                         <RiFilter3Line size={20} />
                         <p> Filter</p>
