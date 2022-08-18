@@ -98,7 +98,7 @@ const Review = () => {
         <div className="rokye__home-review">
             <div className="rokye__home-review__title">
                 <h1>Reviews</h1>
-                <p>Let's see what our customers say about us</p>
+                <p>Let&apos;s see what our customers say about us</p>
             </div>
             <div className="rokye__home-review__detail">
                 <Swiper
