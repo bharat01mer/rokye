@@ -37,10 +37,6 @@ const Navbar = () => {
       name: "Contact Us",
       link: "contact",
     },
-    // {
-    //   name: "Refer & Earn",
-    //   link: "refer",
-    // },
     {
       name: "About Us",
       link: "about",
@@ -61,7 +57,7 @@ const Navbar = () => {
 
   const logoutHandler = () => {
     dispatch(logout())
-    // router.push("/")
+
   }
 
   useEffect(() => {

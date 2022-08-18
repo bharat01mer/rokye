@@ -62,7 +62,7 @@ const Card = ({ img, title, price, city, place, id, furnished, useFavorite = tru
       <ToastContainer delay={2000} />
       <Link passHref href={`/properties/${id}`} >
         <div className="rokye__card-img">
-          <Image src={img} width={300} height={250} objectFit="cover" />
+          <Image src={img ?? "https://res.cloudinary.com/dburijwvn/image/upload/v1660821827/No_image_available_zbwqpo.jpg"} width={300} height={250} objectFit="cover" />
         </div>
       </Link>
       {

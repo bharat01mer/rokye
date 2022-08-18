@@ -19,7 +19,7 @@ const PropertyDetailCarousel = ({ data }) => {
                 }}>
                 {data.map((item) => (
                     <SwiperSlide key={item._id}>
-                        <Image src={item.data} width={1400} height={740} alt={"img"} objectFit="cover" />
+                        <Image src={item.data ?? "https://www.aepint.nl/wp-content/uploads/2014/12/No_image_available.jpg"} width={1400} height={740} alt={"img"} objectFit="cover" />
                     </SwiperSlide>
                 ))}
             </Swiper>

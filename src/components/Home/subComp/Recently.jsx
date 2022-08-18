@@ -60,7 +60,7 @@ const Recently = () => {
                                     city={item.city}
                                     place={item.area}
                                     price={item.rentDetail.monthly}
-                                    img={item.images[0]?.data ? item.images[0]?.data : "https://res.cloudinary.com/dykwfe4cr/image/upload/v1659513375/Trailers/vvdylxopbl0ozuy8m85d.jpg"}
+                                    img={item.images[0]?.data}
                                     id={item._id}
                                 />
                             </SwiperSlide>
