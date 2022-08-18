@@ -80,7 +80,7 @@ const Navbar = () => {
     <div className="rokye__navbar" ref={headerRef}>
       <Link passHref href={"/"}>
       <div className="rokye__navbar-logo">
-        <Image src={"/logo1.png"} width={180} height={80} objectFit="contain" />
+        <Image src={"/logo.png"} width={180} height={60} objectFit="contain" />
       </div>
       </Link>
       <AnimatePresence>
