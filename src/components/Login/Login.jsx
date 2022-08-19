@@ -79,7 +79,7 @@ const Login = ({ isSignUp }) => {
                     } else {
                         router.push("/")
                     }
-                }).catch (error=>{
+                }).catch (err=>{
                     toast.error( err?.data ? err?.data?.message :"Error Occurred")
                 })
         }
@@ -98,7 +98,7 @@ const Login = ({ isSignUp }) => {
 
     }, [dispatch])
 
-
+    
 
     return (
         <div className={`rokye__login ${isSignUp ? "signup" : ""}`} >

@@ -653,28 +653,7 @@
     
   }
 
-  .work{
-    margin: 4rem 0;
-    .title{
-      @include center__elem;
-      h1{
-        font-size: 3rem;
-      }
-    }
-    .content__item{
-      box-shadow: none !important;
-    }
-    @media screen and (max-width:1150px) {
-      .content{
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-    @media screen and (max-width:650px) {
-      .content{
-        grid-template-columns: repeat(1,1fr);
-      }
-    }
-  }
+  
   .search{
     margin: 5rem 0;
     @include center__elem;

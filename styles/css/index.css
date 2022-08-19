@@ -1926,6 +1926,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .rokye__property-detail__prop .title__info .location,
 .rokye__property-detail__prop .title__info .date {
@@ -1949,12 +1950,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  .rokye__property-detail__prop .title__info .number {
+    margin-left: 0;
+  }
+}
 .rokye__property-detail__prop .desc h1 {
   font-family: "lora", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
 .rokye__property-detail__prop .desc p {
+  word-break: break-word;
   color: gray;
   margin: 1rem 0;
 }
@@ -3294,30 +3301,6 @@ body {
 }
 .rokye__about .intro__content .btn p {
   margin-left: 0.5rem;
-}
-.rokye__about .work {
-  margin: 4rem 0;
-}
-.rokye__about .work .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.rokye__about .work .title h1 {
-  font-size: 3rem;
-}
-.rokye__about .work .content__item {
-  box-shadow: none !important;
-}
-@media screen and (max-width: 1150px) {
-  .rokye__about .work .content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 650px) {
-  .rokye__about .work .content {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 .rokye__about .search {
   margin: 5rem 0;

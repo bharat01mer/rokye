@@ -508,6 +508,7 @@
           margin-top: 0.5rem;
           @include center__elem;
           justify-content: flex-start;
+          flex-wrap: wrap;
           .location,
           .date {
             @include center__elem;
@@ -516,9 +517,11 @@
             p {
               margin-left: 0.5rem;
               color: gray;
-            }
-          }
 
+            }
+
+          }
+          
           .date {
             padding-left: 1rem;
           }
@@ -526,7 +529,13 @@
           .number{
             margin-left: 1rem;
             @include center__elem;
+            @media screen and (max-width:500px) {
+              margin-left: 0;
+            }
           }
+
+
+          
         }
       }
       .desc {
@@ -536,6 +545,7 @@
         }
 
         p {
+          word-break: break-word;
           color: gray;
           margin: 1rem 0;
         }
