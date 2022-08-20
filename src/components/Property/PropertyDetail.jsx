@@ -388,7 +388,7 @@ const PropertyDetail = ({ cardDetail }) => {
             <div className="nearby__content">
               {
                 nearByList.map((item)=>(
-                  <div className="item">
+                  <div className="item" key={item.id}>
                     <h4>{item.name}</h4>
                     <p>{item.value}</p>
                   </div>

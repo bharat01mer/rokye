@@ -133,7 +133,8 @@ const Location = () => {
 
                 {
                     nearByList.map((item) => (
-                        <div className="item">
+                        <div className="item" key={item.id}>
+                            
                             <Choose title={item.title} optionItem={valueArr} showOption={showOption} setShowOption={setShowOption} id={item.id} name={item.name} />
                             {
                                 errors[item.name] && <p style={{ color: "red" }}>Please fill the above field</p>
@@ -147,19 +148,3 @@ const Location = () => {
 }
 
 export default Location
-
-
-// Schools
-// Hospital
-// Shopping centres
-// Transportation hubs
-// Temples
-// Commercial hubs
-
-// option
-
-// Within 2 km
-// Within 5 km
-// Within 8 km
-// Within 10 km
-// 10+ km 
