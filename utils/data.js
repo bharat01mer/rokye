@@ -439,7 +439,7 @@ export const questions = {
     {
       id: 1,
       quest: "Do I need to pay anything in advance to use your services?",
-      ans: "No, in order to rent a residential property, you no need to pay any brokerage and you can avail our services without any advancepayment too,We believe in service first and pay later policy.",
+      ans: "No, in order to rent a residential property, you no need to pay any brokerage and you can avail our services without any advance payment too, we believe in service first and pay later policy.",
     },
     {
       id: 2,
@@ -476,7 +476,7 @@ export const questions = {
     {
       id: 2,
       quest: "Will Relationship Manager be present during the house visit?",
-      ans: "Will Relationship Manager be present during the house visit?",
+      ans: "Yes, they will be available with you in every house visit.",
     },
     {
       id: 3,
@@ -499,24 +499,7 @@ export const questions = {
       quest: "When do I need to pay your subscription charges?",
       ans: "Once we find a suitable property that you like to rent, you need to pay our service charges before we make a rent agreement and handover house key to you.",
     },
-  ],
-  referral: [
-    {
-      id: 0,
-      quest: "Why my referral's listing got rejected?",
-      ans: "We deal in residential properties those are for rent only but if you have referred us any commercial property or residential property for sale, it should be rejected.",
-    },
-    {
-      id: 1,
-      quest: "Why didn’t I receive money for my referral?",
-      ans: "We offer referral bonus to you once your referral take our services successfully, if they have not used our services, you are not liable to receive referral bonus.",
-    },
-    {
-      id: 2,
-      quest: "How will I get referral bonus?",
-      ans: "By UPI on your phone number provided to us by you.",
-    },
-  ],
+  ]
 };
 
 export const propertyDataNew = {

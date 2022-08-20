@@ -22,6 +22,14 @@ const initialState = {
     city: "",
     state: "",
     pinCode: null,
+    nearby: {
+        school: "",
+        hospital: "",
+        mall: "",
+        transport: "",
+        temple: "",
+        commercial: ""
+    },
     totalFloor: null,
     facing: "",
     balconies: null,
@@ -51,7 +59,7 @@ const AddProperty = () => {
     const methods = useForm({
         defaultValues: initialState, mode: "onChange"
     })
-    
+
     const router = useRouter()
 
     const { user } = useSelector((state) => state.util)
@@ -104,7 +112,7 @@ const AddProperty = () => {
 
         if (activeStep === totalStep) {
             try {
-                createProperty({ ...data, createdBy: user.data._id,city: data?.city.toLowerCase() }).unwrap().then(async (res) => {
+                createProperty({ ...data, createdBy: user.data._id, city: data?.city.toLowerCase() }).unwrap().then(async (res) => {
                     setIsImageUploading(true)
                     imageUpload(res.data._id).then(() => {
                         toast.success("Completed")
@@ -129,6 +137,7 @@ const AddProperty = () => {
         }
     }
 
+    
     return (
         <div className="rokye__add-property">
             <ToastContainer delay={3000} />
@@ -145,13 +154,6 @@ const AddProperty = () => {
                         <div className="form" >
                             {showForm(activeStep)}
                         </div>
-                        {
-                            isImageUploading && (
-                                <div className="status">
-                                    <h3>Wait, While uploading Image,Once completed you will be automaitcally redirect to your property page</h3>
-                                </div>
-                            )
-                        }
                         <div className="stepper__btn">
                             <button className="stepper__btn-prev" type="button" style={{ visibility: activeStep === 0 ? "hidden" : "visible" }} onClick={() => setActiveStep(activeStep - 1)}>
                                 <h2>Prev</h2>
@@ -160,6 +162,13 @@ const AddProperty = () => {
                                 <h2>{activeStep === totalStep ? "Submit" : "Next"}</h2>
                             </button>
                         </div>
+                        {
+                            isImageUploading && (
+                                <div className="status" style={{ marginTop: "2rem", textAlign: "center" }} >
+                                    <h3>Wait, While uploading Image,Once completed you will be automaitcally redirect to your property page</h3>
+                                </div>
+                            )
+                        }
                     </form>
                 </FormProvider>
             </div>

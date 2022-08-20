@@ -1,11 +1,14 @@
 import { TextField } from "@mui/material"
 import { useFormContext } from "react-hook-form"
+import { useState } from "react"
+import { SiGooglenearby } from "react-icons/si"
 
 import { MdLocationPin } from "react-icons/md"
+import Choose from "./Choose"
 
 
 const Location = () => {
-    
+
     const TextFieldItem = [
         {
             id: 0,
@@ -38,7 +41,71 @@ const Location = () => {
             name: "pinCode"
         },
     ]
-    const { register,formState:{errors} } = useFormContext()
+    const { register, formState: { errors } } = useFormContext()
+
+    const [showOption, setShowOption] = useState({ id: null, show: false })
+
+    const valueArr = [
+        {
+            id: 0,
+            title: "Within 2 km",
+            value: "2km",
+        },
+        {
+            id: 1,
+            title: "Within 5 km",
+            value: "5km",
+        },
+        {
+            id: 2,
+            title: "Within 8 km",
+            value: "8km",
+        },
+        {
+            id: 3,
+            title: "Within 10 km",
+            value: "10km",
+        },
+        {
+            id: 4,
+            title: "Over 10+ km",
+            value: "10km+",
+        },
+    ]
+    const nearByList = [
+        {
+            id: 0,
+            title: "School",
+
+            name: "nearby.school"
+        },
+        {
+            id: 1,
+            title: "Hospital",
+            name: "nearby.hospital"
+        },
+        {
+            id: 2,
+            title: "Shopping centres",
+            name: "nearby.mall"
+        },
+        {
+            id: 3,
+            title: "Transportation hubs",
+            name: "nearby.transport"
+        },
+        {
+            id: 4,
+            title: "Temples",
+            name: "nearby.temple"
+        },
+        {
+            id: 5,
+            title: "Commercial hubs",
+            name: "nearby.comercial"
+        },
+    ]
+
     return (
         <div className="form__basic">
             <div className="form__basic-title">
@@ -56,9 +123,43 @@ const Location = () => {
                         </div>
                     ))
                 }
+
+            </div>
+            <div className="form__basic-title" style={{marginTop:"2rem"}}>
+                <SiGooglenearby size={30} />
+                <h1>Nearby Location</h1>
+            </div>
+            <div className="content">
+
+                {
+                    nearByList.map((item) => (
+                        <div className="item">
+                            <Choose title={item.title} optionItem={valueArr} showOption={showOption} setShowOption={setShowOption} id={item.id} name={item.name} />
+                            {
+                                errors[item.name] && <p style={{ color: "red" }}>Please fill the above field</p>
+                            }
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
 }
 
 export default Location
+
+
+// Schools
+// Hospital
+// Shopping centres
+// Transportation hubs
+// Temples
+// Commercial hubs
+
+// option
+
+// Within 2 km
+// Within 5 km
+// Within 8 km
+// Within 10 km
+// 10+ km 

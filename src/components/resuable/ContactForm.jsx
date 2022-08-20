@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form"
 import { useEffect, useState } from "react"
 
 import { useAddContactMutation } from "../../../redux/slices/contact"
-import { ToastContainer,toast } from "react-toast"
+import { ToastContainer, toast } from "react-toast"
 
 
 const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
@@ -17,7 +17,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
     const { handleSubmit, formState, setValue, register } = useForm({ mode: "onChange" })
     const [checkBox, setCheckBox] = useState(false)
-    const [addContact]=useAddContactMutation()
+    const [addContact] = useAddContactMutation()
 
     const socialLinks = [
         {
@@ -55,10 +55,10 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
         setValue("type", value.value)
         setShowOption(false)
     }
-    const onSubmithandler = async(data) => {
-        await addContact(data).then(()=>{
+    const onSubmithandler = async (data) => {
+        await addContact(data).then(() => {
             toast.success("Message Sent")
-        }).catch(()=>{
+        }).catch(() => {
             toast.error("Try Again")
         })
     }
@@ -152,7 +152,17 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                                 <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
                             </div>
                             <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
+                                <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$`, minLength: 10, maxLength: 10 })} />
+                                {
+                                    formState.errors.phone?.type === "minLength" && (
+                                        <p style={{color:"red",fontSize:".8rem"}}> Please Add 10 digit no </p>
+                                    )
+                                }
+                                {
+                                    formState.errors.phone?.type === "maxLength" && (
+                                        <p style={{color:"red",fontSize:".8rem"}}> Please Add 10 digit no </p>
+                                    )
+                                }
                             </div>
                             <div className="rokye__form-content__item">
                                 <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />

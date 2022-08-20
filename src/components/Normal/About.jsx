@@ -1,8 +1,11 @@
 import { AiOutlineSearch ,AiOutlinePlus} from "react-icons/ai"
 import Link from "next/link"
+import { ScrollTo } from "../resuable"
 
 const About = () => {
     return (
+        <>
+        <ScrollTo />
         <div className="rokye__about">
             <div className="intro">
                 <div className="intro__img">
@@ -50,6 +53,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

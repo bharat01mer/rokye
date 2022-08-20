@@ -230,7 +230,6 @@ const Review = () => {
                 <ToastContainer delay={2000} />
                 <div className="rokye__review-profile">
                     <div className="intro">
-                        {/* <Image src={"/logo.png"} width={150} height={75} objectFit={"contain"} /> */}
                         <h1>Rokye Realty</h1>
                         <p>Online Property Listing Company</p>
                     </div>
@@ -244,7 +243,7 @@ const Review = () => {
                         <div className="detail__social">
                             {
                                 socialLinks.map((item) => (
-                                    <a href={`https://${item.link}`} className="item" key={item.id}>
+                                    <a href={`https://${item.link}`} className="item" key={item.id} target="__blank" rel="noreferrer">
                                         {item.icon}
                                     </a>
                                 ))

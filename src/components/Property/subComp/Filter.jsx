@@ -200,7 +200,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
                             </div>
                         </div>
                         {
-                            modifiedItemList.splice(0, 10).map((item, index) => (
+                            modifiedItemList.map((item, index) => (
                                 <div className="lower__item" key={item.name}>
                                     <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                         <h4>{item.name}:</h4>
@@ -285,12 +285,12 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
                 )
             }
 
-            <div className="property__search" >
+            {/* <div className="property__search" >
                 <motion.div className="btn" whileTap={{ scale: 0.96 }} onClick={searchClickHandler}>
                     <AiOutlineSearch size={24} />
                     <h3>Search</h3>
                 </motion.div>
-            </div>
+            </div> */}
         </div>
     )
 }

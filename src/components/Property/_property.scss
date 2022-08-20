@@ -551,6 +551,40 @@
           margin: 1rem 0;
         }
       }
+
+      .nearby{
+        margin-top: 2rem;
+
+        &__content{
+          padding: 2rem;
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+
+          .item{
+            h4{
+              color: $color1;
+              @include heading_font;
+            }
+            width: 20rem;
+            grid-gap: 2rem;
+            margin-bottom: 1rem;
+            @include center__elem;
+            justify-content: space-between;
+          }
+
+          @media screen and (max-width:900px) {
+            grid-template-columns: repeat(1,1fr);
+          }
+          @media screen and (max-width:900px) {
+            padding: 2rem 1rem;
+            .item{
+
+              width: 100%;
+            }
+          }
+        }
+      }
+
       .detail {
         margin: 4rem 0;
         h1 {
@@ -603,6 +637,7 @@
               margin-left: 0.5rem;
             }
           }
+
         }
       }
     }
@@ -915,6 +950,7 @@
             @include center__elem;
             justify-content: flex-start;
             label {
+              cursor: pointer;
               border-radius: 5px;
               padding: 1rem;
               background: $color5;

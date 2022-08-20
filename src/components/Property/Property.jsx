@@ -33,10 +33,14 @@ const Property = () => {
         }
     }, [])
 
-    console.log({ optionValue })
+    
+    useEffect(()=>{
+        run({ page, sort: sortValue, limit: 8, data: optionValue })
 
+    },[optionValue])
+    
     const filterClickHanlder = (data) => {
-
+        
         run({ page, sort: sortValue, limit: 8, data: optionValue, data })
     }
 

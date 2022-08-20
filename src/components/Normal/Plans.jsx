@@ -6,7 +6,7 @@ import { ownerPoints, tenantPoints } from "../../../utils/data"
 import ContactForm from "../resuable/ContactForm"
 import { useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import {ContactModal} from "../resuable"
+import {ContactModal, ScrollTo} from "../resuable"
 
 
 const Plans = () => {
@@ -31,6 +31,7 @@ const Plans = () => {
     ]
     return (
         <>
+        <ScrollTo />
             <div className="rokye__plan">
                 <div className="upper">
 

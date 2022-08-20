@@ -7,7 +7,6 @@ import { Tooltip,IconButton } from '@mui/material'
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { FcCalendar } from "react-icons/fc"
 import { BiRupee } from "react-icons/bi"
-import { BsHash } from "react-icons/bs"
 import { TbCheckbox } from "react-icons/tb"
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSelector } from 'react-redux'
@@ -89,7 +88,7 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 7,
         name: "Parking Places",
-        value: cardDetail.carParking
+        value: `${cardDetail.bikeParking} bike/${cardDetail.carParking} car`
       },
       {
         id: 8,
@@ -116,7 +115,7 @@ const PropertyDetail = ({ cardDetail }) => {
       },
       {
         id: 2,
-        name: "Super area",
+        name: "Built-In area",
         value: `${cardDetail.superArea} sqft`,
 
       },
@@ -174,6 +173,73 @@ const PropertyDetail = ({ cardDetail }) => {
     const title = propertyDataNew[name].find((item) => item.value === value)
     return title?.title
   }
+  
+  const valueArr = [
+    {
+        id: 0,
+        title: "Within 2 km",
+        value: "2km",
+    },
+    {
+        id: 1,
+        title: "Within 5 km",
+        value: "5km",
+    },
+    {
+        id: 2,
+        title: "Within 8 km",
+        value: "8km",
+    },
+    {
+        id: 3,
+        title: "Within 10 km",
+        value: "10km",
+    },
+    {
+        id: 4,
+        title: "Over 10+ km",
+        value: "10km+",
+      },
+    ]
+    
+    function getTitleOfNearyBy(value) {
+      const title = valueArr.find((item) => item.value === value)
+      return title?.title
+    }
+
+
+  const nearByList=[
+    {
+      id:0,
+      name:"Schools",
+      value:getTitleOfNearyBy(cardDetail.nearby.school)
+    },
+    {
+      id:1,
+      name:"Hospital",
+      value:getTitleOfNearyBy(cardDetail.nearby.hospital)
+    },
+    {
+      id:0,
+      name:"Shopping centres",
+      value:getTitleOfNearyBy(cardDetail.nearby.mall)
+    },
+    {
+      id:0,
+      name:"Transportation hubs",
+      value:getTitleOfNearyBy(cardDetail.nearby.transport)
+    },
+    {
+      id:0,
+      name:"Temples",
+      value:getTitleOfNearyBy(cardDetail.nearby.temple)
+    },
+    {
+      id:0,
+      name:"Commercial hubs",
+      value:getTitleOfNearyBy(cardDetail.nearby.commercial)
+    },
+  ]
   return (
     <>
     <ScrollTo />
@@ -312,6 +378,23 @@ const PropertyDetail = ({ cardDetail }) => {
               <h1>Description</h1>
             </div>
             <p>{cardDetail.description}</p>
+          </div>
+
+
+          <div className="nearby">
+            <div className="nearby__title">
+              <h1>Nearby Location</h1>
+            </div>
+            <div className="nearby__content">
+              {
+                nearByList.map((item)=>(
+                  <div className="item">
+                    <h4>{item.name}</h4>
+                    <p>{item.value}</p>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
 

@@ -27,7 +27,7 @@ const Intro = () => {
             </div>
             <div className="rokye__home-intro__image">
                 <div className="blob"></div>
-                <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660889465/Moving-pana_mabyvm.png"} width={700} height={700} objectFit="contain" loading="eager" />
+                <Image src={"/home.png"} width={700} height={600} objectFit="contain" loading="eager" />
             </div>
         </div>
     )

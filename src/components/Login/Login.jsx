@@ -255,13 +255,6 @@ const Login = ({ isSignUp }) => {
                                 </p>
                             )
                         }
-                        {
-                            !isSignUp && (
-                                <Link passHref href={"/recover"} style={{cursor:"pointer"}}>
-                                    <p>Forgot Password?</p>
-                                </Link>
-                            )
-                        }
                     </div>
                 </form>
             </div>

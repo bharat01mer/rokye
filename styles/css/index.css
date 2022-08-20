@@ -97,11 +97,19 @@ input::-webkit-inner-spin-button {
   top: 4rem;
 }
 .rokye__navbar-mobnav .item {
+  text-align: start;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 .rokye__navbar-mobnav .item.active {
   color: #f25c05;
+}
+.rokye__navbar-mobnav .item .divider {
+  border-bottom: 1px solid rgb(201, 201, 201);
+  margin-top: 0.5rem;
+}
+.rokye__navbar-mobnav .item .divider:first-child {
+  border-bottom: none;
 }
 .rokye__navbar-mobnav .register {
   border: 4px;
@@ -686,10 +694,14 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-intro__image {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
 }
 .rokye__home-intro__image .blob {
   z-index: -1;
-  top: 0;
+  top: -6rem;
   right: 0;
   position: absolute;
   width: 100%;
@@ -1390,13 +1402,6 @@ input::-webkit-inner-spin-button {
   }
 }
 
-body {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
 .rokye__property {
   padding: 9rem 10rem 4rem;
   display: flex;
@@ -1993,6 +1998,41 @@ body {
   color: gray;
   margin: 1rem 0;
 }
+.rokye__property-detail__prop .nearby {
+  margin-top: 2rem;
+}
+.rokye__property-detail__prop .nearby__content {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.rokye__property-detail__prop .nearby__content .item {
+  width: 20rem;
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__property-detail__prop .nearby__content .item h4 {
+  color: #114040;
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+}
+@media screen and (max-width: 900px) {
+  .rokye__property-detail__prop .nearby__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .rokye__property-detail__prop .nearby__content {
+    padding: 2rem 1rem;
+  }
+  .rokye__property-detail__prop .nearby__content .item {
+    width: 100%;
+  }
+}
 .rokye__property-detail__prop .detail {
   margin: 4rem 0;
 }
@@ -2377,6 +2417,7 @@ body {
   justify-content: flex-start;
 }
 .rokye__add-property__content .form__upload-content .upload__btn label {
+  cursor: pointer;
   border-radius: 5px;
   padding: 1rem;
   background: #f25c05;

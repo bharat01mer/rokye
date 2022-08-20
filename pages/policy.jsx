@@ -1,8 +1,10 @@
 import { Layout } from "../src/components"
+import { ScrollTo } from "../src/components/resuable"
 
 const Privacy = () => {
   return (
     <Layout title={"Privacy Policy"} description={"Privacy Policy"}>
+      <ScrollTo />
       <div className="rokye__policy">
         <div className="title">
           <h1>Privacy policy</h1>

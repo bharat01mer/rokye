@@ -1,6 +1,6 @@
 
 import Image from 'next/image'
-import { ContactForm } from '../resuable'
+import { ContactForm, ScrollTo } from '../resuable'
 import { GoMail } from "react-icons/go"
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
@@ -37,34 +37,35 @@ const Contact = () => {
         },
     ]
     return (
-        <div className="rokye__contact">
-            <div className="title">
-                <h1>Contact Us <span>:-</span></h1>
-            </div>
-            <div className="upper">
-                <div className="rokye__contact-animate">
-                    <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486047/Contact_us-pana_zipvkl.png"} width={2500} height={2500} objectFit="contain" />
+        <>
+        <ScrollTo />
+            <div className="rokye__contact">
+
+                <div className="upper">
+                    <div className="rokye__contact-animate">
+                        <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486047/Contact_us-pana_zipvkl.png"} width={2500} height={2500} objectFit="contain" />
+                    </div>
+                    <div className="rokye__contact-form">
+                        <ContactForm />
+                    </div>
                 </div>
-                <div className="rokye__contact-form">
-                    <ContactForm />
-                </div>
-            </div>
-            <div className="lower">
-                {
-                    connectItem.map((item) => (
-                        <a href={item.link} key={item.id} rel="norefferer" target="__blank" >
-                            <div className="item">
-                                <div className="item__icon">
-                                    {item.icon}
+                <div className="lower">
+                    {
+                        connectItem.map((item) => (
+                            <a href={item.link} key={item.id} rel="norefferer" target="__blank" >
+                                <div className="item">
+                                    <div className="item__icon">
+                                        {item.icon}
+                                    </div>
+                                    <p>{item.title}</p>
+                                    <h2>{item.item}</h2>
                                 </div>
-                                <p>{item.title}</p>
-                                <h2>{item.item}</h2>
-                            </div>
-                        </a>
-                    ))
-                }
+                            </a>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -2,11 +2,13 @@ import React from 'react'
 import { Layout } from "../src/components"
 import Link from 'next/link'
 import { BsDot  } from "react-icons/bs"
+import { ScrollTo } from '../src/components/resuable'
 
 const Terms = () => {
     return (
+        
         <Layout title={"Terms and condition"} description={"Terms and condition page of rokye realty"}>
-
+            <ScrollTo />
             <div className="rokye__term">
                 <div className="title">
                     <h1>Terms & Conditions</h1>

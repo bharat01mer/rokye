@@ -36,9 +36,12 @@
     }
     &__image{
       position: relative;
+      @include center__elem;
+      // width: 100%;
+      justify-content: flex-start;
       .blob { 
         z-index: -1;
-        top: 0;
+        top: -6rem;
         right: 0;
         position: absolute;
         width: 100%;
@@ -781,6 +784,3 @@
   }
 }
 
-body {
-  user-select: none;
-}

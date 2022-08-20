@@ -75,18 +75,23 @@ const Navbar = () => {
   return (
     <div className="rokye__navbar" ref={headerRef}>
       <Link passHref href={"/"}>
-      <div className="rokye__navbar-logo">
-        <Image src={"/logo.png"} width={180} height={60} objectFit="contain" />
-      </div>
+        <div className="rokye__navbar-logo">
+          <Image src={"/logo.png"} width={150} height={50} objectFit="contain" />
+        </div>
       </Link>
       <AnimatePresence>
         {
           showMobileNav && (
             <motion.div className="rokye__navbar-mobnav" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
-              {navLinks.map((item) => (
+              {navLinks.map((item,index) => (
                 <Link className='item' href={`/${item.link}`} key={item.link}>
                   <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ x: -5, color: "#F25C05" }}>
                     <h3>{item.name}</h3>
+                    {
+                      index!==0 && index!==6 && (
+                        <div className="divider"></div>
+                      )
+                    }
                   </motion.div>
                 </Link>
               ))}
@@ -95,7 +100,7 @@ const Navbar = () => {
                 (!user || user === undefined) ? (
                   <Link passHref href={"/signup"}>
                     <motion.div className="register" whileTap={{ scale: .97 }}>
-                      <h3>Login</h3>
+                      <h3>Register</h3>
                     </motion.div>
                   </Link>
 
@@ -112,12 +117,19 @@ const Navbar = () => {
       </AnimatePresence>
       <div className='rokye__navbar-tab'>
         <Link href={"/"} passHref >
-          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""} style={{marginRight:"2rem"}}>Home</motion.h3>
+          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""} style={{ marginRight: "2rem" }}>Home</motion.h3>
         </Link>
         {
           user && (
             <Link href={"/setting"} >
               <BiUserCircle size={40} color="#f25c05" cursor={"pointer"} />
+            </Link>
+          )
+        }
+        {
+          !user && (
+            <Link href={"/login"} >
+              <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/login" ? "active" : ""} >Login</motion.h3>
             </Link>
           )
         }
@@ -131,7 +143,9 @@ const Navbar = () => {
         </Link>
         {
           showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
-            <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
+            <>
+              <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
+            </>
           )
         }
       </div>
