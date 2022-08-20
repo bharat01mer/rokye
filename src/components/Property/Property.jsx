@@ -3,45 +3,47 @@ import { useEffect, useState } from 'react'
 import { Filter, Properties } from './subComp'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSelector } from "react-redux"
-import {  useGetAllPropertyWithFilterMutation } from "../../../redux/slices/property"
+import { useGetAllPropertyWithFilterMutation } from "../../../redux/slices/property"
 import { useRouter } from "next/router"
+import { ScrollTo } from '../resuable'
 
 const Property = () => {
-    const { winWidth,search } = useSelector((state => state.util))
+    const { winWidth, search } = useSelector((state => state.util))
     const [showMobFilter, setShowMobFilter] = useState(false)
     const [sortValue, setSortValue] = useState("new")
     const router = useRouter()
     const page = router.query?.page || 1
     const [optionValue, setOptionValue] = useState({ city: null, propType: null, bedroom: null, bathroom: null, min: null, max: null, furnished: null, availablity: null, age: null, flatNo: null, facing: null, nonVeg: null, pet: null, amenity: [] })
-    
-    
-    const isRedirected=router.query.redirect==="true" ? true : false
+
+
+    const isRedirected = router.query.redirect === "true" ? true : false
 
     const [run, info] = useGetAllPropertyWithFilterMutation()
 
-    console.log({router})
+    console.log({ router })
     useEffect(() => {
-        if(!isRedirected){
+        if (!isRedirected) {
             run({ page, sort: sortValue, limit: 8, data: optionValue })
         }
     }, [page, sortValue])
-    
-    useEffect(()=>{
-        if(isRedirected){
-            run({ page, sort: sortValue, limit: 8, data: search })  
-        }
-    },[])
 
-    console.log({optionValue})
+    useEffect(() => {
+        if (isRedirected) {
+            run({ page, sort: sortValue, limit: 8, data: search })
+        }
+    }, [])
+
+    console.log({ optionValue })
 
     const filterClickHanlder = (data) => {
 
         run({ page, sort: sortValue, limit: 8, data: optionValue, data })
     }
 
-    
+
     return (
         <>
+            <ScrollTo />
             <div className="rokye__property">
 
                 {

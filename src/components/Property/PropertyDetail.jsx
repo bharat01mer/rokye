@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ContactForm, ContactModal } from '../resuable'
+import { ContactForm, ContactModal, ScrollTo } from '../resuable'
 import { ImLocation } from "react-icons/im"
 import millify from 'millify'
 import { Tooltip,IconButton } from '@mui/material'
@@ -176,6 +176,7 @@ const PropertyDetail = ({ cardDetail }) => {
   }
   return (
     <>
+    <ScrollTo />
       <div className="rokye__property-detail">
         <div className="rokye__property-detail__prop">
           <div className="title">

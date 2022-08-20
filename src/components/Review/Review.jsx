@@ -7,7 +7,7 @@ import { FaFacebookF, FaTwitter, FaUserCircle } from "react-icons/fa"
 import { BiMessageDetail } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
 import ProgressBar from './ProgressBar'
-import { ContactModal } from "../resuable"
+import { ContactModal, ScrollTo } from "../resuable"
 import { useGetAllReviewQuery } from '../../../redux/slices/review'
 import { useRouter } from 'next/router'
 import ReviewForm from './ReviewForm'
@@ -225,6 +225,7 @@ const Review = () => {
     
     return (
         <>
+        <ScrollTo />
             <div className="rokye__review">
                 <ToastContainer delay={2000} />
                 <div className="rokye__review-profile">

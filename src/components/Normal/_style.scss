@@ -804,6 +804,7 @@
 
     h2 {
       text-transform: capitalize;
+      @include heading-font;
     }
     a {
       color: $color5;
@@ -842,10 +843,10 @@
 
 .rokye__policy {
   padding: 7rem;
-  
-      h2{
-        @include heading-font;
-      }
+
+  h2 {
+    @include heading-font;
+  }
   .title {
     h1 {
       @include heading-font;
@@ -858,7 +859,6 @@
     p {
       margin-top: 1rem;
       color: rgb(79, 79, 79);
-      
     }
     h3 {
       margin-top: 1rem;
@@ -866,13 +866,13 @@
   }
   .content {
     margin-top: 2rem;
-    
+
     &__desc {
       padding: 1rem;
       p {
         margin-bottom: 1rem;
         color: rgb(79, 79, 79);
-        b{
+        b {
           color: black;
           font-weight: bold;
         }
@@ -885,7 +885,7 @@
   @media screen and (max-width: 650px) {
     padding: 7rem 1rem;
     font-size: 0.9rem;
-  
+
     h1 {
       font-size: 1.9rem;
     }
