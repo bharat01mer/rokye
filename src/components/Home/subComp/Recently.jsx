@@ -44,7 +44,6 @@ const Recently = () => {
                         spaceBetween={40}
                         modules={[Navigation]}
                         navigation={{ nextEl: ".next__btn", prevEl: ".prev__btn" }}
-                        loop
                         breakpoints={breakpoints}
                         pagination={{
                             clickable: true,
