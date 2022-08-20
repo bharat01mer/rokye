@@ -10,7 +10,7 @@ const Terms = () => {
             <div className="rokye__term">
                 <div className="title">
                     <h1>Terms & Conditions</h1>
-                    <p>THE AGREEMENT: The use of this website and services on this website and mobile application provided by www.rokye.com (hereinafter referred to as "Website") are subject to the following Terms & Conditions, all parts and sub-parts of which are specifically incorporated by reference here. This Agreement shall govern the use of all pages on this website and any services provided by or on this Website ("Services").</p>
+                    <p>THE AGREEMENT: The use of this website and services on this website and mobile application provided by www.rokye.com (hereinafter referred to as &quot;Website&quot;) are subject to the following Terms & Conditions, all parts and sub-parts of which are specifically incorporated by reference here. This Agreement shall govern the use of all pages on this website and any services provided by or on this Website (&quot;Services&quot;).</p>
                 </div>
                 <div className="content">
                     <div className="content__title">
@@ -82,16 +82,16 @@ const Terms = () => {
                             <BsDot size={10} /><p> However, in a determination to accomplish customer satisfaction, if there is an issue, you can contact us through our email at <strong>info@rokye.com</strong>.</p>
                         </div>
                         <div className="item">
-                            <BsDot size={10} /> <p>We take our customer's feedback very seriously and use it to constantly improve our products and quality of service.</p>
+                            <BsDot size={10} /> <p>We take our customer&apos;s feedback very seriously and use it to constantly improve our products and quality of service.</p>
                         </div>
                     </div>
                     <div className="content__title">
                         <h2>7. INTELLECTUAL PROPERTY</h2>
                     </div>
                     <div className="content__desc">
-                        <p style={{marginBottom:"1rem"}}>You agree that the Website and all Services provided by us are the property of ROKYE REALTY LLP, including all copyrights, trademarks, trade secrets, patents, and other intellectual property ("Our IP"). You agree that we own all right, titles, and interests in and to Our IP and that you will not use Our IP for any unlawful or infringing purpose. You agree not to reproduce or distribute Our IP in any way, including electronically or via registration of any new trademarks, trade names, service marks, or Uniform Resource Locators (URLs), without express written permission from us.</p>
+                        <p style={{marginBottom:"1rem"}}>You agree that the Website and all Services provided by us are the property of ROKYE REALTY LLP, including all copyrights, trademarks, trade secrets, patents, and other intellectual property (&quot;Our IP&quot;). You agree that we own all right, titles, and interests in and to Our IP and that you will not use Our IP for any unlawful or infringing purpose. You agree not to reproduce or distribute Our IP in any way, including electronically or via registration of any new trademarks, trade names, service marks, or Uniform Resource Locators (URLs), without express written permission from us.</p>
                         <div className="item">
-                            <BsDot size={10} /> <p>To make the Website and Services available to you, you hereby grant us a royalty-free, non-exclusive, worldwide license to copy, display, use, broadcast, transmit and make derivative works of any content you publish, upload, or otherwise make available to the Website ("Your Content"). We claim no further proprietary rights in your Content.</p>
+                            <BsDot size={10} /> <p>To make the Website and Services available to you, you hereby grant us a royalty-free, non-exclusive, worldwide license to copy, display, use, broadcast, transmit and make derivative works of any content you publish, upload, or otherwise make available to the Website (&quot;Your Content&quot;). We claim no further proprietary rights in your Content.</p>
                         </div>
                         <div className="item">
                             <BsDot size={10} /><p> If you feel that any of your intellectual property rights have been infringed or otherwise violated by the posting of information or media by another of our users, please contact us and let us know.</p>
@@ -115,7 +115,7 @@ const Terms = () => {
                         <h2>9. INDEMNIFICATION</h2>
                     </div>
                     <div className="content__desc">
-                        <p>You agree to defend and indemnify us and any of our affiliates (if applicable) and hold us harmless against all legal claims and demands, including reasonable attorney's fees, which may arise from or relate to your use or misuse of the Website or Services, your breach of this Agreement, or your conduct or actions. You agree that we shall be able to select its legal counsel and may participate in its defense if we wish.</p>
+                        <p>You agree to defend and indemnify us and any of our affiliates (if applicable) and hold us harmless against all legal claims and demands, including reasonable attorney&apos;s fees, which may arise from or relate to your use or misuse of the Website or Services, your breach of this Agreement, or your conduct or actions. You agree that we shall be able to select its legal counsel and may participate in its defense if we wish.</p>
                     </div>
                     <div className="content__title">
                         <h2>10. EXCLUSION OF LIABILITY</h2>
@@ -123,13 +123,13 @@ const Terms = () => {
                     <div className="content__desc">
                         <p style={{marginBottom:"1rem"}}>You understand and agree that we (A) do not guarantee the accuracy, completeness, validity, or timeliness of information listed by us or any third parties; and (B) shall not be responsible for any materials posted by us or any third party. You shall use your judgment, caution, and common sense in evaluating any prospective methods or offers and any information provided by us or any third party.</p>
                         <p style={{marginBottom:"1rem"}}>Further, we shall not be liable for direct, indirect consequential, or any other form of loss or damage that may be suffered by a user through the use of the <Link href={"/"}><a> www.rokye.com </a></Link>. The website including loss of data or information or any kind of financial or physical loss or damage.</p>
-                        <p style={{marginBottom:"1rem"}}>In no event shall ROKYE REALTY LLP, nor its Owner, directors, employees, partners, agents, suppliers, or affiliates, be accountable for any indirect, incidental, special, eventful, or exemplary costs, including without limitation, loss of proceeds, figures, usage, goodwill, or other intangible losses, consequential from (i) your use or access of or failure to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content attained from the Service; and (iv) unlawful access, use or alteration of your transmissions or content, whether or not based on guarantee, agreement, domestic wrong (including carelessness) or any other lawful concept, whether or not we've been aware of the possibility of such damage, and even if a cure set forth herein is originated to have futile of its important purpose.</p>
+                        <p style={{marginBottom:"1rem"}}>In no event shall ROKYE REALTY LLP, nor its Owner, directors, employees, partners, agents, suppliers, or affiliates, be accountable for any indirect, incidental, special, eventful, or exemplary costs, including without limitation, loss of proceeds, figures, usage, goodwill, or other intangible losses, consequential from (i) your use or access of or failure to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content attained from the Service; and (iv) unlawful access, use or alteration of your transmissions or content, whether or not based on guarantee, agreement, domestic wrong (including carelessness) or any other lawful concept, whether or not we&apos;ve been aware of the possibility of such damage, and even if a cure set forth herein is originated to have futile of its important purpose.</p>
                     </div>
                     <div className="content__title">
                         <h2>11. SPAM POLICY</h2>
                     </div>
                     <div className="content__desc">
-                        <p >You are strictly prohibited from using the Website or any of our's Services for illegal spam activities, including gathering email addresses and personal information from others or sending any mass commercial emails.</p>
+                        <p >You are strictly prohibited from using the Website or any of our&apos;s Services for illegal spam activities, including gathering email addresses and personal information from others or sending any mass commercial emails.</p>
                     </div>
                     <div className="content__title">
                         <h2>12. THIRD-PARTY LINKS & CONTENT</h2>
@@ -156,7 +156,7 @@ const Terms = () => {
                         <p style={{marginBottom:"1rem"}}>You agree not to use the Website or Services for any unlawful purpose or any purpose prohibited under this clause. You agree not to use the Website or Services in any way that could damage the Website, Services, or general business of the ROKYE REALTY LLP.</p>
                         <p style={{marginBottom:"1rem"}}>You further agree not to use the Website or Services:</p>
                         <div className="item">
-                            <BsDot size={10} /> <p>To harass, abuse, or threaten others or otherwise violate any person's legal rights;</p>
+                            <BsDot size={10} /> <p>To harass, abuse, or threaten others or otherwise violate any person&apos;s legal rights;</p>
                         </div>
                         <div className="item">
                             <BsDot size={10} /><p>To violate any of our intellectual property rights or any third party;</p>
@@ -202,7 +202,7 @@ const Terms = () => {
                         <h2>19. NO WARRANTIES</h2>
                     </div>
                     <div className="content__desc">
-                        <p >You agree that your use of the Website and Services is at your sole and exclusive risk and that any Services provided by Us are on an "As Is" basis. We hereby expressly disclaim all express or implied warranties of any kind, including, but not limited to the implied warranty of fitness for a particular purpose- and the implied warranty of merchantability. We make no warranties that the Website or Services will meet your needs or that the Website or Services will be uninterrupted, error-free, or secure. We also make no warranties as to the reliability or accuracy of any information on the Website or obtained through the Services. You agree that any damage that may occur to you, through your computer system, or as a result of the loss of your data from your use of the Website or Services is your sole responsibility and that we are not liable for any such damage or loss.</p>
+                        <p >You agree that your use of the Website and Services is at your sole and exclusive risk and that any Services provided by Us are on an &quot;As Is&quot; basis. We hereby expressly disclaim all express or implied warranties of any kind, including, but not limited to the implied warranty of fitness for a particular purpose- and the implied warranty of merchantability. We make no warranties that the Website or Services will meet your needs or that the Website or Services will be uninterrupted, error-free, or secure. We also make no warranties as to the reliability or accuracy of any information on the Website or obtained through the Services. You agree that any damage that may occur to you, through your computer system, or as a result of the loss of your data from your use of the Website or Services is your sole responsibility and that we are not liable for any such damage or loss.</p>
                     </div>
                     <div className="content__title">
                         <h2>20. LIMITATION ON LIABILITY</h2>
