@@ -50,16 +50,15 @@ const Properties = () => {
                                     </div>
                                     <div className="detail__info">
                                         <div className="upper">
-                                            <h3>{`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`}</h3>
-                                            <p>{item.date.slice(0, 10)}</p>
+                                            <a href={`/properties/${item._id}`} target="__blank" rel="noreferrer">
+                                            <h3>{`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`} <FiExternalLink color={"blue"} /> </h3>
+                                            </a>
                                         </div>
                                         <div className="lower">
-                                            <a href={`/properties/${item._id}`} target="__blank" rel="noreferrer">
-                                                <p className="lower__id"> #{item._id} <FiExternalLink color={"blue"} /> </p>
-                                            </a>
                                             <p>{item.firstName} {item.lastName}</p>
                                             <p>{item.phone}</p>
                                             <p>{item.email}</p>
+                                            <p>{item.date.slice(0, 10)}</p>
 
                                         </div>
                                     </div>

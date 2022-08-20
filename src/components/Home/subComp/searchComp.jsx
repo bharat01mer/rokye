@@ -136,7 +136,7 @@ export default function Desktop(props) {
                 <div className="title" >
                     <div className="outer" onClick={() => setShowMenu({ id: 3, show: showMenu.id === 3 ? !showMenu.show : true })}>
                         <h1>Budget</h1>
-                        <h3>{optionValue.min === 0 ? "Any Amount" : (
+                        <h3>{optionValue.min === 0 ? "Select" : (
                             <>
                                 <BiRupee />{millify(optionValue.min)} - <BiRupee />{millify(optionValue.max)}
                             </>
@@ -181,7 +181,7 @@ export default function Desktop(props) {
             </div>
             <div className="gap" />
             <motion.div className="search" whileTap={{ scale: 0.96 }} onClick={onSearchHandler}>
-                <AiOutlineSearch size={props.winWidth < 1000 ? 30 : 40} />
+                <AiOutlineSearch size={30} />
                 {
                     props.winWidth < 840 && (
                         <h2>Search</h2>

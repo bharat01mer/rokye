@@ -50,6 +50,27 @@ export const userApi = createApi({
         method: "DELETE",
       }),
     }),
+    chechUser: builder.mutation({
+      query:(email)=>({
+        url:`/reset`,
+        method:"POST",
+        body:email
+      })
+    }),
+    resetPass:builder.mutation({
+      query:({email,password,token})=>({
+        url:`/updatepass`,
+        method:"PATCH",
+        body:{email,password,token}
+      })
+    }),
+    createSubAdmin: builder.mutation({
+      query:(data)=>({
+        url:"/add__subadmin",
+        method:"POST",
+        body:data
+      })
+    })
   }),
 });
 
@@ -60,4 +81,5 @@ export const {
   useUpdateUserDataMutation,
   useGetAllUserQuery,
   useDeleteUserMutation,
+  useChechUserMutation,useResetPassMutation,useCreateSubAdminMutation
 } = userApi;

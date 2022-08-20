@@ -112,9 +112,13 @@ const Footer = () => {
       <div className="rokye__footer-info">
         <p>  All rights reserved &#169; 2022 Rokye Realty LLP</p>
         <div className="dot" />
-        <p>Terms & Conditions</p>
+        <Link href={"/terms"}>
+          <p>Terms & Conditions</p>
+        </Link>
         <div className="dot" />
-        <p>Privacy Policy</p>
+        <Link href={"/policy"}>
+          <p>Privacy Policy</p>
+        </Link>
       </div>
     </footer>
   )

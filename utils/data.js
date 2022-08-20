@@ -754,21 +754,16 @@ export const propertyDataNew = {
     },
     {
       id: 6,
-      title: "6",
-      value: "6",
-    },
-    {
-      id: 7,
       title: "7",
       value: "7",
     },
     {
-      id: 8,
+      id: 7,
       title: "8",
       value: "8",
     },
     {
-      id: 9,
+      id: 8,
       title: "9",
       value: "9",
     },
@@ -917,7 +912,7 @@ export const propertyDataNew = {
     },
     {
       id: 1,
-      title: "Bacholor/Family",
+      title: "Bachelor/Family",
       value: "bachelor/family",
     },
   ],
@@ -1063,8 +1058,8 @@ export const propertyDataNew = {
     },
     {
       id: 1,
-      title: "Quaterly",
-      value: "quaterly",
+      title: "Quarterly",
+      value: "quarterly",
     },
     {
       id: 0,

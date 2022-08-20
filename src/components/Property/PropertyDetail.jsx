@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ContactForm, ContactModal } from '../resuable'
 import { ImLocation } from "react-icons/im"
 import millify from 'millify'
+import { Tooltip,IconButton } from '@mui/material'
 
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { FcCalendar } from "react-icons/fc"
@@ -68,7 +69,7 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 3,
         name: "Property Type",
-        value: getTitle(cardDetail.propType,"propertyType")
+        value: getTitle(cardDetail.propType, "propertyType")
       },
       {
         id: 4,
@@ -83,7 +84,7 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 6,
         name: "Furnished Status",
-        value: getTitle( cardDetail.furnished,"furnishing")
+        value: getTitle(cardDetail.furnished, "furnishing")
       },
       {
         id: 7,
@@ -93,31 +94,31 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 8,
         name: "Availability",
-        value: getTitle( cardDetail.availability,"availability")
+        value: getTitle(cardDetail.availability, "availability")
       },
       {
         id: 9,
         name: "Floor",
-        value: getTitle(cardDetail.floor,"floorno")
+        value: getTitle(cardDetail.floor, "floorno")
       },
     ],
     right: [
       {
         id: 0,
         name: "Property Age",
-        value: getTitle(cardDetail.age,"age")
+        value: getTitle(cardDetail.age, "age")
       },
       {
         id: 1,
         name: "Carpet area",
         value: `${cardDetail.carpetArea} sq.ft`,
-        
+
       },
       {
         id: 2,
         name: "Super area",
         value: `${cardDetail.superArea} sqft`,
-        
+
       },
       {
         id: 3,
@@ -132,25 +133,25 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 5,
         name: "Tenant preferred",
-        value: getTitle(cardDetail.tenant,"family")
+        value: getTitle(cardDetail.tenant, "family")
       },
       {
         id: 6,
         name: "Facing",
         value: "South",
-        value: getTitle(cardDetail.facing,"facing")
+        value: getTitle(cardDetail.facing, "facing")
       },
       {
         id: 7,
         name: "Non-veg",
         value: "Not allowed",
-        value: getTitle(cardDetail.nonVeg,"nonVeg")
+        value: getTitle(cardDetail.nonVeg, "nonVeg")
       },
       {
         id: 8,
         name: "Pets",
         value: "Not allowed",
-        value: getTitle(cardDetail.pet,"pets")
+        value: getTitle(cardDetail.pet, "pets")
       },
     ],
   }
@@ -159,7 +160,7 @@ const PropertyDetail = ({ cardDetail }) => {
     const id = user.data._id
 
     try {
-      console.log({ id, data: cardDetail._id})
+      console.log({ id, data: cardDetail._id })
       await addFavoriteProp({ id, data: cardDetail._id }).then((res) => {
         dispatch(updateUserData(res.data.data))
       })
@@ -169,8 +170,8 @@ const PropertyDetail = ({ cardDetail }) => {
     }
   }
 
-  function getTitle(value,name){
-    const title=propertyDataNew[name].find((item)=>item.value===value)
+  function getTitle(value, name) {
+    const title = propertyDataNew[name].find((item) => item.value === value)
     return title?.title
   }
   return (
@@ -184,7 +185,24 @@ const PropertyDetail = ({ cardDetail }) => {
                 user && (
                   <div className="like" onClick={addFavoritePropHandler}>
                     {
-                      favorite ? <AiFillHeart color='red' size={24} /> : <AiOutlineHeart size={24} />
+                      !favorite ? (
+                        <motion.div whileTap={{ scale: 0.90 }}>
+                          <Tooltip title="Add to Shortlist" placement='top-start'>
+                            <IconButton>
+                              <AiOutlineHeart size={25} />
+                            </IconButton>
+                          </Tooltip>
+                        </motion.div>
+                      )
+                        : (
+                          <motion.div whileTap={{ scale: 0.90 }}>
+                            <Tooltip title="Remove to Shortlist" placement='top-start'>
+                              <IconButton>
+                                <AiFillHeart size={25} color="red" />
+                              </IconButton>
+                            </Tooltip>
+                          </motion.div>
+                        )
                     }
                   </div>
                 )
@@ -198,10 +216,6 @@ const PropertyDetail = ({ cardDetail }) => {
               <div className="date">
                 <FcCalendar size={20} />
                 <p>{cardDetail.date.slice(0, 10)}</p>
-              </div>
-              <div className="number">
-                <BsHash size={20} color={"#f25c05"} />
-                <p>{cardDetail._id?.match(/\d+/g)}</p>
               </div>
             </div>
           </div>

@@ -2,32 +2,30 @@ import { BiUserCircle } from "react-icons/bi"
 import { TiDelete } from "react-icons/ti"
 import { useGetAllUserQuery, useDeleteUserMutation } from "../../../redux/slices/user"
 import Paginate from "./Pagination"
-import {toast,ToastContainer} from "react-toast"
+import { toast, ToastContainer } from "react-toast"
 import { useEffect } from "react"
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 
 const User = () => {
     const [deleteUserById] = useDeleteUserMutation()
-    const router=useRouter()
-    const page=router.query?.page || 1
-    const { data, isFetching, refetch } = useGetAllUserQuery(page)
+    const router = useRouter()
+    const page = router.query?.page || 1
+    const { data, refetch } = useGetAllUserQuery(page)
 
-    useEffect(()=>{
+    useEffect(() => {
         refetch()
-    },[])
+    }, [])
 
     if (!data) {
         return null
     }
 
-    const deleteUser = async(id) => {
-        await deleteUserById(id).then(()=>{
+    const deleteUser = async (id) => {
+        await deleteUserById(id).then(() => {
             toast.success("User Deleted")
         })
         refetch()
     }
-
-    console.log({ data })
     return (
         <div className="admin__content-user">
             <ToastContainer delay={2000} />
@@ -49,14 +47,17 @@ const User = () => {
                                     <div className="info">
                                         <div className="upper">
                                             <h2>{item.name}</h2>
+                                        </div>
+                                        <div className="lower">
+                                            <p>{item.phone}</p>
+                                            <p>{item.email}</p>
                                             <p>{item.type}</p>
                                         </div>
-                                        <p>{item.email}</p>
                                     </div>
                                 </div>
                             </div>
                             {
-                                item.type !== "admin" && (
+                                item.type !== "admin" && item.type!=="subadmin"  && (
                                     <div className="delete" onClick={() => deleteUser(item._id)}>
                                         <TiDelete size={35} color="red" />
                                     </div>

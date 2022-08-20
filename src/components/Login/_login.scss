@@ -143,6 +143,32 @@
       }
     }
   }
+  .agree{
+    @include center__elem;
+        justify-content: flex-start;
+        margin: 0 0 1rem;
+
+        // check color
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+          color: $color5;
+        }
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+          padding: 0;
+        }
+        .css-zun73v.Mui-checked {
+          color: $color5 !important;
+        }
+        .css-zun73v {
+          padding: 0 !important;
+        }
+        p {
+          margin-left: 0.5rem;
+        }
+
+        a {
+          color: $color5;
+        }
+  }
 
   @media screen and (max-width: 1400px) {
     padding: 7rem 5rem;
@@ -180,5 +206,71 @@
 
   @media screen and (max-width: 500px) {
     font-size: 0.9rem;
+  }
+}
+
+
+
+.rokye__recover{
+  @include center__elem;
+  justify-content: space-between;
+  
+  padding: 5rem;
+
+  &-img{
+    width: 100%;
+  }
+  &-content{
+    width: 100%;
+    @include center__elem;
+    justify-content: flex-end;
+    justify-content: space-around;
+
+    .form{
+      width: 28rem;
+      padding: 2rem 1rem;
+      @include card_shadow;
+      @include center__elem;
+      flex-direction: column;
+      border-radius: 5px;
+      
+      .email{
+        margin: 2rem 0;
+        width: 100%;
+      }
+
+      .title{
+        h1{
+          @include heading-font;
+          color: $color1;
+        }
+      }
+      .MuiOutlinedInput-notchedOutline{
+        border-color: gray !important; 
+        box-shadow: none
+      }
+
+      .submit{
+        border-radius: 5px;
+        color: white;
+        padding: .7rem 1rem;
+        cursor: pointer;
+        width: 100%;
+        background: $color5;
+      }
+    }
+    
+  }
+
+  @media screen and (max-width:1000px) {
+    flex-direction: column;
+
+    .form{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:600px) {
+    padding: 5rem 1rem ;
   }
 }

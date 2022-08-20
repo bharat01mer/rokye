@@ -495,10 +495,11 @@
           justify-content: space-between;
         }
         .like {
+          cursor: pointer;
           border-radius: 50%;
           @include center__elem;
           box-shadow: 0 2px 9px 0 rgb(34 12 43 / 20%);
-          padding: 0.5rem;
+          padding: 0.1rem;
         }
         h1 {
           @include heading_font;

@@ -23,13 +23,13 @@ const Recently = () => {
             spaceBetween: 10,
         }
     }
-    const {data,isFetching}=useGetAllPropertyQuery({page:1,sort:"new",limit:8})
+    const {data}=useGetAllPropertyQuery({page:1,sort:"new",limit:8})
 
 
     return (
         <>
             <Head>
-                <link rel="stylesheet" href={process.env.NODE_ENV==="production" ? "https://rokye.herokuapp.com" : "http://locahost:4000" } />
+                <link rel="preconnect" href={process.env.NODE_ENV==="production" ? "https://api.rokye.com" : "http://locahost:4000" } />
             </Head>
             <div className="rokye__home-recent">
                 <div className="rokye__home-recent__title">

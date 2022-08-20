@@ -447,14 +447,16 @@ input::-webkit-inner-spin-button {
 }
 .rokye__form-header .cancel {
   position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
+  top: 0.2rem;
+  cursor: pointer;
+  right: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
 }
 .rokye__form-header .title {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -519,6 +521,7 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
 }
 .rokye__form-content .choose__title {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -637,100 +640,110 @@ input::-webkit-inner-spin-button {
   height: 100vh;
 }
 
-.rokye__home {
-  padding: 2rem 0 0;
-}
 .rokye__home-intro {
-  margin-top: 2rem;
-  padding: 4rem 6rem;
-  position: relative;
-  height: 60vh;
-}
-.rokye__home-intro .blob1,
-.rokye__home-intro .blob2 {
-  position: absolute;
-  height: 100px;
-  width: 200px;
-  border-radius: 150px 150px 0 0;
-}
-.rokye__home-intro .blob1 {
-  top: 2rem;
-  right: 1rem;
-  transform: rotate(64deg);
-  background: #035941;
-}
-.rokye__home-intro .content {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.rokye__home-intro .content h1 {
-  font-family: "lora", sans-serif;
-  font-weight: bolder;
-  font-size: 4rem;
-  text-align: center;
-  color: #114040;
-}
-.rokye__home-intro .content h3 {
-  text-align: center;
-  font-size: 2rem;
-}
-.rokye__home-intro .blob2 {
-  bottom: 6rem;
-  left: 0;
-  transform: rotate(-126deg);
-  background: #f25c05;
-}
-@media screen and (max-width: 850px) {
-  .rokye__home-intro .content h1 {
-    font-size: 3rem;
-  }
-  .rokye__home-intro .content h3 {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 750px) {
-  .rokye__home-intro .blob1,
-.rokye__home-intro .blob2 {
-    height: 5rem;
-    width: 11rem;
-  }
-  .rokye__home-intro .content h1 {
-    font-size: 2.5rem;
-  }
-  .rokye__home-intro .content h3 {
-    font-size: 1.3rem;
-  }
-  .rokye__home-intro .blob1 {
-    right: 1rem;
-    transform: rotate(39deg);
-  }
-  .rokye__home-intro .blob2 {
-    left: -1rem;
-    transform: rotate(-141deg);
-  }
-}
-@media screen and (max-width: 1000px) {
-  .rokye__home-intro {
-    padding: 4rem 2rem;
-  }
-}
-.rokye__home-searchbar {
-  position: relative;
-  padding: 0 16rem 0 11rem;
-  margin-top: -7rem;
-}
-.rokye__home-searchbar__tab {
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
+  padding: 0 5rem;
+}
+.rokye__home-intro__detail .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 2.5rem;
+}
+.rokye__home-intro__detail .detail {
+  padding: 2rem 0 4rem;
+}
+.rokye__home-intro__detail .search .btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f25c05;
+  width: 15rem;
+  color: #f2f2f2;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+}
+.rokye__home-intro__detail .search .btn h3 {
+  margin-left: 0.5rem;
+}
+.rokye__home-intro__image {
+  position: relative;
+}
+.rokye__home-intro__image .blob {
+  z-index: -1;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 50rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8, %3Csvg width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 %3E %3Cdefs%3E %3CclipPath id=%22shape%22%3E %3Cpath fill=%22currentColor%22 d=%22M605.5%2C712Q255%2C924%2C269%2C524.5Q283%2C125%2C619.5%2C312.5Q956%2C500%2C605.5%2C712Z%22%3E%3C%2Fpath%3E %3C%2FclipPath%3E %3C%2Fdefs%3E %3Cg clip-path=%22url(%23shape)%22%3E %3Cpath fill=%22%23fbddcc%22 d=%22M605.5%2C712Q255%2C924%2C269%2C524.5Q283%2C125%2C619.5%2C312.5Q956%2C500%2C605.5%2C712Z%22 %2F%3E %3C%2Fg%3E %3C%2Fsvg%3E");
+}
+@media screen and (max-width: 800px) {
+  .rokye__home-intro__image .blob {
+    height: 30rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .rokye__home-intro__image .blob {
+    height: 30rem;
+    top: -50px;
+    left: -50px;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .rokye__home-intro {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .rokye__home-intro {
+    padding: 0 2rem;
+    flex-direction: column-reverse;
+    margin-top: 0;
+  }
+  .rokye__home-intro__detail {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 600px) {
+  .rokye__home-intro__detail .search .btn {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rokye__home-intro {
+    padding: 1rem;
+  }
+  .rokye__home-intro__detail .title h1 {
+    font-size: 2.1rem !important;
+  }
+}
+.rokye__home-searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 700px;
+}
+.rokye__home-searchbar__tab {
+  position: absolute;
+  width: 64rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
   box-shadow: 0px 0px 10px black;
   background: white;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 .rokye__home-searchbar__tab .item {
   display: flex;
@@ -746,13 +759,13 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
 }
 .rokye__home-searchbar__tab .item svg {
-  margin-top: 0.6rem;
-  color: #f2ba52;
-  color: #035941;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #f25c05;
 }
 .rokye__home-searchbar__tab .item .title {
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: 0.7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -761,6 +774,7 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
 }
 .rokye__home-searchbar__tab .item .title h1 {
+  font-size: 1.8rem;
   color: #114040;
   font-family: "lora", sans-serif;
   font-weight: bolder;
@@ -831,18 +845,18 @@ input::-webkit-inner-spin-button {
 .rokye__home-searchbar__tab .divider {
   width: 3px;
   border-radius: 1rem;
-  height: 4rem;
+  height: 3rem;
   background: rgba(0, 0, 0, 0.2);
 }
 .rokye__home-searchbar__tab .search {
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.7rem;
   background: #f25c05;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #f2f2f2;
-  border-radius: 1rem;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1908,12 +1922,13 @@ body {
   justify-content: space-between;
 }
 .rokye__property-detail__prop .title .like {
+  cursor: pointer;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.2);
-  padding: 0.5rem;
+  padding: 0.1rem;
 }
 .rokye__property-detail__prop .title h1 {
   font-family: "lora", sans-serif;
@@ -2641,6 +2656,31 @@ body {
     margin-left: 1rem;
   }
 }
+.rokye__login .agree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 1rem;
+}
+.rokye__login .agree .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: #f25c05;
+}
+.rokye__login .agree .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  padding: 0;
+}
+.rokye__login .agree .css-zun73v.Mui-checked {
+  color: #f25c05 !important;
+}
+.rokye__login .agree .css-zun73v {
+  padding: 0 !important;
+}
+.rokye__login .agree p {
+  margin-left: 0.5rem;
+}
+.rokye__login .agree a {
+  color: #f25c05;
+}
 @media screen and (max-width: 1400px) {
   .rokye__login {
     padding: 7rem 5rem;
@@ -2677,6 +2717,69 @@ body {
 @media screen and (max-width: 500px) {
   .rokye__login {
     font-size: 0.9rem;
+  }
+}
+
+.rokye__recover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem;
+}
+.rokye__recover-img {
+  width: 100%;
+}
+.rokye__recover-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  justify-content: space-around;
+}
+.rokye__recover-content .form {
+  width: 28rem;
+  padding: 2rem 1rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.rokye__recover-content .form .email {
+  margin: 2rem 0;
+  width: 100%;
+}
+.rokye__recover-content .form .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__recover-content .form .MuiOutlinedInput-notchedOutline {
+  border-color: gray !important;
+  box-shadow: none;
+}
+.rokye__recover-content .form .submit {
+  border-radius: 5px;
+  color: white;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  background: #f25c05;
+}
+@media screen and (max-width: 1000px) {
+  .rokye__recover {
+    flex-direction: column;
+  }
+  .rokye__recover .form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rokye__recover {
+    padding: 5rem 1rem;
   }
 }
 
@@ -3025,6 +3128,7 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .rokye__faq-content .item__upper .quest {
   display: flex;
@@ -3448,6 +3552,114 @@ body {
   }
 }
 
+.rokye__term {
+  padding: 7rem;
+}
+.rokye__term .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 2.2rem;
+}
+.rokye__term .title p {
+  margin-top: 2rem;
+  color: gray;
+}
+.rokye__term .content {
+  margin-top: 2rem;
+}
+.rokye__term .content h2 {
+  text-transform: capitalize;
+}
+.rokye__term .content a {
+  color: #f25c05;
+}
+.rokye__term .content__title {
+  margin-top: 1rem;
+}
+.rokye__term .content__desc {
+  padding: 1rem;
+}
+.rokye__term .content__desc p {
+  color: rgb(79, 79, 79);
+}
+.rokye__term .content__desc .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.rokye__term .content__desc .item p {
+  margin-left: 0.6rem;
+}
+@media screen and (max-width: 1200px) {
+  .rokye__term {
+    padding: 7rem 3rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .rokye__term {
+    padding: 7rem 1rem;
+    font-size: 0.9rem;
+  }
+  .rokye__term h1 {
+    font-size: 1.9rem;
+  }
+}
+
+.rokye__policy {
+  padding: 7rem;
+}
+.rokye__policy h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+}
+.rokye__policy .title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+  font-size: 2.2rem;
+}
+.rokye__policy .title .about {
+  margin-top: 2rem;
+}
+.rokye__policy .title p {
+  margin-top: 1rem;
+  color: rgb(79, 79, 79);
+}
+.rokye__policy .title h3 {
+  margin-top: 1rem;
+}
+.rokye__policy .content {
+  margin-top: 2rem;
+}
+.rokye__policy .content__desc {
+  padding: 1rem;
+}
+.rokye__policy .content__desc p {
+  margin-bottom: 1rem;
+  color: rgb(79, 79, 79);
+}
+.rokye__policy .content__desc p b {
+  color: black;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .rokye__policy {
+    padding: 7rem 3rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .rokye__policy {
+    padding: 7rem 1rem;
+    font-size: 0.9rem;
+  }
+  .rokye__policy h1 {
+    font-size: 1.9rem;
+  }
+}
+
 .rokye__review {
   display: flex;
   justify-content: center;
@@ -3779,6 +3991,17 @@ body {
   .rokye__review-profile .detail__contact {
     width: 100%;
   }
+  .rokye__review-content .add {
+    flex-direction: column-reverse;
+  }
+  .rokye__review-content .add__sort {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  .rokye__review-content .add__content {
+    width: 100%;
+  }
   .rokye__review .progress p {
     font-size: 1rem;
   }
@@ -3814,8 +4037,9 @@ body {
 }
 .rokye__reviewForm form .cancel {
   position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  right: 0.5rem;
 }
 .rokye__reviewForm form h1 {
   font-family: "lora", sans-serif;
@@ -3863,6 +4087,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   color: #f2f2f2;
   margin-top: 1rem;
   border-radius: 4px;
@@ -4136,6 +4361,10 @@ body {
 }
 
 .admin {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4213,8 +4442,16 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.admin__content-user .content .item .upper p {
-  margin-left: 1rem;
+.admin__content-user .content .item .lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__content-user .content .item .lower p {
+  margin-right: 1rem;
+}
+.admin__content-user .content .item .lower p:last-child {
   color: #f25c05;
 }
 .admin__content-user .content .item .left {
@@ -4424,6 +4661,39 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
+}
+.admin__content-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.admin__content-create .form {
+  padding: 2rem;
+  width: 25rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+}
+.admin__content-create .title {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin__content-create .item {
+  margin: 1rem 0;
+}
+.admin__content-create .MuiOutlinedInput-notchedOutline {
+  border-color: gray !important;
+  box-shadow: none;
+}
+.admin__content-create .submit {
+  margin-top: 1rem;
+  cursor: pointer;
+  width: 100%;
+  background: #f25c05;
+  color: #f2f2f2;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
 }
 @media screen and (max-width: 600px) {
   .admin {

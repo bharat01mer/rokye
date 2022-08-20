@@ -382,12 +382,14 @@
 
       .cancel {
         position: absolute;
-        top: -0.5rem;
-        right: -0.5rem;
+        top: 0.2rem;
+        cursor: pointer;
+        right: 0.2rem;
         @include center__elem;
         justify-content: flex-end;
       }
       .title {
+        margin-top: 1rem;
         @include center__elem;
         justify-content: space-between;
         h2 {
@@ -400,6 +402,7 @@
         }
 
         .social {
+          // margin-right: 1rem;
           @include center__elem;
           &__item {
             color: $color2;
@@ -448,6 +451,7 @@
         align-items: flex-start;
 
         &__title {
+          cursor: pointer;
           @include center__elem;
           justify-content: space-between;
           padding: 1rem;

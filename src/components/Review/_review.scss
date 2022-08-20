@@ -277,7 +277,10 @@
     }
   }
   @media screen and (max-width: 1250px) {
+
+
     padding: 7rem 3rem;
+    
   }
   @media screen and (max-width: 900px) {
     padding: 7rem 1rem;
@@ -323,6 +326,24 @@
             }
         }
     }
+
+    &-content{
+      .add{
+        flex-direction: column-reverse;
+
+
+        &__sort{
+          width: 100%;
+          justify-content: flex-end;
+          margin-top: 1rem;
+        }
+
+        &__content{
+          width: 100%;
+        }
+      }
+    }
+
     font-size: 0.9rem;
     .progress {
       p {
@@ -360,8 +381,9 @@
 
     .cancel{
         position: absolute;
-        top: -.5rem;
-        right: -.5rem;
+        top: .5rem;
+        cursor: pointer;
+        right: .5rem;
     }
     h1 {
       @include heading-font;
@@ -409,6 +431,7 @@
       padding: 0.5rem 1rem;
       width: 100%;
       @include center__elem;
+      cursor: pointer;
       color: $color4;
       margin-top: 1rem;
       border-radius: 4px;

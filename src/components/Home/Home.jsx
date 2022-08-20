@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className='rokye__home'>
       <Intro winWidth={state.util.winWidth} />
-      <SearchBar winWidth={state.util.winWidth} />
+      {/* <SearchBar winWidth={state.util.winWidth} /> */}
       <Recently  />
       <Choose />
       <Review />

@@ -36,7 +36,6 @@ const Plans = () => {
 
                     <div className="rokye__plan-info">
                         <div className="title">
-                            <h1>Check our plans</h1>
                             <h1>Fill your details and we will get back to you</h1>
                         </div>
                         <div className="content">

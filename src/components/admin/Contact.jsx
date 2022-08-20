@@ -83,8 +83,8 @@ const Contact = () => {
                       <p>{item.date.slice(0, 10)}</p>
                     </div>
                     <div className="item__info">
-                      <p>{item.email}</p>
                       <p>{item.phone}</p>
+                      <p>{item.email}</p>
                       <p>{item.type}</p>
                     </div>
                     <div className="message">

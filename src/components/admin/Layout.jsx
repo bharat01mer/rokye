@@ -27,6 +27,11 @@ const barItem = [
         name: "Reviews",
         link: "review"
     },
+    {
+        id: 4,
+        name: "Create",
+        link: "add"
+    },
 ]
 const Layout = ({ children }) => {
     const router = useRouter()
@@ -36,9 +41,9 @@ const Layout = ({ children }) => {
 
     const { user } = useSelector(state => state.util)
     
-    const isAdmin = user?.data?.type === "admin";
+    const isAdmin = user?.data?.type === "admin" || user?.data?.type === "subadmin";
     
-    console.log({user})
+    const isSuperAdmin=user?.data.email==="jignesg190@gmail.com" || user?.data.email==="info@rokye.com"
     
     useEffect(() => {
         setWinWidth(window.innerWidth)
@@ -46,7 +51,6 @@ const Layout = ({ children }) => {
             router.push("/")
         }
     }, [])
-
 
 
     return isAdmin && (
@@ -60,9 +64,15 @@ const Layout = ({ children }) => {
 
                         <div className="content">
                             {
-                                barItem.map((item) => (
+                                barItem.map((item) => item.id!==4 ?  (
                                     <Link passHref href={`/admin/${item.link}`} key={item.name} >
-                                        <div className={`item ${item.link === query ? "active" : ""}`} >
+                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{cursor:"pointer"}}>
+                                            <h3>{item.name}</h3>
+                                        </div>
+                                    </Link>
+                                ): isSuperAdmin && (
+                                    <Link passHref href={`/admin/${item.link}`} key={item.name} >
+                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{cursor:"pointer"}}>
                                             <h3>{item.name}</h3>
                                         </div>
                                     </Link>

@@ -2,7 +2,7 @@ import Desktop from "./searchComp"
 
 const SearchBar = ({ winWidth }) => {
 
-  const iconSize = winWidth < 1000 ? 20 : 30
+  const iconSize = winWidth < 1000 ? 20 : 25
   const iconSiz2 = 20
 
   return (

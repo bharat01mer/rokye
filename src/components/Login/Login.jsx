@@ -14,7 +14,7 @@ import { toast, ToastContainer } from "react-toast"
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
 import { userData } from "../../../redux/slices/util"
-
+import { Checkbox } from "@mui/material"
 
 
 const checkPoints = [
@@ -45,9 +45,10 @@ const optionItem = [
 ]
 const Login = ({ isSignUp }) => {
     const dispatch = useDispatch()
+    const [checkBox, setCheckBox] = useState(false)
     const [showOption, setShowOption] = useState(false)
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
-    const { handleSubmit, formState: { errors, isValid }, setValue, register } = useForm({ mode: "onChange" })
+    const { handleSubmit, formState: { errors, isValid: IsValid }, setValue, register } = useForm({ mode: "onChange" })
     const [showPass, setShowPass] = useState(false)
     const router = useRouter()
 
@@ -59,29 +60,29 @@ const Login = ({ isSignUp }) => {
     const onSubmitHandler = async (data) => {
 
         if (isSignUp) {
-            createUser(data).unwrap().then((res)=>{
+            createUser(data).unwrap().then((res) => {
                 localStorage.setItem("user", JSON.stringify(res))
                 toast.success("Signup Successfull")
                 dispatch(userData(res))
                 router.push("/")
-            }).catch((err)=>{
-                console.log({err})
-                toast.error(err?.data ? err?.data?.message :"Error Occurred")
+            }).catch((err) => {
+                console.log({ err })
+                toast.error(err?.data ? err?.data?.message : "Error Occurred")
             })
-            
+
         } else {
             loginUser(data).unwrap().then((res) => {
-                    localStorage.setItem("user", JSON.stringify(res))
-                    toast.success("Login Successfull")
-                    dispatch(userData(res))
-                    if (router.query?.redirect) {
-                        router.push(`/${router.query?.redirect}`)
-                    } else {
-                        router.push("/")
-                    }
-                }).catch (err=>{
-                    toast.error( err?.data ? err?.data?.message :"Error Occurred")
-                })
+                localStorage.setItem("user", JSON.stringify(res))
+                toast.success("Login Successfull")
+                dispatch(userData(res))
+                if (router.query?.redirect) {
+                    router.push(`/${router.query?.redirect}`)
+                } else {
+                    router.push("/")
+                }
+            }).catch(err => {
+                toast.error(err?.data ? err?.data?.message : "Error Occurred")
+            })
         }
     }
 
@@ -98,7 +99,8 @@ const Login = ({ isSignUp }) => {
 
     }, [dispatch])
 
-    
+    const isValid= !isSignUp ? IsValid :  checkBox && IsValid
+    console.log({errors,IsValid,isValid})
 
     return (
         <div className={`rokye__login ${isSignUp ? "signup" : ""}`} >
@@ -106,7 +108,7 @@ const Login = ({ isSignUp }) => {
             <div className="rokye__login-left">
                 {
                     !isSignUp ? (
-                                <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Login-pana_prjzhm.png"}  />
+                        <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Login-pana_prjzhm.png"} />
                     ) : (
 
                         <>
@@ -125,7 +127,7 @@ const Login = ({ isSignUp }) => {
                                 }
                             </div>
                             <div className="animation">
-                                <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Sign_up-cuate_tyrhp1.png"}  />
+                                <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Sign_up-cuate_tyrhp1.png"} />
                             </div>
                         </>
                     )
@@ -180,10 +182,20 @@ const Login = ({ isSignUp }) => {
                                         }
                                     </div>
                                     <div className="phone item">
-                                        <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
+                                        <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, minLength: 10, maxLength: 10 })} />
                                         {
-                                            errors.phone && (
+                                            errors.phone?.type === "required" && (
                                                 <p> Phone No Required </p>
+                                            )
+                                        }
+                                        {
+                                            errors.phone?.type === "minLength" && (
+                                                <p> Please Add 10 digit no </p>
+                                            )
+                                        }
+                                        {
+                                            errors.phone?.type === "maxLength" && (
+                                                <p> Please Add 10 digit no </p>
                                             )
                                         }
                                     </div>
@@ -210,12 +222,20 @@ const Login = ({ isSignUp }) => {
                                 )
                             }} />
                             {
-                                errors.password && (
+                                (isSignUp && errors.password )&& (
                                     <p> {errors.password.type = "minLength" ? "Password Length Should be greater than 8" : "Password Required"} </p>
                                 )
                             }
                         </div>
-                        <motion.button className="form__submit" type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65", borderColor: isValid ? "#F25C05" : "#ff9e65" }} whileTap={{ scale:  .95 }}>
+                        {
+                            isSignUp && (
+                                <div className="agree">
+                                    <Checkbox color="primary" onChange={() => setCheckBox(!checkBox)} />
+                                    <p>I agree to the <Link href={"/term"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
+                                </div>
+                            )
+                        }
+                        <motion.button className="form__submit" type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65", borderColor: isValid ? "#F25C05" : "#ff9e65", cursor: "pointer" }} disabled={isValid ? false : true} whileTap={{ scale: .95 }}>
                             <h2>Submit</h2>
                         </motion.button>
                     </div>
@@ -237,7 +257,7 @@ const Login = ({ isSignUp }) => {
                         }
                         {
                             !isSignUp && (
-                                <Link passHref href={"/login?reset"}>
+                                <Link passHref href={"/recover"} style={{cursor:"pointer"}}>
                                     <p>Forgot Password?</p>
                                 </Link>
                             )

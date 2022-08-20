@@ -38,8 +38,6 @@ const Choose = () => {
         },
     ]
 
-
-
     const parentVariant = {
         intial: {
             opacity: 0
