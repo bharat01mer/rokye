@@ -25,10 +25,10 @@ const PropertyDetailCarousel = ({ data }) => {
             </Swiper>
             <div className="navigation" >
                 <div className="navigation__prev" >
-                    <AiOutlineArrowLeft size={50} />
+                    <AiOutlineArrowLeft size={50} cursor="pointer" />
                 </div>
                 <div className="navigation__next" >
-                    <AiOutlineArrowRight size={50} />
+                    <AiOutlineArrowRight size={50} cursor="pointer" />
                 </div>
             </div>
         </div>

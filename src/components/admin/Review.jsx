@@ -3,18 +3,24 @@ import { useRouter } from "next/router"
 import { useDeleteReviewMutation, useGetAllReviewQuery } from '../../../redux/slices/review'
 import { FaUserCircle } from 'react-icons/fa'
 import { AiFillStar } from 'react-icons/ai'
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import Paginate from './Pagination'
 import { MdDelete } from 'react-icons/md'
-import {toast,ToastContainer} from "react-toast"
+import { toast, ToastContainer } from "react-toast"
+import { TextField } from '@mui/material'
+import { useEffect } from 'react'
 
 const Review = () => {
   const router = useRouter()
   const page = router.query?.page || 1
 
-  const { data, isFetching, error, refetch } = useGetAllReviewQuery({ id: page, filter: "new" })
-  const [deleteFunc]=useDeleteReviewMutation()
+  const { data, refetch } = useGetAllReviewQuery({ id: page, filter: "new" })
+  const [search, setSearch] = useState(null)
+  const [deleteFunc] = useDeleteReviewMutation()
+  
+    useEffect(()=>{
 
+    },[search])
 
   const userRatingStar = (value) => {
     switch (value) {
@@ -66,7 +72,7 @@ const Review = () => {
     }
   }
 
-  if(!data){
+  if (!data) {
     return null
   }
 
@@ -79,7 +85,9 @@ const Review = () => {
     })
   }
 
+  const filterData= search ? data.data.filter((item)=> item.name.toLowerCase().includes(search)  ) : data?.data
   return (
+
     <div className="admin__content-review">
       <ToastContainer delay={2000} />
       <div className="title">
@@ -87,15 +95,20 @@ const Review = () => {
         <p>{data.count} contact</p>
       </div>
       <div className="divider" />
+      <div className="search">
+        <div className="search__field">
+          <TextField id="outlined-basic" label="Search" variant="standard" onChange={(e) => setSearch(e.target.value.toLowerCase())} type={"search"} />
+        </div>
+      </div>
       <div className="content">
         <div className="review">
           {
-            data?.data?.map((item) => (
+            filterData.map((item) => (
               <div className="review__item" key={item.id}>
                 <div className="upper">
                   <div className="upper__info">
                     {
-                      
+
                     }
                     <FaUserCircle size={40} />
 
@@ -113,7 +126,7 @@ const Review = () => {
                   <p>{item.comment}</p>
 
 
-                  <motion.div className="remove" onClick={() => deleteReviewHandler(item._id)} >
+                  <motion.div className="remove" onClick={() => deleteReviewHandler(item._id)} style={{ cursor: "pointer" }}>
                     <MdDelete size={30} color="red" />
                   </motion.div>
 

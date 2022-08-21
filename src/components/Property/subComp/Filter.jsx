@@ -58,7 +58,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
             id: 4,
             name: "Bathroom",
             optionValue: optionValue.bathroom,
-            data: propertyDataNew.bedRoom,
+            data: propertyDataNew.bathroom,
             nameForOptionHandler: "bathroom"
         },
         {
@@ -80,7 +80,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
             name: "Availability",
             optionValue: optionValue.availablity,
             data: propertyDataNew.availability,
-            nameForOptionHandler: "availablity"
+            nameForOptionHandler: "availability"
         },
         {
             id: 8,
@@ -109,7 +109,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
         {
             id: 3,
             name: "Non-Veg",
-            optionValue: optionValue.non_veg,
+            optionValue: optionValue.nonVeg,
             data: propertyDataNew.nonVeg,
             nameForOptionHandler: "nonVeg"
         },
@@ -165,6 +165,8 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
         return title?.title
     }    
 
+    
+
 
     return (
         <div className="rokye__property-filter" >
@@ -192,7 +194,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
                             )}
                             <div className="name" onClick={() => setShowOption({ id: 9, show: showOption.id === 9 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: 9, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                 <h4>Budget</h4>
-                                <p className='budget__p'> {value.min === 0 ? "Any Amount" : (
+                                <p className='budget__p'> {value.min === 0 ? "choose" : (
                                     <>
                                         <BiRupee />{millify(value.min)} - <BiRupee />{millify(value.max)}
                                     </>
@@ -204,7 +206,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
                                 <div className="lower__item" key={item.name}>
                                     <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                         <h4>{item.name}:</h4>
-                                        <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "All"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />}
+                                        <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "choose"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />}
                                         </p>
                                     </div>
                                     <AnimatePresence>
@@ -240,7 +242,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
                                     <div className='lower__item' key={item.name}>
                                         <div className="name" onClick={() => setShowOption({ id: item.id, show: showOption.id === index + 1 ? !showOption.show : true })} onMouseEnter={() => setShowArrow({ id: item.id, show: true })} onMouseLeave={() => setShowArrow({ id: null, show: false })}>
                                             <h4>{item.name}</h4>
-                                            <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "Any"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />} </p>
+                                            <p>{item.optionValue ? getTitle(item.data,item.optionValue) : "choose"} {(showArrow.id === item.id && showArrow.show) ? <DownArrow size={20} /> : <BiMinus size={20} />} </p>
                                         </div>
 
                                         <AnimatePresence>

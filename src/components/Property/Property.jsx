@@ -13,14 +13,13 @@ const Property = () => {
     const [sortValue, setSortValue] = useState("new")
     const router = useRouter()
     const page = router.query?.page || 1
-    const [optionValue, setOptionValue] = useState({ city: null, propType: null, bedroom: null, bathroom: null, min: null, max: null, furnished: null, availablity: null, age: null, flatNo: null, facing: null, nonVeg: null, pet: null, amenity: [] })
+    const [optionValue, setOptionValue] = useState({ city: null, propType: null, bedroom: null, bathroom: null, min: null, max: null, furnished: null, availability: null, age: null, flatNo: null, facing: null, nonVeg: null, pet: null, amenity: [] })
 
 
     const isRedirected = router.query.redirect === "true" ? true : false
 
     const [run, info] = useGetAllPropertyWithFilterMutation()
 
-    console.log({ router })
     useEffect(() => {
         if (!isRedirected) {
             run({ page, sort: sortValue, limit: 8, data: optionValue })

@@ -238,7 +238,7 @@ const Review = () => {
                     <div className="detail">
                         <div className="detail__mail">
                             <FiMail />
-                            <a href="mailto:sales@rokye.com">sales@rokye.com</a>
+                            <p >sales@rokye.com</p>
                         </div>
                         <div className="detail__social">
                             {

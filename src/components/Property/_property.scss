@@ -703,6 +703,7 @@
       }
       .amenity {
         &__content {
+          grid-template-columns: repeat(1,1fr);
           padding: 2rem 1rem !important;
         }
       }

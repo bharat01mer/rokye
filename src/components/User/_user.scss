@@ -118,6 +118,15 @@
       padding: 0.5rem 1rem;
       border-radius: 4px;
     }
+
+    @media screen and (max-width:500px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .logout{
+        margin-top: 1rem;
+      }
+    }
   }
 
   &-dashboard {
@@ -268,8 +277,9 @@
 
     .tab {
       justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
       grid-gap: 1rem;
+      align-items: stretch;
     }
     &-dashboard {
       padding: 2rem 1rem;

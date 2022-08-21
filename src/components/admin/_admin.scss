@@ -5,11 +5,22 @@
   height: 100vh;
 }
 
+.search{
+  @include center__elem;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+
+  .MuiOutlinedInput-notchedOutline{
+    border-color: gray !important; 
+    box-shadow: none
+  }
+}
 .admin {
   user-select: text;
   @include center__elem;
   flex-direction: column;
   justify-content: space-between;
+
 
   &__sidebar {
     width: 100%;

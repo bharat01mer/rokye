@@ -150,7 +150,7 @@ const Login = ({ isSignUp }) => {
                             isSignUp && (
                                 <>
                                     <div className="choose">
-                                        <div className="choose__title" onClick={() => setShowOption(!showOption)} >
+                                        <div className="choose__title" onClick={() => setShowOption(!showOption)} style={{cursor:"pointer"}}>
                                             <p {...register("type", { required: true })}>
                                                 {optionValue.id === null ? "I am " : optionValue.name}
                                             </p>
@@ -231,7 +231,7 @@ const Login = ({ isSignUp }) => {
                             isSignUp && (
                                 <div className="agree">
                                     <Checkbox color="primary" onChange={() => setCheckBox(!checkBox)} />
-                                    <p>I agree to the <Link href={"/term"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
+                                    <p>I agree to the <Link href={"/terms"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
                                 </div>
                             )
                         }

@@ -35,7 +35,7 @@ const Recently = () => {
                 <div className="rokye__home-recent__title">
                     <h1>Recently Added</h1>
                     <Link passHref href="/properties">
-                        <h3>Show More</h3>
+                        <h3>View all</h3>
                     </Link>
                 </div>
                 <div className="rokye__home-recent__detail">
@@ -48,11 +48,10 @@ const Recently = () => {
                         pagination={{
                             clickable: true,
                         }}
-                        // centeredSlides={true}
                         className="mySwiper"
                     >
                         {data?.data?.map((item) => (
-                            <SwiperSlide key={item.id}>
+                            <SwiperSlide key={item._id}>
                                 <Card
                                     title={`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`}
                                     furnished={item.furnished}

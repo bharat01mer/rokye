@@ -5,6 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Navigation } from "swiper"
 import { useGetAllReviewQuery } from "../../../../redux/slices/review";
+import { FaUserCircle } from "react-icons/fa";
 
 const userRatingStar = (value) => {
     switch (value) {
@@ -57,14 +58,22 @@ const userRatingStar = (value) => {
 }
 
 
-const ReviewCard = ({ img, desc, name, className,rating }) => {
+const ReviewCard = ({ img, desc, name, className, rating }) => {
     return (
         <div className={`review__card ${className}`}>
             <div className="review__card-img">
-                <Image src={img} width={120} height={120} objectFit="cover" />
-                <div className="comma">
-                    <Image src={"/comma.png"} width={20} height={20} objectFit="cover" />
-                </div>
+                {
+                    img ? (
+                        <>
+                            <Image src={img} width={120} height={120} objectFit="cover" />
+                            <div className="comma">
+                                <Image src={"/comma.png"} width={20} height={20} objectFit="cover" />
+                            </div>
+                        </>
+                    ) : (
+                        <FaUserCircle size={50} color="#114040" />
+                    )
+                }
             </div>
             <div className="review__card-detail">
                 <p>&quot;{desc}&quot;</p>

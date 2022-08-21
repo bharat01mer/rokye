@@ -96,8 +96,8 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                     </div>
                 </div>
                 <div className="mail">
-                    <FiMail size={15} />
-                    <a href="mailto:sales@rokye.com">sales@rokye.com</a>
+                    <FiMail size={20} />
+                    <p >sales@rokye.com</p>
                 </div>
             </div>
             <div className="divider" />
@@ -175,7 +175,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                 </div>
                 <div className="agree">
                     <Checkbox color="primary" onChange={() => setCheckBox(!checkBox)} />
-                    <p>I agree to the <Link href={"/term"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
+                    <p>I agree to the <Link href={"/terms"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
                 </div>
                 <motion.button className="submit" whileTap={{ scale: 0.97 }} type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65" }}>
                     <h3>Send Request</h3>

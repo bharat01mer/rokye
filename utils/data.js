@@ -215,19 +215,24 @@ export const budgetData = {
       data: 60000,
     },
     {
-      id:11,
+      id:10,
       price: "70k",
       data:70000,
     },
     {
-      id:12,
+      id:11,
       price: "80k",
       data:80000,
     },
     {
-      id:13,
+      id:12,
       price: "90k",
       data:90000,
+    },
+    {
+      id:13,
+      price: "1lac",
+      data:100000,
     },
     {
       id:14,
@@ -408,7 +413,7 @@ export const tenantPoints = [
   },
   {
     id: 4,
-    value: "Rent Negotiation",
+    value: "Rent negotiation",
   },
 
   {
@@ -616,6 +621,28 @@ export const propertyDataNew = {
       value: "3+",
     },
   ],
+  bathroom: [
+    {
+      id: 0,
+      title: "1",
+      value: "1",
+    },
+    {
+      id: 1,
+      title: "2",
+      value: "2",
+    },
+    {
+      id: 2,
+      title: "3",
+      value: "3",
+    },
+    {
+      id: 3,
+      title: "3+",
+      value: "3+",
+    },
+  ],
   bike: [
     {
       id: 0,
@@ -664,41 +691,36 @@ export const propertyDataNew = {
   floorno: [
     {
       id: 0,
-      title: "Basement",
-      value: "base",
-    },
-    {
-      id: 1,
       title: "Ground",
       value: "ground",
     },
     {
-      id: 2,
+      id: 1,
       title: "1",
       value: "1",
     },
     {
-      id: 3,
+      id: 2,
       title: "2",
       value: "2",
     },
     {
-      id: 4,
+      id: 3,
       title: "3",
       value: "3",
     },
     {
-      id: 5,
+      id: 4,
       title: "4",
       value: "4",
     },
     {
-      id: 6,
+      id: 5,
       title: "5",
       value: "5",
     },
     {
-      id: 7,
+      id: 6,
       title: "5+",
       value: "5+",
     },
@@ -749,6 +771,16 @@ export const propertyDataNew = {
       id: 8,
       title: "9",
       value: "9",
+    },
+    {
+      id: 9,
+      title: "10",
+      value: "10",
+    },
+    {
+      id: 10,
+      title: "10+",
+      value: "10+",
     },
   ],
 
@@ -849,16 +881,11 @@ export const propertyDataNew = {
     },
     {
       id: 2,
-      title: "5+ years old",
-      value: "5+",
-    },
-    {
-      id: 3,
       title: "5-10 years old",
       value: "10",
     },
     {
-      id: 4,
+      id: 3,
       title: "10+ years old",
       value: "10+",
     },
@@ -891,7 +918,7 @@ export const propertyDataNew = {
     {
       id: 1,
       title: "Family",
-      value: "bachelor",
+      value: "family",
     },
     {
       id: 1,
@@ -953,7 +980,7 @@ export const propertyDataNew = {
     },
     {
       id: 5,
-      title: "Visitort Parking",
+      title: "Visitor Parking",
       value: "visitor",
     },
     {

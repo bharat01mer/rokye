@@ -1,13 +1,16 @@
 import { BiUserCircle } from "react-icons/bi"
-import { TiDelete } from "react-icons/ti"
+import { MdDelete } from "react-icons/md"
 import { useGetAllUserQuery, useDeleteUserMutation } from "../../../redux/slices/user"
 import Paginate from "./Pagination"
 import { toast, ToastContainer } from "react-toast"
+import TextField from "@mui/material/TextField"
 import { useEffect } from "react"
 import { useRouter } from "next/router"
+import { useState } from "react"
 
 const User = () => {
     const [deleteUserById] = useDeleteUserMutation()
+    const [search, setSearch] = useState(null)
     const router = useRouter()
     const page = router.query?.page || 1
     const { data, refetch } = useGetAllUserQuery(page)
@@ -26,6 +29,13 @@ const User = () => {
         })
         refetch()
     }
+
+    useEffect(()=>{
+
+    },[search])
+    const filterData= search ? data.data.filter((item)=>item.phone.toString().includes(search) || item.name.toLowerCase().includes(search) || item.email.toLowerCase().includes(search) ) : data?.data
+
+
     return (
         <div className="admin__content-user">
             <ToastContainer delay={2000} />
@@ -34,9 +44,14 @@ const User = () => {
                 <p>{data.count} Users</p>
             </div>
             <div className="divider" />
+            <div className="search">
+                <div className="search__field">
+                    <TextField id="outlined-basic" label="Search" variant="standard" onChange={(e)=>setSearch(e.target.value.toLowerCase())} type={"search"} />
+                </div>
+            </div>
             <div className="content">
                 {
-                    data?.data?.map((item, i) => (
+                    filterData.map((item, i) => (
                         <div className="item" key={item.email}>
                             <div className="left">
                                 <div className="item__no">
@@ -57,9 +72,9 @@ const User = () => {
                                 </div>
                             </div>
                             {
-                                item.type !== "admin" && item.type!=="subadmin"  && (
+                                item.type !== "admin" && item.type !== "subadmin" && (
                                     <div className="delete" onClick={() => deleteUser(item._id)}>
-                                        <TiDelete size={35} color="red" />
+                                        <MdDelete size={30} color="red" cursor={"pointer"} />
                                     </div>
 
                                 )

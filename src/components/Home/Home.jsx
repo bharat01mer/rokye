@@ -20,7 +20,6 @@ const Home = () => {
     <div className='rokye__home'>
       <ScrollTo />
       <Intro winWidth={state.util.winWidth} />
-      {/* <SearchBar winWidth={state.util.winWidth} /> */}
       <Recently  />
       <Choose />
       <Review />

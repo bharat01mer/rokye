@@ -95,11 +95,7 @@ const PropertyDetail = ({ cardDetail }) => {
         name: "Availability",
         value: getTitle(cardDetail.availability, "availability")
       },
-      {
-        id: 9,
-        name: "Floor",
-        value: getTitle(cardDetail.floor, "floorno")
-      },
+      
     ],
     right: [
       {
@@ -121,8 +117,8 @@ const PropertyDetail = ({ cardDetail }) => {
       },
       {
         id: 3,
-        name: "Flat no",
-        value: cardDetail.flatNo
+        name: "Floor",
+        value: getTitle(cardDetail.floor, "floorno")
       },
       {
         id: 4,
@@ -137,19 +133,16 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 6,
         name: "Facing",
-        value: "South",
         value: getTitle(cardDetail.facing, "facing")
       },
       {
         id: 7,
         name: "Non-veg",
-        value: "Not allowed",
         value: getTitle(cardDetail.nonVeg, "nonVeg")
       },
       {
         id: 8,
         name: "Pets",
-        value: "Not allowed",
         value: getTitle(cardDetail.pet, "pets")
       },
     ],
@@ -240,6 +233,13 @@ const PropertyDetail = ({ cardDetail }) => {
       value:getTitleOfNearyBy(cardDetail.nearby.commercial)
     },
   ]
+
+  function getTitleOfAmenities(value) {
+    const title = propertyDataNew.amenities.find((item) => item.value === value)        
+    return title?.title
+}    
+
+
   return (
     <>
     <ScrollTo />
@@ -247,7 +247,7 @@ const PropertyDetail = ({ cardDetail }) => {
         <div className="rokye__property-detail__prop">
           <div className="title">
             <div className="headline">
-              <h1>{`${cardDetail?.bedroom}BHK ${cardDetail?.propType} for rent`}</h1>
+              <h1>{`${cardDetail.bedroom} BHK ${cardDetail.propType[0].toUpperCase()}${cardDetail.propType.slice(1)} ${cardDetail.superArea} sqft`}</h1>
               {
                 user && (
                   <div className="like" onClick={addFavoritePropHandler}>
@@ -278,7 +278,7 @@ const PropertyDetail = ({ cardDetail }) => {
             <div className="title__info">
               <div className="location">
                 <ImLocation />
-                <p>{cardDetail?.society},{cardDetail?.city}</p>
+                <p>{cardDetail?.area}, {cardDetail?.city}</p>
               </div>
               <div className="date">
                 <FcCalendar size={20} />
@@ -302,11 +302,14 @@ const PropertyDetail = ({ cardDetail }) => {
                   <div className="tag" key={item.id}>
                     <p>{item.name}</p>
                     {
-                      item?.price ? (
+                      item?.price ? item.id===2 ? (
+                        <p> <BiRupee /> {millify(item.value)}/{cardDetail.rentDetail.per}</p>
+
+                      ) : (
                         <p> <BiRupee /> {millify(item.value)}</p>
 
                       ) : (
-                        <p>{item.value}</p>
+                        <p style={{textTransform:"capitalize"}}>{item.value}</p>
 
                       )
                     }
@@ -329,7 +332,7 @@ const PropertyDetail = ({ cardDetail }) => {
                             </>
 
                           ) : (
-                            <p>{item.value}</p>
+                            <p style={{textTransform:"capitalize"}}>{item.value}</p>
                           )
                         }
                       </div>
@@ -366,7 +369,7 @@ const PropertyDetail = ({ cardDetail }) => {
                 cardDetail.amenity.map((item) => (
                   <div className="item" key={item}>
                     <TbCheckbox size={20} color={"#035941"} />
-                    <p style={{ textTransform: "capitalize" }}>{item}</p>
+                    <p>{getTitleOfAmenities(item)}</p>
                   </div>
                 ))
               }

@@ -85,11 +85,14 @@ const Navbar = () => {
             <motion.div className="rokye__navbar-mobnav" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
               {navLinks.map((item,index) => (
                 <Link className='item' href={`/${item.link}`} key={item.link}>
-                  <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ x: -5, color: "#F25C05" }}>
+                  <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ x: 5, color: "#F25C05" }}>
                     <h3>{item.name}</h3>
                     {
+                      winWidth>650 ? 
                       index!==0 && index!==6 && (
-                        <div className="divider"></div>
+                        <div className="divider" />
+                        ): index!==6 && (
+                          <div className="divider" />
                       )
                     }
                   </motion.div>
@@ -136,7 +139,7 @@ const Navbar = () => {
 
 
         <Link href={"/properties/create"} passHref>
-          <motion.div className="sell" whileTap={{ scale: 0.97 }}>
+          <motion.div className="sell" whileTap={{ scale: 0.97 }} style={{cursor:"pointer"}}>
             <AiOutlinePlus size={25} color={"#fff "} />
             <h3 >Add Property</h3>
           </motion.div>

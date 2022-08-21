@@ -6,6 +6,7 @@ import { useCreatePropertyMutation, useAddImageInPropertyByIdMutation } from "..
 import { ToastContainer, toast } from "react-toast"
 import axios from "axios"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 const initialState = {
     category: "",
@@ -52,8 +53,13 @@ const initialState = {
 const AddProperty = () => {
     const [activeStep, setActiveStep] = useState(0)
     const [imageArray, setImageArray] = useState([])
+    const [uploadedCloudinaryArr, setUploadedCloudinaryArr] = useState([])
 
     const [isImageUploading, setIsImageUploading] = useState(false)
+    const [showImageUploadWarning, setShowImageUploadWarning] = useState(false)
+    const [isUploadCompleted, setIsUploadCompleted] = useState(false)
+
+    const [disabled, setDisabled] = useState(false)
 
     const totalStep = 4
     const methods = useForm({
@@ -65,8 +71,11 @@ const AddProperty = () => {
     const { user } = useSelector((state) => state.util)
 
     const [createProperty] = useCreatePropertyMutation()
-    const [addImageInProp] = useAddImageInPropertyByIdMutation()
 
+
+    useEffect(()=>{
+        // setDisabled(false)
+    },[disabled,showImageUploadWarning,isUploadCompleted])
     const showForm = (step) => {
         switch (step) {
             case 0:
@@ -85,59 +94,59 @@ const AddProperty = () => {
     }
 
 
-    const imageUpload = (id) => {
+    const imageUpload = () => {
         const file = new FormData()
-        return new Promise((resolve, reject) => {
+        setIsImageUploading(true)
+        for (let i = 0; i < imageArray.length; i++) {
 
-            for (let i = 0; i < imageArray.length; i++) {
+            file.append('file', imageArray[i])
+            file.append("upload_preset", "all_image")
 
-                file.append('file', imageArray[i])
-                file.append("upload_preset", "all_image")
+            axios.post("https://api.cloudinary.com/v1_1/dburijwvn/image/upload", file).then((res) => {
+                setUploadedCloudinaryArr(item => [...item, { data: res.data.secure_url }])
 
-                axios.post("https://api.cloudinary.com/v1_1/dburijwvn/image/upload", file).then((res) => {
-                    addImageInProp({ id: id, data: res.data.secure_url })
+                if (i === imageArray.length - 1) {
+                    toast.success("Images Uploaded")
+                    setIsImageUploading(false)
+                    setDisabled(false)
+                }
+            }).catch((err) => {
+                setIsImageUploading(false)
+                toast.error("Image upload failed,try agaiin")
+            })
+        }
 
-                    if (i === imageArray.length - 1) {
-                        resolve()
-                    }
-                }).catch((err) => {
-                    reject()
-                })
-            }
-        })
     }
 
 
     const nextClickHandler = async (data) => {
-
         if (activeStep === totalStep) {
-            try {
-                createProperty({ ...data, createdBy: user.data._id, city: data?.city.toLowerCase() }).unwrap().then(async (res) => {
-                    setIsImageUploading(true)
-                    imageUpload(res.data._id).then(() => {
-                        toast.success("Completed")
-                        setIsImageUploading(false)
-                        router.push(`/properties/${res.data._id}`)
-                    }).catch((err) => {
-                        console.log({ err })
-                        toast.error("Error")
-                        setIsImageUploading(false)
-                    })
+            setDisabled(true)
+            if (isImageUploading) {
+                setShowImageUploadWarning(true)
+                toast.warn("Wait While Images Uploading")
+            } else {
+                setShowImageUploadWarning(false)
+                createProperty({ ...data, createdBy: user.data._id, city: data?.city.toLowerCase(), images: uploadedCloudinaryArr }).unwrap().then(async (res) => {
+                    toast.success("Property Created")
+                    router.push(`/properties/${res.data._id}`)
+                }).catch((error) => {
+                    console.log({ error })
+                    toast.error("Error Occured")
                 })
-
-            } catch (error) {
-                console.log({ error })
-                toast.error("Error Occured")
             }
         } else if (activeStep === 3 && imageArray.length === 0) {
             methods.setError("images", { type: "required" })
-        } else {
-            localStorage.setItem("propertyData", JSON.stringify(data))
+        } else if (activeStep === 3 && imageArray.length !== 0) {
+            imageUpload()
+            setActiveStep(item => item + 1)
+        }
+        else {
             setActiveStep(item => item + 1)
         }
     }
-
     
+
     return (
         <div className="rokye__add-property">
             <ToastContainer delay={3000} />
@@ -158,14 +167,14 @@ const AddProperty = () => {
                             <button className="stepper__btn-prev" type="button" style={{ visibility: activeStep === 0 ? "hidden" : "visible" }} onClick={() => setActiveStep(activeStep - 1)}>
                                 <h2>Prev</h2>
                             </button>
-                            <button className="stepper__btn-next" type="submit" disabled={isImageUploading} style={{ backgroundColor: isImageUploading && "gray" }}  >
+                            <button className="stepper__btn-next" type="submit" disabled={disabled} style={{ backgroundColor: disabled && "gray" }}  >
                                 <h2>{activeStep === totalStep ? "Submit" : "Next"}</h2>
                             </button>
                         </div>
                         {
-                            isImageUploading && (
+                            showImageUploadWarning && (
                                 <div className="status" style={{ marginTop: "2rem", textAlign: "center" }} >
-                                    <h3>Wait, While uploading Image,Once completed you will be automaitcally redirect to your property page</h3>
+                                    <h3>Please wait a moment, once images uploaded, click on submit button</h3>
                                 </div>
                             )
                         }

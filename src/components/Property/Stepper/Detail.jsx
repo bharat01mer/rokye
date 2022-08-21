@@ -54,7 +54,7 @@ const Detail = () => {
         },
         {
             id: 7,
-            title: "Tenants preferred",
+            title: "Tenant preferred",
             arr:propertyDataNew.family,
             name: "tenant"
         },

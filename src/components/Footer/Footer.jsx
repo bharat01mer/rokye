@@ -94,7 +94,7 @@ const Footer = () => {
         </div>
         <div className="rokye__footer-address">
           <h1>Email</h1>
-          <p>sales@rokye.com</p>
+          <p style={{cursor:"auto"}}>sales@rokye.com</p>
 
           <div className="social">
             {

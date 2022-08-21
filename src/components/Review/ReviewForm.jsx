@@ -69,7 +69,7 @@ const ReviewForm = ({ setClose, name, email, id, refetch,img }) => {
                                 onChange={ratingHandler}
                                 size={30}
                                 activeColor="#f25c05"
-                            />,
+                            />
                         </div>
                     </div>
 

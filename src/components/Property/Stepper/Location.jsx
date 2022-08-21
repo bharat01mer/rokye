@@ -75,13 +75,13 @@ const Location = () => {
     const nearByList = [
         {
             id: 0,
-            title: "School",
+            title: "Schools",
 
             name: "nearby.school"
         },
         {
             id: 1,
-            title: "Hospital",
+            title: "Hospitals",
             name: "nearby.hospital"
         },
         {
@@ -102,7 +102,7 @@ const Location = () => {
         {
             id: 5,
             title: "Commercial hubs",
-            name: "nearby.comercial"
+            name: "nearby.commercial"
         },
     ]
 
