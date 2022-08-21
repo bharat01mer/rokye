@@ -18,6 +18,10 @@ const User = () => {
     useEffect(() => {
         refetch()
     }, [])
+    
+    useEffect(()=>{
+
+    },[search])
 
     if (!data) {
         return null
@@ -30,9 +34,6 @@ const User = () => {
         refetch()
     }
 
-    useEffect(()=>{
-
-    },[search])
     const filterData= search ? data.data.filter((item)=>item.phone.toString().includes(search) || item.name.toLowerCase().includes(search) || item.email.toLowerCase().includes(search) ) : data?.data
 
 
