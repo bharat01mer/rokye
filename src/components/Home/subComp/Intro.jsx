@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { AiOutlineSearch } from "react-icons/ai"
 
 
-const Intro = () => {
+const Intro = ({winWidth}) => {
     return (
         <div className="rokye__home-intro">
             <div className="rokye__home-intro__detail">
@@ -13,10 +13,10 @@ const Intro = () => {
                     <h1>No brokerage property site</h1>
                 </div>
                 <div className="detail">
-                    <h2>No brokerage, No advance payment and <br /> all the listings are physically verified.</h2>
+                    <h2>No brokerage, No advance payment and {winWidth>650 && <br />} all the listings are physically verified.</h2>
                 </div>
                 <Link href={"/properties"} passHref >
-                    <div className="search">
+                    <div className="search" style={{justifyContent:"flex-start"}}>
                         <div className="btn">
 
                             <AiOutlineSearch size={26} />

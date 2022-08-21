@@ -1072,12 +1072,12 @@ export const propertyDataNew = {
       value: "quarterly",
     },
     {
-      id: 0,
+      id: 2,
       title: "Yearly",
       value: "year",
     },
     {
-      id: 0,
+      id: 3,
       title: "One Time",
       value: "once",
     },

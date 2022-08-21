@@ -78,7 +78,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
         {
             id: 7,
             name: "Availability",
-            optionValue: optionValue.availablity,
+            optionValue: optionValue.availability,
             data: propertyDataNew.availability,
             nameForOptionHandler: "availability"
         },

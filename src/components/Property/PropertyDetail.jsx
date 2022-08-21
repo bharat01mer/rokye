@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ContactForm, ContactModal, ScrollTo } from '../resuable'
 import { ImLocation } from "react-icons/im"
 import millify from 'millify'
-import { Tooltip,IconButton } from '@mui/material'
+import { Tooltip, IconButton } from '@mui/material'
 
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { FcCalendar } from "react-icons/fc"
@@ -95,7 +95,7 @@ const PropertyDetail = ({ cardDetail }) => {
         name: "Availability",
         value: getTitle(cardDetail.availability, "availability")
       },
-      
+
     ],
     right: [
       {
@@ -166,83 +166,84 @@ const PropertyDetail = ({ cardDetail }) => {
     const title = propertyDataNew[name].find((item) => item.value === value)
     return title?.title
   }
+
   
+
   const valueArr = [
     {
-        id: 0,
-        title: "Within 2 km",
-        value: "2km",
+      id: 0,
+      title: "Within 2 km",
+      value: "2km",
     },
     {
-        id: 1,
-        title: "Within 5 km",
-        value: "5km",
+      id: 1,
+      title: "Within 5 km",
+      value: "5km",
     },
     {
-        id: 2,
-        title: "Within 8 km",
-        value: "8km",
+      id: 2,
+      title: "Within 8 km",
+      value: "8km",
     },
     {
-        id: 3,
-        title: "Within 10 km",
-        value: "10km",
+      id: 3,
+      title: "Within 10 km",
+      value: "10km",
     },
     {
-        id: 4,
-        title: "Over 10+ km",
-        value: "10km+",
-      },
-    ]
-    
-    function getTitleOfNearyBy(value) {
-      const title = valueArr.find((item) => item.value === value)
-      return title?.title
-    }
+      id: 4,
+      title: "Over 10+ km",
+      value: "10km+",
+    },
+  ]
+
+  function getTitleOfNearyBy(value) {
+    const title = valueArr.find((item) => item.value === value)
+    return title?.title
+  }
 
 
-  const nearByList=[
+  const nearByList = [
     {
-      id:0,
-      name:"Schools",
-      value:getTitleOfNearyBy(cardDetail.nearby.school)
+      id: 0,
+      name: "Schools",
+      value: getTitleOfNearyBy(cardDetail.nearby.school)
     },
     {
-      id:1,
-      name:"Hospital",
-      value:getTitleOfNearyBy(cardDetail.nearby.hospital)
+      id: 1,
+      name: "Hospitals",
+      value: getTitleOfNearyBy(cardDetail.nearby.hospital)
     },
     {
-      id:0,
-      name:"Shopping centres",
-      value:getTitleOfNearyBy(cardDetail.nearby.mall)
+      id: 0,
+      name: "Shopping centres",
+      value: getTitleOfNearyBy(cardDetail.nearby.mall)
     },
     {
-      id:0,
-      name:"Transportation hubs",
-      value:getTitleOfNearyBy(cardDetail.nearby.transport)
+      id: 0,
+      name: "Transportation hubs",
+      value: getTitleOfNearyBy(cardDetail.nearby.transport)
     },
     {
-      id:0,
-      name:"Temples",
-      value:getTitleOfNearyBy(cardDetail.nearby.temple)
+      id: 0,
+      name: "Temples",
+      value: getTitleOfNearyBy(cardDetail.nearby.temple)
     },
     {
-      id:0,
-      name:"Commercial hubs",
-      value:getTitleOfNearyBy(cardDetail.nearby.commercial)
+      id: 0,
+      name: "Commercial hubs",
+      value: getTitleOfNearyBy(cardDetail.nearby.commercial)
     },
   ]
 
   function getTitleOfAmenities(value) {
-    const title = propertyDataNew.amenities.find((item) => item.value === value)        
+    const title = propertyDataNew.amenities.find((item) => item.value === value)
     return title?.title
-}    
-
+  }
 
   return (
     <>
-    <ScrollTo />
+      <ScrollTo />
       <div className="rokye__property-detail">
         <div className="rokye__property-detail__prop">
           <div className="title">
@@ -278,7 +279,7 @@ const PropertyDetail = ({ cardDetail }) => {
             <div className="title__info">
               <div className="location">
                 <ImLocation />
-                <p>{cardDetail?.area}, {cardDetail?.city}</p>
+                <p style={{textTransform:"capitalize"}}>{cardDetail?.area}, {cardDetail?.city}</p>
               </div>
               <div className="date">
                 <FcCalendar size={20} />
@@ -302,14 +303,14 @@ const PropertyDetail = ({ cardDetail }) => {
                   <div className="tag" key={item.id}>
                     <p>{item.name}</p>
                     {
-                      item?.price ? item.id===2 ? (
-                        <p> <BiRupee /> {millify(item.value)}/{cardDetail.rentDetail.per}</p>
+                      item?.price ? item.id === 2 ? (
+                        <p> <BiRupee /> {millify(item.value)} {getTitle(cardDetail.rentDetail.per,"perInfo")}</p>
 
                       ) : (
                         <p> <BiRupee /> {millify(item.value)}</p>
 
                       ) : (
-                        <p style={{textTransform:"capitalize"}}>{item.value}</p>
+                        <p style={{ textTransform: "capitalize" }}>{item.value}</p>
 
                       )
                     }
@@ -332,7 +333,7 @@ const PropertyDetail = ({ cardDetail }) => {
                             </>
 
                           ) : (
-                            <p style={{textTransform:"capitalize"}}>{item.value}</p>
+                            <p style={{ textTransform: "capitalize" }}>{item.value}</p>
                           )
                         }
                       </div>
@@ -390,7 +391,7 @@ const PropertyDetail = ({ cardDetail }) => {
             </div>
             <div className="nearby__content">
               {
-                nearByList.map((item)=>(
+                nearByList.map((item) => (
                   <div className="item" key={item.id}>
                     <h4>{item.name}</h4>
                     <p>{item.value}</p>
