@@ -70,7 +70,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
         },
         {
             id: 6,
-            name: "Tenant Preferred",
+            name: "Tenant preferred",
             optionValue: optionValue.tenant,
             data: propertyDataNew.family,
             nameForOptionHandler: "tenant"
@@ -84,7 +84,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
         },
         {
             id: 8,
-            name: "Contruction Age",
+            name: "Contruction age",
             optionValue: optionValue.age,
             data: propertyDataNew.age,
             nameForOptionHandler: "age"
@@ -94,7 +94,7 @@ const Filter = ({ winWidth, setShowMobFilter, setOptionValue, optionValue, run,i
     const premiumItemList = [
         {
             id: 1,
-            name: "Floor No",
+            name: "Floor no",
             optionValue: optionValue.floor,
             data: propertyDataNew.floorno,
             nameForOptionHandler: "floor"

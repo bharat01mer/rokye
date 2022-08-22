@@ -73,7 +73,7 @@ const User = () => {
                                 </div>
                             </div>
                             {
-                                item.type !== "admin" && item.type !== "subadmin" && (
+                                item.type !== "admin" && (
                                     <div className="delete" onClick={() => deleteUser(item._id)}>
                                         <MdDelete size={30} color="red" cursor={"pointer"} />
                                     </div>

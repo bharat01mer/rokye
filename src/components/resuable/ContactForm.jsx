@@ -15,10 +15,14 @@ import { ToastContainer, toast } from "react-toast"
 const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
     const [showOption, setShowOption] = useState(false)
     const [optionValue, setOptionValue] = useState({ id: null, name: "" })
-    const { handleSubmit, formState, setValue, register } = useForm({ mode: "onChange" })
+    const { handleSubmit, formState, setValue, register, reset } = useForm({ mode: "onChange" })
     const [checkBox, setCheckBox] = useState(false)
     const [addContact] = useAddContactMutation()
+    let isValid = (formState.isValid && checkBox && optionValue.id !== null) ? true : false
 
+    useEffect(() => {
+
+    }, [optionValue, checkBox, isValid])
     const socialLinks = [
         {
             id: 0,
@@ -55,19 +59,27 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
         setValue("type", value.value)
         setShowOption(false)
     }
+
     const onSubmithandler = async (data) => {
         await addContact(data).then(() => {
             toast.success("Message Sent")
-        }).catch(() => {
+            if (setShowModal) {
+                setShowModal(false)
+
+            }
+            reset()
+            setValue("type", "")
+            setOptionValue({ id: null, name: "" })
+            setCheckBox(false)
+            isValid = false
+
+        }).catch((err) => {
+            console.log({ err })
             toast.error("Try Again")
         })
     }
-    useEffect(() => {
 
-    }, [optionValue])
-
-
-    const isValid = (formState.isValid && checkBox && optionValue.id !== null) ? true : false
+    console.log({ isValid })
 
 
     return (
@@ -129,52 +141,31 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                         </div>
                     )
                 }
-                {
-                    referral ? (
-                        <>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Your Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("referrarName", { required: true })} />
-                            </div>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Your Number*" type={"number"} variant="outlined" fullWidth {...register("referrarPhone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
-                            </div>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Referral Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("referralName", { required: true })} />
-                            </div>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Referral Number*" type={"number"} variant="outlined" fullWidth {...register("referralPhone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$` })} />
-                            </div>
-                        </>
 
-                    ) : (
-                        <>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
-                            </div>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$`, minLength: 10, maxLength: 10 })} />
-                                {
-                                    formState.errors.phone?.type === "minLength" && (
-                                        <p style={{color:"red",fontSize:".8rem"}}> Please Add 10 digit no </p>
-                                    )
-                                }
-                                {
-                                    formState.errors.phone?.type === "maxLength" && (
-                                        <p style={{color:"red",fontSize:".8rem"}}> Please Add 10 digit no </p>
-                                    )
-                                }
-                            </div>
-                            <div className="rokye__form-content__item">
-                                <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />
-                            </div>
-                        </>
-                    )
-                }
+                <div className="rokye__form-content__item">
+                    <TextField id="outlined-basic" label="Full Name*" variant="outlined" fullWidth style={{ border: "none" }} {...register("name", { required: true })} />
+                </div>
+                <div className="rokye__form-content__item">
+                    <TextField id="outlined-basic" label="Phone*" type={"number"} variant="outlined" fullWidth {...register("phone", { required: true, pattern: `^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$`, minLength: 10, maxLength: 10 })} />
+                    {
+                        formState.errors.phone?.type === "minLength" && (
+                            <p style={{ color: "red", fontSize: ".8rem" }}> Please Add 10 digit no </p>
+                        )
+                    }
+                    {
+                        formState.errors.phone?.type === "maxLength" && (
+                            <p style={{ color: "red", fontSize: ".8rem" }}> Please Add 10 digit no </p>
+                        )
+                    }
+                </div>
+                <div className="rokye__form-content__item">
+                    <TextField id="outlined-basic" label="Email*" type={"email"} variant="outlined" fullWidth {...register("email", { required: true })} />
+                </div>
                 <div className="rokye__form-content__item">
                     <TextField id="outlined-basic" label="Mesage(optional)" variant="outlined" multiline rows={4} fullWidth {...register("message")} />
                 </div>
                 <div className="agree">
-                    <Checkbox color="primary" onChange={() => setCheckBox(!checkBox)} />
+                    <Checkbox color="primary" checked={isValid ? true : false} onChange={(e) => setCheckBox(!checkBox)} />
                     <p>I agree to the <Link href={"/terms"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
                 </div>
                 <motion.button className="submit" whileTap={{ scale: 0.97 }} type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65" }}>

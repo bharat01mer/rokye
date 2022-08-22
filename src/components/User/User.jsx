@@ -124,7 +124,7 @@ const User = ({ user }) => {
                                     <label className="no__img" htmlFor="profimg">
                                         <input type="file" id="profimg" accept="image/*" onChange={(e) => onChangeImageHandler(e)} />
 
-                                        <FaUserCircle size={55} color="gray" />
+                                        <FaUserCircle size={55} color="#114040" />
                                         <div className="edit">
                                             <FaEdit size={20}  cursor="pointer" />
                                         </div>

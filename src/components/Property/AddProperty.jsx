@@ -51,14 +51,14 @@ const initialState = {
 }
 
 const AddProperty = () => {
-    const [activeStep, setActiveStep] = useState(0)
+    const [activeStep, setActiveStep] = useState(4)
     const [imageArray, setImageArray] = useState([])
 
     const [isImageUploading, setIsImageUploading] = useState(false)
 
     const totalStep = 4
     const methods = useForm({
-        defaultValues: initialState, mode: "onChange"
+        defaultValues: initialState, mode:"onSubmit"
     })
 
     const router = useRouter()

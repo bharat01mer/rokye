@@ -12,14 +12,22 @@ const Review=dynamic(()=>import("./subComp/Review"),{ssr:false})
 
 import Intro from "./subComp/Intro"
 import Recently from "./subComp/Recently"
+import Intro2 from './subComp/Intro2'
 
 const Home = () => {
-  const state=useSelector((state)=>state)
+  const {winWidth}=useSelector((state)=>state.util)
   
   return (
     <div className='rokye__home'>
       <ScrollTo />
-      <Intro winWidth={state.util.winWidth} />
+      {
+        winWidth< 1280 ? (
+          <Intro winWidth={winWidth} /> 
+
+        ): (
+          <Intro2 />
+        )
+      }
       <Recently  />
       <Choose />
       <Review />

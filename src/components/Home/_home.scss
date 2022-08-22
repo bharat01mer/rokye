@@ -1,4 +1,55 @@
 .rokye__home {
+
+  &-intro2{
+    margin-top: 2rem;
+    position: relative;
+
+    .upper{
+      @include center__elem;
+      flex-direction: column;
+      position: absolute;
+      left: 50%;
+      /* right: 50%; */
+      top: 8rem;
+      transform: translateX(-50%);
+  
+    }
+    .title {
+      @include center__elem;
+      flex-direction: column;
+
+      
+      h1 {
+        text-align: center;
+        @include heading_font;
+        color: $color1;
+        font-size: 2.5rem;
+      }
+    }
+    .detail {
+      padding: 2rem 0 4rem;
+    }
+    .search {
+      .btn {
+        cursor: pointer;
+        @include center__elem;
+        background: $color5;
+        width: 15rem;
+        color: $color4;
+        padding: .7rem 1rem;
+        border-radius: 5px;
+
+        h3{
+          margin-left: .5rem;
+        }
+      }
+    }
+    .lower{
+      // position: absolute;
+      
+    }
+
+  }
   &-intro {
     margin-top: 5rem;
     @include center__elem;

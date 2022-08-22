@@ -960,7 +960,7 @@ export const propertyDataNew = {
     },
     {
       id: 1,
-      title: "Gas Pipeline",
+      title: "Gas pipeline",
       value: "gas",
     },
     {
@@ -975,12 +975,12 @@ export const propertyDataNew = {
     },
     {
       id: 4,
-      title: "Car Parking",
+      title: "Car parking",
       value: "parking",
     },
     {
       id: 5,
-      title: "Visitor Parking",
+      title: "Visitor parking",
       value: "visitor",
     },
     {
@@ -1020,7 +1020,7 @@ export const propertyDataNew = {
     },
     {
       id: 13,
-      title: "Club House",
+      title: "Club house",
       value: "clubhouse",
     },
     {

@@ -67,7 +67,7 @@ const PropertyDetail = ({ cardDetail }) => {
       },
       {
         id: 3,
-        name: "Property Type",
+        name: "Property type",
         value: getTitle(cardDetail.propType, "propertyType")
       },
       {
@@ -82,12 +82,12 @@ const PropertyDetail = ({ cardDetail }) => {
       },
       {
         id: 6,
-        name: "Furnished Status",
+        name: "Furnished status",
         value: getTitle(cardDetail.furnished, "furnishing")
       },
       {
         id: 7,
-        name: "Parking Places",
+        name: "Parking places",
         value: `${cardDetail.bikeParking} bike/${cardDetail.carParking} car`
       },
       {
@@ -100,7 +100,7 @@ const PropertyDetail = ({ cardDetail }) => {
     right: [
       {
         id: 0,
-        name: "Property Age",
+        name: "Property age",
         value: getTitle(cardDetail.age, "age")
       },
       {
@@ -112,12 +112,12 @@ const PropertyDetail = ({ cardDetail }) => {
       {
         id: 2,
         name: "Built-In area",
-        value: `${cardDetail.superArea} sqft`,
+        value: `${cardDetail.superArea} sq.ft`,
 
       },
       {
         id: 3,
-        name: "Floor",
+        name: "Floor no",
         value: getTitle(cardDetail.floor, "floorno")
       },
       {
