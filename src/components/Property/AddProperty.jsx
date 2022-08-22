@@ -51,7 +51,7 @@ const initialState = {
 }
 
 const AddProperty = () => {
-    const [activeStep, setActiveStep] = useState(4)
+    const [activeStep, setActiveStep] = useState(0)
     const [imageArray, setImageArray] = useState([])
 
     const [isImageUploading, setIsImageUploading] = useState(false)

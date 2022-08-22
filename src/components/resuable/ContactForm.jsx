@@ -165,7 +165,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                     <TextField id="outlined-basic" label="Mesage(optional)" variant="outlined" multiline rows={4} fullWidth {...register("message")} />
                 </div>
                 <div className="agree">
-                    <Checkbox color="primary" checked={isValid ? true : false} onChange={(e) => setCheckBox(!checkBox)} />
+                    <Checkbox color="primary" checked={checkBox} onChange={(e) => setCheckBox(!checkBox)} />
                     <p>I agree to the <Link href={"/terms"}>Terms of use</Link> and <Link href={"/policy"}>Privacy Policy</Link>.</p>
                 </div>
                 <motion.button className="submit" whileTap={{ scale: 0.97 }} type="submit" style={{ background: isValid ? "#F25C05" : "#ff9e65" }}>
