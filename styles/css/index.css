@@ -4314,6 +4314,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .admin__content-user .content .item .lower p {
   margin-right: 1rem;

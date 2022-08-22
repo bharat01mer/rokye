@@ -91,6 +91,7 @@
           .lower{
             @include center__elem;
             justify-content: space-between;
+            flex-wrap: wrap;
             p {
               margin-right: 1rem;
               &:last-child {

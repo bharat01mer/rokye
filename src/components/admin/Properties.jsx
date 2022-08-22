@@ -45,7 +45,7 @@ const Properties = () => {
             <div className="divider" />
             <div className="search">
                 <div className="search__field">
-                    <TextField id="outlined-basic" label="Search" variant="standard" onChange={(e) => setSearch(e.target.value)} type={"search"} />
+                    <TextField id="outlined-basic" label="Search" variant="standard" onChange={(e) => setSearch(e.target.value.toLowerCase())} type={"search"} />
                 </div>
             </div>
             <div className="content">
