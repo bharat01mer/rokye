@@ -250,6 +250,10 @@
           // background:black ;
           @include box_shadow;
           
+
+        }
+        img{
+          width: 500px;
         }
       }
     }
@@ -277,6 +281,14 @@
           grid-template-columns: repeat(1, 1fr);
         }
       }
+      &__payment{
+        .img{
+    
+          img{
+            width: 100% !important;
+          }
+        }
+      }
     }
   }
 
@@ -285,6 +297,7 @@
   }
   @media screen and (max-width: 800px) {
     padding: 7rem 1rem;
+
   }
   @media screen and (max-width: 570px) {
     font-size: 0.9rem;

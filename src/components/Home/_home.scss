@@ -1,7 +1,7 @@
 .rokye__home {
 
   &-intro2{
-    margin-top: 2rem;
+    margin-top: 0;
     position: relative;
 
     .upper{
@@ -10,7 +10,7 @@
       position: absolute;
       left: 50%;
       /* right: 50%; */
-      top: 8rem;
+      top: 15rem;
       transform: translateX(-50%);
   
     }

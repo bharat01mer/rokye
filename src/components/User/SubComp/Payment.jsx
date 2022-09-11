@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+
 
 const Payment = () => {
     return (
@@ -9,7 +9,8 @@ const Payment = () => {
             </div>
             <div className="content">
                 <div className="img">
-                    <Image src={"/qrcode.jpeg"} width={300} height={300} objectFit={"contain"} />
+                    {/* <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1662876227/UPI_dcnvry.jpg"} width={300} height={300} objectFit={"contain"}  /> */}
+                    <img src="https://res.cloudinary.com/dburijwvn/image/upload/v1662876227/UPI_dcnvry.jpg" alt=""  />
                 </div>
             </div>
         </div>

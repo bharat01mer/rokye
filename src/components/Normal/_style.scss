@@ -1,5 +1,6 @@
 .rokye__plan {
   padding: 7rem;
+  margin-top: 3rem;
   .upper {
     @include center__elem;
     justify-content: space-between;
@@ -174,7 +175,7 @@
 
 .rokye__contact {
   padding: 7rem 10rem;
-
+  margin-top: 2rem;
   .upper {
     @include center__elem;
     justify-content: space-between;
@@ -611,6 +612,7 @@
 
 .rokye__about {
   padding: 7rem;
+  margin-top: 2rem;
 
   img {
     width: 100%;

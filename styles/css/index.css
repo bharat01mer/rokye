@@ -697,7 +697,7 @@ input::-webkit-inner-spin-button {
 }
 
 .rokye__home-intro2 {
-  margin-top: 2rem;
+  margin-top: 0;
   position: relative;
 }
 .rokye__home-intro2 .upper {
@@ -708,7 +708,7 @@ input::-webkit-inner-spin-button {
   position: absolute;
   left: 50%;
   /* right: 50%; */
-  top: 8rem;
+  top: 15rem;
   transform: translateX(-50%);
 }
 .rokye__home-intro2 .title {
@@ -1682,6 +1682,7 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 1650px) {
   .rokye__property {
     padding: 5rem 3rem;
+    padding-top: 9rem;
   }
   .rokye__property-grid {
     width: 70vw;
@@ -2094,6 +2095,7 @@ input::-webkit-inner-spin-button {
 
 .rokye__add-property {
   padding: 7rem;
+  margin-top: 2rem;
 }
 .rokye__add-property__title {
   display: flex;
@@ -2711,6 +2713,7 @@ input::-webkit-inner-spin-button {
 
 .rokye__plan {
   padding: 7rem;
+  margin-top: 3rem;
 }
 .rokye__plan .upper {
   display: flex;
@@ -2870,6 +2873,7 @@ input::-webkit-inner-spin-button {
 
 .rokye__contact {
   padding: 7rem 10rem;
+  margin-top: 2rem;
 }
 .rokye__contact .upper {
   display: flex;
@@ -3288,6 +3292,7 @@ input::-webkit-inner-spin-button {
 
 .rokye__about {
   padding: 7rem;
+  margin-top: 2rem;
 }
 .rokye__about img {
   width: 100%;
@@ -3595,6 +3600,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   padding: 7rem;
   align-items: flex-start;
+  margin-top: 2rem;
 }
 .rokye__review-profile {
   margin-right: 1rem;
@@ -4262,6 +4268,9 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
 }
+.rokye__user-dashboard__payment .content img {
+  width: 500px;
+}
 @media screen and (max-width: 1550px) {
   .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
     grid-template-columns: repeat(3, 1fr);
@@ -4275,6 +4284,9 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 800px) {
   .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .rokye__user-dashboard__payment .img img {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 1250px) {

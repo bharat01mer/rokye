@@ -87,23 +87,23 @@ const Navbar = () => {
       link: "properties"
     },
     {
-      name: "Plans",
+      name: "Our Plans",
       link: "plans"
     },
     {
       name: "Contact Us",
       link: "contact"
     },
-    {
-      name: "FAQ",
-      link: "faq"
-    },
   ]
-
+  
   const moreOpt = [
     {
       name: "About Us",
       link: "about"
+    },
+    {
+      name: "FAQ",
+      link: "faq"
     },
     // {
     //   name: "Blog",
@@ -163,50 +163,50 @@ const Navbar = () => {
         }
       </AnimatePresence>
 
-      {
-        winWidth > 1200 && (
-
-          <div className="rokye__navbar-desktop">
-            {
-              desktopLink.map((item) => (
-                <Link className='item' href={`/${item.link}`} key={item.link}>
-
-                  <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ y: -5, color: "#F25C05" }}>
-                    <h3>
-                      {item.name}
-                    </h3>
-                  </motion.div>
-                </Link>
-              ))
-            }
-            <div className="more">
-              <h3 onClick={() => setShowMoreOpt(item => !item)}>More <BiChevronDown size={25} /> </h3>
-
-              <AnimatePresence>
-
-                {
-                  showMoreOpt && (
-                    <motion.div className="more__content" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
-                      {
-                        moreOpt.map((item) => (
-
-                          <Link className='item' href={`/${item.link}`} key={item.link}>
-                            <motion.div className="more__link" whileTap={{x:5}}>
-                              <h3>{item.name}</h3>
-                            </motion.div>
-                          </Link>
-                        ))
-                      }
-                    </motion.div>
-                  )
-                }
-              </AnimatePresence>
-            </div>
-          </div>
-        )
-      }
 
       <div className='rokye__navbar-tab'>
+        {
+          winWidth > 1200 && (
+
+            <div className="rokye__navbar-desktop" style={{marginRight:"1rem"}}>
+              {
+                desktopLink.map((item) => (
+                  <Link className='item' href={`/${item.link}`} key={item.link}>
+
+                    <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ y: -5, color: "#F25C05" }}>
+                      <h3>
+                        {item.name}
+                      </h3>
+                    </motion.div>
+                  </Link>
+                ))
+              }
+              <div className="more">
+                <h3 onClick={() => setShowMoreOpt(item => !item)}>More <BiChevronDown size={25} /> </h3>
+
+                <AnimatePresence>
+
+                  {
+                    showMoreOpt && (
+                      <motion.div className="more__content" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
+                        {
+                          moreOpt.map((item) => (
+
+                            <Link className='item' href={`/${item.link}`} key={item.link}>
+                              <motion.div className="more__link" whileTap={{ x: 5 }}>
+                                <h3>{item.name}</h3>
+                              </motion.div>
+                            </Link>
+                          ))
+                        }
+                      </motion.div>
+                    )
+                  }
+                </AnimatePresence>
+              </div>
+            </div>
+          )
+        }
         {
           user && (
             <Link href={"/setting"} >
