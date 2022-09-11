@@ -108,7 +108,8 @@ const Card = ({ img, title, price, city, place, id, furnished, useFavorite = tru
           <div className="additional">
             <div className="additional__price">
               <Image src={"/rupee.png"} width={20} height={20} />
-              <p> <span>{milify(price)}</span>/month </p>
+              {/* <p> <span>{milify(price)}</span>/month </p> */}
+              <p><span>{price}</span></p>
             </div>
             <div className="additional__info">
               <p style={{ textTransform: "capitalize" }}>{furnished}</p>

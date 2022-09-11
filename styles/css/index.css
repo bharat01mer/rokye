@@ -81,6 +81,44 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   align-items: center;
 }
+.rokye__navbar-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__navbar-desktop .item:not(:last-child) {
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.rokye__navbar-desktop .item:not(:last-child).active {
+  color: #f25c05;
+  border-bottom: 2px solid #f25c05;
+}
+.rokye__navbar-desktop .more {
+  cursor: pointer;
+  position: relative;
+}
+.rokye__navbar-desktop .more h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rokye__navbar-desktop .more__content {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background: white;
+  width: 8rem;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+}
+.rokye__navbar-desktop .more__link h3 {
+  justify-content: flex-start;
+}
+.rokye__navbar-desktop .more__link:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
 .rokye__navbar-mobnav {
   width: 12rem;
   z-index: 2;
@@ -4211,6 +4249,19 @@ input::-webkit-inner-spin-button {
   grid-gap: 1rem;
   justify-items: center;
 }
+.rokye__user-dashboard__payment .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.rokye__user-dashboard__payment .content .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
+}
 @media screen and (max-width: 1550px) {
   .rokye__user-dashboard__listing .content, .rokye__user-dashboard__wishlist .content {
     grid-template-columns: repeat(3, 1fr);
@@ -4618,4 +4669,73 @@ input::-webkit-inner-spin-button {
   .admin__content .title h1 {
     font-size: 2rem;
   }
+}
+
+.rokye__blog {
+  padding: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rokye__blog-title h1 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__blog-title .line {
+  width: 100%;
+  background: #f25c05 !important;
+  height: 0.16rem;
+  border-radius: 1rem;
+}
+.rokye__blog-content {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  width: 100%;
+}
+.rokye__blog-content .card {
+  border-radius: 5px;
+  cursor: pointer;
+  width: 23rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+}
+.rokye__blog-content .card img {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.rokye__blog-content .card__detail {
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+.rokye__blog-content .card__detail .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+.rokye__blog-content .card__detail .upper .date {
+  color: #f25c05;
+}
+.rokye__blog-content .card__detail .upper .divider {
+  height: 1rem;
+  width: 0.1rem;
+  border-radius: 4px;
+  background-color: #035941 !important;
+  margin: 0 0.5rem;
+}
+.rokye__blog-content .card__detail h2 {
+  font-family: "lora", sans-serif;
+  font-weight: bolder;
+  color: #114040;
+}
+.rokye__blog-content .card__detail .content {
+  margin-top: 0.5rem;
+}
+.rokye__blog-content .card__detail .content .more {
+  margin-top: 0.5rem;
+  color: gray;
 }/*# sourceMappingURL=index.css.map */

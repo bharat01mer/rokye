@@ -3,20 +3,24 @@ import { BsViewList } from "react-icons/bs"
 import { FaUserCircle } from "react-icons/fa"
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai"
 import { useState } from "react"
-import Perosnal from "./SubComp/Perosnal"
-import Listing from "./SubComp/Listing"
-import WishList from "./SubComp/WishList"
 import { useDispatch } from "react-redux"
 import { FaEdit } from "react-icons/fa"
 import { useEffect } from "react"
 import { motion } from "framer-motion"
-import { logout } from "../../../redux/slices/util"
 import { useRouter } from "next/router"
-import Edit from "./SubComp/Edit"
-import { useUpdateUserDataMutation } from "../../../redux/slices/user"
+import {MdPayment} from "react-icons/md"
 import {ToastContainer,toast} from "react-toast"
 import { updateUserData } from "../../../redux/slices/util"
 import axios from "axios"
+
+
+import { logout } from "../../../redux/slices/util"
+import Edit from "./SubComp/Edit"
+import { useUpdateUserDataMutation } from "../../../redux/slices/user"
+import Perosnal from "./SubComp/Perosnal"
+import Listing from "./SubComp/Listing"
+import WishList from "./SubComp/WishList"
+import Payment from "./SubComp/Payment"
 
 const tabItem = [
     {
@@ -33,6 +37,11 @@ const tabItem = [
         id: 2,
         title: "Wishlist",
         icon: <AiOutlineHeart />
+    },
+    {
+        id: 3,
+        title: "Payment",
+        icon: <MdPayment />
     },
 ]
 
@@ -55,6 +64,8 @@ const User = ({ user }) => {
                 return <Listing id={userData._id} />
             case 2:
                 return <WishList list={user?.data?.favoriteProp} id={userData._id} />
+            case 3:
+                return <Payment />
             default:
                 return <Perosnal />
         }

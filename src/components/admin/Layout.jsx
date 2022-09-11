@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import { AiOutlineMenu } from "react-icons/ai"
 import { FaTimes } from "react-icons/fa"
+import Head from 'next/head'
 
 const barItem = [
     {
@@ -29,22 +30,27 @@ const barItem = [
     },
     {
         id: 4,
+        name: "Blog",
+        link: "blog"
+    },
+    {
+        id: 5,
         name: "Create",
         link: "add"
     },
 ]
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
     const router = useRouter()
     const [showMenu, setShowMenu] = useState(false)
     const query = router.pathname.slice(7)
     const [winWidth, setWinWidth] = useState(0)
 
     const { user } = useSelector(state => state.util)
-    
+
     const isAdmin = user?.data?.type === "admin" || user?.data?.type === "subadmin";
-    
-    const isSuperAdmin=user?.data.email==="jignesg190@gmail.com" || user?.data.email==="info@rokye.com"
-    
+
+    const isSuperAdmin = user?.data.email === "jignesg190@gmail.com" || user?.data.email === "info@rokye.com"
+
     useEffect(() => {
         setWinWidth(window.innerWidth)
         if (!isAdmin) {
@@ -55,6 +61,9 @@ const Layout = ({ children }) => {
 
     return isAdmin && (
         <>
+            <Head>
+                <title>{title ? `${title} - Admin` : 'Admin'}</title>
+            </Head>
             <div className="admin__sidebar">
                 <div className="title">
                     <h1>Admin Dashboard</h1>
@@ -64,15 +73,15 @@ const Layout = ({ children }) => {
 
                         <div className="content">
                             {
-                                barItem.map((item) => item.id!==4 ?  (
+                                barItem.map((item) => item.id !== 4 ? (
                                     <Link passHref href={`/admin/${item.link}`} key={item.name} >
-                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{cursor:"pointer"}}>
+                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{ cursor: "pointer" }}>
                                             <h3>{item.name}</h3>
                                         </div>
                                     </Link>
-                                ): isSuperAdmin && (
+                                ) : isSuperAdmin && (
                                     <Link passHref href={`/admin/${item.link}`} key={item.name} >
-                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{cursor:"pointer"}}>
+                                        <div className={`item ${item.link === query ? "active" : ""}`} style={{ cursor: "pointer" }}>
                                             <h3>{item.name}</h3>
                                         </div>
                                     </Link>

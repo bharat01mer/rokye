@@ -79,8 +79,8 @@ export const optionData = {
     },
     {
       id: 3,
-      title: "Duplex",
-      value: "duplex",
+      title: "Builder floor",
+      value: "builderfloor",
     },
   ],
 };
@@ -89,154 +89,154 @@ export const budgetData = {
   min: [
     {
       id: 0,
-      price: "5K",
+      price: "5000",
       data: 5000,
     },
     {
       id: 1,
-      price: "10k",
+      price: "10000",
       data: 10000,
     },
     {
       id: 2,
-      price: "15k",
+      price: "15000",
       data: 15000,
     },
     {
       id: 3,
-      price: "20k",
+      price: "20000",
       data: 20000,
     },
     {
       id: 4,
-      price: "25k",
+      price: "25000",
       data: 25000,
     },
     {
       id: 5,
-      price: "30k",
+      price: "30000",
       data: 30000,
     },
     {
       id: 6,
-      price: "35k",
+      price: "35000",
       data: 35000,
     },
     {
       id: 7,
-      price: "40k",
+      price: "40000",
       data: 40000,
     },
     {
       id: 8,
-      price: "45k",
+      price: "45000",
       data: 45000,
     },
     {
       id: 9,
-      price: "50k",
+      price: "50000",
       data: 50000,
     },
     {
       id: 10,
-      price: "60k",
+      price: "60000",
       data: 60000,
     },
     {
       id: 11,
-      price: "70k",
+      price: "70000",
       data: 70000,
     },
     {
       id:12,
-      price: "80k",
+      price: "80000",
       data:80000,
     },
     {
       id:13,
-      price: "90k",
+      price: "90000",
       data:90000,
     },
     {
       id:14,
-      price: "1Lac",
+      price: "100000",
       data:100000,
     } 
   ],
   max: [
     {
       id: 0,
-      price: "10k",
+      price: "10000",
       data: 10000,
     },
     {
       id: 1,
-      price: "15k",
+      price: "15000",
       data: 15000,
     },
     {
       id: 2,
-      price: "20k",
+      price: "20000",
       data: 20000,
     },
     {
       id: 3,
-      price: "25k",
+      price: "25000",
       data: 25000,
     },
     {
       id: 4,
-      price: "30k",
+      price: "30000",
       data: 30000,
     },
     {
       id: 5,
-      price: "35k",
+      price: "35000",
       data: 35000,
     },
     {
       id: 6,
-      price: "40k",
+      price: "40000",
       data: 40000,
     },
     {
       id: 7,
-      price: "45k",
+      price: "45000",
       data: 45000,
     },
     {
       id: 8,
-      price: "50k",
+      price: "50000",
       data: 50000,
     },
     {
       id: 9,
-      price: "60k",
+      price: "60000",
       data: 60000,
     },
     {
       id:10,
-      price: "70k",
+      price: "70000",
       data:70000,
     },
     {
       id:11,
-      price: "80k",
+      price: "80000",
       data:80000,
     },
     {
       id:12,
-      price: "90k",
+      price: "90000",
       data:90000,
     },
     {
       id:13,
-      price: "1lac",
+      price: "100000",
       data:100000,
     },
     {
       id:14,
-      price: "1lac+",
+      price: "100000+",
       data:200000,
     },
 
@@ -595,8 +595,8 @@ export const propertyDataNew = {
     },
     {
       id: 3,
-      title: "Duplex",
-      value: "duplex",
+      title: "Builder floor",
+      value: "builderfloor",
     },
   ],
   bedRoom: [
@@ -721,8 +721,33 @@ export const propertyDataNew = {
     },
     {
       id: 6,
-      title: "5+",
-      value: "5+",
+      title: "6",
+      value: "6",
+    },
+    {
+      id: 7,
+      title: "7",
+      value: "7",
+    },
+    {
+      id: 8,
+      title: "8",
+      value: "8",
+    },
+    {
+      id: 9,
+      title: "9",
+      value: "9",
+    },
+    {
+      id: 10,
+      title: "10",
+      value: "10",
+    },
+    {
+      id: 11,
+      title: "10+",
+      value: "10+",
     },
   ],
 
@@ -779,8 +804,33 @@ export const propertyDataNew = {
     },
     {
       id: 10,
-      title: "10+",
-      value: "10+",
+      title: "11",
+      value: "11",
+    },
+    {
+      id: 11,
+      title: "12",
+      value: "12",
+    },
+    {
+      id: 12,
+      title: "13",
+      value: "13",
+    },
+    {
+      id: 13,
+      title: "14",
+      value: "14",
+    },
+    {
+      id: 14,
+      title: "15",
+      value: "15",
+    },
+    {
+      id: 15,
+      title: "15+",
+      value: "15+",
     },
   ],
 
@@ -853,7 +903,7 @@ export const propertyDataNew = {
   furnishing: [
     {
       id: 0,
-      title: "Furnished",
+      title: "Fully-Furnished",
       value: "furnished",
     },
     {
@@ -990,7 +1040,7 @@ export const propertyDataNew = {
     },
     {
       id: 7,
-      title: "Landscape garden",
+      title: "Garden",
       value: "garden",
     },
     {
@@ -1052,12 +1102,7 @@ export const propertyDataNew = {
       id: 19,
       title: "Shopping center",
       value: "shopingcenter",
-    },
-    {
-      id: 20,
-      title: "Park",
-      value: "park",
-    },
+    }
   ],
 
   perInfo: [

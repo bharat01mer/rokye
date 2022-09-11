@@ -29,17 +29,7 @@ const Location = () => {
             id: 3,
             label: "City",
             name: "city"
-        },
-        {
-            id: 4,
-            label: "State",
-            name: "state"
-        },
-        {
-            id: 5,
-            label: "PIN code",
-            name: "pinCode"
-        },
+        }
     ]
     const { register, formState: { errors } } = useFormContext()
 
@@ -91,7 +81,7 @@ const Location = () => {
         },
         {
             id: 3,
-            title: "Transportation hubs",
+            title: "Transportation",
             name: "nearby.transport"
         },
         {
@@ -101,7 +91,7 @@ const Location = () => {
         },
         {
             id: 5,
-            title: "Commercial hubs",
+            title: "Offices",
             name: "nearby.commercial"
         },
     ]

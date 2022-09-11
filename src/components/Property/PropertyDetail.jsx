@@ -304,10 +304,10 @@ const PropertyDetail = ({ cardDetail }) => {
                     <p>{item.name}</p>
                     {
                       item?.price ? item.id === 2 ? (
-                        <p> <BiRupee /> {millify(item.value)} {getTitle(cardDetail.rentDetail.per,"perInfo")}</p>
+                        <p> <BiRupee /> {item.value} {getTitle(cardDetail.rentDetail.per,"perInfo")}</p>
 
                       ) : (
-                        <p> <BiRupee /> {millify(item.value)}</p>
+                        <p> <BiRupee /> {item.value}</p>
 
                       ) : (
                         <p style={{ textTransform: "capitalize" }}>{item.value}</p>

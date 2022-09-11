@@ -9,14 +9,15 @@ import storage from "redux-persist/lib/storage"
 import {persistReducer,persistStore} from "redux-persist";
 import thunk from "redux-thunk"
 import { contactApi } from "./slices/contact";
-
+import {blogApi} from './slices/blog'
 
 export const rootReducer=combineReducers({
     util: utilSlice.reducer,
     [userApi.reducerPath]:userApi.reducer,
     [propertyApi.reducerPath]: propertyApi.reducer,
     [reviewApi.reducerPath]: reviewApi.reducer,
-    [contactApi.reducerPath]: contactApi.reducer
+    [contactApi.reducerPath]: contactApi.reducer,
+    [blogApi.reducerPath]: blogApi.reducer
 
 })
 const persistConfig={

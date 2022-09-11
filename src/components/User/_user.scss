@@ -239,6 +239,20 @@
         justify-items: center;
       }
     }
+    &__payment{
+      .content{
+        @include center__elem;
+        margin-top: 3rem;
+
+        .img{
+          @include center__elem;
+          padding: 1rem;
+          // background:black ;
+          @include box_shadow;
+          
+        }
+      }
+    }
 
     @media screen and (max-width: 1550px) {
       &__listing,

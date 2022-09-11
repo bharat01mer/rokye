@@ -24,6 +24,49 @@
       @include center__elem;
     }
 
+    &-desktop{
+      @include center__elem;
+
+      .item:not(:last-child){
+        margin-right: 2rem;
+        cursor: pointer;
+        
+        &.active {
+          color: $color5;
+          border-bottom: 2px solid $color5;
+        }
+      }
+      .more{
+        cursor: pointer;
+        h3{
+          @include center__elem;
+
+        }
+        position: relative;
+
+        &__content{
+          position: absolute;
+          top: 2rem;
+          left: 0;
+          background: white;
+          width: 8rem;
+          border-radius: 4px;
+          padding: 1rem;
+          @include card_shadow;
+        }
+        &__link{
+          
+          h3{
+           justify-content: flex-start;
+          }
+
+          &:not(:last-child){
+            margin-bottom: .5rem;
+          }
+        }
+
+      }
+    }
     &-mobnav {
       width: 12rem;
       z-index: 2;

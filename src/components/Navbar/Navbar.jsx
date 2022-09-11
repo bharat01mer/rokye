@@ -8,6 +8,7 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { BiUserCircle } from "react-icons/bi"
 import { useSelector, useDispatch } from 'react-redux'
 import Image from "next/image"
+import { BiChevronDown } from "react-icons/bi"
 import { setwinWidth, logout } from '../../../redux/slices/util'
 
 const Navbar = () => {
@@ -15,6 +16,7 @@ const Navbar = () => {
   const headerRef = useRef()
   const state = useSelector((state) => state.util)
   const { winWidth, user } = state
+  const [showMoreOpt, setShowMoreOpt] = useState(false)
 
   const [showMobileNav, setShowMobileNav] = useState(false)
 
@@ -46,6 +48,10 @@ const Navbar = () => {
       link: "reviews",
     },
     {
+      name: "Blog",
+      link: "blog",
+    },
+    {
       name: "FAQ",
       link: "faq",
     },
@@ -71,6 +77,44 @@ const Navbar = () => {
     })
   }, [showMobileNav, state, dispatch])
 
+  const desktopLink = [
+    {
+      name: "Home",
+      link: ""
+    },
+    {
+      name: "Properties",
+      link: "properties"
+    },
+    {
+      name: "Plans",
+      link: "plans"
+    },
+    {
+      name: "Contact Us",
+      link: "contact"
+    },
+    {
+      name: "FAQ",
+      link: "faq"
+    },
+  ]
+
+  const moreOpt = [
+    {
+      name: "About Us",
+      link: "about"
+    },
+    // {
+    //   name: "Blog",
+    //   link: "blog"
+    // },
+    {
+      name: "Reviews",
+      link: "reviews"
+    },
+  ]
+
 
   return (
     <div className="rokye__navbar" ref={headerRef}>
@@ -83,17 +127,17 @@ const Navbar = () => {
         {
           showMobileNav && (
             <motion.div className="rokye__navbar-mobnav" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
-              {navLinks.map((item,index) => (
+              {navLinks.map((item, index) => (
                 <Link className='item' href={`/${item.link}`} key={item.link}>
                   <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ x: 5, color: "#F25C05" }}>
                     <h3>{item.name}</h3>
                     {
-                      winWidth>650 ? 
-                      index!==0 && index!==6 && (
-                        <div className="divider" />
-                        ): index!==6 && (
+                      winWidth > 650 ?
+                        index !== 0 && index !== 7 && (
                           <div className="divider" />
-                      )
+                        ) : index !== 7 && (
+                          <div className="divider" />
+                        )
                     }
                   </motion.div>
                 </Link>
@@ -118,10 +162,51 @@ const Navbar = () => {
           )
         }
       </AnimatePresence>
+
+      {
+        winWidth > 1200 && (
+
+          <div className="rokye__navbar-desktop">
+            {
+              desktopLink.map((item) => (
+                <Link className='item' href={`/${item.link}`} key={item.link}>
+
+                  <motion.div className={`item ${isActivePage(item) ? "active" : ""} `} whileTap={{ y: -5, color: "#F25C05" }}>
+                    <h3>
+                      {item.name}
+                    </h3>
+                  </motion.div>
+                </Link>
+              ))
+            }
+            <div className="more">
+              <h3 onClick={() => setShowMoreOpt(item => !item)}>More <BiChevronDown size={25} /> </h3>
+
+              <AnimatePresence>
+
+                {
+                  showMoreOpt && (
+                    <motion.div className="more__content" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: "spring", duration: 0.5 }} exit={{ scale: 0, opacity: 0 }}>
+                      {
+                        moreOpt.map((item) => (
+
+                          <Link className='item' href={`/${item.link}`} key={item.link}>
+                            <motion.div className="more__link" whileTap={{x:5}}>
+                              <h3>{item.name}</h3>
+                            </motion.div>
+                          </Link>
+                        ))
+                      }
+                    </motion.div>
+                  )
+                }
+              </AnimatePresence>
+            </div>
+          </div>
+        )
+      }
+
       <div className='rokye__navbar-tab'>
-        <Link href={"/"} passHref >
-          <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/" ? "active" : ""} style={{ marginRight: "2rem" }}>Home</motion.h3>
-        </Link>
         {
           user && (
             <Link href={"/setting"} >
@@ -139,17 +224,20 @@ const Navbar = () => {
 
 
         <Link href={"/properties/create"} passHref>
-          <motion.div className="sell" whileTap={{ scale: 0.97 }} style={{cursor:"pointer"}}>
+          <motion.div className="sell" whileTap={{ scale: 0.97 }} style={{ cursor: "pointer" }}>
             <AiOutlinePlus size={25} color={"#fff "} />
             <h3 >Add Property</h3>
           </motion.div>
         </Link>
         {
-          showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
-            <>
-              <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
-            </>
+          winWidth < 1200 && (
+            showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
+              <>
+                <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
+              </>
+            )
           )
+
         }
       </div>
 

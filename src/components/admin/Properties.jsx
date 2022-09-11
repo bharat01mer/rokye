@@ -63,7 +63,8 @@ const Properties = () => {
                                     <div className="detail__info">
                                         <div className="upper">
                                             <a href={`/properties/${item._id}`} target="__blank" rel="noreferrer">
-                                                <h3>{`${item.bedroom} BHK ${item.propType[0].toUpperCase()}${item.propType.slice(1)} ${item.superArea} sqft`} <FiExternalLink color={"blue"} /> </h3>
+                                                
+                                                <h3>{`${item.flatNo} in ${item.society}`} <FiExternalLink color={"blue"} /></h3>
                                             </a>
                                         </div>
                                         <div className="lower">
