@@ -10,7 +10,6 @@ const Message=dynamic(()=>import("./subComp/Message"))
 
 const Review=dynamic(()=>import("./subComp/Review"),{ssr:false})
 
-import Intro from "./subComp/Intro"
 import Recently from "./subComp/Recently"
 import Intro2 from './subComp/Intro2'
 
@@ -20,14 +19,8 @@ const Home = () => {
   return (
     <div className='rokye__home'>
       <ScrollTo />
-      {
-        winWidth< 1280 ? (
-          <Intro winWidth={winWidth} /> 
-
-        ): (
+      
           <Intro2 />
-        )
-      }
       <Recently  />
       <Choose />
       <Review />

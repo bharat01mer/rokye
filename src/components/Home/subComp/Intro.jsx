@@ -10,7 +10,6 @@ const Intro = ({winWidth}) => {
             <div className="rokye__home-intro__detail">
                 <div className="title">
                     <h1>Rent your next dream home with {winWidth >650  && <br /> }us without paying any brokerage </h1>
-                    
                 </div>
                 <div className="detail">
                     <h2 style={{fontSize:"1.4rem"}}>Zero hassle, Everything’s instant, Loved by everyone.</h2>

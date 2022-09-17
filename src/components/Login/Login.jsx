@@ -20,15 +20,15 @@ import { Checkbox } from "@mui/material"
 const checkPoints = [
     {
         id: 0,
-        title: "No Brokerage"
+        title: "Post Free Property Ads"
     },
     {
         id: 1,
-        title: "No Advance Payment"
+        title: "Get quick response"
     },
     {
         id: 2,
-        title: "All listings physically verified"
+        title: "Hassle free process"
     },
 ]
 const optionItem = [
@@ -64,7 +64,12 @@ const Login = ({ isSignUp }) => {
                 localStorage.setItem("user", JSON.stringify(res))
                 toast.success("Signup Successfull")
                 dispatch(userData(res))
-                router.push("/")
+                
+                if (router.query?.redirect) {
+                    router.push(`/${router.query?.redirect}`)
+                } else {
+                    router.push("/")
+                }
             }).catch((err) => {
                 console.log({ err })
                 toast.error(err?.data ? err?.data?.message : "Error Occurred")

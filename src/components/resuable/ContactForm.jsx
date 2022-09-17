@@ -94,7 +94,7 @@ const ContactForm = ({ showCancel, setShowModal, referral = false }) => {
                     )
                 }
                 <div className="title">
-                    <h2>Rokye <span>Realty</span></h2>
+                    <h2>Fill details</h2>
                     <div className="social">
                         {
                             socialLinks.map((item) => (

@@ -95,7 +95,7 @@ const Navbar = () => {
       link: "contact"
     },
   ]
-  
+
   const moreOpt = [
     {
       name: "About Us",
@@ -105,10 +105,10 @@ const Navbar = () => {
       name: "FAQ",
       link: "faq"
     },
-    // {
-    //   name: "Blog",
-    //   link: "blog"
-    // },
+    {
+      name: "Blog",
+      link: "blog"
+    },
     {
       name: "Reviews",
       link: "reviews"
@@ -168,7 +168,7 @@ const Navbar = () => {
         {
           winWidth > 1200 && (
 
-            <div className="rokye__navbar-desktop" style={{marginRight:"1rem"}}>
+            <div className="rokye__navbar-desktop" style={{ marginRight: "1rem" }}>
               {
                 desktopLink.map((item) => (
                   <Link className='item' href={`/${item.link}`} key={item.link}>
@@ -217,7 +217,9 @@ const Navbar = () => {
         {
           !user && (
             <Link href={"/login"} >
-              <motion.h3 whileHover={{ y: -5, color: "#F25C05" }} className={router.pathname === "/login" ? "active" : ""} >Login</motion.h3>
+              <div className="login">
+                <h3 >Login</h3>
+              </div>
             </Link>
           )
         }

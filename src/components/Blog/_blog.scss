@@ -1,70 +1,117 @@
-.rokye__blog{
-    padding: 7rem;
-    @include center__elem;
-    flex-direction: column;
-    &-title{
-        
-        h1{
-            @include heading_font;
-            color: $color1;
-        }
-        .line{
-            width:  100%;
-            background: $color5 !important;
-            height: .16rem;
-            border-radius: 1rem;
-        }
+.rokye__blog {
+  padding: 7rem 5rem;
+  @include center__elem;
+  flex-direction: column;
+  &-title {
+    h1 {
+      @include heading_font;
+      color: $color1;
     }
-    &-content{
-        margin-top: 4rem;
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: 2rem;
+    .line {
+      width: 100%;
+      background: $color5 !important;
+      height: 0.16rem;
+      border-radius: 1rem;
+    }
+  }
+  &-content {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    grid-gap: 5rem;
+    .card {
+      border-radius: 5px;
+      cursor: pointer;
+
+      img {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+      width: 23rem;
+      @include card_shadow;
+
+      &__detail {
+        padding: 1rem;
+        padding-top: 0.5rem;
+        .upper {
+          @include center__elem;
+          justify-content: flex-start;
+          .date {
+            color: $color5;
+          }
+          .divider {
+            height: 1rem;
+            width: 0.1rem;
+            border-radius: 4px;
+            background-color: $color2 !important;
+            margin: 0 0.5rem;
+          }
+          margin-bottom: 0.5rem;
+        }
+        h2 {
+          @include heading_font;
+          color: $color1;
+        }
+        .content {
+          margin-top: 0.5rem;
+          .more {
+            margin-top: 0.5rem;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+
+  &-detail{
+    margin-top: 3rem;
+    padding: 5rem;
+    img{
         width: 100%;
-        .card{
-            border-radius: 5px;
-            cursor: pointer;
-            
-            img{
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
+    }
+    .detail{
+        @include center__elem;
+        justify-content: flex-start;
+
+        .item{
+            @include center__elem;
+
+            svg{
+               margin-right: .5rem; 
             }
-            width: 23rem;
-            @include card_shadow;
+            margin-right: 1rem;
+        }
+        &__genre{
+            padding: .2rem 1rem;
+            background: $color5;
+            color: white;
+            border-radius: 4px;
 
-
-            &__detail{
-                padding:  1rem;
-                padding-top: .5rem;
-                .upper{
-                    @include center__elem;
-                    justify-content: flex-start;
-                    .date{
-                        color: $color5;
-
-                    }
-                    .divider{
-                        height: 1rem;
-                        width: .1rem;
-                        border-radius: 4px;
-                        background-color: $color2 !important;
-                        margin: 0 .5rem;
-                    }
-                    margin-bottom: .5rem;
-                }
-                h2{
-                    @include heading_font;
-                    color: $color1;
-                }
-                .content{
-                    margin-top: .5rem;
-                    .more{
-                        
-                        margin-top: .5rem;
-                        color: gray;
-                    }
-                }
-            }
         }
     }
+    .content{
+        margin-top: 5rem;
+
+        p{
+            word-break: break-word;
+        }
+    }
+  }
+
+  @media screen and (max-width:1250px) {
+    padding: 7rem 3rem;
+
+    &-detail{
+        padding: 5rem 2rem;
+    }
+}
+@media screen and (max-width:500px) {
+    padding: 7rem 1rem;
+    &-detail{
+        padding: 5rem 1rem;
+    }
+  }
 }

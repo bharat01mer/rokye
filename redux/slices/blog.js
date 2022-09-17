@@ -27,11 +27,16 @@ export const blogApi=createApi({
             })
         }),
         getALLBlog: builder.query({
-            query:"/"
+            query:()=>"/"
         }),
+        getBlogById: builder.query({
+            query:(id)=>({
+                url:`/${id}`
+            })
+        })
         
     })
 })
 
 
-export const {useCreateBlogMutation,useGetALLBlogQuery}=blogApi
+export const {useCreateBlogMutation,useGetALLBlogQuery,useGetBlogByIdQuery}=blogApi

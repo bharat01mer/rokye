@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from "next/link"
-import Image from 'next/image'
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
 import { motion } from 'framer-motion'
@@ -11,13 +10,13 @@ const Footer = () => {
   const rentalLinks = [
     {
       id: 0,
-      name: "Our Plans",
-      link: "plans"
+      name: "Properties",
+      link: "properties",
     },
     {
       id: 1,
-      name: "Properties",
-      link: "properties",
+      name: "Our Plans",
+      link: "plans"
     },
     {
       id: 2,
@@ -118,6 +117,10 @@ const Footer = () => {
         <div className="dot" />
         <Link href={"/policy"}>
           <p>Privacy Policy</p>
+        </Link>
+        <div className="dot" />
+        <Link href={"/blog"}>
+          <p>Blog</p>
         </Link>
       </div>
     </footer>

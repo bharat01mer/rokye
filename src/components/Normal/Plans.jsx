@@ -41,7 +41,7 @@ const Plans = () => {
                         </div>
                         <div className="content">
                             <div className="content__owner">
-                                <Image src={"/landlord.png"} width={130} height={130} objectFit="cover" />
+                                {/* <Image src={"/landlord.png"} width={130} height={130} objectFit="cover" /> */}
                                 <div className="detail">
                                     <div className="detail__title">
                                         <h1>Owner Plans</h1>
@@ -63,7 +63,7 @@ const Plans = () => {
                                 </div>
                             </div>
                             <div className="content__tenant">
-                                <Image src={"/tenant.png"} width={130} height={130} objectFit="cover" />
+                                {/* <Image src={"/tenant.png"} width={130} height={130} objectFit="cover" /> */}
                                 <div className="detail">
                                     <div className="detail__title">
                                         <h1>Tenant Plans</h1>

@@ -67,10 +67,30 @@
 
       }
     }
+    .login{
+      margin-left: 2rem;
+      padding: .5rem 1rem;
+      background: white;
+      border: 1px solid $color5;
+      border-radius: 3px;
+
+      h3{
+        color: $color5;
+
+      }
+
+    }
+
+    @media screen and (max-width:1000px) {
+      .login{
+        display: none;
+      }
+    }
     &-mobnav {
       width: 12rem;
       z-index: 2;
       padding: 1rem;
+      
       position: absolute;
       text-align: end;
       right: 2rem;
@@ -142,6 +162,7 @@
         padding: 0.6rem 1rem;
         border-radius: 4px;
         margin: 0 3rem;
+        margin-right: 0;
         h3 {
           margin-left: 0.4rem;
           color: white;
@@ -656,4 +677,51 @@
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
+}
+
+
+.rokye__warning{
+  @include center__elem;
+
+      position: fixed;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    
+    flex-direction: column;
+    top: 0;
+    z-index: 12;
+    left: 0;
+
+  &-modal{
+    @include card_shadow;
+    padding: 2rem;
+    border-radius: 5px;
+    @include center__elem;
+    background: white;
+    flex-direction: column;
+
+    .register{
+      margin: 1rem 0 0;
+      @include center__elem;
+      padding: .5rem 1rem;
+      background: $color5;
+      color: white;
+      cursor: pointer;
+
+      width: 100%;
+    }
+    p{
+      width: 100%;
+      text-align: end;
+
+      span{
+        color: $color5;
+        cursor: pointer;
+      }
+    }
+
+  }
+
 }

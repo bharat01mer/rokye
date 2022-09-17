@@ -346,7 +346,26 @@
         border-radius: 4px;
       }
     }
+
+    &-blog{
+      .add{
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        background: $color5;
+        color: white;
+      }
+
+      .content{
+        &__item{
+          
+        }
+      }
+      
+    }
+
   }
+
 
   @media screen and (max-width: 600px) {
     font-size: 0.9rem;

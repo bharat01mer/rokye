@@ -8,8 +8,8 @@ const Intro2 = () => {
     <div className="rokye__home-intro2">
         <div className="upper">
         <div className="title">
-                    <h1>Rent your next dream home with</h1>
-                    <h1>us without paying any brokerage</h1>
+                    <h1>Welcome to! </h1>
+                    <h1>No Brokerage Property Site</h1>
                 </div>
                 <div className="detail">
                     <h3 >Zero hassle, Everything’s instant, Loved by everyone.</h3>
@@ -25,7 +25,8 @@ const Intro2 = () => {
                 </Link>
         </div>
         <div className="lower">
-            <img src="https://res.cloudinary.com/dburijwvn/image/upload/v1661176293/Home_gxrsqc.png" alt="" width={"100%"} />
+            {/* <img src="https://res.cloudinary.com/dburijwvn/image/upload/v1661176293/Home_gxrsqc.png" alt="" width={"100%"} /> */}
+            <div className="lower__div"></div>
         </div>
     </div>
   )
