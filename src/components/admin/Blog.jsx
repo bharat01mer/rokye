@@ -30,7 +30,7 @@ const Blog = () => {
       <div className="content">
         {
           data?.data.map((item,index) => (
-            <div className="content__item">
+            <div className="content__item" key={item._id}>
               {console.log(item.img)}
               <div className="left">
                 <div className="left__no">

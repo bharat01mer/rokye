@@ -14,7 +14,7 @@ const Blog = ({ data }) => {
 
                 {
                     data?.data?.map((item) => (
-                        <Link href={`/blog/${item._id}`} >
+                        <Link href={`/blog/${item._id}`}  key={item._id}>
                             <div className="card" key={item._id}>
                                 <Image src={item?.img} width={400} height={200} objectFit="cover" />
                                 <div className="card__detail">

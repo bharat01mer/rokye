@@ -13,7 +13,7 @@ const Warning = () => {
                         <h3>Login</h3>
                     </motion.div>
                 </Link>
-                <p>Don't have account,  <Link href={"/signup?redirect=properties/create"}><span>Register</span></Link></p>
+                <p>Don&apos;t have account,  <Link href={"/signup?redirect=properties/create"}><span>Register</span></Link></p>
             </div>
         </div>
     )
