@@ -10,7 +10,7 @@ const BlogDetail = ({data}) => {
     
     return (
         <Layout title={data?.data?.title} description={data?.data?.content}>
-            <Blog data={data?.data} author={data?.author} />
+            <Blog data={data?.data}  />
         </Layout>
     )
 }

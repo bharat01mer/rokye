@@ -2,22 +2,34 @@ import { TextField } from "@mui/material"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useDispatch } from "react-redux"
-import { useGetALLBlogQuery } from "../../../redux/slices/blog"
+import { useDeleteBlogMutation, useGetALLBlogQuery } from "../../../redux/slices/blog"
 import { MdDelete } from "react-icons/md"
 import Image from "next/image"
+import { ToastContainer,toast } from "react-toast"
+
+import BlogModal from "./BlogModal"
 
 const Blog = () => {
   const [search, setSearch] = useState("")
-  const { data } = useGetALLBlogQuery()
+  const { data,refetch } = useGetALLBlogQuery()
+  
+  const [deleteBlog]=useDeleteBlogMutation()
 
-  if(true){
-    return null
+  const [showModal, setShowModal] = useState(false)
+
+  const deleteBlogHandler=(id)=>{
+    deleteBlog(id) 
+    toast.success("Blog Deleted")
+    refetch()
   }
+
+  const filterData= search ?( data?.data?.filter((item)=>item.title.toLowerCase().includes(search)) || data?.data?.filter((item)=>item.author.name.toLowerCase().includes(search))  ) : data?.data
   return (
     <div className="admin__content-blog">
+      <ToastContainer delay={2000} position="top-right" />
       <div className="title">
         <h1>All Blog List</h1>
-        <motion.div className="add" whileTap={{ scale: .97 }}>
+        <motion.div className="add" whileTap={{ scale: .97 }} onClick={()=>setShowModal(true)}>
           <h3>Create Blog</h3>
         </motion.div>
       </div>
@@ -29,24 +41,39 @@ const Blog = () => {
       </div>
       <div className="content">
         {
-          data?.data.map((item,index) => (
+          filterData?.map((item, index) => (
             <div className="content__item" key={item._id}>
-              {console.log(item.img)}
+
               <div className="left">
                 <div className="left__no">
-                  <p>{index+1}</p>
+                  <p>{index + 1}</p>
                 </div>
                 <div className="left__img">
-                  <Image src={item.img} width={200} height={100} objectFit="cover" />
+                  <Image src={item.img} width={150} height={75} objectFit="cover" />
+                </div>
+                <div className="left__detail">
+                  <h2>{item.title}</h2>
+                  <div className="date">
+                    <p>{item.author?.name ? item.author?.name : "Jhon Doe"}</p>
+                    <p>{item?.date?.slice(0, 10)}</p>
+                  </div>
                 </div>
               </div>
               <div className="right">
-
+                <div className="right__delete" onClick={()=>deleteBlogHandler(item._id)} style={{cursor:"pointer"}}>
+                  <MdDelete size={30} color="red" />
+                </div>
               </div>
-            </div>   
+            </div>
           ))
         }
       </div>
+
+      {
+        showModal && (
+          <BlogModal setShowModal={setShowModal} toast={toast} refetch={refetch} />
+        )
+      }
     </div>
   )
 }

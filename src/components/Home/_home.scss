@@ -9,7 +9,7 @@
       flex-direction: column;
       position: absolute;
       left: 50%;
-      /* right: 50%; */
+      width: 100%;
       top: 10rem;
       transform: translateX(-50%);
   
@@ -17,6 +17,7 @@
     .title {
       @include center__elem;
       flex-direction: column;
+      
 
       
       h1 {
@@ -28,6 +29,8 @@
     }
     .detail {
       padding: 2rem 0 4rem;
+
+      text-align: center;
     }
     .search {
       .btn {
@@ -47,8 +50,12 @@
     }
     .lower{
       &__div{
-        height: 55vh;
-        background: rgba(242,186,82,.9);
+        height: 40vh;
+        
+      }
+
+      @media screen and (max-width:1500px) {
+        height: 45vh;
       }
       
     }
@@ -59,6 +66,24 @@
         }
       }
     }
+    @media screen and (max-width:800px) {
+      .title{
+        h1{
+          font-size: 2rem;
+        }
+      }
+    }
+    @media screen and (max-width:550px) {
+      .upper{
+        padding: 2rem;
+      }
+    }
+    @media screen and (max-width:450px) {
+      .upper{
+        top: 5rem;
+      }
+    }
+    
 
   }
   &-intro {
@@ -169,7 +194,7 @@
   // why choose us
 
   &-choose {
-    padding: 5rem 4rem;
+    padding: 2rem 4rem;
     // background: rgba($color: $color3, $alpha: 0.9);
     &__title {
       @include center__elem;
@@ -288,7 +313,7 @@
       }
     }
     @media screen and (max-width: 850px) {
-      padding: 5rem 2rem;
+      padding: 0rem 2rem;
 
       &__title {
         p {
@@ -333,7 +358,7 @@
     padding: 2rem 4rem;
     padding-top: 1rem;
     &__title {
-      padding: 1rem 2rem;
+      padding: 0 2rem;
       @include center__elem;
       font-size: 1.3rem;
       justify-content: space-between;
@@ -350,7 +375,7 @@
       }
     }
     &__detail {
-      margin-top: 2rem;
+      margin-top:-.5rem;
     }
 
     .swiper {
@@ -440,7 +465,7 @@
     }
     .review__card {
       padding: 1rem;
-      width: 23rem;
+      width: 100%;
       height: 29rem;
       @include center__elem;
       flex-direction: column;
@@ -530,6 +555,7 @@
       }
     }
     @media screen and (max-width: 600px) {
+      padding: 2rem 4rem;
       &__title {
         font-size: 1.1rem;
       }

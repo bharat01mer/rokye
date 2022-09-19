@@ -120,7 +120,8 @@ const Navbar = () => {
     <div className="rokye__navbar" ref={headerRef}>
       <Link passHref href={"/"}>
         <div className="rokye__navbar-logo">
-          <Image src={"/logo.png"} width={150} height={50} objectFit="contain" />
+          {/* <Image src={"/logo.png"} width={150} height={50} objectFit="contain" /> */}
+          <h1 style={{color:"white"}}>ROKYE</h1>
         </div>
       </Link>
       <AnimatePresence>
@@ -182,7 +183,7 @@ const Navbar = () => {
                 ))
               }
               <div className="more">
-                <h3 onClick={() => setShowMoreOpt(item => !item)}>More <BiChevronDown size={25} /> </h3>
+                <h3 style={{color:"white"}} onClick={() => setShowMoreOpt(item => !item)}>More <BiChevronDown size={25} /> </h3>
 
                 <AnimatePresence>
 

@@ -6,6 +6,7 @@
     width: 100%;
     z-index: 23;
     top: 0;
+    background: $color1;
 
     @include center__elem;
     justify-content: space-between;
@@ -23,6 +24,7 @@
     .outer {
       @include center__elem;
     }
+    
 
     &-desktop{
       @include center__elem;
@@ -32,8 +34,12 @@
         cursor: pointer;
         
         &.active {
-          color: $color5;
-          border-bottom: 2px solid $color5;
+          h3{
+            color: $color5;
+          }
+        }
+        h3{
+          color: white;
         }
       }
       .more{
@@ -176,7 +182,6 @@
       }
       .active {
         color: $color5 !important;
-        border-bottom: 2px solid $color5;
       }
 
       @media screen and (max-width: 650px) {
@@ -196,7 +201,6 @@
       transition: all 0.5s ease-in-out;
       padding: 0.8rem 4rem;
       box-shadow: 0px 0px 7px black;
-      background: white;
       z-index: 2;
     }
 
@@ -212,7 +216,7 @@
   &__card {
     cursor: pointer;
     box-shadow: 0 2px 9px 0 rgb(34 12 43 / 10%);
-    width: 20rem;
+    width: 100%;
     border-radius: 0.7rem;
     position: relative;
 

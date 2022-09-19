@@ -33,7 +33,7 @@ const Recently = () => {
             </Head>
             <div className="rokye__home-recent">
                 <div className="rokye__home-recent__title">
-                    <h1>Recently Added</h1>
+                    <h1></h1>
                     <Link passHref href="/properties">
                         <h3>View all</h3>
                     </Link>

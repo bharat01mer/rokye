@@ -4,8 +4,8 @@ import { FcCalendar } from "react-icons/fc"
 import { BiUserCircle } from "react-icons/bi"
 import { useSelector } from 'react-redux'
 
-const BlogDetail = ({ data, author }) => {
-    const { date, type, content } = data
+const BlogDetail = ({ data }) => {
+    const { date, type, content,author } = data
     const { winWidth } = useSelector(state => state.util)
     return (
         <div className="rokye__blog-detail">
@@ -20,14 +20,14 @@ const BlogDetail = ({ data, author }) => {
                 </div>
                 <div className="detail__author item">
                     <BiUserCircle size={25} />
-                    <p>{author}</p>
+                    <p>{author?.name}</p>
                 </div>
                 <div className="detail__genre item">
                     <p>#{type}</p>
                 </div>
             </div>
-            <div className="content">
-                <p>{content}</p>
+            <div className="content" dangerouslySetInnerHTML={{__html: content}}>
+                
             </div>
         </div>
     )

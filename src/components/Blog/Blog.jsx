@@ -20,11 +20,10 @@ const Blog = ({ data }) => {
                                 <div className="card__detail">
                                     <div className="upper">
                                         <p className="date">June 30,2021</p>  <div className="divider"></div> <p>{item?.type}</p>
-
                                     </div>
                                     <h2 className="title">{item?.title}</h2>
                                     <div className="content">
-                                        <p>{item.content.slice(0, 200)}</p>
+                                        <p>{item.content.slice(0, 200).replace(/<(.|\n)*?>/g, '')}</p>
                                         <div className="more">
                                             <p>
                                                 Read More

@@ -8,8 +8,8 @@ const Intro2 = () => {
     <div className="rokye__home-intro2">
         <div className="upper">
         <div className="title">
-                    <h1>Welcome to! </h1>
-                    <h1>No Brokerage Property Site</h1>
+                    <h1>Welcome to
+                    No Brokerage Property Site</h1>
                 </div>
                 <div className="detail">
                     <h3 >Zero hassle, Everything’s instant, Loved by everyone.</h3>

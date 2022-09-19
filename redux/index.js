@@ -25,7 +25,8 @@ const persistConfig={
     blacklist:[
         "property",
         "review",
-        "contact"
+        "contact",
+        "blog"
     ],
     storage
 }

@@ -2,7 +2,7 @@
   padding: 9rem 10rem 4rem;
 
   @include center__elem;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 
   &-filter {
@@ -348,7 +348,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 2rem 0;
-        grid-gap: 4rem;
+        grid-gap: 2rem;
       }
     }
   }

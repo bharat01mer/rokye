@@ -62,6 +62,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
   z-index: 23;
   top: 0;
+  background: #114040;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,9 +91,11 @@ input::-webkit-inner-spin-button {
   margin-right: 2rem;
   cursor: pointer;
 }
-.rokye__navbar-desktop .item:not(:last-child).active {
+.rokye__navbar-desktop .item:not(:last-child).active h3 {
   color: #f25c05;
-  border-bottom: 2px solid #f25c05;
+}
+.rokye__navbar-desktop .item:not(:last-child) h3 {
+  color: white;
 }
 .rokye__navbar-desktop .more {
   cursor: pointer;
@@ -218,7 +221,6 @@ input::-webkit-inner-spin-button {
 }
 .rokye__navbar-tab .active {
   color: #f25c05 !important;
-  border-bottom: 2px solid #f25c05;
 }
 @media screen and (max-width: 650px) {
   .rokye__navbar-tab h3 {
@@ -234,7 +236,6 @@ input::-webkit-inner-spin-button {
   transition: all 0.5s ease-in-out;
   padding: 0.8rem 4rem;
   box-shadow: 0px 0px 7px black;
-  background: white;
   z-index: 2;
 }
 @media screen and (max-width: 1250px) {
@@ -248,7 +249,7 @@ input::-webkit-inner-spin-button {
 .rokye__card {
   cursor: pointer;
   box-shadow: 0 2px 9px 0 rgba(34, 12, 43, 0.1);
-  width: 20rem;
+  width: 100%;
   border-radius: 0.7rem;
   position: relative;
   display: flex;
@@ -767,7 +768,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   position: absolute;
   left: 50%;
-  /* right: 50%; */
+  width: 100%;
   top: 10rem;
   transform: translateX(-50%);
 }
@@ -786,6 +787,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-intro2 .detail {
   padding: 2rem 0 4rem;
+  text-align: center;
 }
 .rokye__home-intro2 .search .btn {
   cursor: pointer;
@@ -802,12 +804,31 @@ input::-webkit-inner-spin-button {
   margin-left: 0.5rem;
 }
 .rokye__home-intro2 .lower__div {
-  height: 55vh;
-  background: rgba(242, 186, 82, 0.9);
+  height: 40vh;
+}
+@media screen and (max-width: 1500px) {
+  .rokye__home-intro2 .lower {
+    height: 45vh;
+  }
 }
 @media screen and (max-width: 800px) {
   .rokye__home-intro2 .title h1 {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .rokye__home-intro2 .title h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .rokye__home-intro2 .upper {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .rokye__home-intro2 .upper {
+    top: 5rem;
   }
 }
 .rokye__home-intro {
@@ -900,7 +921,7 @@ input::-webkit-inner-spin-button {
   }
 }
 .rokye__home-choose {
-  padding: 5rem 4rem;
+  padding: 2rem 4rem;
 }
 .rokye__home-choose__title {
   display: flex;
@@ -1012,7 +1033,7 @@ input::-webkit-inner-spin-button {
 }
 @media screen and (max-width: 850px) {
   .rokye__home-choose {
-    padding: 5rem 2rem;
+    padding: 0rem 2rem;
   }
   .rokye__home-choose__title p {
     text-align: center;
@@ -1048,7 +1069,7 @@ input::-webkit-inner-spin-button {
   display: block !important;
 }
 .rokye__home-recent__title {
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1067,7 +1088,7 @@ input::-webkit-inner-spin-button {
   color: #f25c05;
 }
 .rokye__home-recent__detail {
-  margin-top: 2rem;
+  margin-top: -0.5rem;
 }
 .rokye__home-recent .swiper {
   margin-left: 2rem !important;
@@ -1155,7 +1176,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-review .review__card {
   padding: 1rem;
-  width: 23rem;
+  width: 100%;
   height: 29rem;
   display: flex;
   justify-content: center;
@@ -1245,6 +1266,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media screen and (max-width: 600px) {
+  .rokye__home-review {
+    padding: 2rem 4rem;
+  }
   .rokye__home-review__title {
     font-size: 1.1rem;
   }
@@ -1350,7 +1374,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 }
 .rokye__property-filter {
@@ -1749,7 +1773,7 @@ input::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 2rem 0;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
 }
 @media screen and (max-width: 1650px) {
   .rokye__property {
@@ -4750,6 +4774,46 @@ input::-webkit-inner-spin-button {
   background: #f25c05;
   color: white;
 }
+.admin__content-blog .content__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+.admin__content-blog .content__item .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin__content-blog .content__item .left__img {
+  margin: 0 1rem;
+}
+.admin__content-blog .content__item .left .date {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.admin__content-blog .content__item .left .date p:last-child {
+  margin-left: 3rem;
+}
+.admin__content-blog .content__item .right__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: black;
+}
+@media screen and (max-width: 1100px) {
+  .admin__content-blog .content img {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 600px) {
   .admin {
     font-size: 0.9rem;
@@ -4760,6 +4824,79 @@ input::-webkit-inner-spin-button {
   .admin__content .title h1 {
     font-size: 2rem;
   }
+}
+
+.rokye__admin-blog__modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  z-index: 12;
+  left: 0;
+}
+.rokye__admin-blog__modal .modal {
+  width: 30rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(31, 27, 45, 0.12), 0 0.25rem 1rem rgba(31, 27, 45, 0.12) !important;
+  background: white;
+  position: relative;
+}
+.rokye__admin-blog__modal .modal__cancel {
+  position: absolute;
+  top: 0.5rem;
+  cursor: pointer;
+  right: 0.5rem;
+}
+.rokye__admin-blog__modal .modal .MuiOutlinedInput-notchedOutline {
+  border-color: black !important;
+}
+.rokye__admin-blog__modal .modal .title {
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+.rokye__admin-blog__modal .modal .title h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.rokye__admin-blog__modal .modal .error {
+  font-size: 0.8rem;
+  color: red;
+}
+.rokye__admin-blog__modal .modal .form__item {
+  margin-bottom: 1.5rem;
+}
+.rokye__admin-blog__modal .modal .form__item.img .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.rokye__admin-blog__modal .modal .form__item.img .upper input {
+  display: none;
+}
+.rokye__admin-blog__modal .modal .form__item.img .upper label {
+  padding: 0.3rem 0.5rem;
+  background: #f25c05;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.rokye__admin-blog__modal .modal .form .submit {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background: #f25c05;
+  color: white;
 }
 
 .rokye__blog {

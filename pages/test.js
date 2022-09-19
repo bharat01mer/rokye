@@ -1,9 +1,9 @@
 import React from 'react'
-import { Preloader } from '../src/components/resuable'
+import BlogModal from '../src/components/admin/BlogModal'
 
 const Test = () => {
   return (
-    <Preloader />
+    <BlogModal />
   )
 }
 

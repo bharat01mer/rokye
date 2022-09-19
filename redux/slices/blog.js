@@ -33,10 +33,16 @@ export const blogApi=createApi({
             query:(id)=>({
                 url:`/${id}`
             })
+        }),
+        deleteBlog: builder.mutation({
+            query:(id)=>({
+                url:`/${id}`,
+                method:"DELETE"
+            })
         })
         
     })
 })
 
 
-export const {useCreateBlogMutation,useGetALLBlogQuery,useGetBlogByIdQuery}=blogApi
+export const {useCreateBlogMutation,useGetALLBlogQuery,useGetBlogByIdQuery,useDeleteBlogMutation}=blogApi
