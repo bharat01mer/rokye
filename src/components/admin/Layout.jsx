@@ -58,6 +58,7 @@ const Layout = ({ children, title }) => {
         }
     }, [])
 
+    
 
     return isAdmin && (
         <>
@@ -73,7 +74,7 @@ const Layout = ({ children, title }) => {
 
                         <div className="content">
                             {
-                                barItem.map((item) => item.id !== 4 ? (
+                                barItem.map((item) => item.id !== 5 ? (
                                     <Link passHref href={`/admin/${item.link}`} key={item.name} >
                                         <div className={`item ${item.link === query ? "active" : ""}`} style={{ cursor: "pointer" }}>
                                             <h3>{item.name}</h3>

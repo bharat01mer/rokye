@@ -1,23 +1,17 @@
 .rokye__home {
 
   &-intro2{
-    margin-top: 0;
+    margin-top: 10rem;
     position: relative;
 
     .upper{
       @include center__elem;
       flex-direction: column;
-      position: absolute;
-      left: 50%;
-      width: 100%;
-      top: 10rem;
-      transform: translateX(-50%);
   
     }
     .title {
       @include center__elem;
       flex-direction: column;
-      
 
       
       h1 {
@@ -48,17 +42,7 @@
       }
 
     }
-    .lower{
-      &__div{
-        height: 40vh;
-        
-      }
-
-      @media screen and (max-width:1500px) {
-        height: 45vh;
-      }
-      
-    }
+    
     @media screen and (max-width:800px) {
       .title{
         h1{
@@ -76,11 +60,6 @@
     @media screen and (max-width:550px) {
       .upper{
         padding: 2rem;
-      }
-    }
-    @media screen and (max-width:450px) {
-      .upper{
-        top: 5rem;
       }
     }
     
