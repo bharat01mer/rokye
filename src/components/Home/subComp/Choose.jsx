@@ -11,28 +11,28 @@ const Choose = () => {
         {
             id: 0,
             title: "No Brokerage",
-            img: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            img: "https://res.cloudinary.com/dburijwvn/image/upload/v1663314023/No_Brokerage_bx2i1n.png",
             desc: 'Let us connect home owners and tenants directly to save time and thousands in a brokerage.',
             icon: <FiUserX size={45} color={"#035941"} />
         },
         {
             id: 1,
             title: "No Advance Payment",
-            img: "https://res.cloudinary.com/dburijwvn/image/upload/v1660407705/photo-1556740738-b6a63e27c4df_u6xnws.jpg",
+            img: "https://res.cloudinary.com/dburijwvn/image/upload/v1663314023/No_Advance_Payment_oeevtg.png",
             desc: 'Avail our no advance payment service - use our service first and pay us later.',
             icon: <ImCancelCircle size={45} color={"#035941"} />
         },
         {
             id: 2,
             title: "Shortlist at home",
-            img: "https://images.unsplash.com/photo-1516382799247-87df95d790b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+            img: "https://res.cloudinary.com/dburijwvn/image/upload/v1663314023/Shortlist_at_home_hfjxks.png",
             desc: 'Wishlist all the properties you like to see and visit once you are ready to make a decision.',
             icon: <RiFileList2Fill size={45} color={"#035941"} />
         },
         {
             id: 3,
             title: "Rental Agreement",
-            img: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+            img: "https://res.cloudinary.com/dburijwvn/image/upload/v1663314023/Rental_Agreement_pzs33z.png",
             desc: 'We will assist you in creating rental agreement as well to make it hassle free and easy.',
             icon: <CgFileDocument size={45} color={"#035941"} />
         },
@@ -53,7 +53,7 @@ const Choose = () => {
         <div className="rokye__home-choose">
             <div className="rokye__home-choose__title">
                 <h1>Why Choose us</h1>
-                <p>Rokye Group is commited to help our clients</p>
+                <p style={{color:"#000"}}>Rokye Group is commited to help our clients</p>
             </div>
             <div className="outer">
 
@@ -62,10 +62,10 @@ const Choose = () => {
                         items.map((data) => (
                             <motion.div className="item" key={data.title}>
                                 <div className={`icon img${data.id}`}>
-                                    <Image src={data.img} objectFit="cover" width={350} height={300} alt={data.title} />
+                                    <Image src={data.img} objectFit="cover" width={300} height={250} alt={data.title} />
                                 </div>
                                 <div className="detail">
-                                    <h2>{data.title}</h2>
+                                    <h2 style={{color:"#000"}}>{data.title}</h2>
                                 </div>
                             </motion.div>
                         ))

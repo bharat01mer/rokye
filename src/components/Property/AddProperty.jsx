@@ -8,49 +8,50 @@ import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
-const initialState = {
-    category: "",
-    propType: "",
-    bedroom: "",
-    bathroom: "",
-    bikeParking: "",
-    carParking: "",
-    carpetArea: null,
-    superArea: null,
-    flatNo: null,
-    society: "",
-    area: "",
-    city: "",
-    state: "",
-    pinCode: null,
-    nearby: {
-        school: "",
-        hospital: "",
-        mall: "",
-        transport: "",
-        temple: "",
-        commercial: ""
-    },
-    totalFloor: null,
-    facing: "",
-    balconies: null,
-    furnished: "",
-    age: "",
-    availability: "",
-    tenant: "",
-    nonVeg: "",
-    pet: "",
-    amenity: [],
-    description: "",
-    rentDetail: { monthly: null, securityAmount: null, maintenance: null, per: "" },
-    images: [],
-    firstName: "",
-    lastName: "",
-    phone: null,
-    email: ""
-}
 
 const AddProperty = () => {
+    const { user } = useSelector((state) => state.util)
+    const initialState = {
+        category: "",
+        propType: "",
+        bedroom: "",
+        bathroom: "",
+        bikeParking: "",
+        carParking: "",
+        carpetArea: null,
+        superArea: null,
+        flatNo: null,
+        society: "",
+        area: "",
+        city: "",
+        state: "",
+        pinCode: null,
+        nearby: {
+            school: "",
+            hospital: "",
+            mall: "",
+            transport: "",
+            temple: "",
+            commercial: ""
+        },
+        totalFloor: null,
+        facing: "",
+        balconies: null,
+        furnished: "",
+        age: "",
+        availability: "",
+        tenant: "",
+        nonVeg: "",
+        pet: "",
+        amenity: [],
+        description: "",
+        rentDetail: { monthly: null, securityAmount: null, maintenance: null, per: "" },
+        images: [],
+        firstName: user?.data?.name,
+        phone: user?.data?.phone,
+        email: user?.data?.email
+    }
+    
     const [activeStep, setActiveStep] = useState(0)
     const [imageArray, setImageArray] = useState([])
 
@@ -63,7 +64,6 @@ const AddProperty = () => {
 
     const router = useRouter()
 
-    const { user } = useSelector((state) => state.util)
 
     const [createProperty] = useCreatePropertyMutation()
     const [addImageInProp] = useAddImageInPropertyByIdMutation()
@@ -80,7 +80,7 @@ const AddProperty = () => {
         console.log("running")
     })
 
-    console.log({state: methods.formState.errors})
+    
     const showForm = (step) => {
         switch (step) {
             case 0:

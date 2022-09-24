@@ -179,7 +179,7 @@
       @include center__elem;
       flex-direction: column;
 
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: $color2;
 
       h1 {
@@ -339,7 +339,7 @@
     &__title {
       padding: 0 2rem;
       @include center__elem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       justify-content: space-between;
 
       h1 {
@@ -354,11 +354,11 @@
       }
     }
     &__detail {
-      margin-top:-.5rem;
+      margin-top:.5rem;
     }
 
     .swiper {
-      margin-left: 2rem !important;
+      
       padding: 1rem !important;
     }
     &__navigate {
@@ -418,7 +418,7 @@
     padding: 5rem 4rem;
     &__title {
       @include center__elem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       flex-direction: column;
 
       h1 {

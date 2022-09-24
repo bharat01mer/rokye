@@ -4,8 +4,10 @@ import { ContactForm, ScrollTo } from '../resuable'
 import { GoMail } from "react-icons/go"
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
+import { useSelector } from 'react-redux'
 
 const Contact = () => {
+    const { winWidth } = useSelector(state => state.util)
     const connectItem = [
         {
             id: 0,
@@ -38,13 +40,17 @@ const Contact = () => {
     ]
     return (
         <>
-        <ScrollTo />
+            <ScrollTo />
             <div className="rokye__contact">
 
                 <div className="upper">
-                    <div className="rokye__contact-animate">
-                        <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486047/Contact_us-pana_zipvkl.png"} width={2500} height={2500} objectFit="contain" />
-                    </div>
+                    {
+                        winWidth > 600 && (
+                            <div className="rokye__contact-animate">
+                                <Image src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486047/Contact_us-pana_zipvkl.png"} width={2500} height={2500} objectFit="contain" />
+                            </div>
+                        )
+                    }
                     <div className="rokye__contact-form">
                         <ContactForm />
                     </div>

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -385,7 +385,7 @@ input::-webkit-inner-spin-button {
   margin-top: 1rem;
 }
 .rokye__footer h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -396,7 +396,7 @@ input::-webkit-inner-spin-button {
   margin-bottom: 1rem;
 }
 .rokye__footer-intro h3 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -525,7 +525,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 .rokye__form-header .title h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #f25c05;
 }
@@ -775,7 +775,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-intro2 .title h1 {
   text-align: center;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.5rem;
@@ -822,7 +822,7 @@ input::-webkit-inner-spin-button {
   padding: 0 5rem;
 }
 .rokye__home-intro__detail .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.5rem;
@@ -910,11 +910,11 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #035941;
 }
 .rokye__home-choose__title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-weight: bolder;
 }
@@ -973,7 +973,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-choose__detail .detail h2 {
   font-size: 1.7rem;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #035941;
   margin-bottom: 0.4rem;
@@ -1055,12 +1055,12 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   justify-content: space-between;
 }
 .rokye__home-recent__title h1 {
   color: #035941;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-weight: bolder;
 }
@@ -1070,10 +1070,9 @@ input::-webkit-inner-spin-button {
   color: #f25c05;
 }
 .rokye__home-recent__detail {
-  margin-top: -0.5rem;
+  margin-top: 0.5rem;
 }
 .rokye__home-recent .swiper {
-  margin-left: 2rem !important;
   padding: 1rem !important;
 }
 .rokye__home-recent__navigate {
@@ -1133,12 +1132,12 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   flex-direction: column;
 }
 .rokye__home-review__title h1 {
   color: #035941;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-weight: bolder;
 }
@@ -1210,7 +1209,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__home-review .review__card-detail .person h3 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   margin-bottom: 0.3rem;
 }
@@ -1286,7 +1285,7 @@ input::-webkit-inner-spin-button {
   color: #114040;
 }
 .rokye__home-message .info h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
 }
@@ -1617,7 +1616,7 @@ input::-webkit-inner-spin-button {
   width: 15rem;
 }
 .rokye__property-grid .error h2, .rokye__property-grid .loading h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -1630,7 +1629,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
 }
 .rokye__property-grid .error__prop h2, .rokye__property-grid .loading__prop h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -1647,7 +1646,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 .rokye__property-grid__title .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2rem;
@@ -1746,7 +1745,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .rokye__property-grid__title .sort .result svg {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .rokye__property-grid__title .sort .result p {
   margin-left: 0.2rem;
@@ -1846,7 +1845,7 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
 }
 .rokye__property-detail h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -1899,7 +1898,7 @@ input::-webkit-inner-spin-button {
   padding: 0.1rem;
 }
 .rokye__property-detail__prop .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -1939,7 +1938,7 @@ input::-webkit-inner-spin-button {
   }
 }
 .rokye__property-detail__prop .desc h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -1967,7 +1966,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__property-detail__prop .nearby__content .item h4 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 @media screen and (max-width: 900px) {
@@ -1987,7 +1986,7 @@ input::-webkit-inner-spin-button {
   margin: 4rem 0;
 }
 .rokye__property-detail__prop .detail h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2020,7 +2019,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: flex-start;
   margin-left: 0.5rem;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2182,7 +2181,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
 }
 .rokye__add-property__title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.5rem;
@@ -2246,7 +2245,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__add-property__content .form__basic-title h1 {
   margin-left: 1rem;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2271,12 +2270,12 @@ input::-webkit-inner-spin-button {
 }
 .rokye__add-property__content .form__complex-title h1 {
   margin-left: 1rem;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
 .rokye__add-property__content .form__complex .content h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2350,7 +2349,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__add-property__content .form__upload-title h1 {
   margin-left: 1rem;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2526,7 +2525,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .rokye__login-left .points h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   margin-bottom: 1rem;
@@ -2575,7 +2574,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .rokye__login-right .form__title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2759,7 +2758,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .rokye__recover-content .form .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2805,7 +2804,7 @@ input::-webkit-inner-spin-button {
 .rokye__plan-info .title h1 {
   font-size: 2.4rem;
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 .rokye__plan-info .content {
@@ -2869,7 +2868,7 @@ input::-webkit-inner-spin-button {
   margin-top: 5rem;
 }
 .rokye__plan-work .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -2960,7 +2959,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 .rokye__contact .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 3rem;
@@ -3088,7 +3087,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 .rokye__faq-title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
   color: #f2f2f2;
@@ -3214,7 +3213,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 .rokye__refer-form {
@@ -3226,7 +3225,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .rokye__refer-work h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -3243,7 +3242,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__refer-work .content__item h2 {
   color: #f25c05;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 2rem;
 }
@@ -3284,7 +3283,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 .rokye__refer-faq .content__title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 2.4rem;
 }
@@ -3388,7 +3387,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__about .intro__content h1 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
 }
@@ -3430,7 +3429,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__about .search__content h1 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
 }
@@ -3472,7 +3471,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__about .verification__content h1 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
 }
@@ -3565,7 +3564,7 @@ input::-webkit-inner-spin-button {
   padding: 7rem;
 }
 .rokye__term .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.2rem;
@@ -3579,7 +3578,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__term .content h2 {
   text-transform: capitalize;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 .rokye__term .content a {
@@ -3623,11 +3622,11 @@ input::-webkit-inner-spin-button {
   padding: 7rem;
 }
 .rokye__policy h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 .rokye__policy .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.2rem;
@@ -3685,7 +3684,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__review-profile .intro h1 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   margin: 0.5rem 0;
 }
@@ -3698,7 +3697,7 @@ input::-webkit-inner-spin-button {
   color: gray;
 }
 .rokye__review-profile .detail svg {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #114040;
 }
 .rokye__review-profile .detail a {
@@ -3776,7 +3775,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .rokye__review-content .progress h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -3921,7 +3920,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .rokye__review-content .review__item .upper__info h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -4054,7 +4053,7 @@ input::-webkit-inner-spin-button {
   right: 0.5rem;
 }
 .rokye__reviewForm form h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   margin-bottom: 2rem;
@@ -4200,7 +4199,7 @@ input::-webkit-inner-spin-button {
 }
 .rokye__user-title .info h1 {
   color: #114040;
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
 }
 .rokye__user-title .info p {
@@ -4250,7 +4249,7 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 .rokye__user-dashboard .tab .item svg {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-right: 0.2rem;
   color: #f25c05;
 }
@@ -4261,7 +4260,7 @@ input::-webkit-inner-spin-button {
   margin-top: 2rem;
 }
 .rokye__user-dashboard .container h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -4290,7 +4289,7 @@ input::-webkit-inner-spin-button {
   color: gray;
 }
 .rokye__user-dashboard__personal .content__item svg {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .rokye__user-dashboard__personal .content__input {
   position: relative;
@@ -4467,7 +4466,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 .admin__content .title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
   font-size: 2.5rem;
@@ -4617,7 +4616,7 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
 }
 .admin__content-contact .content .item .left h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -4692,7 +4691,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .admin__content-review .review__item .upper__info h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -4889,7 +4888,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
 }
 .rokye__blog-title h1 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }
@@ -4940,7 +4939,7 @@ input::-webkit-inner-spin-button {
   margin: 0 0.5rem;
 }
 .rokye__blog-content .card__detail h2 {
-  font-family: "lora", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: #114040;
 }

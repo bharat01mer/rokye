@@ -12,7 +12,7 @@ import { RiArrowDownSLine as DownArrow } from "react-icons/ri"
 import { motion, AnimatePresence } from "framer-motion"
 import { toast, ToastContainer } from "react-toast"
 import { useRouter } from "next/router"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { userData } from "../../../redux/slices/util"
 import { Checkbox } from "@mui/material"
 
@@ -51,6 +51,7 @@ const Login = ({ isSignUp }) => {
     const { handleSubmit, formState: { errors, isValid: IsValid }, setValue, register } = useForm({ mode: "onChange" })
     const [showPass, setShowPass] = useState(false)
     const router = useRouter()
+    const { winWidth } = useSelector(state => state.util)
 
     const [createUser] = useCreateUserMutation()
     const [loginUser] = useLoginUserMutation()
@@ -64,7 +65,7 @@ const Login = ({ isSignUp }) => {
                 localStorage.setItem("user", JSON.stringify(res))
                 toast.success("Signup Successfull")
                 dispatch(userData(res))
-                
+
                 if (router.query?.redirect) {
                     router.push(`/${router.query?.redirect}`)
                 } else {
@@ -104,38 +105,40 @@ const Login = ({ isSignUp }) => {
 
     }, [dispatch])
 
-    const isValid= !isSignUp ? IsValid :  checkBox && IsValid
-    console.log({errors,IsValid,isValid})
+    const isValid = !isSignUp ? IsValid : checkBox && IsValid
 
     return (
         <div className={`rokye__login ${isSignUp ? "signup" : ""}`} >
             <ToastContainer delay={2000} />
-            <div className="rokye__login-left">
+            <div className="rokye__login-left" style={{marginTop:winWidth <600 ? "5rem" : "0"}}>
                 {
-                    !isSignUp ? (
-                        <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Login-pana_prjzhm.png"} />
-                    ) : (
+                    !isSignUp ? (winWidth > 600 && (
+                            <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Login-pana_prjzhm.png"} />
+                        
+                )) : winWidth > 600 && (
 
-                        <>
-                            <div className="points">
-                                <div className="points__title">
-                                    <h1>Welcome to <br />
-                                        No Brokerage property site!</h1>
-                                </div>
-                                {
-                                    checkPoints.map((item) => (
-                                        <motion.div className="points__item" key={item.id}>
-                                            <CheckIcon color="#f25c05" />
-                                            <p>{item.title}</p>
-                                        </motion.div>
-                                    ))
-                                }
-                            </div>
+                <>
+                    <div className="points">
+                        <div className="points__title">
+                            <h1>Welcome to <br />
+                                No Brokerage property site!</h1>
+                        </div>
+                        {
+                            checkPoints.map((item) => (
+                                <motion.div className="points__item" key={item.id}>
+                                    <CheckIcon color="#f25c05" />
+                                    <p>{item.title}</p>
+                                </motion.div>
+                            ))
+                        }
+                    </div>
+                    
                             <div className="animation">
                                 <Image width={2500} height={2500} objectFit={"contain"} src={"https://res.cloudinary.com/dburijwvn/image/upload/v1660486046/Sign_up-cuate_tyrhp1.png"} />
                             </div>
-                        </>
-                    )
+                    
+                </>
+                )
                 }
 
             </div>
@@ -155,7 +158,7 @@ const Login = ({ isSignUp }) => {
                             isSignUp && (
                                 <>
                                     <div className="choose">
-                                        <div className="choose__title" onClick={() => setShowOption(!showOption)} style={{cursor:"pointer"}}>
+                                        <div className="choose__title" onClick={() => setShowOption(!showOption)} style={{ cursor: "pointer" }}>
                                             <p {...register("type", { required: true })}>
                                                 {optionValue.id === null ? "I am " : optionValue.name}
                                             </p>
@@ -227,7 +230,7 @@ const Login = ({ isSignUp }) => {
                                 )
                             }} />
                             {
-                                (isSignUp && errors.password )&& (
+                                (isSignUp && errors.password) && (
                                     <p> {errors.password.type = "minLength" ? "Password Length Should be greater than 8" : "Password Required"} </p>
                                 )
                             }

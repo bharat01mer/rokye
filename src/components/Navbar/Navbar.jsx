@@ -227,15 +227,15 @@ const Navbar = () => {
 
         <Link href={"/properties/create"} passHref>
           <motion.div className="sell" whileTap={{ scale: 0.97 }} style={{ cursor: "pointer" }}>
-            <AiOutlinePlus size={25} color={"#fff "} />
+            <AiOutlinePlus size={25} color={"#fff"} />
             <h3 >Add Property</h3>
           </motion.div>
         </Link>
         {
           winWidth < 1200 && (
-            showMobileNav ? <RiCloseLine size={35} onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
+            showMobileNav ? <RiCloseLine size={35 } color="#f25c05" onClick={() => setShowMobileNav(false)} cursor="pointer" /> : (
               <>
-                <CgMenuRight size={35} onClick={() => setShowMobileNav(true)} cursor="pointer" />
+                <CgMenuRight size={35} color="#f25c05" onClick={() => setShowMobileNav(true)} cursor="pointer" />
               </>
             )
           )

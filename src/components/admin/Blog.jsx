@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { useDispatch } from "react-redux"
+import { useEffect } from "react"
 import { useDeleteBlogMutation, useGetALLBlogQuery } from "../../../redux/slices/blog"
 import { MdDelete } from "react-icons/md"
 import Image from "next/image"
@@ -16,6 +16,10 @@ const Blog = () => {
   const [deleteBlog]=useDeleteBlogMutation()
 
   const [showModal, setShowModal] = useState(false)
+
+  useEffect(()=>{
+
+  },[data])
 
   const deleteBlogHandler=(id)=>{
     deleteBlog(id) 
