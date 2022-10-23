@@ -49,7 +49,7 @@ const Layout = ({ children, title }) => {
 
     const isAdmin = user?.data?.type === "admin" || user?.data?.type === "subadmin";
 
-    const isSuperAdmin = user?.data.email === "jignesg190@gmail.com" || user?.data.email === "info@rokye.com"
+    const isSuperAdmin = user?.data?.email === "jignesg190@gmail.com" || user?.data?.email === "info@rokye.com"
 
     useEffect(() => {
         setWinWidth(window.innerWidth)
@@ -57,8 +57,6 @@ const Layout = ({ children, title }) => {
             router.push("/")
         }
     }, [])
-
-    
 
     return isAdmin && (
         <>
